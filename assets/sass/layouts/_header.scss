@@ -1,4 +1,4 @@
-header, .headerShadow{
+.mainHeader, .headerShadow{
     width: 100%;
     height: 5.6rem;
     position: fixed;
@@ -16,7 +16,7 @@ header, .headerShadow{
     }
 
 }
-header{
+.mainHeader{
     /*padding .4rem both sides
      to align in 16px margin of 
      the whole page cause the hamburger icon already 
@@ -68,7 +68,6 @@ nav{
     grid-template-rows: 4.8rem 4.8rem minmax(20rem, auto) 1fr;
     background-image: url("../images/PUPlogo.png");
     background-repeat: no-repeat;
-    background-position: center;
     background-color: $primaryColor;
     background-size: 4rem 4rem;
     background-position: center bottom 5rem;
@@ -149,7 +148,7 @@ nav{
 
 @media(min-width: 52.5em){
 
-    header, .headerShadow{
+    .mainHeader, .headerShadow{
         height: 6rem;
         padding: 0 2.4rem;
         &::before{

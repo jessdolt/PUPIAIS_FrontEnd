@@ -1,4 +1,4 @@
-/*Color Variables*/
+//Color Variables
 $primaryColor:#5C1C1C;
 $primaryColorDark:#522121;
 $primaryColorLight:#A63F3F;
@@ -7,8 +7,19 @@ $surfaceColor:#FFFFFF;
 $highEmphasis:rgba(0,0,0,0.87);
 $mediumEmphasis:rgba(0,0,0,0.60);
 $disabled:rgba(0,0,0,0.38);
+$textfield-border: rgba(0,0,0,0.20);
+$errorColor: #B00020;
+$visitedColor: #8E5E57;
 
-/*Elevation Variables*/
+//Font Sizes
+$basic-text: 1.4rem;
+$h3-text-mobile: 1.8rem;
+$h2-text-mobile: 2.4rem;
+$h1-text-mobile: 3.6rem;
+
+$overline-text-desktop: 1.8rem;
+
+//Elevation Variables
 $elevate1dp:
     0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14),
