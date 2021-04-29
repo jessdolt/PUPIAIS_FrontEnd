@@ -1,0 +1,38 @@
+.admin{
+    background-color: $backgroundColor;
+
+    .pageSpecificHeader{
+        background-image: url("../images/pageSpecificHeaderBg.png");
+        background-repeat: no-repeat;
+        @include set-background-color($primaryColorLight);
+        min-height: 16rem;
+        box-shadow: $elevate2dp;
+        padding: 2.4rem;
+        display: flex;
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $primaryColorLight;
+            opacity: .4;
+        }
+
+        & > div{
+            z-index: 1;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+        }
+
+        & > div:last-child{
+            align-self: flex-end;
+            margin-left: auto;
+        } 
+    }
+
+}

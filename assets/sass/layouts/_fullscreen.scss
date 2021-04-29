@@ -1,0 +1,14 @@
+.fullscreen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+//this div contains the side nav and main content in admin pages
+.main{
+    flex: 1;
+    display: flex;
+    main{
+        flex: 1;
+    }
+}

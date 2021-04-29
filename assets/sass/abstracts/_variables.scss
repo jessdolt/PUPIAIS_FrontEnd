@@ -10,14 +10,20 @@ $disabled:rgba(0,0,0,0.38);
 $textfield-border: rgba(0,0,0,0.20);
 $errorColor: #B00020;
 $visitedColor: #8E5E57;
+$activeIndicator: #43B581;
 
 //Font Sizes
+//mobile
 $basic-text: 1.4rem;
 $h3-text-mobile: 1.8rem;
 $h2-text-mobile: 2.4rem;
 $h1-text-mobile: 3.6rem;
 
+//desktop
 $overline-text-desktop: 1.8rem;
+$h3-text-desktop: 2.4rem;
+$h2-text-desktop: 3rem;
+$h1-text-desktop: 3.6rem;
 
 //Elevation Variables
 $elevate1dp:
@@ -56,3 +62,9 @@ $elevate24dp:
     0px 11px 15px -7px rgba(0, 0, 0, 0.2),
     0px 24px 38px 3px rgba(0, 0, 0, 0.14),
     0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+
+//breakpoints
+$breakpoints: (
+    'medium' : 415px,
+    'large' : 840px
+);

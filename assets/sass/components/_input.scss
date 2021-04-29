@@ -33,30 +33,18 @@
         transition: 200ms ease;
     }
 
-    .error{
-        display: none;
-    }
-
 }
 
 input:required:-moz-ui-invalid{
     border: 1px solid $errorColor;
     border-right: none;
+    //remove the default red box-shadow for invalid textfield
     box-shadow: none;
 
     &~.icon{
         border: 1px solid $errorColor;
         border-left: none;
         box-shadow: none;
-    }
-    
-    &~.error{
-        display: block;
-
-        &::before{
-            content: "Ilmer bubu Error";
-        }
-
     }
 
 }

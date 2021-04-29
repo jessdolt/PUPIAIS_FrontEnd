@@ -1,6 +1,5 @@
-button{
-    border: none;
-    min-height: 4.8rem;
+%btn{
+    min-height: 4.4rem;
     min-width: 6.4rem;
     display: flex;
     align-items: center;
@@ -17,9 +16,24 @@ button{
     }
 
     &:active{
-        opacity: .8;
+        filter: opacity(.88);
     }
-    
+
+}
+
+%outline{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10rem;
+}
+
+
+%filled{
+    border: 1px solid transparent;
+}
+
+button{
+    @extend %btn;
 }
 
 .icon{

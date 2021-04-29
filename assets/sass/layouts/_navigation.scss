@@ -1,0 +1,367 @@
+//------------------MainNavigation------------------
+.mainNav{
+    position: fixed;
+    left: -100%;
+    transition: 200ms ease;
+    box-shadow: $elevate24dp;
+    z-index: 24;
+    @include set-background-color($primaryColor);
+    width: 30rem;
+    height: 100vh;
+    padding: .4rem;
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: 4.8rem 1fr 10.4rem;
+    grid-template-rows: 4.8rem 4.8rem minmax(20rem, auto) 1fr;
+    background-image: url("../images/PUPlogo.png");
+    background-repeat: no-repeat;
+    background-color: $primaryColor;
+    background-size: 4rem 4rem;
+    background-position: center bottom 5rem;
+
+    .closeIcon{
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    
+    form,ul{
+        justify-self: center;
+    }
+
+    ul{
+        display: flex;
+        gap: .8rem;
+        flex-flow: column;
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+
+        a{
+            display: inline-block;
+            width: 23.8rem;
+            padding: 1.2rem 0;
+            border-radius: 3rem;
+            border: $surfaceColor .1rem solid;
+            color: $surfaceColor;
+            text-align: center;
+        }
+        
+    }
+
+    form{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        display: flex;
+        align-items: center;
+
+        input[type="search"]{
+            width: 23.8rem;
+            border-radius: 1.75rem;
+            border: none;
+            background-image: url("../images/search-24px.svg");
+            background-repeat: no-repeat;
+            background-position: center right .4rem;
+        }
+
+        button{
+            display: none;
+        }
+
+    }
+
+    > div{
+        grid-column: 3;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            border-radius: 3rem;
+            white-space: nowrap;
+        }
+
+    }
+
+    h1{
+        grid-column: 1 / 4;
+        grid-row: 4;
+        text-align: center;
+        align-self: flex-end;
+    }
+    
+}
+
+//------------------AdminNavigation------------------
+.adminNav{
+    min-width: 31.6rem;
+    max-width: 31.6rem;
+    padding: 2.4rem 2.4rem 4.8rem;
+    box-shadow: $elevate24dp;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 4rem;
+    z-index: 22;
+
+    .accountNameContainer{
+        @include set-background-color($primaryColorLight);
+        border-radius: 1rem;
+        min-height: 10rem;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        padding: 2rem 1.4rem 2rem 2rem;
+
+        .imageContainer{
+            //line height 0 to reset height
+            line-height: 0;
+            position: relative;
+
+            &::after{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                content: '';
+                background-color: $activeIndicator;
+                width: 1.5rem;
+                height: 1.5rem;
+                border: 3px $surfaceColor solid;
+                border-radius: 5rem;
+            }
+
+            img{
+                border-radius: 5rem;
+                width: 6rem;
+                height: 6rem;
+            }
+
+        }
+        
+
+        a{
+            margin-left: auto;
+            .icon{
+                fill: set-text-color($primaryColorLight);
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+
+        }
+
+    }
+
+    .mainCategoryList{
+        min-height: 25.2rem;
+        width: 22rem;
+        display: flex;
+        flex-flow: column;
+        gap: .8rem;
+        color: $primaryColorLight;
+        
+        .mainCategory{
+            border-radius: 2.5rem;
+            &:nth-child(1) .categoryContainer{
+                background-image: url("../images/dashboard-icon.svg");
+            }
+            &:nth-child(2) .categoryContainer{
+                background-image: url("../images/accounts-icon.svg");
+            }
+            &:nth-child(3) .categoryContainer{
+                background-image: url("../images/content-icon.svg");
+            }
+            &:nth-child(4) .categoryContainer{
+                background-image: url("../images/survey-icon.svg");
+            }
+            &:nth-child(5) .categoryContainer{
+                background-image: url("../images/job-icon.svg");
+            }
+        }
+
+        .categoryContainer{
+            //border default settings
+            @extend %outline;
+            @extend %btn;
+            position: relative;
+            text-transform: capitalize;
+            border-color: $primaryColorLight;
+            background-repeat: no-repeat;
+            background-position: left .6rem center;
+            background-size: 3.2rem 3.2rem;
+            padding: 0  !important; // remove the default padding
+            a{
+                width: 100%;
+            }
+
+            .dropArrow{
+                width: 3.2rem;
+                height: 3.2rem;
+                position: absolute;
+                right: .6rem;
+                svg{
+                    fill: $primaryColorLight;
+                }
+            }
+            
+            
+        }
+
+        .subCategoryList{
+            visibility: hidden;
+            max-height: 0;
+            transition: max-height 200ms ease;
+        }
+        .open{
+
+            &:nth-child(1) .categoryContainer{
+                background-image: url("../images/dashboardActive-icon.svg");
+            }
+            &:nth-child(2) .categoryContainer{
+                background-image: url("../images/accountsActive-icon.svg");
+            }
+            &:nth-child(3) .categoryContainer{
+                background-image: url("../images/contentActive-icon.svg");
+            }
+            &:nth-child(4) .categoryContainer{
+                background-image: url("../images/surveyActive-icon.svg");
+            }
+            &:nth-child(5) .categoryContainer{
+                background-image: url("../images/jobActive-icon.svg");
+            }
+
+            .categoryContainer{
+                @extend %filled;
+                @include set-background-color($primaryColorLight);
+                a{
+                    color: set-text-color($primaryColorLight);
+                }
+            }
+            
+
+            .dropArrow{
+                transform: rotate(180deg);
+
+                svg{
+                    fill: $surfaceColor;
+                }
+
+            }
+            .subCategoryList{
+                visibility: visible;
+                max-height: 200px;
+            }
+
+        }
+
+    }
+
+    button{
+        @extend %filled;
+        width: 22rem;
+        margin-top: auto;
+        box-shadow: $elevate1dp;
+        position: relative;
+        
+        svg{
+            position: absolute;
+            left: 1.3rem;
+            top: 1.3rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            fill: set-text-color($surfaceColor);
+        }
+
+        &:focus, &:hover{
+            @include set-background-color($primaryColorLight);
+
+            svg{
+                fill: set-text-color($primaryColorLight);
+            }
+        }
+    }
+
+}
+
+@media(min-width: 52.5em){
+    //------------------MainNavigation------------------
+    .mainNav{
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        top: 6rem;
+        left: 0;
+        background-color: #c9c9c9;
+        width: 100%;
+        height: 4rem;
+        padding: 0 2.4rem;
+        z-index: 2;
+        box-shadow: $elevate2dp;
+    
+        ul{
+            flex-flow: row;
+    
+            a{
+                display: block;
+                width: initial;
+                line-height: 4rem;
+                padding: 0 2rem;
+                border: none;
+                border-radius: 0;
+                color: $highEmphasis;
+            }
+    
+            .active{
+                background-color: $backgroundColor;
+            }
+            
+        }
+    
+        form{
+            justify-content: flex-end;
+            flex: 1;
+            gap: .4rem;
+    
+            input[type="search"]{
+                min-width: 15rem;
+                max-width: 30rem;
+                flex: 1;
+                background-image: none;
+            }
+    
+            button{
+                /*unhide*/
+                display: flex;
+                padding: 0;
+                background-color: transparent;
+    
+                &:focus, &:hover{
+                    box-shadow: none;
+                }
+    
+                svg{
+                    fill: $highEmphasis;
+                }
+            
+            }
+            
+        }
+    
+        > div{
+            margin-right: 10.4rem;
+        }
+    
+        .closeIcon{
+            display: none;
+        }
+    
+        h1{
+            display: none;
+        }
+        
+    }
+
+    //------------------AdminNavigation------------------
+    
+}
