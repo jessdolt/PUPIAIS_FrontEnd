@@ -1,7 +1,6 @@
 const alertModalObj = {
     init:() => {
         //--------------------Variable Declaration------------------------
-        const body = document.querySelector("body");
         const btnLogout = document.querySelector(".adminNav button")
         const btnDelete = document.querySelector(".deleteSelected");
         const btnDeleteInline = document.querySelector(".btnDeleteInline");

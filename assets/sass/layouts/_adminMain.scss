@@ -56,6 +56,11 @@
                     fill: none;
                 }
             }
+            h2{
+                span{
+                    font-size: inherit;
+                }
+            }
         }
 
         & > div:last-child{
@@ -145,7 +150,7 @@
                 //forfirefox scrollbar
                 scrollbar-width: thin;
                 scrollbar-color: $disabled $surfaceColor;
-                padding-top: 2.4rem;
+                padding-top: 0.8rem;
                 flex-flow: column;
                 flex: 1;
                 &::-webkit-scrollbar{
@@ -199,6 +204,7 @@
             
             img{
                 min-width: 13.6rem;
+                max-width: 13.6rem;
                 max-height: 7.6rem;
                 object-fit: cover;
             }
@@ -210,6 +216,7 @@
                 -webkit-line-clamp: 3;
                 overflow: hidden;
                 width: 100%;
+                text-align: center;
             }
             //this idot just to make textoverflow ellipsis
             .studentName, .studentEmail,.jobTitle,.company{
@@ -217,7 +224,9 @@
                 white-space: nowrap;
                 text-overflow: ellipsis;
             }
-
+            .Description,.description{
+                text-align: left;
+            }
             .option{
                 position: relative;
                 height: 3.2rem;
