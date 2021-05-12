@@ -68,13 +68,15 @@
                     padding: 0;
                 }
                 input[type="radio"]{
-                    width: 12rem;
+                    width: 11rem;
                     height: 4rem;
                     &::before{
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         height: 100%;
+                        color: $primaryColorLight;
+                        border-color: currentColor;
                         border: 1px solid;
                         border-radius: 0.5rem;
                         background-repeat: no-repeat;
@@ -83,26 +85,8 @@
                     }
                     &:checked::before{
                         @extend %filled;
-                    }
-                    &.workType{
-                        &::before{
-                            color: $primaryColorLight;
-                            border-color: currentColor;
-                        }
-                        &:checked::before{
-                            @include set-background-color($primaryColorLight);
+                        @include set-background-color($primaryColorLight);
                             background-image: url('../images/workTypeActiveIcon.svg');
-                        }
-                    }
-                    &.status{
-                        &::before{
-                            color: $disabled;
-                            border-color: currentColor;
-                        }
-                        &:checked::before{
-                            @include set-background-color($backgroundColor);
-                            background-image: url('../images/statusActiveIcon.svg');
-                        }
                     }
     
                     &#full-time::before{
