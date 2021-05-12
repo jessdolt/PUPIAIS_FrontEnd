@@ -1139,8 +1139,11 @@ table tbody {
 
 .mainContent.adminForm {
   z-index: 5;
-  flex-flow: row;
   max-height: calc(100% - 4.8rem); }
+  .mainContent.adminForm form {
+    height: 100%;
+    display: flex;
+    flex-flow: row; }
   .mainContent.adminForm .form {
     flex: 3;
     height: 100%;
@@ -1307,8 +1310,7 @@ table tbody {
 
 input {
   -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer; }
+  appearance: none; }
 
 .textFieldContainer {
   position: relative;
@@ -1352,6 +1354,9 @@ input[type="file"] {
   cursor: pointer;
   border-radius: 0.5rem;
   text-align: center; }
+
+input[type="radio"] {
+  cursor: pointer; }
 
 input:required:-moz-ui-invalid {
   border: 1px solid #B00020;
