@@ -1,0 +1,39 @@
+//set text color based on bg---------------------------------------
+@function set-text-color($color){
+    @if(lightness($color) > 70){
+        @return $highEmphasis;
+    }
+
+    @else{
+        @return $surfaceColor;
+    }
+}
+
+@mixin set-background-color($color) {
+    background-color: $color;
+    color: set-text-color($color)
+}
+
+//set the media queries---------------------------------------
+@mixin respond-to($breakpoint) {
+    //Retrieves the value from the key
+    $value: map-get($breakpoints, $breakpoint);
+
+    @if $value{
+        // Prints a media query based on the value
+        @media (min-width: $value){
+            @content;
+        }
+    }
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+
+//use to extend something inside media query
+/* @at-root (without: media) {
+    @extend %foo;
+} */

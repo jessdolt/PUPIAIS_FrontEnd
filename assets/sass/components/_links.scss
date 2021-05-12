@@ -1,22 +1,19 @@
 a{
-    min-width: 4.8rem;
-    min-height: 4.8rem;
     text-decoration: none;
     color: $highEmphasis;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 a:link, a:visited{
     color: $primaryColorLight;
 }
 
-a:focus, a:hover{
-    filter: opacity(.8);
+a:focus{
+    filter: opacity(.88);
 }
 
 a:hover{
+    filter: opacity(.96);
     text-decoration: underline;
 }
 

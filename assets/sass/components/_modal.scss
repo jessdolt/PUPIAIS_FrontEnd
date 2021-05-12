@@ -1,0 +1,89 @@
+.alertModalContainer{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: $disabled;
+    z-index: 25;
+    &.show{
+        display: block;
+    }
+    .alertModal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding: 7rem 2.4rem 2.4rem 2.4rem;
+        border-radius: 1rem;
+        background-color: transparent;
+        background-image: url('../images/alertContainer.png');
+        background-position: top 1px right 0;
+        background-repeat: no-repeat;
+        /* box-shadow: $elevate24dp; */
+
+        //change color base on class in alert modal
+        &.logoutAlert{
+            svg{
+                background-image: url("../images/alertLogoutIcon.svg");
+            }
+            div{
+                button{
+                    &:last-child{
+                        @include set-background-color($primaryColorLight);
+                    }
+                }
+            }
+        }
+        &.deleteAlert{
+            svg{
+                background-image: url("../images/alertDeleteIcon.svg");
+            }
+            div{
+                button{
+                    &:last-child{
+                        @include set-background-color($errorColor2);
+                    }
+                }
+            }
+        }
+    
+        svg{
+            position: absolute;
+            transform: translateY(-80%);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 19.6rem;
+            height: 19.8rem;
+        }
+        h2,p{
+            text-align: center;
+        }
+        h2{
+            font-weight: 500;
+        }
+        p{
+            margin-top: 2.4rem;
+            max-width: 25.2rem;
+        }
+    
+        div{
+            margin-top: 3.2rem;
+            display: flex;
+            gap: 2.4rem;
+            button{
+                @extend %filled;
+                min-width: 16rem;
+                &:first-child{
+                    @include set-background-color($backgroundColor);
+                }
+            }
+        }
+    }
+}

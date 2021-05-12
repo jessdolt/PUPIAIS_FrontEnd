@@ -1,0 +1,15 @@
+.dashboard{
+    .pageSpecificHeader{
+        & > div{
+            svg{
+                width: 14.6rem;
+                height: 6.3rem;
+            }
+        }
+        .dateTimeContainer{
+            .currentTime{
+                font-size: $h2-text-desktop;
+            }
+        }
+    }
+}
