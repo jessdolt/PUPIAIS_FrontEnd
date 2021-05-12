@@ -9,8 +9,12 @@
 .mainContent{
     &.adminForm{
         z-index: 5;
-        flex-flow: row;
         max-height: calc(100% - 4.8rem);
+        form{
+            height: 100%;
+            display: flex;
+            flex-flow: row;
+        }
         .form{
             flex: 3;
             height: 100%;

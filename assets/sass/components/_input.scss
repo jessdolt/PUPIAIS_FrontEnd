@@ -1,7 +1,6 @@
 input{
     -webkit-appearance: none;
     appearance: none;
-    cursor: pointer;
 }
 
 .outsideLabel{
@@ -63,6 +62,9 @@ input[type="file"] {
     cursor: pointer;
     border-radius: 0.5rem;
     text-align: center;
+}
+input[type="radio"]{
+    cursor: pointer;
 }
 
 //basic error

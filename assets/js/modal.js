@@ -26,18 +26,18 @@ const alertModalObj = {
                 if(targetElem == btnDelete || targetElem == btnDeleteInline){
                     modal.classList.add("alertModal","deleteAlert");
                     modalHeader.textContent = "Are you sure?";
-                    console.log("work");
+                    modalBtnDelete.textContent = "Yes! Delete";
                 }
                 else if(targetElem == btnLogout){
                     modal.classList.add("alertModal","logoutAlert");
                     modalHeader.textContent = "Are you leaving?";
+                    modalBtnDelete.textContent = "Logout";
                 }
                 targetElem = targetElem.parentNode;
             }while(targetElem);
             
             modalPara.textContent = "This will delete all the data selected and cannot be undone!";
             modalBtnCancel.textContent = "Cancel";
-            modalBtnDelete.textContent = "Yes! Delete";
 
             modalBackground.appendChild(modal);
             modal.appendChild(modalSvg);
