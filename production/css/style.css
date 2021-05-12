@@ -1184,32 +1184,24 @@ table tbody {
         gap: 2.4rem;
         padding: 0; }
       .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"] {
-        width: 12rem;
+        width: 11rem;
         height: 4rem; }
         .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]::before {
           display: flex;
           align-items: center;
           justify-content: center;
           height: 100%;
+          color: #A63F3F;
+          border-color: currentColor;
           border: 1px solid;
           border-radius: 0.5rem;
           background-repeat: no-repeat;
           background-position: left 0.8rem center;
           transition: 200ms ease; }
-        .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"].workType::before {
-          color: #A63F3F;
-          border-color: currentColor; }
-        .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"].workType:checked::before {
+        .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before {
           background-color: #A63F3F;
           color: #FFFFFF;
           background-image: url("../images/workTypeActiveIcon.svg"); }
-        .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"].status::before {
-          color: rgba(0, 0, 0, 0.38);
-          border-color: currentColor; }
-        .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"].status:checked::before {
-          background-color: #EEEEEE;
-          color: rgba(0, 0, 0, 0.87);
-          background-image: url("../images/statusActiveIcon.svg"); }
         .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]#full-time::before {
           content: "Full-Time"; }
         .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]#part-time::before {
