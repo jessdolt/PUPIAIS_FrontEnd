@@ -16,7 +16,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        display: flex;
+        display: none;
         flex-flow: column;
         align-items: center;
         padding: 7rem 2.4rem 2.4rem 2.4rem;
@@ -28,27 +28,25 @@
         /* box-shadow: $elevate24dp; */
 
         //change color base on class in alert modal
-        &.logoutAlert{
+        &.logoutAlert.show{
+            display: flex;
             svg{
                 background-image: url("../images/alertLogoutIcon.svg");
             }
             div{
-                button{
-                    &:last-child{
-                        @include set-background-color($primaryColorLight);
-                    }
+                a{
+                    @include set-background-color($primaryColorLight);
                 }
             }
         }
-        &.deleteAlert{
+        &.deleteAlert.show{
+            display: flex;
             svg{
                 background-image: url("../images/alertDeleteIcon.svg");
             }
             div{
-                button{
-                    &:last-child{
-                        @include set-background-color($errorColor2);
-                    }
+                a{
+                    @include set-background-color($errorColor2);
                 }
             }
         }
@@ -77,12 +75,15 @@
             margin-top: 3.2rem;
             display: flex;
             gap: 2.4rem;
+            a,button{
+                min-width: 16rem;
+            }
             button{
                 @extend %filled;
-                min-width: 16rem;
-                &:first-child{
-                    @include set-background-color($backgroundColor);
-                }
+                @include set-background-color($backgroundColor);
+            }
+            a{
+                @extend %btn;
             }
         }
     }

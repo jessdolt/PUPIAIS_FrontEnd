@@ -330,13 +330,13 @@ thead, tbody, tfoot, th {
   letter-spacing: 0.025rem;
   font-weight: 400; }
 
-button, .adminHeader a, .adminNav .mainCategoryList .categoryContainer, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, button, .users .filterNav .btnContainer .addNewGroup {
+button, .adminHeader a, .adminNav .mainCategoryList .categoryContainer, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, button, .alertModalContainer .alertModal div a, .users .filterNav .btnContainer .addNewGroup {
   font-weight: 500;
   text-transform: uppercase; }
-  button span, button a, .adminHeader a span, .adminNav .mainCategoryList .categoryContainer span, .admin .pageSpecificHeader > div:first-child button span, .admin .pageSpecificHeader > div:first-child a span, button span, .users .filterNav .btnContainer .addNewGroup span, .adminHeader a a, .adminNav .mainCategoryList .categoryContainer a, .admin .pageSpecificHeader > div:first-child button a, .admin .pageSpecificHeader > div:first-child a a, button a, .users .filterNav .btnContainer .addNewGroup a {
+  button span, button a, .adminHeader a span, .adminNav .mainCategoryList .categoryContainer span, .admin .pageSpecificHeader > div:first-child button span, .admin .pageSpecificHeader > div:first-child a span, button span, .alertModalContainer .alertModal div a span, .users .filterNav .btnContainer .addNewGroup span, .adminHeader a a, .adminNav .mainCategoryList .categoryContainer a, .admin .pageSpecificHeader > div:first-child button a, .admin .pageSpecificHeader > div:first-child a a, button a, .alertModalContainer .alertModal div a a, .users .filterNav .btnContainer .addNewGroup a {
     font-weight: 500; }
 
-input, a, p, span, button, .adminHeader a, .adminNav .mainCategoryList .categoryContainer, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, button, .users .filterNav .btnContainer .addNewGroup {
+input, a, p, span, button, .adminHeader a, .adminNav .mainCategoryList .categoryContainer, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, button, .alertModalContainer .alertModal div a, .users .filterNav .btnContainer .addNewGroup {
   font-size: 1.4rem;
   font-family: 'Roboto', sans-serif; }
 
@@ -1071,7 +1071,7 @@ table tbody {
           background-color: #EEEEEE;
           color: rgba(0, 0, 0, 0.87); }
           .admin .mainContent .data-table .option .optionModal button {
-            background-color: #DB1A3E;
+            background-color: #B61734;
             color: #FFFFFF; }
           .admin .mainContent .data-table .option .optionModal a {
             display: flex;
@@ -1112,7 +1112,7 @@ table tbody {
         padding: 0;
         min-width: 3rem;
         margin-left: 0.8rem;
-        background-color: #DB1A3E;
+        background-color: #B61734;
         color: #FFFFFF; }
         .admin .mainContent .pagination .deleteSelected svg {
           width: 1.8rem;
@@ -1399,69 +1399,7 @@ a:active {
 ul {
   list-style: none; }
 
-.alertModalContainer {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.38);
-  z-index: 25; }
-  .alertModalContainer.show {
-    display: block; }
-  .alertModalContainer .alertModal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: 7rem 2.4rem 2.4rem 2.4rem;
-    border-radius: 1rem;
-    background-color: transparent;
-    background-image: url("../images/alertContainer.png");
-    background-position: top 1px right 0;
-    background-repeat: no-repeat;
-    /* box-shadow: $elevate24dp; */ }
-    .alertModalContainer .alertModal.logoutAlert svg {
-      background-image: url("../images/alertLogoutIcon.svg"); }
-    .alertModalContainer .alertModal.logoutAlert div button:last-child {
-      background-color: #A63F3F;
-      color: #FFFFFF; }
-    .alertModalContainer .alertModal.deleteAlert svg {
-      background-image: url("../images/alertDeleteIcon.svg"); }
-    .alertModalContainer .alertModal.deleteAlert div button:last-child {
-      background-color: #DB1A3E;
-      color: #FFFFFF; }
-    .alertModalContainer .alertModal svg {
-      position: absolute;
-      transform: translateY(-80%);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      width: 19.6rem;
-      height: 19.8rem; }
-    .alertModalContainer .alertModal h2, .alertModalContainer .alertModal p {
-      text-align: center; }
-    .alertModalContainer .alertModal h2 {
-      font-weight: 500; }
-    .alertModalContainer .alertModal p {
-      margin-top: 2.4rem;
-      max-width: 25.2rem; }
-    .alertModalContainer .alertModal div {
-      margin-top: 3.2rem;
-      display: flex;
-      gap: 2.4rem; }
-      .alertModalContainer .alertModal div button {
-        min-width: 16rem; }
-        .alertModalContainer .alertModal div button:first-child {
-          background-color: #EEEEEE;
-          color: rgba(0, 0, 0, 0.87); }
-
-.adminHeader a, .adminNav .mainCategoryList .categoryContainer, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, button, .users .filterNav .btnContainer .addNewGroup {
+.adminHeader a, .adminNav .mainCategoryList .categoryContainer, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, button, .alertModalContainer .alertModal div a, .users .filterNav .btnContainer .addNewGroup {
   min-height: 4.4rem;
   min-width: 6.4rem;
   display: flex;
@@ -1472,10 +1410,10 @@ ul {
   transition: 200ms ease;
   cursor: pointer;
   border-radius: 2.5rem; }
-  .adminHeader a:focus, .adminNav .mainCategoryList .categoryContainer:focus, .admin .pageSpecificHeader > div:first-child button:focus, .admin .pageSpecificHeader > div:first-child a:focus, button:focus, .users .filterNav .btnContainer .addNewGroup:focus, .adminHeader a:hover, .adminNav .mainCategoryList .categoryContainer:hover, .admin .pageSpecificHeader > div:first-child button:hover, .admin .pageSpecificHeader > div:first-child a:hover, button:hover, .users .filterNav .btnContainer .addNewGroup:hover {
+  .adminHeader a:focus, .adminNav .mainCategoryList .categoryContainer:focus, .admin .pageSpecificHeader > div:first-child button:focus, .admin .pageSpecificHeader > div:first-child a:focus, button:focus, .alertModalContainer .alertModal div a:focus, .users .filterNav .btnContainer .addNewGroup:focus, .adminHeader a:hover, .adminNav .mainCategoryList .categoryContainer:hover, .admin .pageSpecificHeader > div:first-child button:hover, .admin .pageSpecificHeader > div:first-child a:hover, button:hover, .alertModalContainer .alertModal div a:hover, .users .filterNav .btnContainer .addNewGroup:hover {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
     outline: 0; }
-  .adminHeader a:active, .adminNav .mainCategoryList .categoryContainer:active, .admin .pageSpecificHeader > div:first-child button:active, .admin .pageSpecificHeader > div:first-child a:active, button:active, .users .filterNav .btnContainer .addNewGroup:active {
+  .adminHeader a:active, .adminNav .mainCategoryList .categoryContainer:active, .admin .pageSpecificHeader > div:first-child button:active, .admin .pageSpecificHeader > div:first-child a:active, button:active, .alertModalContainer .alertModal div a:active, .users .filterNav .btnContainer .addNewGroup:active {
     filter: opacity(0.88); }
 
 .adminNav .mainCategoryList .categoryContainer, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="number"], .jobPortal .mainContent .data-table .status.open {
@@ -1497,6 +1435,72 @@ ul {
   fill: currentcolor; }
   .icon:focus, .icon:hover {
     filter: opacity(0.88); }
+
+.alertModalContainer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.38);
+  z-index: 25; }
+  .alertModalContainer.show {
+    display: block; }
+  .alertModalContainer .alertModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    padding: 7rem 2.4rem 2.4rem 2.4rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    background-image: url("../images/alertContainer.png");
+    background-position: top 1px right 0;
+    background-repeat: no-repeat;
+    /* box-shadow: $elevate24dp; */ }
+    .alertModalContainer .alertModal.logoutAlert.show {
+      display: flex; }
+      .alertModalContainer .alertModal.logoutAlert.show svg {
+        background-image: url("../images/alertLogoutIcon.svg"); }
+      .alertModalContainer .alertModal.logoutAlert.show div a {
+        background-color: #A63F3F;
+        color: #FFFFFF; }
+    .alertModalContainer .alertModal.deleteAlert.show {
+      display: flex; }
+      .alertModalContainer .alertModal.deleteAlert.show svg {
+        background-image: url("../images/alertDeleteIcon.svg"); }
+      .alertModalContainer .alertModal.deleteAlert.show div a {
+        background-color: #B61734;
+        color: #FFFFFF; }
+    .alertModalContainer .alertModal svg {
+      position: absolute;
+      transform: translateY(-80%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 19.6rem;
+      height: 19.8rem; }
+    .alertModalContainer .alertModal h2, .alertModalContainer .alertModal p {
+      text-align: center; }
+    .alertModalContainer .alertModal h2 {
+      font-weight: 500; }
+    .alertModalContainer .alertModal p {
+      margin-top: 2.4rem;
+      max-width: 25.2rem; }
+    .alertModalContainer .alertModal div {
+      margin-top: 3.2rem;
+      display: flex;
+      gap: 2.4rem; }
+      .alertModalContainer .alertModal div a, .alertModalContainer .alertModal div button {
+        min-width: 16rem; }
+      .alertModalContainer .alertModal div button {
+        background-color: #EEEEEE;
+        color: rgba(0, 0, 0, 0.87); }
 
 .loginMain {
   height: 100vh;
