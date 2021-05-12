@@ -1,0 +1,240 @@
+//just to move this header behind the form.
+.dataInput{
+    .pageSpecificHeader{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+}
+.mainContent{
+    &.adminForm{
+        z-index: 5;
+        flex-flow: row;
+        max-height: calc(100% - 4.8rem);
+        .form{
+            flex: 3;
+            height: 100%;
+            max-height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            //forfirefox scrollbar
+            scrollbar-width: thin;
+            scrollbar-color: $disabled $surfaceColor;
+            &::-webkit-scrollbar{
+                width: 0.5rem;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: $surfaceColor;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: $disabled;
+                border-radius: 5rem;
+            }
+        }
+        .form:first-child{
+            padding: 2.4rem 7.2rem;
+            background-color: $surfaceColor;
+            border-radius: 1rem 0 0 1rem;
+            
+            h2{
+                color: $primaryColorLight;
+            }
+            h3{
+                margin-top: 1.6rem;
+            }
+            input[type="text"]{
+                border-radius: 0.5rem;
+                border-right: 1px solid $textfield-border !important;
+            }
+            .outsideLabel{
+                display: block;
+                margin-top: 1.6rem;
+                margin-bottom: 0.8rem;
+                white-space: nowrap;
+            }
+            .smallComponentsContainer{
+                display: flex;
+                gap: 2rem;
+
+                & > div:nth-child(2),
+                & > div:nth-child(3){
+                    margin-left: auto;
+                }
+                //radioButtons
+                fieldset{
+                    border: none;
+                    display: flex;
+                    gap: 2.4rem;
+                    padding: 0;
+                }
+                input[type="radio"]{
+                    width: 12rem;
+                    height: 4rem;
+                    &::before{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                        border: 1px solid;
+                        border-radius: 0.5rem;
+                        background-repeat: no-repeat;
+                        background-position: left 0.8rem center ;
+                        transition: 200ms ease;
+                    }
+                    &:checked::before{
+                        @extend %filled;
+                    }
+                    &.workType{
+                        &::before{
+                            color: $primaryColorLight;
+                            border-color: currentColor;
+                        }
+                        &:checked::before{
+                            @include set-background-color($primaryColorLight);
+                            background-image: url('../images/workTypeActiveIcon.svg');
+                        }
+                    }
+                    &.status{
+                        &::before{
+                            color: $disabled;
+                            border-color: currentColor;
+                        }
+                        &:checked::before{
+                            @include set-background-color($backgroundColor);
+                            background-image: url('../images/statusActiveIcon.svg');
+                        }
+                    }
+    
+                    &#full-time::before{
+                        content: "Full-Time";
+                    }
+                    &#part-time::before{
+                        content: "Part-Time";
+                    }
+                    &#open-status::before{
+                        content: "Open";
+                    }
+                    &#closed-status::before{
+                        content: "Closed";
+                    }
+                }
+    
+                input[type="number"]{
+                    @extend %outline;
+                    padding: 0.8rem 0.4rem 0.8rem 1.6rem;
+                    max-width: 8rem;
+                    max-height: 4rem;
+                    color: $mediumEmphasis;
+                }
+            }
+            .richTfContainer{
+                border-radius: 0.5rem;
+                border: 1px solid $textfield-border;
+                min-height: 31.4rem;
+                &:last-child{
+                    margin-bottom: 4.8rem;
+                }
+            }
+        }
+        .form:last-child,.imageInputContainer,.btnGroupContainer{
+            display: flex;
+            flex-flow: column;
+            gap: 0.8rem;
+        }
+        .form:last-child{
+            flex: 1;
+            position: relative;
+            max-width: 36rem;
+            align-items: center;
+            padding: 4rem 0rem 4rem;
+            border-radius: 0 1rem 1rem 0;
+            background-color: $backgroundColor;
+            @include respond-to('large'){
+                padding: 7.2rem 0rem 4.8rem;
+            }
+            .closeIcon{
+                position: absolute;
+                top: 1.6rem;
+                right: 1.6rem;
+                width:3rem;
+                height:3rem;
+            }
+            .imageInputContainer,.btnGroupContainer{
+                    min-width: 16rem;
+                    width: 16rem;
+                @include respond-to('large'){
+                    min-width: 21.6rem;
+                    width: 21.6rem;
+                }
+                
+            }
+            .imageInputContainer{
+                min-height: 16rem;
+                @include respond-to('large'){
+                    min-height: 21.6rem;
+                }
+                //for images that must be landscape
+                &.landscape{
+                    min-width: 21.6rem;
+                    width: 21.6rem;
+                    min-height: 12.1rem;
+                    @include respond-to('large'){
+                        min-width: 28rem;
+                        width: 28rem;
+                        min-height: 15.7rem;
+                    }
+                }
+                
+                gap: 0;
+                img{
+                    border-top-left-radius: 0.5rem;
+                    border-top-right-radius: 0.5rem;
+                    appearance: none;
+                    flex: 1;
+                    background-color: $surfaceColor;
+                    background-image: url("../images/imgInputPlaceHolder.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                .fileUploadBtn{
+                    @include set-background-color($mediumEmphasis);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    padding: 0.4rem 0;
+                    svg{
+                        width: 1.8rem;
+                        height: 1.8rem;
+                    }
+                }
+            }
+            .btnGroupContainer{
+                margin-top: auto;
+                button{
+                    @extend %filled;
+                    position: relative;
+                    svg{
+                        position: absolute;
+                        left: 1.3rem;
+                        top: 1.3rem;
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        
+                    }
+                }
+                .reset{
+                    @include set-background-color($surfaceColor);
+                    text-transform: lowercase;
+                    svg{
+                        fill: none;
+                    }
+                }
+                .save{
+                    @include set-background-color($primaryColorLight);
+                }
+            }
+        }
+    }
+}

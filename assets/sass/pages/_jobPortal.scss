@@ -1,0 +1,70 @@
+.jobPortal{
+    .mainContent{
+        .data-table{
+            tr{
+                padding: 1.5rem 1.6rem;
+            }
+            th,td{
+                //width of the columns set here.
+                &:nth-child(2){
+                    min-width: 6.8rem;
+                }
+                
+                &:nth-child(3){
+                    min-width: 9rem;
+                }
+                &:nth-child(4),&:nth-child(5),&:nth-child(6){
+                    flex: 1;
+                    //this idot just to make textoverflow ellipsis
+                    max-width: 100%;
+                }
+                &:nth-child(4){
+                    width: 14rem;
+                    min-width: 14rem;
+                }
+                &:nth-child(5){
+                    width: 12rem;
+                    min-width: 12rem;
+                }
+                &:nth-child(6){
+                    flex: 2;
+                    width: 14.6rem;
+                    min-width: 14.6rem;
+                }
+                &:nth-child(7){
+                    min-width: 14rem;
+                }
+            }
+            p{
+                -webkit-line-clamp: 2;
+            }
+            .status,.workType{
+                padding: 0.45rem 0;
+                border-radius: 0.5rem;
+                text-align: center;
+            }
+            .status{
+                text-transform: uppercase;
+                color: $mediumEmphasis;
+                &.open{
+                    @extend %outline;
+                    border-color: currentColor;
+                }
+                &.closed{
+                    @extend %filled;
+                    background-color: $backgroundColor;
+                }
+            }
+            .workType{
+                text-transform: capitalize;
+                @extend %filled;
+                &.fullTime{
+                    @include set-background-color($primaryColorLight);
+                }
+                &.partTime{
+                    @include set-background-color($secondaryColor);
+                }
+            }
+        }
+    }
+}

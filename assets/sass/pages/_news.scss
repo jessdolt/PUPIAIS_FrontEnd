@@ -1,137 +1,27 @@
 .news{
-
-    .pageSpecificHeader{
-
-        & > div{
-    
-            button{
-                margin-top: auto;
-                @extend %filled;
-                padding: 0 1rem 0 2rem;
-                gap: .8rem;
-
-                svg{
-                    width: 2.4rem;
-                    height: 2.4rem;
-                }
-            }
-
-        }
-
-    }
-
-    .textFieldContainer{
-        border-radius: 5rem;
-        width: 30rem;
-
-        .icon{
-            border-top-right-radius: 5rem;
-            border-bottom-right-radius: 5rem;
-            background-color: $surfaceColor;
-        }
-
-        input{
-            border-top-left-radius: 5rem;
-            border-bottom-left-radius: 5rem;
-        }
-
-    }
-
     .mainContent{
-        padding: 2.4rem;
         .data-table{
-            @include set-background-color($surfaceColor);
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
             th,td{
-                padding: 0 1.6rem;
-            }
-            
-            thead{
-                @include set-background-color($primaryColorLight);
-                th{
-                    padding: .8rem 0;
-                    &:first-child, &:last-child{
-                        width: 3.2rem;
-                    }
-                    &:first-child{
-                        padding: 0 3.2rem 0 5.8rem;  
-                    }
-
-                    &:last-child{
-                        padding: 0 5.8rem 0 3.2rem;  
-                    }
-                    
-                    &:nth-child(2){
-                        width: 14.2rem;
-                    }
-                    
-                    &:nth-child(3){
-                        width: 30rem;
-                    }
-                    
-                    &:nth-child(4),&:nth-child(6){
-                        width: 15.6rem;
-                    }
-                    
-                    &:nth-child(5){
-                        width: 42.4rem;
-                    }
-                    
-                }
-
-            }
-            
-            tbody{
-
-                td{
-
-                    &:first-child{
-                        padding: 0 3.2rem 0 5.8rem;  
-                    }
-
-                    &:last-child{
-                        padding: 0 5.8rem 0 3.2rem;  
-                    }
-
+                //width of the columns set here.
+                &:nth-child(2){
+                    min-width: 13.6rem;
                 }
                 
-                tr:first-child td{
-                    padding-top: 3.4rem;
+                &:nth-child(3){
+                    flex: 16rem 2;
                 }
-
-                td{
-                    padding-top: 1rem;
-                    padding-bottom: 1rem;
-                    max-height: 8rem;
+                
+                &:nth-child(4){
+                    flex: 11rem 1;
                 }
-
+                
+                &:nth-child(5){
+                    flex: 26.4rem 2;
+                }
+                &:nth-child(6){
+                    min-width: 14rem;
+                }
             }
-            
-            img{
-                width: 100%;
-            }
-
-            .option{
-                font-size: 3.2rem;
-            }
-
         }
-
-        .pagination{
-
-            button{
-
-                svg{
-                    width: 2.4rem;
-                    height: 2.4rem;
-                }
-
-            }
-
-        }
-
     }
-    
 }

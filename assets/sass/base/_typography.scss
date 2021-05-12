@@ -5,7 +5,8 @@ html{
 
 h1,h2,h3,h4,h5,h6,
 p,a,span,li,dl,
-label,button,input,textarea,thead,tbody,tfoot,th{
+label,button,input,textarea,
+thead,tbody,tfoot,th{
     line-height: 1.5;
     letter-spacing: 0.025rem;
     font-weight: 400;
@@ -22,18 +23,18 @@ button, %btn{
 input, a, p, span, button, %btn{
     font-size: $basic-text;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
 }
 
-h1,h2{
-}
-h1{
+header h1{
     font-family: 'Cinzel', serif;
     font-size: 2.8rem;
 }
 
 h2{
-    font-size: $h2-text-desktop;
+    font-size: $h2-text-mobile;
+    @include respond-to('large'){
+        font-size: $h2-text-desktop;
+    }
 }
 
 b{
@@ -56,69 +57,53 @@ table{
 }
 //for mobile nav h1
 .mainNav{
-
     h1{
         font-size: $basic-text;
     }
-
 }
 
 //for adminNav
 .adminNav{
-
     h3{
         font-size: $basic-text;
     }
-
 }
 
-.mainHeader{
-    color: $surfaceColor;
+.form{
+    h3{
+        font-size: $h3-text-mobile;
+        text-transform: capitalize;
+        color: $primaryColorLight;
+        text-align: center;
+    }
+    .outsideLabel,label{
+        font-size: $basic-text;
+    }
 }
 
-//login
+
+//loginPage
 
 .loginMain{
-
-    header{
-
-        h1{
-            font-family: 'Roboto', sans-serif;
-            font-size: $h1-text-mobile;
-            color: $highEmphasis;
-        }
-
-        span{
-            color: $mediumEmphasis;
-        }
-
+    h1{
+        font-family: 'Roboto', sans-serif;
+        font-size: $h1-text-mobile;
     }
-    
+
+    span{
+        color: $mediumEmphasis;
+
+        @include respond-to('large'){
+            font-size: $overline-text-desktop;
+            letter-spacing: 0.015rem;
+        }
+    }
 }
 
 .textFieldContainer{
-
     .error{
         font-size: 1rem;
         letter-spacing: 0.15rem;
-        color: $errorColor;
+        color: $errorColor1;
     }
-
-}
-
-@media(min-width:52.5em) and (orientation:landscape){
-
-    .loginMain{
-
-        header{
-
-            span{
-                font-size: $overline-text-desktop;
-                letter-spacing: 0.015rem;
-            }
-
-        }
-
-    }
-
 }

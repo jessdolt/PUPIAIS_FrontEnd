@@ -7,7 +7,6 @@
     @else{
         @return $surfaceColor;
     }
-
 }
 
 @mixin set-background-color($color) {

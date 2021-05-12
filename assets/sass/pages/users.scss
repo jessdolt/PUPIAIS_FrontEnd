@@ -1,0 +1,109 @@
+//this .users class is attach to div together with .main class
+// speific just for this page
+.users{
+    .filterNav{
+        max-width: 26rem;
+        width: 26rem;
+        min-width: 18.1rem;
+        padding: 5.6rem 2.4rem;
+        background-color: $backgroundColor;
+        box-shadow: $elevate24dp;
+        z-index: 21;
+        button{
+            @extend %filled;
+            min-height: 3rem;
+            width: 100%;
+            svg{
+                width: 2.1rem;
+                height: 2.1rem;
+            }
+        }
+        .btnContainer{
+            display: flex;
+            flex-flow: column;
+            gap:2.4rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 0.05rem solid $disabled;
+            margin-bottom: 3.2rem;
+
+            & > *{
+                text-transform: capitalize;
+                justify-content: flex-start;
+                & > *{
+                    margin-left: auto;
+                }
+            }
+
+            .addNewGroup{
+                @extend %btn;
+                @include set-background-color($surfaceColor);
+                box-shadow: $elevate1dp;
+                text-decoration: none;
+                svg{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    fill: none;
+                }
+            }
+        }
+        .groupList{
+            display: flex;
+            flex-flow: column;
+            gap: 0.8rem;
+
+            .group{
+                .groupHeader{
+                    text-transform: uppercase;
+                    justify-content: flex-start;
+                    &.active{
+                        & ~ .subGroupList{
+                            visibility: visible;
+                            opacity: 1;
+                            max-height: initial;
+                        }
+                    }
+                    & > *{
+                        margin-left: auto;
+                    }
+                }
+            }
+            .subGroupList{
+                transition: 200ms ease;
+                visibility: hidden;
+                opacity: 0;
+                max-height: 0;
+                display: flex;
+                margin-top: 0.8rem;
+                flex-flow: column;
+                gap: 0.8rem;
+            }
+        }
+    }
+    .mainContent{
+        .data-table{
+            tr{
+                padding: 2rem 1.6rem;
+            }
+            th,td{
+                //width of the columns set here.
+                &:nth-child(2){
+                    min-width: 11.8rem;
+                }
+                
+                &:nth-child(3),&:nth-child(4){
+                    flex: 1;
+                    //this idot just to make textoverflow ellipsis
+                    max-width: 100%;
+                    width: 12rem;
+                    min-width: 12rem;
+                }
+                &:nth-child(5),&:nth-child(6){
+                    min-width: 5.8rem;
+                }
+                &:nth-child(7){
+                    min-width: 4.8rem;
+                }
+            }
+        }
+    }
+}

@@ -18,16 +18,14 @@
     &:active{
         filter: opacity(.88);
     }
-
 }
 
 %outline{
     border-width: 1px;
     border-style: solid;
-    border-radius: 10rem;
+    border-radius: 0.5rem;
 }
-
-
+    
 %filled{
     border: 1px solid transparent;
 }
@@ -44,9 +42,9 @@ button{
     justify-content: center;
     cursor: pointer;
     transition: 200ms ease;
-    fill: $surfaceColor;
+    fill: currentcolor;
 
     &:focus,&:hover{
-        opacity: .8;
+        filter: opacity(.88);
     }
 }

@@ -2,13 +2,15 @@
 $primaryColor:#5C1C1C;
 $primaryColorDark:#522121;
 $primaryColorLight:#A63F3F;
+$secondaryColor: #C7B13F;
 $backgroundColor:#EEEEEE;
 $surfaceColor:#FFFFFF;
 $highEmphasis:rgba(0,0,0,0.87);
 $mediumEmphasis:rgba(0,0,0,0.60);
 $disabled:rgba(0,0,0,0.38);
 $textfield-border: rgba(0,0,0,0.20);
-$errorColor: #B00020;
+$errorColor1: #B00020;
+$errorColor2: #DB1A3E;
 $visitedColor: #8E5E57;
 $activeIndicator: #43B581;
 
@@ -66,5 +68,7 @@ $elevate24dp:
 //breakpoints
 $breakpoints: (
     'medium' : 415px,
-    'large' : 840px
+    'large' : 1367px
 );
+
+//idotIdeaSize

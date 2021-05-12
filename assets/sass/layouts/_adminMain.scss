@@ -1,16 +1,26 @@
 .admin{
+    position: relative;
     background-color: $backgroundColor;
-
+    display: flex;
+    flex-flow: column;
+    max-height: calc(100vh - 6rem);
     .pageSpecificHeader{
-        background-image: url("../images/pageSpecificHeaderBg.png");
+        background-image: url("../images/stonksGraph.svg"),
+                          url("../images/pageSpecificHeaderBg.png");
         background-repeat: no-repeat;
+        background-position: center bottom, center center;
         @include set-background-color($primaryColorLight);
-        min-height: 16rem;
+        min-height: 11.6rem;
+        padding: 1.6rem 2.4rem;
+        @include respond-to('large'){
+            min-height: 15.6rem;
+            padding: 2.4rem;
+        }
         box-shadow: $elevate2dp;
-        padding: 2.4rem;
         display: flex;
         position: relative;
 
+        //this act as the background color filter
         &::before{
             content: '';
             position: absolute;
@@ -21,18 +31,322 @@
             background-color: $primaryColorLight;
             opacity: .4;
         }
-
         & > div{
             z-index: 1;
+        }
+
+        & > div:first-child{
             display: flex;
             flex-flow: column;
             align-items: flex-start;
+            .btnContainer{
+                margin-top: auto;
+                display: flex;
+                gap: 2.4rem;
+            }
+            button,a{
+                @extend %btn;
+                @extend %filled;
+                @include set-background-color($surfaceColor);
+                padding: 0 1rem 0 2rem;
+                gap: .8rem;
+                svg{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    fill: none;
+                }
+            }
         }
 
         & > div:last-child{
             align-self: flex-end;
             margin-left: auto;
+
+            .textFieldContainer{
+                border-radius: 5rem;
+                width: 30rem;
+                .icon{
+                    border-top-right-radius: 5rem;
+                    border-bottom-right-radius: 5rem;
+                    background-color: $surfaceColor;
+                }
+        
+                input{
+                    border-top-left-radius: 5rem;
+                    border-bottom-left-radius: 5rem;
+                }
+            }
         } 
+    }
+    
+    .mainContent{
+        border-radius: 1rem;
+        margin: 2.4rem;
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        max-height: calc(100% - 16.4rem);
+        @include respond-to('large'){
+            max-height: calc(100% - 20.4rem);
+        }
+        box-shadow: $elevate8dp;
+        .data-table,.pagination{
+            @include set-background-color($surfaceColor);
+        }
+        .data-table{
+            min-height: 15.9rem;
+            max-height: calc(100% - 7.8rem);
+            display: flex;
+            flex-flow: column;
+            flex: 1;
+            width: 100%;
+            border-collapse: collapse;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            thead,tbody{
+                width: 100%;
+                padding: 0 2.4rem;
+                display: flex;
+            }
+            th,td{
+                &:first-child, &:last-child{
+                    width: 3.2rem;
+                    max-width: 3.2rem;
+                }
+                &:first-child{
+                    border-top-left-radius: 1rem;
+                }
+
+                &:last-child{
+                    border-top-right-radius: 1rem;
+                }
+            }
+            tr{
+                display: flex;
+                gap: 3.2rem;
+                align-items: center;
+                justify-content: center;
+                padding: 0.8rem 1.6rem;
+                border-bottom: 1px solid $textfield-border;
+            }
+            //width of the columns set here.
+            thead{
+                height: 4.3rem;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                @include set-background-color($primaryColorLight);
+                tr{
+                    width: 100%;
+                }
+            }
+            
+            tbody{
+                overflow-y: auto;
+                //forfirefox scrollbar
+                scrollbar-width: thin;
+                scrollbar-color: $disabled $surfaceColor;
+                padding-top: 2.4rem;
+                flex-flow: column;
+                flex: 1;
+                &::-webkit-scrollbar{
+                    width: 0.5rem;
+                }
+                &::-webkit-scrollbar-track{
+                    background-color: $surfaceColor;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: $disabled;
+                    border-radius: 5rem;
+                    
+                }
+                td{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            input[type="checkbox"]{
+                position: relative;
+                border-color: $disabled;
+                border-width: 0.25rem;
+                border-style: solid;
+                border-radius: 0.5rem;
+                width: 2.1rem;
+                height: 2.1rem;
+                transition: 400ms ease;
+                &:focus,&:hover{
+                    border-color: $primaryColorLight;
+                }
+                &:checked{
+                    border-color: transparent;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    &::before{
+                        background-image: url('../images/checked.svg');
+                    }
+                }
+
+                &::before{
+                    content: '';
+                    display: inline-flex;
+                    background-size: 100%;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+            
+            img{
+                min-width: 13.6rem;
+                max-height: 7.6rem;
+                object-fit: cover;
+            }
+
+            //limit the paragraph in table to 3 lines
+            p{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                width: 100%;
+            }
+            //this idot just to make textoverflow ellipsis
+            .studentName, .studentEmail,.jobTitle,.company{
+                display: block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .option{
+                position: relative;
+                height: 3.2rem;
+                width: 3.2rem;
+                font-size: 2.7rem;
+                background-color: transparent;
+                
+                .optionSpan{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: inherit;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10rem;
+                    z-index: 1;
+                    &:focus,&:hover{
+                        background-color: $backgroundColor;
+                        //reset
+                        filter: opacity(1);
+                    }
+                    &.active{
+                        &~.optionModal{
+                            visibility: visible;
+                            opacity: 1;
+                            z-index: 24;
+                        }
+                    }
+                }
+
+                .optionModal{
+                    visibility: hidden;
+                    opacity: 0;
+                    position:  absolute;
+                    top: 4rem;
+                    left: -12.6rem;
+                    border-radius: 0.5rem;
+                    height: 4.6rem;
+                    min-width: 16.4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.8rem;
+                    box-shadow: $elevate3dp;
+                    transition: all 200ms ease;
+                    @include set-background-color($backgroundColor);
+                    button{
+                        @extend %filled;
+                        @include set-background-color($errorColor2);
+                    }
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        @include set-background-color($surfaceColor);
+                        &:nth-child(1){
+                            padding: 0 2rem;
+                        }
+                    }
+                    svg:nth-child(1){
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                    svg:nth-child(2){
+                        width: 1.8rem;
+                        height: 2rem;
+                    }
+                    > *{
+                        min-width: 3rem;
+                        min-height: 3rem;
+                        padding: 0;
+                        border-radius: 5rem;
+                    }
+                }
+            }
+        }
+
+        .pagination{
+            height: 7.8rem;
+            display: flex;
+            gap: 0.8rem;
+            padding: 2.4rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+
+            button{
+                @extend %filled;
+                font-weight: 400;
+                min-height: 3rem;
+                text-transform: capitalize;
+                svg{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+            }
+            
+            .deleteSelected{
+                visibility: hidden;
+                opacity: 0;
+                padding: 0;
+                min-width: 3rem;
+                margin-left: 0.8rem;
+                @include set-background-color($errorColor2);
+                svg{
+                    width: 1.8rem;
+                    height: 2rem;
+                }
+                &.visible{
+                    visibility: visible;
+                    opacity: 1;
+                    min-width: 3rem;
+                    max-height: 3rem;
+                }
+            }
+
+            span{
+                margin-left: auto;
+                align-self: center;
+            }
+
+            .start,.previous,.next,.end{
+                padding: 0;
+                min-width: 3rem;
+                background-color: transparent;
+                &:hover,:focus{
+                    background-color: $backgroundColor;
+                }
+            }
+        }
     }
 
 }

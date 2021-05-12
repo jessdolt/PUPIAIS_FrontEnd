@@ -18,13 +18,11 @@
     background-color: $primaryColor;
     background-size: 4rem 4rem;
     background-position: center bottom 5rem;
-
     .closeIcon{
         grid-column: 1;
         grid-row: 1;
         align-self: center;
     }
-
     
     form,ul{
         justify-self: center;
@@ -36,7 +34,6 @@
         flex-flow: column;
         grid-column: 1 / 4;
         grid-row: 3 / 4;
-
         a{
             display: inline-block;
             width: 23.8rem;
@@ -46,7 +43,6 @@
             color: $surfaceColor;
             text-align: center;
         }
-        
     }
 
     form{
@@ -67,7 +63,6 @@
         button{
             display: none;
         }
-
     }
 
     > div{
@@ -76,12 +71,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         button{
             border-radius: 3rem;
             white-space: nowrap;
         }
-
     }
 
     h1{
@@ -90,36 +83,62 @@
         text-align: center;
         align-self: flex-end;
     }
-    
 }
 
 //------------------AdminNavigation------------------
 .adminNav{
-    min-width: 31.6rem;
-    max-width: 31.6rem;
-    padding: 2.4rem 2.4rem 4.8rem;
+    min-width: 9.2rem;
+    max-width: 9.2rem;
+    max-height: 100%;
     box-shadow: $elevate24dp;
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 4rem;
     z-index: 22;
-
+    transition: 200ms ease;
+    background-color: ($surfaceColor);
+    overflow-x: hidden;
+    overflow-y: auto;
+    //forfirefox scrollbar
+    scrollbar-width: thin;
+    scrollbar-color: $disabled $surfaceColor;
+    &::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: $surfaceColor;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $disabled;
+        border-radius: 5rem;
+    }
+    
+    @include respond-to('large'){
+        min-width: 31.6rem;
+        max-width: 31.6rem;
+        padding: 2.4rem 2.4rem 4.8rem;
+        gap: 4rem;
+    }
     .accountNameContainer{
+        display: none;
+        border-radius: 1rem;
+        min-height: 10rem;
+        align-self: stretch;
         @include set-background-color($primaryColorLight);
         border-radius: 1rem;
         min-height: 10rem;
         align-self: stretch;
-        display: flex;
         align-items: center;
         gap: .8rem;
         padding: 2rem 1.4rem 2rem 2rem;
-
+        @include respond-to('large'){
+            display: flex;
+        }
+        
         .imageContainer{
             //line height 0 to reset height
             line-height: 0;
             position: relative;
-
             &::after{
                 position: absolute;
                 right: 0;
@@ -131,13 +150,11 @@
                 border: 3px $surfaceColor solid;
                 border-radius: 5rem;
             }
-
             img{
                 border-radius: 5rem;
                 width: 6rem;
                 height: 6rem;
             }
-
         }
         
 
@@ -148,21 +165,24 @@
                 width: 2.4rem;
                 height: 2.4rem;
             }
-
         }
-
     }
 
     .mainCategoryList{
-        min-height: 25.2rem;
-        width: 22rem;
+        width: 100%;
+        @include respond-to('large'){
+            min-height: 25.2rem;
+            width: 22rem;
+            gap: .8rem;
+        }
         display: flex;
         flex-flow: column;
-        gap: .8rem;
         color: $primaryColorLight;
-        
         .mainCategory{
-            border-radius: 2.5rem;
+            @include respond-to('large'){
+                border-radius: 2.5rem;
+            }
+            background-color: $backgroundColor;
             &:nth-child(1) .categoryContainer{
                 background-image: url("../images/dashboard-icon.svg");
             }
@@ -178,24 +198,58 @@
             &:nth-child(5) .categoryContainer{
                 background-image: url("../images/job-icon.svg");
             }
+            
+            a{
+                width: 100%;
+                display: inline-block;
+            }
         }
 
         .categoryContainer{
             //border default settings
-            @extend %outline;
             @extend %btn;
+            @extend %outline;
+            height: 9.2rem;
+            @include respond-to('large'){
+                height: initial;
+                border-radius: 2.5rem!important;
+                border: 1px solid!important;
+                border-color: $primaryColorLight!important;
+                background-position: left .6rem center;
+            }
+            //overide
+            border-radius: 0!important;
+            border: none!important;
             position: relative;
-            text-transform: capitalize;
-            border-color: $primaryColorLight;
+            text-transform: capitalize; 
+            background-color: $surfaceColor;
             background-repeat: no-repeat;
-            background-position: left .6rem center;
+            background-position: top 2rem center;
             background-size: 3.2rem 3.2rem;
             padding: 0  !important; // remove the default padding
-            a{
-                width: 100%;
-            }
 
+            a, span:first-child{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                padding: 2rem 0;
+                /* position: absolute;
+                top: 5.2rem;
+                left: 50%;
+                transform: translateX(-50%); */
+                @include respond-to('large'){
+                    min-height: inherit;
+                    padding: 0;
+                    align-items: center;
+                }
+            }
             .dropArrow{
+                display: none;
+                @include respond-to('large'){
+                    display: block;
+                }
                 width: 3.2rem;
                 height: 3.2rem;
                 position: absolute;
@@ -204,17 +258,18 @@
                     fill: $primaryColorLight;
                 }
             }
-            
-            
         }
 
         .subCategoryList{
             visibility: hidden;
             max-height: 0;
-            transition: max-height 200ms ease;
+            transition: 200ms ease, visibility 100ms ease;
+            display: flex;
+            flex-flow: column;
+            gap: 0.8rem;
         }
-        .open{
 
+        .open{
             &:nth-child(1) .categoryContainer{
                 background-image: url("../images/dashboardActive-icon.svg");
             }
@@ -238,32 +293,32 @@
                     color: set-text-color($primaryColorLight);
                 }
             }
-            
 
             .dropArrow{
                 transform: rotate(180deg);
-
                 svg{
                     fill: $surfaceColor;
                 }
-
             }
             .subCategoryList{
                 visibility: visible;
                 max-height: 200px;
+                padding: 0.8rem 0;
             }
-
         }
-
     }
 
     button{
         @extend %filled;
+        @include respond-to('large'){
+            display: flex;
+        }
+        display: none;
         width: 22rem;
+        border-radius: 2.5rem;
         margin-top: auto;
         box-shadow: $elevate1dp;
         position: relative;
-        
         svg{
             position: absolute;
             left: 1.3rem;
@@ -275,14 +330,58 @@
 
         &:focus, &:hover{
             @include set-background-color($primaryColorLight);
-
             svg{
                 fill: set-text-color($primaryColorLight);
             }
         }
     }
+    //class to toggle side nav
+    &.navOpen{
+        min-width: 31.6rem;
+        max-width: 31.6rem;
+        padding: 2.4rem 2.4rem 4.8rem;
+        gap: 4rem;
 
+        .accountNameContainer{
+            display: flex;
+        }
+        .mainCategoryList{
+            min-height: 25.2rem;
+            width: 22rem;
+            gap: .8rem;
+
+            .mainCategory{
+                border-radius: 2.5rem;
+            }
+
+            .categoryContainer{
+                height: initial;
+                border-radius: 2.5rem!important;
+                border: 1px solid!important;
+                border-color: $primaryColorLight!important;
+                background-position: left .6rem center;
+            }
+
+            a, span:first-child{
+                min-height: inherit;
+                padding: 0;
+                align-items: center;
+            }
+
+            .dropArrow{
+                display: block;
+            }
+        }
+
+        button{
+            display: block;
+        }
+    }
 }
+.users .adminNav{
+    box-shadow: $elevate1dp;
+}
+
 
 @media(min-width: 52.5em){
     //------------------MainNavigation------------------
@@ -298,10 +397,8 @@
         padding: 0 2.4rem;
         z-index: 2;
         box-shadow: $elevate2dp;
-    
         ul{
             flex-flow: row;
-    
             a{
                 display: block;
                 width: initial;
@@ -315,14 +412,12 @@
             .active{
                 background-color: $backgroundColor;
             }
-            
         }
     
         form{
             justify-content: flex-end;
             flex: 1;
             gap: .4rem;
-    
             input[type="search"]{
                 min-width: 15rem;
                 max-width: 30rem;
@@ -335,7 +430,6 @@
                 display: flex;
                 padding: 0;
                 background-color: transparent;
-    
                 &:focus, &:hover{
                     box-shadow: none;
                 }
@@ -343,9 +437,7 @@
                 svg{
                     fill: $highEmphasis;
                 }
-            
             }
-            
         }
     
         > div{
@@ -359,7 +451,6 @@
         h1{
             display: none;
         }
-        
     }
 
     //------------------AdminNavigation------------------
