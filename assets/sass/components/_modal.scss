@@ -50,6 +50,17 @@
                 }
             }
         }
+        &.deleteAlertAll.show{
+            display: flex;
+            svg{
+                background-image: url("../images/alertDeleteIcon.svg");
+            }
+            div{
+                button:last-child{
+                    @include set-background-color($errorColor2);
+                }
+            }
+        }
     
         svg{
             position: absolute;

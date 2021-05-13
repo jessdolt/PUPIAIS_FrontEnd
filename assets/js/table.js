@@ -2,11 +2,11 @@ const table = {
     init:() => {
         let page = document.body.id;
         switch(page){
-            case 'user':
+            case 'Alumni':
                 //--------------------Variable Declaration------------------------
                 
                 break;
-            case 'admin':
+            case 'Admin':
                 //--------------------Variable Declaration------------------------
                 //variables for inline option btn
                 const optionBtn = document.querySelectorAll(".optionSpan");

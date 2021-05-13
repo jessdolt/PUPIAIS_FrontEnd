@@ -90,8 +90,7 @@
         border-radius: 1rem;
         margin: 2.4rem;
         flex: 1;
-        display: flex;
-        flex-flow: column;
+        
         max-height: calc(100% - 16.4rem);
         @include respond-to('large'){
             max-height: calc(100% - 20.4rem);
@@ -99,6 +98,11 @@
         box-shadow: $elevate8dp;
         .data-table,.pagination{
             @include set-background-color($surfaceColor);
+        }
+        .table-form{
+            height: 100%;
+            display: flex;
+            flex-flow: column;
         }
         .data-table{
             min-height: 15.9rem;
