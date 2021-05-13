@@ -21,7 +21,9 @@ const table = {
                 optionBtn.forEach(element => element.addEventListener("click", toggleOptions));
                 window.addEventListener("click", closeOptionModal);
                 //Listeners for checkbox selection
-                btnSelectAll.addEventListener("click", selectAll);
+                if(btnSelectAll != null){
+                    btnSelectAll.addEventListener("click", selectAll);
+                }
                 checkbox.forEach(element => element.addEventListener("click", select));
                 //Listener for modal button
                 /* btnCancel.addEventListener("click", removeAlertModal); */
