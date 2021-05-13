@@ -8,10 +8,12 @@ const alertModalObj = {
         const modalLogout = document.querySelector(".logoutAlert");
         const modalDelete = document.querySelector(".deleteAlert");
         const modalBtnCancel = document.querySelectorAll(".alertModal div button");
+
         //--------------------Event Listeners------------------------
         btnLogout.addEventListener("click", generateLogoutModal);
         btnDelete.addEventListener("click", generateDeleteModal);
-        btnDeleteInline.addEventListener("click", generateDeleteModal);
+        //btnDeleteInline.addEventListener("click", generateDeleteModal);
+
         //--------------------functions------------------------
         modalBtnCancel.forEach(element => element.onclick = () => {
             modalBackground.classList.remove("show");
@@ -19,14 +21,17 @@ const alertModalObj = {
             modalBackground.classList.remove("show");
             modalLogout.classList.remove("show");
         })
+
         function generateDeleteModal(){
             modalBackground.classList.add("show");
             modalDelete.classList.add("show");
         }
+
         function generateLogoutModal(){
             modalBackground.classList.add("show");
             modalLogout.classList.add("show");
         }
+
     }
 }
 
