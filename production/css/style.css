@@ -1860,10 +1860,13 @@ ul {
       display: flex;
       margin-top: 0.8rem;
       flex-flow: column;
-      gap: 0.8rem; }
-      .users .filterNav .groupList .subGroupList button:focus, .users .filterNav .groupList .subGroupList button:hover {
-        box-shadow: none;
-        text-decoration: underline; }
+      gap: 0.8rem;
+      /* button{
+                    &:focus,&:hover{
+                        box-shadow: none;
+                        text-decoration: underline;
+                    }
+                } */ }
 
 .users .admin .input-file-hidden {
   position: absolute;
