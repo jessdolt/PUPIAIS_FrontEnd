@@ -91,6 +91,12 @@
             }
         }
     }
+    .admin{
+        .input-file-hidden{
+            position: absolute;
+            top: 0;
+        }
+    }
     .mainContent{
         .data-table{
             tr{

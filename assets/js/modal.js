@@ -28,9 +28,14 @@ const alertModalObj = {
         const modalPreview = document.querySelector(".modalPreview");
         const previewBtnCancel = document.querySelector(".pagination .btnContainer .cancel");
         const previewBtnImport = document.querySelector(".importBtn");
+        const previewFileInput = document.querySelector(".input-file-hidden");
+        const previewFormHidden = document.querySelector("#preview-form-hidden");
         
         //--------------------Event Listeners------------------------
-        btnLogout.addEventListener("click", generateLogoutModal);
+        if(btnLogout != null){
+            btnLogout.addEventListener("click", generateLogoutModal);
+        }
+        
         if(btnDelete != null){
             btnDelete.addEventListener("click", generateDeleteModalAll);
             btnDeleteInline.forEach(element => element.addEventListener("click", generateDeleteModal(element)));
@@ -38,7 +43,8 @@ const alertModalObj = {
 
         if(modalPreviewBackground != null){
             previewBtnImport.addEventListener("click", generatePreviewModal);
-            previewBtnCancel.addEventListener("click", refreshPage)
+            previewBtnCancel.addEventListener("click", refreshPage);
+            previewFileInput.addEventListener("change", submitForm);
         }
         
         //--------------------functions------------------------
@@ -62,7 +68,12 @@ const alertModalObj = {
 
 =======
         function generatePreviewModal(){
-            modalPreviewBackground.classList.add("show");
+            previewFileInput.click();
+            /* modalPreviewBackground.classList.add("show"); */
+        }
+        function submitForm(){
+            console.log(previewFormHidden);
+            previewFormHidden.submit();
         }
         function refreshPage(){
             document.location.reload();

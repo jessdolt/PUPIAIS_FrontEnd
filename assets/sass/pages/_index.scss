@@ -1,0 +1,11 @@
+.home{
+    position: relative;
+    top: 10.6rem;
+    .heroBox{
+        height: 36rem;
+        .container{
+            @include set-background-color(rgba(0,0,0,0.5));
+        }
+    }
+
+}

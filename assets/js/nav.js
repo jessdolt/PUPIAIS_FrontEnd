@@ -9,40 +9,25 @@ const nav = {
                 const closeIcon = document.querySelector(".closeIcon");
                 const mobileNav = document.querySelector(".mainNav");
                 //--------------------Event Listeners------------------------
-                /*open mobile nav*/
-                hamburgerIcon.addEventListener("keydown", enterHamburgerIcon);
-                hamburgerIcon.addEventListener("click", openMobileNav);
-                /*close mobile nav*/
-                closeIcon.addEventListener("keydown", enterCloseIcon);
-                closeIcon.addEventListener("click", closeMobileNav);
-                console.log("AlloYapo")
+                hamburgerIcon.addEventListener("click", showMobileNav);
+                closeIcon.addEventListener("click", hideMobileNav);
+
                 //--------------------functions------------------------
                 //mobileNav Functions
-                window.addEventListener("resize", (event) => {
+                window.addEventListener("resize", () => {
                     if(window.innerWidth >= 1280){
-                        mobileNav.style.left = "0";
+                        showMobileNav();
                     }
                     else{
-                        mobileNav.style.left = "-100%";
+                        hideMobileNav();
                     }
                 });
-                function enterHamburgerIcon(event){
-                    if(event.key == "Enter"){
-                        console.log(event);
-                        openMobileNav();
-                    }
+
+                function showMobileNav(){
+                    mobileNav.classList.add("show");
                 }
-                function openMobileNav(event){
-                    mobileNav.style.left = "0";
-                }
-                function enterCloseIcon(event){
-                    if(event.key == "Enter"){
-                        console.log(event);
-                        closeMobileNav();
-                    }
-                }
-                function closeMobileNav(event){
-                    mobileNav.style.left = "-100%";
+                function hideMobileNav(){
+                    mobileNav.classList.remove("show");
                 }
                 break;
             case 'Admin':
