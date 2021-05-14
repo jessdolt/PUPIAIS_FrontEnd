@@ -4,7 +4,7 @@
     .filterNav{
         max-width: 26rem;
         width: 26rem;
-        min-width: 18.1rem;
+        min-width: 20.8rem;
         padding: 5.6rem 2.4rem;
         background-color: $backgroundColor;
         box-shadow: $elevate24dp;
@@ -55,6 +55,7 @@
                 .groupHeader{
                     text-transform: uppercase;
                     justify-content: flex-start;
+                    position: relative;
                     &.active{
                         & ~ .subGroupList{
                             visibility: visible;
@@ -62,7 +63,12 @@
                             max-height: initial;
                         }
                     }
-                    & > *{
+                    & > span:first-child{
+                        position: absolute;
+                        left: 8rem;
+                    }
+
+                    & > span:last-child{
                         margin-left: auto;
                     }
                 }
@@ -76,6 +82,12 @@
                 margin-top: 0.8rem;
                 flex-flow: column;
                 gap: 0.8rem;
+                button{
+                    &:focus,&:hover{
+                        box-shadow: none;
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
@@ -94,8 +106,8 @@
                     flex: 1;
                     //this idot just to make textoverflow ellipsis
                     max-width: 100%;
-                    width: 12rem;
-                    min-width: 12rem;
+                    width: 5rem;
+                    min-width: 5rem;
                 }
                 &:nth-child(5),&:nth-child(6){
                     min-width: 5.8rem;

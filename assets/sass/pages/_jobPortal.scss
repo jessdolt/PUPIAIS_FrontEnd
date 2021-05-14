@@ -7,11 +7,12 @@
             th,td{
                 //width of the columns set here.
                 &:nth-child(2){
-                    min-width: 6.8rem;
+                    min-width: 8.4rem;
                 }
                 
                 &:nth-child(3){
                     min-width: 9rem;
+                    flex: none;
                 }
                 &:nth-child(4),&:nth-child(5),&:nth-child(6){
                     flex: 1;

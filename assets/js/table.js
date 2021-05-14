@@ -2,11 +2,11 @@ const table = {
     init:() => {
         let page = document.body.id;
         switch(page){
-            case 'user':
+            case 'Alumni':
                 //--------------------Variable Declaration------------------------
                 
                 break;
-            case 'admin':
+            case 'Admin':
                 //--------------------Variable Declaration------------------------
                 //variables for inline option btn
                 const optionBtn = document.querySelectorAll(".optionSpan");
@@ -21,7 +21,9 @@ const table = {
                 optionBtn.forEach(element => element.addEventListener("click", toggleOptions));
                 window.addEventListener("click", closeOptionModal);
                 //Listeners for checkbox selection
-                btnSelectAll.addEventListener("click", selectAll);
+                if(btnSelectAll != null){
+                    btnSelectAll.addEventListener("click", selectAll);
+                }
                 checkbox.forEach(element => element.addEventListener("click", select));
                 //Listener for modal button
                 /* btnCancel.addEventListener("click", removeAlertModal); */

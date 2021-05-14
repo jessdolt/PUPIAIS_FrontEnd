@@ -76,6 +76,9 @@ table{
         color: $primaryColorLight;
         text-align: center;
     }
+    h4{
+        font-size: $h3-text-mobile;
+    }
     .outsideLabel,label{
         font-size: $basic-text;
     }

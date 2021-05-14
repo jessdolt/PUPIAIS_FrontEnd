@@ -2,7 +2,7 @@ const nav = {
     init:() => {
         let page = document.body.id;
         switch(page){
-            case 'user':
+            case 'Alumni':
                 //--------------------Variable Declaration------------------------
                 //userNav
                 const hamburgerIcon = document.querySelector(".hamburgerIcon");
@@ -45,7 +45,7 @@ const nav = {
                     mobileNav.style.left = "-100%";
                 }
                 break;
-            case 'admin':
+            case 'Admin':
                 //check if filterNav is on the page
                 let main = document.querySelector(".main");
                 if(main.childNodes[3].classList.contains("filterNav")){
