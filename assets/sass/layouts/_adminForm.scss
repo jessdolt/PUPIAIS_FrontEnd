@@ -176,6 +176,7 @@
                 
             }
             .imageInputContainer{
+                position: relative;
                 min-width: 12rem;
                 width: 12rem;
                 max-width: 12rem;
@@ -211,6 +212,12 @@
                     background-image: url("../images/imgInputPlaceHolder.svg");
                     background-repeat: no-repeat;
                     background-position: center;
+                }
+                svg{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%)
                 }
                 .fileUploadBtn{
                     @include set-background-color($mediumEmphasis);
