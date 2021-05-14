@@ -90,7 +90,6 @@
         border-radius: 1rem;
         margin: 2.4rem;
         flex: 1;
-        
         max-height: calc(100% - 16.4rem);
         @include respond-to('large'){
             max-height: calc(100% - 20.4rem);

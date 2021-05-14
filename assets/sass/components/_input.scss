@@ -1,6 +1,7 @@
 input{
     -webkit-appearance: none;
     appearance: none;
+    @include set-background-color($surfaceColor);
 }
 
 .outsideLabel{
@@ -21,7 +22,7 @@ input{
         max-width: 100%;
     }
 
-    .icon,input{
+    .icon,input,select{
         border: 1px $textfield-border solid;
 
         &:focus ~.icon, &:focus{ 
@@ -44,6 +45,9 @@ input{
         flex: 1;
         color: $highEmphasis;
         transition: 200ms ease;
+    }
+    select{
+        flex: 1;
     }
     .error{
         position: absolute;

@@ -22,11 +22,23 @@ const alertModalObj = {
         const modalDeleteAll = document.querySelector(".deleteAlertAll");
         const modalBtnCancel = document.querySelectorAll(".alertModal div .cancelBtn");
         const modalBtnDelete = document.querySelector(".modalDeleteInline");
+
+        //for preview
+        const modalPreviewBackground = document.querySelector(".modalContainer");
+        const modalPreview = document.querySelector(".modalPreview");
+        const previewBtnCancel = document.querySelector(".pagination .btnContainer .cancel");
+        const previewBtnImport = document.querySelector(".importBtn");
+        
         //--------------------Event Listeners------------------------
         btnLogout.addEventListener("click", generateLogoutModal);
         if(btnDelete != null){
             btnDelete.addEventListener("click", generateDeleteModalAll);
             btnDeleteInline.forEach(element => element.addEventListener("click", generateDeleteModal(element)));
+        }
+
+        if(modalPreviewBackground != null){
+            previewBtnImport.addEventListener("click", generatePreviewModal);
+            previewBtnCancel.addEventListener("click", refreshPage)
         }
         
         //--------------------functions------------------------
@@ -44,6 +56,12 @@ const alertModalObj = {
         function generateLogoutModal(){
             modalBackground.classList.add("show");
             modalLogout.classList.add("show");
+        }
+        function generatePreviewModal(){
+            modalPreviewBackground.classList.add("show");
+        }
+        function refreshPage(){
+            document.location.reload();
         }
     }
 }
