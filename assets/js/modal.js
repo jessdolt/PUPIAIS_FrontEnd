@@ -43,7 +43,6 @@ const alertModalObj = {
 
         if(modalPreviewBackground != null){
             previewBtnImport.addEventListener("click", generatePreviewModal);
-            previewBtnCancel.addEventListener("click", refreshPage);
             previewFileInput.addEventListener("change", submitForm);
         }
         
@@ -70,9 +69,6 @@ const alertModalObj = {
         function submitForm(){
             console.log(previewFormHidden);
             previewFormHidden.submit();
-        }
-        function refreshPage(){
-            document.location.reload();
         }
     }
 }

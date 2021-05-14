@@ -13,8 +13,6 @@ const table = {
                 //variables for checkbox selection
                 const btnSelectAll = document.querySelector(".selectAll");
                 const btnDelete = document.querySelector(".deleteSelected");
-                /* const btnCancel = document.querySelector(".alertModal button:first-child");
-                const alertModal = document.querySelector('.alertModalContainer'); */
                 const checkbox = document.querySelectorAll('input[type="checkbox"]');
                 //--------------------Event Listeners------------------------
                 //Listeners for inline option btn
@@ -25,10 +23,7 @@ const table = {
                     btnSelectAll.addEventListener("click", selectAll);
                 }
                 checkbox.forEach(element => element.addEventListener("click", select));
-                //Listener for modal button
-                /* btnCancel.addEventListener("click", removeAlertModal); */
-                /* btnDelete.addEventListener("click", showDeleteAlert);
-                btnDeleteInline.forEach(element => element.addEventListener("click", showDeleteAlert)); */
+                
                 //--------------------functions------------------------
                 //functions for inline option btn
                 function toggleOptions(e){
