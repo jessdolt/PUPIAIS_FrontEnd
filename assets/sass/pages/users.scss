@@ -57,6 +57,7 @@
                     justify-content: flex-start;
                     position: relative;
                     &.active{
+                        @include set-background-color($surfaceColor);
                         & ~ .subGroupList{
                             visibility: visible;
                             opacity: 1;
@@ -82,12 +83,24 @@
                 margin-top: 0.8rem;
                 flex-flow: column;
                 gap: 0.8rem;
-                /* button{
+                /* bu0 0.6remtton{
                     &:focus,&:hover{
                         box-shadow: none;
                         text-decoration: underline;
                     }
                 } */
+                a{
+                    display: inline-block;
+                    width: 100%;
+                    color: set-text-color($backgroundColor);
+                    font-weight: 500;
+                }
+            }
+            .allUserCount,.groupUserCount{
+                @include set-background-color($primaryColorLight);
+                padding: 0 0.6rem;
+                border-radius: 0.5rem;
+
             }
         }
     }

@@ -1843,10 +1843,13 @@ ul {
       text-transform: uppercase;
       justify-content: flex-start;
       position: relative; }
-      .users .filterNav .groupList .group .groupHeader.active ~ .subGroupList {
-        visibility: visible;
-        opacity: 1;
-        max-height: initial; }
+      .users .filterNav .groupList .group .groupHeader.active {
+        background-color: #FFFFFF;
+        color: rgba(0, 0, 0, 0.87); }
+        .users .filterNav .groupList .group .groupHeader.active ~ .subGroupList {
+          visibility: visible;
+          opacity: 1;
+          max-height: initial; }
       .users .filterNav .groupList .group .groupHeader > span:first-child {
         position: absolute;
         left: 8rem; }
@@ -1861,12 +1864,22 @@ ul {
       margin-top: 0.8rem;
       flex-flow: column;
       gap: 0.8rem;
-      /* button{
+      /* bu0 0.6remtton{
                     &:focus,&:hover{
                         box-shadow: none;
                         text-decoration: underline;
                     }
                 } */ }
+      .users .filterNav .groupList .subGroupList a {
+        display: inline-block;
+        width: 100%;
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: 500; }
+    .users .filterNav .groupList .allUserCount, .users .filterNav .groupList .groupUserCount {
+      background-color: #A63F3F;
+      color: #FFFFFF;
+      padding: 0 0.6rem;
+      border-radius: 0.5rem; }
 
 .users .admin .input-file-hidden {
   position: absolute;
