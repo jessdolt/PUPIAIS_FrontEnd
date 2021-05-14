@@ -34,6 +34,7 @@ const nav = {
                 //check if filterNav is on the page
                 let main = document.querySelector(".main");
                 if(main.childNodes[3].classList.contains("filterNav")){
+                    const allUser = document.querySelector(".allUser")
                     const groupHeader = document.querySelectorAll(".groupHeader")
                     groupHeader.forEach(element=>element.addEventListener("click",()=>{
                         let isActive = element.classList.contains("active")
@@ -42,9 +43,15 @@ const nav = {
                         }
                         else{
                             groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.remove("active")
                             element.classList.add("active")
                         }
                     }))
+
+                    allUser.addEventListener("click", () => {
+                            groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.add("active")
+                    })
                 }
                 //--------------------Variable Declaration------------------------
                 //adminNav
