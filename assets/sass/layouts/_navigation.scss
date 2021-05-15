@@ -1,14 +1,14 @@
 //------------------MainNavigation------------------
 #Alumni{
     .mainNav{
-        & > a{
+        .dashboardLink{
             display: none;
         }
     }
 }
 #Admin{
     .mainNav{
-        button{
+        .logout{
             display: none;
         }
     }
@@ -90,6 +90,7 @@
         @include respond-to('large'){
             @include set-background-color($surfaceColor);
             display: flex;
+            display: none;
             padding: 0 1.6rem;
             margin-right: 10.4rem;
             min-height: 3rem;
