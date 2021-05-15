@@ -33,25 +33,27 @@ const nav = {
             case 'Admin':
                 //check if filterNav is on the page
                 let main = document.querySelector(".main");
-                if(main.childNodes[3].classList.contains("filterNav")){
-                    const allUser = document.querySelector(".allUser")
-                    const groupHeader = document.querySelectorAll(".groupHeader")
-                    groupHeader.forEach(element=>element.addEventListener("click",()=>{
-                        let isActive = element.classList.contains("active")
-                        if(isActive){
-                            element.classList.remove("active")
-                        }
-                        else{
-                            groupHeader.forEach(boom=>boom.classList.remove("active"))
-                            allUser.classList.remove("active")
-                            element.classList.add("active")
-                        }
-                    }))
-
-                    allUser.addEventListener("click", () => {
-                            groupHeader.forEach(boom=>boom.classList.remove("active"))
-                            allUser.classList.add("active")
-                    })
+                if(main != null){
+                    if(main.childNodes[3].classList.contains("filterNav")){
+                        const allUser = document.querySelector(".allUser")
+                        const groupHeader = document.querySelectorAll(".groupHeader")
+                        groupHeader.forEach(element=>element.addEventListener("click",()=>{
+                            let isActive = element.classList.contains("active")
+                            if(isActive){
+                                element.classList.remove("active")
+                            }
+                            else{
+                                groupHeader.forEach(boom=>boom.classList.remove("active"))
+                                allUser.classList.remove("active")
+                                element.classList.add("active")
+                            }
+                        }))
+    
+                        allUser.addEventListener("click", () => {
+                                groupHeader.forEach(boom=>boom.classList.remove("active"))
+                                allUser.classList.add("active")
+                        })
+                    }
                 }
                 //--------------------Variable Declaration------------------------
                 //adminNav
@@ -61,8 +63,12 @@ const nav = {
                 
                 //--------------------Event Listeners------------------------
                 /* toggleSideNav */
-                adminHamburger.addEventListener("click", toggleSideNav);
-                window.addEventListener("click", closeSideNav);
+                if(adminHamburger != null){
+                    adminHamburger.addEventListener("click", toggleSideNav);
+                }
+                if(sideNav != null){
+                    window.addEventListener("click", closeSideNav);
+                }
                 //toggleNavCategories
                 mainCategory.forEach(element => element.addEventListener("keydown", tabSelectMainCategory));
                 mainCategory.forEach(element => element.addEventListener("click", selectMainCategory));

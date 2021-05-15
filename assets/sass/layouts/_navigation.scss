@@ -1,4 +1,18 @@
 //------------------MainNavigation------------------
+#Alumni{
+    .mainNav{
+        & > a{
+            display: none;
+        }
+    }
+}
+#Admin{
+    .mainNav{
+        button{
+            display: none;
+        }
+    }
+}
 .mainNav{
     position: fixed;
     left: -100%;
@@ -17,6 +31,7 @@
     @include respond-to('large'){
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: .8rem;
         top: 6rem;
         left: 0;
@@ -76,10 +91,21 @@
             @include set-background-color($surfaceColor);
             display: flex;
             padding: 0 1.6rem;
-            margin-left: auto;
             margin-right: 10.4rem;
             min-height: 3rem;
         }
+    }
+
+    & > a{
+        @extend %btn;
+        @extend %filled;
+        @include set-background-color($surfaceColor);
+        margin-right: 10.4rem;
+        min-height: 3rem!important;
+        font-weight: 500;
+        text-transform: capitalize;
+
+
     }
     h1{
         text-align: center;
