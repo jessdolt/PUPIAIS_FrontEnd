@@ -8,9 +8,12 @@ const nav = {
                 const hamburgerIcon = document.querySelector(".hamburgerIcon");
                 const closeIcon = document.querySelector(".closeIcon");
                 const mobileNav = document.querySelector(".mainNav");
+                const navBtn = document.querySelector(".mainNav button");
+
                 //--------------------Event Listeners------------------------
                 hamburgerIcon.addEventListener("click", showMobileNav);
                 closeIcon.addEventListener("click", hideMobileNav);
+                navBtn.addEventListener("click", toggleNavModal);
 
                 //--------------------functions------------------------
                 //mobileNav Functions
@@ -22,7 +25,9 @@ const nav = {
                         hideMobileNav();
                     }
                 });
-
+                function toggleNavModal(){
+                    navBtn.classList.toggle("active");
+                }
                 function showMobileNav(){
                     mobileNav.classList.add("show");
                 }
