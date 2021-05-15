@@ -1,4 +1,18 @@
 //------------------MainNavigation------------------
+#Alumni{
+    .mainNav{
+        .dashboardLink{
+            display: none;
+        }
+    }
+}
+#Admin{
+    .mainNav{
+        button{
+            display: none;
+        }
+    }
+}
 .mainNav{
     position: fixed;
     left: -100%;
@@ -17,6 +31,7 @@
     @include respond-to('large'){
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: .8rem;
         top: 6rem;
         left: 0;
@@ -24,7 +39,7 @@
         width: 100%;
         height: 4.6rem;
         padding: 0 2.4rem;
-        z-index: 2;
+        z-index: 18;
         box-shadow: $elevate2dp;
     }
     &.show{
@@ -76,10 +91,65 @@
             @include set-background-color($surfaceColor);
             display: flex;
             padding: 0 1.6rem;
-            margin-left: auto;
             margin-right: 10.4rem;
             min-height: 3rem;
         }
+        &.active{
+            @include set-background-color($primaryColorLight);
+            & ~ .userContainer{
+                display: flex;
+                a:last-child{
+                    @extend %btn;
+                    @include set-background-color($surfaceColor);
+                    position: relative;
+                    min-height: 3rem!important;
+                    svg{
+                        position: absolute;
+                        left: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    .userContainer{
+        @include set-background-color($backgroundColor);
+        position: absolute;
+        top: 4.2rem;
+        right: 12.8rem;
+        display: none;
+        flex-flow: column;
+        gap: 1.6rem;
+        border-radius: 1rem;
+        min-width: 20rem;
+        padding: 1.6rem 2.4rem;
+        z-index: 100;
+        p{
+            text-align: center;
+            padding-bottom: 1.6rem;
+            border-bottom: 1px solid $disabled;
+            color: $mediumEmphasis;
+        }
+        a{
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-align: left;
+            color: set-text-color($backgroundColor);
+        }
+    }
+    
+
+    & > a{
+        @extend %btn;
+        @extend %filled;
+        @include set-background-color($surfaceColor);
+        margin-right: 10.4rem;
+        min-height: 3rem!important;
+        font-weight: 500;
+        text-transform: capitalize;
+
+
     }
     h1{
         text-align: center;

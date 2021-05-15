@@ -9,7 +9,7 @@
         background-color: $backgroundColor;
         box-shadow: $elevate24dp;
         z-index: 21;
-        button{
+        button,a{
             @extend %filled;
             min-height: 3rem;
             width: 100%;
@@ -43,6 +43,15 @@
                     width: 2.4rem;
                     height: 2.4rem;
                     fill: none;
+                }
+            }
+            a{
+                @extend %btn;
+                @include set-background-color($backgroundColor);
+                min-height: 3rem;
+                text-decoration: none;
+                &.active{
+                    @include set-background-color($surfaceColor);
                 }
             }
         }
@@ -83,12 +92,6 @@
                 margin-top: 0.8rem;
                 flex-flow: column;
                 gap: 0.8rem;
-                /* bu0 0.6remtton{
-                    &:focus,&:hover{
-                        box-shadow: none;
-                        text-decoration: underline;
-                    }
-                } */
                 a{
                     display: inline-block;
                     width: 100%;
@@ -96,12 +99,11 @@
                     font-weight: 500;
                 }
             }
-            .allUserCount,.groupUserCount{
-                @include set-background-color($primaryColorLight);
-                padding: 0 0.6rem;
-                border-radius: 0.5rem;
-
-            }
+        }
+        .allUserCount,.groupUserCount{
+            @include set-background-color($primaryColorLight);
+            padding: 0 0.6rem;
+            border-radius: 0.5rem;
         }
     }
     .admin{

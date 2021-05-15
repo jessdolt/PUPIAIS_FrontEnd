@@ -1,10 +1,53 @@
+body{
+    //forfirefox scrollbar
+    scrollbar-width: thin;
+    scrollbar-color: $disabled $surfaceColor;
+    &::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: $surfaceColor;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $disabled;
+        border-radius: 5rem;
+        
+    }
+}
 .home{
     position: relative;
     top: 10.6rem;
     .heroBox{
+        position: relative;
         height: 36rem;
+        padding: 14rem 0 7rem;
+        background-image: url('../images/heroBoxBg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255,255,255,0.3);
+            z-index: 1;
+        }
         .container{
             @include set-background-color(rgba(0,0,0,0.5));
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            padding: 1rem 34rem;
+            h1{
+                padding-left: 1.6rem;
+               border-left: 0.6rem solid $secondaryColor; 
+               font-family: 'Roboto Slab', serif;
+               font-size: 5rem;
+               line-height: 1.3;
+            }
         }
     }
 
