@@ -2,6 +2,7 @@ input{
     -webkit-appearance: none;
     appearance: none;
     @include set-background-color($surfaceColor);
+    transition: 200ms ease;
 }
 
 .outsideLabel{
@@ -71,17 +72,35 @@ input[type="radio"],input[type="checkbox"]{
     cursor: pointer;
 }
 
-//basic error
+//email verification hide arrow on input
+.loginMain{
+    input[type=number]{
+        -moz-appearance: textfield;
+        border: none;
+        background-image: url('../images/verificationBg.svg');
+        background-repeat: no-repeat;
+        &:required:-moz-ui-invalid{
+            background-image: url('../images/verificationBgError.svg');
+            border: none;
+        }
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button{ 
+      -webkit-appearance: none; 
+      appearance: none;
+      margin: 0; 
+    }
+}
+
+
 
 input:required:-moz-ui-invalid{
     border: 1px solid $errorColor1;
-    border-right: none;
     //remove the default red box-shadow for invalid textfield
     box-shadow: none;
 
     &~.icon{
         border: 1px solid $errorColor1;
-        border-left: none;
         box-shadow: none;
     }
 }

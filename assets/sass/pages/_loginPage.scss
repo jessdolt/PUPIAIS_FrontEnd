@@ -49,6 +49,8 @@
 
     header{
         text-align: center;
+        display: flex;
+        flex-flow: column;
 
         div{
             min-width: 27rem;
@@ -63,12 +65,18 @@
         flex-flow: column;
         align-items: center;
         gap: 1.6rem;
+        //just to limit the width in firefox
+        max-width: 30rem;
 
         .textFieldContainer{
             .icon{
                 path{
                     fill: $mediumEmphasis;
                 }
+            }
+            //just to limit the width in firefox
+            #verification-code{
+                max-width: 100%
             }
         }
         
@@ -120,6 +128,7 @@
 
         header{
             position: relative;
+            gap: 0.8rem;
 
             //the actual visible logo for desktop view
             &::before{
@@ -139,7 +148,6 @@
             }
 
             div{
-                margin: .8rem 0;
                 box-shadow: 0px 0px 1px rgba($color: #000000, $alpha: .25);
             }
         }

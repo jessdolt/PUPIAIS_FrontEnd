@@ -18,7 +18,7 @@ const nav = {
                 //--------------------functions------------------------
                 //mobileNav Functions
                 window.addEventListener("resize", () => {
-                    if(window.innerWidth >= 1280){
+                    if(window.innerWidth >= 1366){
                         showMobileNav();
                     }
                     else{
