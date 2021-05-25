@@ -2,7 +2,11 @@ const inputUtil = {
     init:() => {
         //--------------------Variable Declaration------------------------
         const codeTextBox = document.querySelector("#verification-code");
+        const batchComboBox = document.querySelector("#batch-id");
+        const studentIdBox = document.querySelector("#student-id");
+
         //--------------------Event Listeners------------------------
+        //for verification code to fill the box
         if(codeTextBox){
             codeTextBox.addEventListener("input",(e) => {
                 let codeTexField = e.target;
@@ -15,13 +19,19 @@ const inputUtil = {
                         else{
                             clearInterval(moveToLeft)
                         }
-                        console.log("kapow")
                     }, 10);
                     
                 }
             })
         }
+        if(batchComboBox){
+            batchComboBox.addEventListener("click", setStudentId)
+        }
         //--------------------functions------------------------
+
+        function setStudentId(){
+            studentIdBox.value = batchComboBox.value - 4;
+        }
     }
 }
 

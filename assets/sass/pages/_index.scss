@@ -15,17 +15,22 @@ body{
     }
 }
 .home{
+    & > section{
+        &.welcomeBox{
+            .container{
+                display: flex;
+                align-items: center;
+                gap: 4rem;
+            }
+            
+        }
+    }
     .heroBox{
-        height: 36rem;
         padding: 14rem 0 7rem;
         background-image: url('../images/heroBoxBg.png');
         .container{
-            position: absolute;
-            left: 0;
-            right: 0;
-            z-index: 2;
-            height: 15rem;
-            padding: 1rem 34rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             h1{
                font-size: 5rem;
                line-height: 1.31;
@@ -34,12 +39,12 @@ body{
     }
     .welcomeBox{
         @include set-background-color($backgroundColor);
-        display: flex;
-        padding: 3.2rem 34rem;
-        gap: 4rem;
-        & > *:nth-child(1){
-            margin-left: 1.6rem;
-            min-width: 14.5rem;
+        padding: 3.2rem 0;
+        .container{
+            & > *:nth-child(1){
+                margin-left: 1.6rem;
+                min-width: 14.5rem;
+            }
         }
 
         .welcomeMessage{

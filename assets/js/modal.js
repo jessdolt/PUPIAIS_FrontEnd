@@ -5,7 +5,14 @@ const alertModalObj = {
             return function curried_func(e) {
                 let dataId = element.getAttribute("data-id");
                 let dataUrl = element.getAttribute("data-url");
-                const actualURL = dataUrl + "/" + dataId;
+                let actualURL;
+                if(dataId){
+                    actualURL = dataUrl + "/" + dataId;
+                }
+                else{
+                    actualURL = dataUrl;
+                }
+                
 
                 modalBtnDelete.setAttribute("href", actualURL);
                 modalBackground.classList.add("show");
@@ -13,6 +20,7 @@ const alertModalObj = {
             }
         }
         //--------------------Variable Declaration------------------------
+        //for logout and delete in table
         const btnLogout = document.querySelector(".adminNav button")
         const btnDelete = document.querySelector(".deleteSelected");
         const btnDeleteInline = document.querySelectorAll(".btnDeleteInline");
@@ -23,27 +31,38 @@ const alertModalObj = {
         const modalBtnCancel = document.querySelectorAll(".alertModal div .cancelBtn");
         const modalBtnDelete = document.querySelector(".modalDeleteInline");
 
-        //for preview
+        //for user import preview
         const modalPreviewBackground = document.querySelector(".modalContainer");
         const modalPreview = document.querySelector(".modalPreview");
         const previewBtnCancel = document.querySelector(".pagination .btnContainer .cancel");
         const previewBtnImport = document.querySelector(".importBtn");
         const previewFileInput = document.querySelector(".input-file-hidden");
         const previewFormHidden = document.querySelector("#preview-form-hidden");
-        
+
+        //modal for questionair add question
+        const newQuestBtn = document.querySelector(".addNewQuestion");
+        const modalQuestionBg = document.querySelector(".addModalContainer");
+        const questionBtnCancel = document.querySelector(".addModalContainer .btnContainer .cancel");
         //--------------------Event Listeners------------------------
-        if(btnLogout != null){
+        if(btnLogout){
             btnLogout.addEventListener("click", generateLogoutModal);
         }
         
-        if(btnDelete != null){
+        if(btnDelete){
             btnDelete.addEventListener("click", generateDeleteModalAll);
+            
+        }
+        if(btnDeleteInline){
             btnDeleteInline.forEach(element => element.addEventListener("click", generateDeleteModal(element)));
         }
 
-        if(modalPreviewBackground != null){
+        if(modalPreviewBackground){
             previewBtnImport.addEventListener("click", generatePreviewModal);
             previewFileInput.addEventListener("change", submitForm);
+        }
+        if(newQuestBtn){
+            newQuestBtn.addEventListener("click", generateAddQuestion);
+            questionBtnCancel.addEventListener("click", cancelAddQuestion);
         }
         
         //--------------------functions------------------------
@@ -64,11 +83,15 @@ const alertModalObj = {
         }
         function generatePreviewModal(){
             previewFileInput.click();
-            /* modalPreviewBackground.classList.add("show"); */
         }
         function submitForm(){
-            console.log(previewFormHidden);
             previewFormHidden.submit();
+        }
+        function generateAddQuestion(){
+            modalQuestionBg.classList.add("show")
+        }
+        function cancelAddQuestion(){
+            modalQuestionBg.classList.remove("show");
         }
     }
 }

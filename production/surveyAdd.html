@@ -22,7 +22,7 @@
             <span>Admin Page</span>
             <a href="#">Switch to homepage</a>
         </header>
-        <div class="main users">
+        <div class="main">
             <nav class="adminNav">
                 <div class="accountNameContainer">
                     <div class="imageContainer">
@@ -85,152 +85,59 @@
                     Logout
                 </button>
             </nav>
-            <main class="admin userAdd dataInput">
-                <section class="pageSpecificHeader">
-                    
-                </section>
+            <main class="admin surveyAdd dataInput">
+                <section class="pageSpecificHeader"></section>
                 <section class="mainContent adminForm">
                     <form action="">
                         <div class="form">
                             <h2>
-                                Accounts
+                                Survey
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.47149 19.0139C9.23783 19.0143 9.0114 18.9329 8.83149 18.7839C8.73023 18.6999 8.64653 18.5968 8.58517 18.4805C8.52382 18.3641 8.48603 18.2368 8.47395 18.1058C8.46187 17.9749 8.47576 17.8428 8.5148 17.7172C8.55385 17.5916 8.61728 17.4749 8.70149 17.3739L13.1815 12.0139L8.86149 6.64386C8.77842 6.54157 8.71639 6.42387 8.67896 6.29753C8.64153 6.17119 8.62943 6.0387 8.64337 5.90767C8.65731 5.77665 8.69701 5.64966 8.76018 5.53403C8.82335 5.41839 8.90876 5.31638 9.01149 5.23386C9.11495 5.14282 9.23612 5.07415 9.36738 5.03216C9.49864 4.99017 9.63717 4.97577 9.77426 4.98986C9.91135 5.00394 10.0441 5.04621 10.164 5.11401C10.284 5.18181 10.3887 5.27368 10.4715 5.38386L15.3015 11.3839C15.4486 11.5628 15.529 11.7872 15.529 12.0189C15.529 12.2505 15.4486 12.4749 15.3015 12.6539L10.3015 18.6539C10.2012 18.7749 10.0737 18.8705 9.92953 18.9331C9.78532 18.9956 9.62839 19.0233 9.47149 19.0139Z" fill="#A63F3F"/>
                                 </svg>
                                 Add New
                             </h2>
                             <section class="infoCon">
-                                <h3>personal information</h3>
+                                <h3>Primary Details</h3>
                                 <div class="infoSubCon">
                                     <div class="smallComponentsContainer">
                                         <div>
-                                            <label for="first-name" class="outsideLabel">FirstName:</label>
+                                            <label for="survey-title" class="outsideLabel">Survey Title:</label>
                                             <div class="textFieldContainer">
-                                                <input type="text" name="firstName" id="first-name"required>
+                                                <input type="text" name="surveyTitle" id="survey-title"required>
                                                 <span class="error"></span>
                                             </div>
                                         </div>
                                         <div>
-                                            <label for="last-name" class="outsideLabel">Last Name:</label>
+                                            <label for="description-id" class="outsideLabel">Description:</label>
                                             <div class="textFieldContainer">
-                                                <input type="text" name="lastName" id="last-name"required>
+                                                <textarea name="description" id="description-id"></textarea>
                                                 <span class="error"></span>
                                             </div>
                                         </div>
-                                        <div>
-                                            <label for="middle-name" class="outsideLabel">Middle Name:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="text" name="middleName" id="middle-name"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="birth-date" class="outsideLabel">Birth Date:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="date" name="birthDate" id="birth-date"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                    
-                                        <div>
-                                            <label class="outsideLabel">Gender:</label>
-                                            <fieldset class="radioBtnContainer">
-                                                <input type="radio" class="male" name="gender" id="male-id" value="Male" checked>
-                                                <input type="radio" class="female" name="gender" id="female-id" value="Female">
-                                            </fieldset>
-                                        </div>
-                                        <div>
-                                            <label class="outsideLabel">Employment Status:</label>
-                                            <fieldset class="radioBtnContainer">
-                                                <input type="radio" class="eStatus" name="eStatus" id="employed-id" value="Employed" checked>
-                                                <input type="radio" class="eStatus" name="eStatus" id="unemployed-id" value="Unemployed">
-                                            </fieldset>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </section>
                             <section class="infoCon">
-                                <h3>Contact Information</h3>
+                                <h3>Timeframe</h3>
                                 <div class="infoSubCon">
                                     <div class="smallComponentsContainer">
                                         <div>
-                                            <label for="address-line1" class="outsideLabel">Address Line 1:</label>
+                                            <label for="start-date" class="outsideLabel">Start Date:</label>
                                             <div class="textFieldContainer">
-                                                <input type="text" name="addressLine1" id="address-line1"required>
+                                                <input type="date" name="startDate" id="start-date"required>
                                                 <span class="error"></span>
                                             </div>
                                         </div>
                                         <div>
-                                            <label for="city-id" class="outsideLabel">City:</label>
+                                            <label for="end-date" class="outsideLabel">End Date:</label>
                                             <div class="textFieldContainer">
-                                                <input type="text" name="city" id="city-id"required>
+                                                <input type="date" name="endDate" id="end-date"required>
                                                 <span class="error"></span>
                                             </div>
                                         </div>
-                                        <div>
-                                            <label for="spr-id" class="outsideLabel">State | Province | Region:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="text" name="spr" id="spr-id"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="zpc-id" class="outsideLabel">Zip | Postal Code:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="tel" name="zpc" id="zpc-id"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="contact-num-id" class="outsideLabel">Contact Number:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="tel" name="contactNum" id="contact-num-id"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="email-id" class="outsideLabel">Email:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="email" name="email" id="email-id"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="infoCon">
-                                <h3>Alumni Information</h3>
-                                <div class="infoSubCon">
-                                    <div class="smallComponentsContainer">
-                                        <div>
-                                            <label for="department-id" class="outsideLabel">Department:</label>
-                                            <div class="textFieldContainer">
-                                                <select name="department" id="department-id" required>
-                                                    <option>--Department--</option>
-                                                    <option value="dict">DICT</option>
-                                                    <option value="decet">DECET</option>
-                                                </select>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="batch-id" class="outsideLabel">Batch:</label>
-                                            <div class="textFieldContainer">
-                                                <select name="batch" id="batch-id" required>
-                                                    <option>--Batch--</option>
-                                                    <option value="2021">Batch 2021</option>
-                                                    <option value="2020">Batch 2020</option>
-                                                </select>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="student-id" class="outsideLabel">Student ID:</label>
-                                            <div class="textFieldContainer">
-                                                <input type="text" name="studentId" id="student-id"required>
-                                                <span class="error"></span>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </section>
@@ -241,11 +148,6 @@
                                     <path d="M16.7624 15L22.1374 9.63749C22.3728 9.40211 22.505 9.08287 22.505 8.74999C22.505 8.41711 22.3728 8.09787 22.1374 7.86249C21.902 7.62711 21.5828 7.49487 21.2499 7.49487C20.917 7.49487 20.5978 7.62711 20.3624 7.86249L14.9999 13.2375L9.63742 7.86249C9.40204 7.62711 9.0828 7.49487 8.74992 7.49487C8.41705 7.49487 8.0978 7.62711 7.86242 7.86249C7.62704 8.09787 7.49481 8.41711 7.49481 8.74999C7.49481 9.08287 7.62704 9.40211 7.86242 9.63749L13.2374 15L7.86242 20.3625C7.74526 20.4787 7.65227 20.6169 7.58881 20.7693C7.52535 20.9216 7.49268 21.085 7.49268 21.25C7.49268 21.415 7.52535 21.5784 7.58881 21.7307C7.65227 21.883 7.74526 22.0213 7.86242 22.1375C7.97863 22.2547 8.11688 22.3476 8.2692 22.4111C8.42153 22.4746 8.58491 22.5072 8.74992 22.5072C8.91494 22.5072 9.07832 22.4746 9.23064 22.4111C9.38297 22.3476 9.52122 22.2547 9.63742 22.1375L14.9999 16.7625L20.3624 22.1375C20.4786 22.2547 20.6169 22.3476 20.7692 22.4111C20.9215 22.4746 21.0849 22.5072 21.2499 22.5072C21.4149 22.5072 21.5783 22.4746 21.7306 22.4111C21.883 22.3476 22.0212 22.2547 22.1374 22.1375C22.2546 22.0213 22.3476 21.883 22.411 21.7307C22.4745 21.5784 22.5072 21.415 22.5072 21.25C22.5072 21.085 22.4745 20.9216 22.411 20.7693C22.3476 20.6169 22.2546 20.4787 22.1374 20.3625L16.7624 15Z" fill="black" fill-opacity="0.87"/>
                                 </svg>
                             </a>
-                            <div class="imageInputContainer">
-                                <svg class="userformIcon" width="160" height="142" viewBox="0 0 160 142" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M146.667 8.875H13.3333C5.97222 8.875 0 14.8379 0 22.1875V26.625H160V22.1875C160 14.8379 154.028 8.875 146.667 8.875ZM0 119.812C0 127.162 5.97222 133.125 13.3333 133.125H146.667C154.028 133.125 160 127.162 160 119.812V35.5H0V119.812ZM97.7778 55.4688C97.7778 54.2484 98.7778 53.25 100 53.25H140C141.222 53.25 142.222 54.2484 142.222 55.4688V59.9062C142.222 61.1266 141.222 62.125 140 62.125H100C98.7778 62.125 97.7778 61.1266 97.7778 59.9062V55.4688ZM97.7778 73.2188C97.7778 71.9984 98.7778 71 100 71H140C141.222 71 142.222 71.9984 142.222 73.2188V77.6562C142.222 78.8766 141.222 79.875 140 79.875H100C98.7778 79.875 97.7778 78.8766 97.7778 77.6562V73.2188ZM97.7778 90.9688C97.7778 89.7484 98.7778 88.75 100 88.75H140C141.222 88.75 142.222 89.7484 142.222 90.9688V95.4062C142.222 96.6266 141.222 97.625 140 97.625H100C98.7778 97.625 97.7778 96.6266 97.7778 95.4062V90.9688ZM48.8889 53.25C58.6944 53.25 66.6667 61.2098 66.6667 71C66.6667 80.7902 58.6944 88.75 48.8889 88.75C39.0833 88.75 31.1111 80.7902 31.1111 71C31.1111 61.2098 39.0833 53.25 48.8889 53.25ZM18.6389 109.884C20.9722 102.756 27.6667 97.625 35.5556 97.625H37.8333C41.25 99.0395 44.9722 99.8438 48.8889 99.8438C52.8056 99.8438 56.5556 99.0395 59.9444 97.625H62.2222C70.1111 97.625 76.8056 102.756 79.1389 109.884C80.0278 112.629 77.6944 115.375 74.8056 115.375H22.9722C20.0833 115.375 17.75 112.602 18.6389 109.884Z" fill="#A63F3F"/>
-                                </svg>
-                            </div>
                             <div class="btnGroupContainer">
                                 <button class="reset">
                                     <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

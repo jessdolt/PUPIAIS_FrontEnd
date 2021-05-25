@@ -1,0 +1,21 @@
+.survey{
+    .mainContent{
+        .data-table{
+            th,td{
+                //width of the columns set here.
+                &:nth-child(2){
+                    min-width: 13.6rem;
+                    flex: 1;
+                }
+                
+                &:nth-child(3){
+                    flex: 2;
+                }
+                
+                &:nth-child(4),&:nth-child(5){
+                    min-width: 12.6rem;
+                }
+            }
+        }
+    }
+}
