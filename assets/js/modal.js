@@ -73,40 +73,30 @@ const alertModalObj = {
             modalLogout.classList.remove("show");
         })
 
-        function generateDeleteModal(){
+        /* function generateDeleteModal(){
             modalBackground.classList.add("show");
             modalDeleteAll.classList.add("show");
-        }
+        } */
 
         function generateLogoutModal(){
             modalBackground.classList.add("show");
             modalLogout.classList.add("show");
         }
-<<<<<<< HEAD
-
-=======
         function generatePreviewModal(){
             previewFileInput.click();
         }
         function submitForm(){
             previewFormHidden.submit();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
         function refreshPage(){
             document.location.reload();
         }
->>>>>>> 3cbc09ed8dd8e2b1fb04d80ae75c2329f3cd6958
-=======
->>>>>>> 4f82ab0740f63ccb7de2b9d690200924ecf68315
-=======
         function generateAddQuestion(){
             modalQuestionBg.classList.add("show")
         }
         function cancelAddQuestion(){
             modalQuestionBg.classList.remove("show");
         }
->>>>>>> 00eb4d0031597aa2be9496729db911ad8d2efa6f
     }
 }
 
