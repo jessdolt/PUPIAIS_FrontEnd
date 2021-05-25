@@ -1676,7 +1676,7 @@ ul {
   border-style: solid;
   border-radius: 0.5rem; }
 
-.mainNav button, .mainNav > a, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer button, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btnContainer button, .loginMain form button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .mainContent.adminForm.questionnaire .form:first-child > button {
+.mainNav button, .mainNav > a, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer button, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .loginMain form button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .mainContent.adminForm.questionnaire .form:first-child > button {
   border: 1px solid transparent; }
 
 .icon {
@@ -2039,6 +2039,12 @@ ul {
     cursor: pointer;
     width: 3rem;
     height: 3rem; }
+    .addModalContainer .addModal .btn-opt-delete button {
+      background-color: transparent;
+      color: #FFFFFF;
+      min-width: 3rem;
+      min-height: 3rem;
+      padding: 0; }
   .addModalContainer .addModal .btn-add-opt {
     margin-top: 1.6rem; }
     .addModalContainer .addModal .btn-add-opt button {
@@ -2270,10 +2276,10 @@ body {
     padding-bottom: 0.8rem;
     border-bottom: 0.05rem solid rgba(0, 0, 0, 0.38);
     margin-bottom: 3.2rem; }
-    .users .filterNav .btnContainer > * {
+    mana .users .filterNav .btnContainer > * {
       text-transform: capitalize;
       justify-content: flex-start; }
-      .users .filterNav .btnContainer > * > * {
+      mana .users .filterNav .btnContainer > * > * {
         margin-left: auto; }
     .users .filterNav .btnContainer .manageUsers {
       background-color: #FFFFFF;
