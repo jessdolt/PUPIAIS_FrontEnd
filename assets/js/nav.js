@@ -135,7 +135,7 @@ const nav = {
                 }
                 break;
             default:
-                console.log("Allo")
+                
         }
     }
 }

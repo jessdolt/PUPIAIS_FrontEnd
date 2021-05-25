@@ -13,7 +13,7 @@ const table = {
                 //variables for checkbox selection
                 const btnSelectAll = document.querySelector(".selectAll");
                 const btnDelete = document.querySelector(".deleteSelected");
-                const checkbox = document.querySelectorAll('input[type="checkbox"]');
+                const checkbox = document.querySelectorAll('tr input[type="checkbox"]');
                 //--------------------Event Listeners------------------------
                 //Listeners for inline option btn
                 optionBtn.forEach(element => element.addEventListener("click", toggleOptions));
@@ -86,7 +86,7 @@ const table = {
                 } */
                 break;
             default:
-                console.log("Default")
+                
         }
     }
 }

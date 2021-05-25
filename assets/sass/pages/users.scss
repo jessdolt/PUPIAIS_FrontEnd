@@ -4,7 +4,7 @@
     .filterNav{
         max-width: 26rem;
         width: 26rem;
-        min-width: 20.8rem;
+        min-width: 22.8rem;
         padding: 5.6rem 2.4rem;
         background-color: $backgroundColor;
         box-shadow: $elevate24dp;
@@ -26,6 +26,8 @@
             border-bottom: 0.05rem solid $disabled;
             margin-bottom: 3.2rem;
 
+            mana
+
             & > *{
                 text-transform: capitalize;
                 justify-content: flex-start;
@@ -34,7 +36,7 @@
                 }
             }
 
-            .addNewGroup{
+            .manageUsers{
                 @extend %btn;
                 @include set-background-color($surfaceColor);
                 box-shadow: $elevate1dp;
@@ -42,7 +44,6 @@
                 svg{
                     width: 2.4rem;
                     height: 2.4rem;
-                    fill: none;
                 }
             }
             a{

@@ -1,4 +1,5 @@
-.modalContainer{
+//same bg setting for preview and question modal
+.modalContainer,.addModalContainer{
     display: none;
     position: absolute;
     top: 50%;
@@ -13,6 +14,10 @@
     &.show{
         display: flex;
     }
+}
+
+//for user preview
+.modalContainer{
     .hidden-form{
         visibility: hidden;
     }
@@ -189,6 +194,7 @@
         }
     }
 }
+//for alert modal
 .alertModalContainer{
     display: none;
     position: absolute;
@@ -287,6 +293,185 @@
             a{
                 @extend %btn;
             }
+        }
+    }
+}
+//for add question
+.addModalContainer{
+    .addModal{
+        display: flex;
+        flex-flow: column;
+        padding: 2.4rem 4rem;
+        margin: 2.4rem;
+        @include set-background-color($surfaceColor);
+        border-radius: 1rem;
+        width: 100rem;
+        min-width: 0;
+        form{
+            display: flex;
+            flex-flow: column;
+            gap: 2.4rem;
+        }
+        .formContainer{
+            display: flex;
+            flex-flow: wrap;
+            gap: 1.8rem;
+            & > div{
+                flex: 1;
+
+                &:first-child{
+                    flex: 3;
+                }
+                &:last-child{
+                    min-width: 100%;
+
+                    input[type="text"]{
+                        border: none!important;
+                        background-color: transparent;
+                        &:focus,&:hover{
+                            border: 1px solid $textfield-border !important;
+                        }
+                    }
+                }
+            }
+        }
+        .callout{
+            overflow-y: auto;
+            //forfirefox scrollbar
+            scrollbar-width: thin;
+            scrollbar-color: $disabled $surfaceColor;
+            &::-webkit-scrollbar{
+                width: 0.5rem;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: $surfaceColor;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: $disabled;
+                border-radius: 5rem;
+            }
+            border: 1px solid $textfield-border;
+            padding: 1.6rem 2.4rem; 
+            border-radius: 0.5rem;
+            max-height: 20.5rem;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        tbody{
+            display: flex;
+            flex-flow: column;
+            gap: 0.8rem;
+        }
+        tr{
+            display: flex;
+            align-items: center;
+            gap: 1.7rem;
+            @include set-background-color($backgroundColor);
+            padding: 0.8rem 1.3rem;
+            border-radius: 0.5rem;
+            td{
+                &:nth-child(1){
+                    min-width: 1.8rem;
+                    & > div{
+                        position: relative;
+                        input{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    flex: 1;
+                }
+                
+            }
+
+        }
+        .btn-opt-delete{
+            cursor: pointer;
+            width: 3rem;
+            height: 3rem;
+        }
+        .btn-add-opt{
+            margin-top: 1.6rem;
+            button{
+                margin: 0 auto;
+                border: none;
+                background-color: transparent;
+
+                &:focus,&:hover{
+                    background-color: $backgroundColor;
+                }
+            }
+            svg{
+                margin-left: 0.4rem;
+            }
+        }
+        .btnContainer{
+            margin-top: 1.6rem;
+            display: flex;
+            gap: 2.4rem;
+            align-self: flex-end;
+            button{
+               @extend %filled; 
+                flex: 1;
+                width: 16rem;
+            }
+            .cancel{
+                @include set-background-color($backgroundColor);
+            }
+            .add{
+                @include set-background-color($primaryColorLight);
+            }
+        }
+        input[type="text"],input[type="date"],input[type="tel"],input[type="email"],select,textarea{
+            border-radius: 0.5rem;
+            border-right: 1px solid $textfield-border !important;
+            min-width: 32.4rem;
+            padding-right: 1.6rem;
+            padding-left: 1.6rem;
+            &:focus{ 
+                border-right: 1px $mediumEmphasis solid!important;
+            }
+        }
+        textarea{
+            resize: none;
+            width: 100%;
+        }
+        input[type="checkbox"]{
+            position: relative;
+            border-color: $disabled;
+            border-width: 0.25rem;
+            border-style: solid;
+            border-radius: 0.5rem;
+            min-width: 1.7rem;
+            height: 1.7rem;
+            transition: 400ms ease;
+            &:focus,&:hover{
+                border-color: $primaryColorLight;
+            }
+            &:checked{
+                border-color: transparent;
+                width: 2rem;
+                height: 2rem;
+                &::before{
+                    background-image: url('../images/checked.svg');
+                }
+            }
+
+            &::before{
+                content: '';
+                display: inline-flex;
+                background-size: 100%;
+                background-position: center;
+                width: 100%;
+                height: 100%;
+            }
+
         }
     }
 }

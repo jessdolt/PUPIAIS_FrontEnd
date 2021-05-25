@@ -6,6 +6,7 @@
         width: 100%;
     }
 }
+
 .mainContent{
     &.adminForm{
         z-index: 5;
@@ -36,6 +37,7 @@
                 border-radius: 5rem;
             }
         }
+        //left side of the form -----------------------------
         .form:first-child{
             padding: 2.4rem 7.2rem;
             @include set-background-color($surfaceColor);
@@ -50,14 +52,48 @@
             }
             h3{
                 margin-top: 3.2rem;
+                text-align: center;
+                color: $primaryColorLight;
             }
-            input[type="text"],input[type="date"],input[type="tel"],input[type="email"],select{
+            input[type="text"],input[type="date"],input[type="tel"],input[type="email"],select,textarea{
                 border-radius: 0.5rem;
                 border-right: 1px solid $textfield-border !important;
                 min-width: 32.4rem;
+                padding-right: 1.6rem;
                 &:focus{ 
                     border-right: 1px $mediumEmphasis solid!important;
                 }
+            }
+            input[type="checkbox"]{
+                position: relative;
+                border-color: $disabled;
+                border-width: 0.25rem;
+                border-style: solid;
+                border-radius: 0.5rem;
+                min-width: 1.7rem;
+                height: 1.7rem;
+                transition: 400ms ease;
+                &:focus,&:hover{
+                    border-color: $primaryColorLight;
+                }
+                &:checked{
+                    border-color: transparent;
+                    width: 2rem;
+                    height: 2rem;
+                    &::before{
+                        background-image: url('../images/checked.svg');
+                    }
+                }
+
+                &::before{
+                    content: '';
+                    display: inline-flex;
+                    background-size: 100%;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+
             }
             .outsideLabel{
                 display: block;
@@ -80,11 +116,16 @@
                 input[type="radio"]{
                     width: 15rem;
                     height: 4rem;
+                    border: none;
                     &::before{
+                        //1,2 reset
+                        position: static;//1
+                        transform: translate(0);//2
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         height: 100%;
+                        width: 100%;
                         color: $primaryColorLight;
                         border-color: currentColor;
                         border: 1px solid;
@@ -142,7 +183,50 @@
                     margin-bottom: 4.8rem;
                 }
             }
+
+            //general setting at form that has 2 columns----------
+            .infoCon{
+                display: flex;
+                justify-content: space-between;
+                gap: 2.4rem;
+                border-bottom: 1px solid $disabled;
+                padding-bottom: 4.8rem;
+                
+                max-width: 100%;
+                &:last-child{
+                    border: none;
+                }
+                h3{
+                    margin-top: 1.6rem;
+                    overflow: hidden;
+                    display: block;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                textarea{
+                    resize: none;
+                }
+                .infoSubCon{
+                    margin-top: 0.6rem;
+                    max-width: 74.5rem;
+                    flex: 1;
+
+                    .smallComponentsContainer{
+                        & > div{
+                            flex: 1;
+                            //remove textfield min width
+                            .textFieldContainer{
+                                min-width: 0;
+                                input,select,textarea{
+                                    min-width: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+        //start of right side of the form-------------------------
         .form:last-child,.imageInputContainer,.btnGroupContainer{
             display: flex;
             flex-flow: column;
@@ -158,6 +242,9 @@
             box-shadow: $elevate1dp;
             @include respond-to('large'){
                 padding: 7.2rem 0rem 4.8rem;
+            }
+            h4{
+                color: $mediumEmphasis;
             }
             .closeIcon{
                 position: absolute;
