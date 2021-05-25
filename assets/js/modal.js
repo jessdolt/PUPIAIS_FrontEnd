@@ -40,9 +40,10 @@ const alertModalObj = {
         const previewFormHidden = document.querySelector("#preview-form-hidden");
 
         //modal for questionair add question
-        const newQuestBtn = document.querySelector(".addNewQuestion");
+        //JessDoIt
+        /* const newQuestBtn = document.querySelector(".addNewQuestion");
         const modalQuestionBg = document.querySelector(".addModalContainer");
-        const questionBtnCancel = document.querySelector(".addModalContainer .btnContainer .cancel");
+        const questionBtnCancel = document.querySelector(".addModalContainer .btnContainer .cancel"); */
         //--------------------Event Listeners------------------------
         if(btnLogout){
             btnLogout.addEventListener("click", generateLogoutModal);
@@ -60,10 +61,11 @@ const alertModalObj = {
             previewBtnImport.addEventListener("click", generatePreviewModal);
             previewFileInput.addEventListener("change", submitForm);
         }
-        if(newQuestBtn){
+        //JessDoIt
+        /* if(newQuestBtn){
             newQuestBtn.addEventListener("click", generateAddQuestion);
             questionBtnCancel.addEventListener("click", cancelAddQuestion);
-        }
+        } */
         
         //--------------------functions------------------------
         modalBtnCancel.forEach(element => element.onclick = () => {
@@ -91,12 +93,14 @@ const alertModalObj = {
         function refreshPage(){
             document.location.reload();
         }
+        //JessDoIt
+        /* 
         function generateAddQuestion(){
             modalQuestionBg.classList.add("show")
         }
         function cancelAddQuestion(){
             modalQuestionBg.classList.remove("show");
-        }
+        } */
     }
 }
 
