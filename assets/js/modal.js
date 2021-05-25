@@ -73,10 +73,10 @@ const alertModalObj = {
             modalLogout.classList.remove("show");
         })
 
-        /* function generateDeleteModal(){
+        function generateDeleteModalAll(){
             modalBackground.classList.add("show");
             modalDeleteAll.classList.add("show");
-        } */
+        }
 
         function generateLogoutModal(){
             modalBackground.classList.add("show");
