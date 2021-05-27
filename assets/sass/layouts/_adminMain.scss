@@ -4,6 +4,9 @@
     display: flex;
     flex-flow: column;
     max-height: calc(100vh - 6rem);
+    background-image: url('../images/PUP-Pylon.svg');
+    background-repeat: no-repeat;
+    background-position: bottom 0 right 9.5rem;
     .pageSpecificHeader{
         background-image: url("../images/stonksGraph.svg"),
                           url("../images/pageSpecificHeaderBg.png");

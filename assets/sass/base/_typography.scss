@@ -67,6 +67,20 @@ table{
         font-size: $basic-text;
     }
 }
+.mainContent{
+    .container{
+        h1{
+            font-size: 3.6rem;
+            font-weight: 500;
+        }
+        .surveyCard{
+            h3{
+                font-size: $h3-text-desktop;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
 
 //for adminNav
 .adminNav{
@@ -79,6 +93,9 @@ table{
     h3{
         font-size: $h3-text-mobile;
         text-transform: capitalize;
+        span{
+            font-size: inherit;
+        }
     }
     h4{
         font-size: $h3-text-mobile;
@@ -90,6 +107,12 @@ table{
 }
 .optionSpan{
     font-size: 2.7rem;
+}
+.answerCon{
+    li{
+        font-size: $basic-text;
+        font-weight: 500;
+    }
 }
 
 

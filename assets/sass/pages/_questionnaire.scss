@@ -1,18 +1,26 @@
 .mainContent{
-    &.adminForm.questionnaire{
+    &.questionnaire{
+        
         .form{
             &:first-child{
                 display: flex;
                 flex-flow: column;
                 gap: 3.2rem;
+                h2{
+                    & > button{
+                        @extend %filled;
+                        @include set-background-color($primaryColorLight);
+                        margin-left: auto;
+                    }
+                }
                 .questionCon{
                     display: flex;
                     flex-flow: column;
                     gap: 1.6rem;
-                    border: 1px solid $textfield-border;
+                    border-left: 4px solid $primaryColorLight;
                     border-radius: 0.5rem;
                     padding: 1.6rem 3.2rem;
-                    @include set-background-color($backgroundColor);
+                    box-shadow: $elevate2dp;
                 }
                 .questionHeader{
                     display: flex;
@@ -28,7 +36,7 @@
                     padding: 0.45rem 1rem;
                     border: 1px solid currentColor;
                     border-radius: 0.5rem;
-                    background-color: $surfaceColor;
+                    background-color: $backgroundColor;
                     color: $mediumEmphasis;
                 }
 
@@ -36,10 +44,14 @@
                     display: flex;
                     flex-flow: column;
                     gap: 0.8rem;
-                    div{
+                    div,ul{
                         display: flex;
                         align-items: flex-start;
                         gap: 0.8rem;
+                    }
+                    ul{
+                        list-style: disc;
+                        flex-flow: column;
                     }
                 }
 
@@ -65,20 +77,25 @@
                         border: 1px $mediumEmphasis solid;
                     }
                 }
-                & > button{
-                    @extend %filled;
-                    @include set-background-color($primaryColorLight);
-                }
+                
             }
-            &:last-child{
-                padding-left: 4.8rem;
-                padding-right: 4.8rem;
-                .surveyInfoCon{
-                    display: flex;
-                    flex-flow: column;
-                    gap: 0.8rem;
-                    padding-bottom: 2.4rem;
-                    border-bottom: 1px solid $disabled;
+        }
+        &.adminForm{
+            .form{
+                &:last-child{
+                    gap: 4rem;
+                    padding-left: 4.8rem;
+                    padding-right: 4.8rem;
+                    .surveyInfoCon{
+                        display: flex;
+                        flex-flow: column;
+                        gap: 0.8rem;
+                        padding-bottom: 2.4rem;
+                        border-bottom: 1px solid $disabled;
+                    }
+                    .dateInfo{
+                        margin-top: 0;
+                    }
                 }
             }
         }

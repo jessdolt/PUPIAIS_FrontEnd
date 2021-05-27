@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/js/card.js":
+/*!***************************!*\
+  !*** ./assets/js/card.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst card = {\r\n    init:() => {\r\n        const svg = document.querySelectorAll(\".card-svg\")\r\n        let colorChoices = [\"#C5C5C5\",\"#DCDCDC\",\"#9B9B9B\"]\r\n        if(svg){\r\n            svg.forEach(element => {\r\n                const listOfVector = element.children\r\n                //Fill array with color\r\n                if(colorChoices.length == 0){\r\n                    colorChoices = [\"#C5C5C5\",\"#DCDCDC\",\"#9B9B9B\"]\r\n                }\r\n                //------------------------------------------------\r\n                //loop through every vector\r\n                for(let i=0;i<listOfVector.length;i++){\r\n                   const selectedColor = rand(colorChoices)\r\n                    listOfVector[i].style.fill = selectedColor\r\n                }\r\n                //------------------------------------------------\r\n            })\r\n            //select a random color from the given array and delete the one selected\r\n            function rand(colorChoices){\r\n                let colorIndex = Math.floor(Math.random() * colorChoices.length)\r\n                const selectedColor = colorChoices[colorIndex]\r\n                let remove = colorChoices.splice(colorIndex, 1)\r\n                return selectedColor\r\n            }\r\n        }\r\n        \r\n    }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (card);\n\n//# sourceURL=webpack://PUPIAIS/./assets/js/card.js?");
+
+/***/ }),
+
 /***/ "./assets/js/index.js":
 /*!****************************!*\
   !*** ./assets/js/index.js ***!
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nav */ \"./assets/js/nav.js\");\n/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ \"./assets/js/modal.js\");\n/* harmony import */ var _table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./table */ \"./assets/js/table.js\");\n/* harmony import */ var _inputFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inputFunctions */ \"./assets/js/inputFunctions.js\");\n\r\n\r\n\r\n\r\n\r\n_nav__WEBPACK_IMPORTED_MODULE_0__.default.init();\r\n_modal__WEBPACK_IMPORTED_MODULE_1__.default.init();\r\n_table__WEBPACK_IMPORTED_MODULE_2__.default.init();\r\n_inputFunctions__WEBPACK_IMPORTED_MODULE_3__.default.init();\r\n/* if(module.hot){\r\n    module.hot.accept()\r\n}   */ \n\n//# sourceURL=webpack://PUPIAIS/./assets/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nav */ \"./assets/js/nav.js\");\n/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ \"./assets/js/modal.js\");\n/* harmony import */ var _table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./table */ \"./assets/js/table.js\");\n/* harmony import */ var _inputFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inputFunctions */ \"./assets/js/inputFunctions.js\");\n/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./card */ \"./assets/js/card.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n_nav__WEBPACK_IMPORTED_MODULE_0__.default.init();\r\n_modal__WEBPACK_IMPORTED_MODULE_1__.default.init();\r\n_table__WEBPACK_IMPORTED_MODULE_2__.default.init();\r\n_inputFunctions__WEBPACK_IMPORTED_MODULE_3__.default.init();\r\n_card__WEBPACK_IMPORTED_MODULE_4__.default.init();\r\n/* if(module.hot){\r\n    module.hot.accept()\r\n}   */ \n\n//# sourceURL=webpack://PUPIAIS/./assets/js/index.js?");
 
 /***/ }),
 
