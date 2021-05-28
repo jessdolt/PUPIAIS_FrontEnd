@@ -25,12 +25,23 @@ const inputUtil = {
             })
         }
         if(batchComboBox){
-            batchComboBox.addEventListener("click", setStudentId)
+            batchComboBox.addEventListener("change", setStudentId)
         }
         //--------------------functions------------------------
 
-        function setStudentId(){
-            studentIdBox.value = batchComboBox.value - 4;
+        function setStudentId(e){
+            try{
+                let selectedBatch = e.target.selectedOptions[0].attributes[1].value;
+                
+                    studentIdBox.value = selectedBatch - 4;
+            }
+            catch{
+                studentIdBox.value = "";
+            }
+            
+
+            
+            
         }
     }
 }

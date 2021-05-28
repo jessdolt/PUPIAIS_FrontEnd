@@ -1013,8 +1013,8 @@ table tbody {
   width: 100%;
   z-index: 24; }
   .userSurvey ~ .alumni .mainContent .container {
-    margin-top: 2.4rem;
-    margin-bottom: 2.4rem;
+    margin-top: 4.8rem;
+    margin-bottom: 4.8rem;
     box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
     border-radius: 1rem;
     padding: 0 4.2rem 8rem;
