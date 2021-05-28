@@ -4,6 +4,20 @@
         & > *{
             display: none;
         }
+        //except the userButton
+        & > button{
+            display: flex;
+            margin-left: auto;
+            //hide other options except logout
+            & ~ .userContainer{
+                & > a{
+                    display: none;
+                }
+                & > a:last-of-type{
+                    display: block;
+                }
+            }
+        }
     }
 
     .hamburgerIcon{
@@ -15,13 +29,17 @@
 
         .heroBox{
             height: 36rem;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
         }
         .mainContent{
-            position: absolute;
-            top:2.4rem;
+            
             width: 100%;
-            z-index: 2;
+            z-index: 24;
             .container{
+                margin-top: 2.4rem;
+                margin-bottom: 2.4rem;
                 box-shadow: $elevate24dp;
                 border-radius: 1rem;
                 padding: 0 4.2rem 8rem;
@@ -43,6 +61,7 @@
                     }
                     .surveyCard{
                         max-width: 65.6rem;
+                        width: 100%;
                         margin: 0 auto;
                         padding: 2.4rem 4.8rem;
                         p{
