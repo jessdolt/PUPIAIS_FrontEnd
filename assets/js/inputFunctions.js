@@ -33,15 +33,11 @@ const inputUtil = {
             try{
                 let selectedBatch = e.target.selectedOptions[0].attributes[1].value;
                 
-                    studentIdBox.value = selectedBatch - 4;
+                    studentIdBox.value = selectedBatch - 3;
             }
             catch{
                 studentIdBox.value = "";
             }
-            
-
-            
-            
         }
     }
 }
