@@ -38,11 +38,18 @@
             width: 100%;
             z-index: 24;
             .container{
-                margin-top: 4.8rem;
-                margin-bottom: 4.8rem;
+                /* use longhand margin property 
+                because there is a shorthand declaration 
+                of margin for all .container class */
+                margin: 3.2rem 1.6rem;
                 box-shadow: $elevate24dp;
                 border-radius: 1rem;
-                padding: 0 4.2rem 8rem;
+                padding: 0 1.6rem 4.8rem;
+                @include respond-to('medium2'){
+                    padding: 0 9.6rem 4.8rem;
+                    margin-top: 4.8rem;
+                    margin-bottom: 4.8rem;
+                }
                 @include set-background-color($surfaceColor);
                 .form{
                     gap: 2.4rem;
@@ -71,18 +78,22 @@
                         }
                         
                     }
+                    //for the link to the actual survey questions 
                     button,a{
+                        @extend %btn;
                         @extend %filled;
                         @include set-background-color($activeIndicator);
                         align-self: center;
                         width: 16rem;
                     }
-                    a{
-                        @extend %btn;
-                    }
+                    //submit the survey
                     button{
-                        align-self: flex-end;
+                        align-self: center;
+                        @include respond-to('medium2'){
+                            align-self: flex-end;
+                        }
                         width: 18rem;
+
                     }
                 }
             }

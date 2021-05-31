@@ -16,6 +16,7 @@ $activeIndicator: #15CC8A;
 
 //Font Sizes
 //mobile
+$smallest-text: 1.2rem;
 $basic-text: 1.4rem;
 $h3-text-mobile: 1.8rem;
 $h2-text-mobile: 2.4rem;
@@ -68,7 +69,9 @@ $elevate24dp:
 //breakpoints
 $breakpoints: (
     'medium' : 415px,
+    'medium2': 800px,
     'large' : 1367px
 );
 
-//idotIdeaSize
+//util
+

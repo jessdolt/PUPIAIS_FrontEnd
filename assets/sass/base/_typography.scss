@@ -31,7 +31,10 @@ header h1{
 }
 
 h2{
-    font-size: $h2-text-mobile;
+    font-size: $h3-text-mobile;
+    @include respond-to('medium2'){
+        font-size: $h2-text-mobile;
+    }
     @include respond-to('large'){
         font-size: $h2-text-desktop;
     }
@@ -67,11 +70,52 @@ table{
         font-size: $basic-text;
     }
 }
+//index
+.welcomeBox{
+    h2{
+        font-size: $h3-text-mobile;
+        @include respond-to('medium2'){
+            font-size: $h2-text-mobile;
+        }
+    }
+}
+.card{
+    h3{
+        font-size: $basic-text;
+        font-weight: 500;
+        @include respond-to('medium2'){
+            font-size: $h3-text-desktop;
+            font-weight: 400;
+        }
+    }
+    &.jobs{
+        h3{
+            @include respond-to('medium2'){
+                font-size: $basic-text;
+                font-weight: 500;
+            }
+        }
+    }
+    .date-posted{
+        font-size: $smallest-text;
+        color: $mediumEmphasis;
+    }
+    a{
+        font-family: 'Roboto Slab', serif;
+        font-weight: 500;
+    }
+}
+    
+
+//userSurvey
 .mainContent{
     .container{
         h1{
-            font-size: 3.6rem;
+            font-size: $h3-text-mobile;
             font-weight: 500;
+            @include respond-to('medium2'){
+                font-size: $h1-text-desktop;
+            }
         }
         .surveyCard{
             h3{
@@ -102,6 +146,7 @@ table{
     }
 }
 
+//form
 .outsideLabel,label{
     font-size: $basic-text;
 }
@@ -156,13 +201,21 @@ table{
 .mainFooter{
     h1{
         font-family: 'Cinzel', serif;
-        font-size: $h3-text-desktop;
         font-weight: 700;
+        font-size: $h3-text-desktop;
+        font-size: $h3-text-mobile;
+        @include respond-to('medium2'){
+            font-size: $h3-text-desktop;
+        }
         span{
-            font-size: $overline-text-desktop;
             font-family: inherit;
             font-weight: inherit;
             color: $primaryColorLight;
+            letter-spacing: 0.15rem;
+            font-size: $basic-text;
+            @include respond-to('medium2'){
+                font-size: $overline-text-desktop;
+            }
         }
     }
     .tagline{
@@ -170,6 +223,9 @@ table{
         text-transform: uppercase;
         font-style: italic;
         font-weight: 800;
-        font-size: $overline-text-desktop;
+        font-size: 1.6rem;
+        @include respond-to('medium2'){
+            font-size: $overline-text-desktop;
+        }
     }
 }

@@ -28,7 +28,7 @@
     background-color: $primaryColor;
     background-size: 4rem 4rem;
     background-position: center bottom 5rem;
-    @include respond-to('large'){
+    @include respond-to('medium2'){
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -49,7 +49,7 @@
         width: 4.8rem;
         height: 4.8rem;
         align-self: center;
-        @include respond-to('large'){
+        @include respond-to('medium2'){
             display: none;
         }
     }
@@ -58,7 +58,7 @@
         display: flex;
         gap: .8rem;
         flex-flow: column;
-        @include respond-to('large'){
+        @include respond-to('medium2'){
             flex-flow: row;
         }
         a{
@@ -69,7 +69,7 @@
             border: $surfaceColor .1rem solid;
             color: $surfaceColor;
             text-align: center;
-            @include respond-to('large'){
+            @include respond-to('medium2'){
                 display: block;
                 width: initial;
                 line-height: 4.6rem;
@@ -87,7 +87,7 @@
         display: none;
         text-transform: capitalize;
         @extend %filled;
-        @include respond-to('large'){
+        @include respond-to('medium2'){
             @include set-background-color($surfaceColor);
             display: flex;
             padding: 0 1.6rem;
@@ -154,7 +154,7 @@
     h1{
         text-align: center;
         align-self: flex-end;
-        @include respond-to('large'){
+        @include respond-to('medium2'){
             display: none;
         }
     }

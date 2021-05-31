@@ -1,9 +1,9 @@
 .mainFooter{
     @include set-background-color(#42464F);
     position: relative;
-    top: 10.6rem;
+    top: 6rem;
     height: 40rem;
-    padding: 6rem 0;
+    padding: 6rem 6.1rem;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -11,6 +11,10 @@
     background-image: url('../images/PUP-Pylon-footer.png');
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: $elevate1dp;
+    @include respond-to('medium2'){
+        top: 10.6rem;
+    }
     &>*{
         z-index: 2;
     }
@@ -46,7 +50,11 @@
         color: currentColor;
         margin-bottom: 1.6rem;
         width: 100%;
-        max-width: 40rem;
+        max-width: 22.8rem;
+        @include respond-to('medium2'){
+            max-width: 40rem;
+        }
+        
     }
     .tagline{
         margin-bottom: auto;

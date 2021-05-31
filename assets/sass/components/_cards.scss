@@ -1,0 +1,126 @@
+
+.card{
+    @include set-background-color($backgroundColor);
+    @include respond-to('medium2'){
+        border-radius: 1rem;
+        max-width: 86.8rem;
+    }
+    //margin  2.4rem all elements inside newsCon except image
+    .card-img{
+        @include set-background-color(#121212);
+        margin: 0;
+        min-height: 20rem;
+        min-width: 36rem;
+        width: 100vw;
+        height: calc(100vw - 60vw);
+        
+        object-fit: cover;
+        @include respond-to('medium2'){
+            width: 100%;
+            max-height: 48.7rem;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+        &::before{
+            display: none;
+        }
+    }
+    .card-body{
+        padding: 2.4rem 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        @include respond-to('medium2'){
+            display: block;
+        }
+        .caption{
+            border-top: 1px solid $primaryColorLight;
+            padding-top: 0.4rem;
+            margin-top: 0.4rem;
+            @include respond-to('medium'){
+                padding-top: 0.8rem;
+                margin-top: 0.8rem;
+            }
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-flow: column;
+            gap: 1.2rem;
+            justify-content: space-between;
+            @include respond-to('medium'){
+                flex-flow: row;
+                align-items: center;
+                margin-bottom: 2.4rem;
+            }
+        }
+        a,.date-posted{
+            display: inline-flex;
+            align-items: center;
+        }
+        .date-posted{
+            gap: 0.4rem;
+        }
+
+        .description{
+            margin-bottom: 0.8rem;
+            @include respond-to('medium2'){
+                margin-bottom: 2.4rem;
+            }
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+        }
+        .workType{
+            padding: 0.4rem 1.6rem;
+            border-radius: 0.5rem;
+            &.fullTime{
+                @include set-background-color($primaryColorLight);
+            }
+            &.partTime{
+                @include set-background-color($secondaryColor);
+            }
+        }
+    }
+}
+.events{
+    &.card{
+        @include set-background-color($primaryColorLight);
+        *{
+            color: currentColor;
+        }
+        .card-img{
+            @include respond-to('medium2'){
+                min-width: 0;
+                min-height: 0;
+                max-height: 16.4rem;
+            }
+        }
+        .card-body{
+            .caption{
+                border-color: currentColor;
+            }
+        }
+    }
+}
+.jobs{
+    &.card{
+        border-radius: 1rem;
+        margin: 0 2.4rem;
+        @include respond-to('medium2'){
+            margin: 0;
+        }
+        @include set-background-color($surfaceColor);
+        border: 1px solid $primaryColorLight;
+        .card-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-body{
+            .caption{
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+}
+    
