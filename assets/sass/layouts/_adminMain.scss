@@ -319,17 +319,20 @@
             padding: 2.4rem;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
-
-            button{
+            a{
+                @extend %btn;
+            }
+            a,button{
                 @extend %filled;
                 font-weight: 400;
-                min-height: 3rem;
+                min-height: 3rem !important;
                 text-transform: capitalize;
                 svg{
                     width: 2.4rem;
                     height: 2.4rem;
                 }
             }
+            
             
             .deleteSelected{
                 visibility: hidden;
@@ -359,6 +362,7 @@
                 padding: 0;
                 min-width: 3rem;
                 background-color: transparent;
+                border-radius: 2.5rem;
                 &:hover,:focus{
                     background-color: $backgroundColor;
                 }

@@ -37,28 +37,56 @@ const nav = {
                 break;
             case 'Admin':
                 //check if filterNav is on the page
-                let main = document.querySelector(".main");
-                if(main != null){
-                    if(main.childNodes[3].classList.contains("filterNav")){
-                        const allUser = document.querySelector(".allUser")
-                        const groupHeader = document.querySelectorAll(".groupHeader")
-                        groupHeader.forEach(element=>element.addEventListener("click",()=>{
-                            let isActive = element.classList.contains("active")
-                            if(isActive){
-                                element.classList.remove("active")
-                            }
-                            else{
-                                groupHeader.forEach(boom=>boom.classList.remove("active"))
-                                allUser.classList.remove("active")
-                                element.classList.add("active")
-                            }
-                        }))
-    
-                        allUser.addEventListener("click", () => {
-                                groupHeader.forEach(boom=>boom.classList.remove("active"))
-                                allUser.classList.add("active")
-                        })
-                    }
+                let filterNav = document.querySelector(".filterNav");
+                if(filterNav){
+                    const allUser = document.querySelector(".allUser")
+                    const manage = document.querySelector(".btnContainer")
+                    const deptHead = document.querySelectorAll(".deptHead")
+                    const groupHeader = document.querySelectorAll(".groupHeader")
+                    manage.addEventListener("click",()=>{
+                        let isActive = manage.classList.contains("active")
+                        if(isActive){
+                            manage.classList.remove("active")
+                            deptHead.forEach(boom=>boom.classList.remove("active"))
+                            groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.remove("active")
+                        }
+                        else{
+                            deptHead.forEach(boom=>boom.classList.add("active"))
+                            groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.remove("active")
+                            manage.classList.add("active")
+                        }
+                    })
+                    deptHead.forEach(element=>element.addEventListener("click",()=>{
+                        let isActive = element.classList.contains("active")
+                        if(isActive){
+                            element.classList.remove("active")
+                        }
+                        else{
+                            deptHead.forEach(boom=>boom.classList.remove("active"))
+                            groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.remove("active")
+                            element.classList.add("active")
+                        }
+                    }))
+                    groupHeader.forEach(element=>element.addEventListener("click",()=>{
+                        let isActive = element.classList.contains("active")
+                        if(isActive){
+                            element.classList.remove("active")
+                        }
+                        else{
+                            groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.remove("active")
+                            element.classList.add("active")
+                        }
+                    }))
+
+                    allUser.addEventListener("click", () => {
+                            deptHead.forEach(boom=>boom.classList.remove("active"))
+                            groupHeader.forEach(boom=>boom.classList.remove("active"))
+                            allUser.classList.add("active")
+                    })
                 }
                 //--------------------Variable Declaration------------------------
                 //adminNav

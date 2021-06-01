@@ -140,6 +140,33 @@
             @include respond-to('medium2'){
                 grid-row: 2/3;
             }
+            //reset
+            & > a{
+                padding: 0;
+                text-align: start;
+                display: block;
+                text-transform: initial;
+                border-radius: 1rem;
+                margin: 0 2.4rem;
+                &:focus,&:hover{
+                    text-decoration: none;
+                }
+                @include respond-to('medium2'){
+                    margin: 0;
+                }
+                @include set-background-color($surfaceColor);
+                border: 1px solid $primaryColorLight;
+                .card-title{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .card-body{
+                    .caption{
+                        margin-bottom: 0.8rem;
+                    }
+                }
+            }
         }
     }
 }

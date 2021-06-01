@@ -21,16 +21,43 @@
         .btnContainer{
             display: flex;
             flex-flow: column;
-            gap:2.4rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 0.05rem solid $disabled;
-            margin-bottom: 3.2rem;
-            & > *{
-                text-transform: capitalize;
-                justify-content: flex-start;
-                & > *{
-                    margin-left: auto;
+            gap:0.8rem;
+            margin-bottom: 2.4rem;
+            border-radius: 2.5rem;
+            @include set-background-color($surfaceColor);
+            &>button{
+                justify-content: space-between!important;
+            }
+            svg.active{
+                display: none;
+            }
+            &.active{
+                .manageUsers{
+                    @include set-background-color($primaryColorLight);
+                    //icons
+                    svg.default{
+                        display: none;
+                    }
+                    svg.active{
+                        display: inline;
+                    }
                 }
+                .manageOptions{
+                    visibility: visible;
+                    max-height: 200px;
+                    opacity: 1;
+                }
+                & ~ .department .groupHeader{
+                    //the alumni count
+                    & > span:last-of-type{ 
+                        display: none;
+                    }
+                    & svg{
+                        display: block !important;
+                    }
+                }
+                 
+                
             }
 
             .manageUsers{
@@ -43,61 +70,116 @@
                     height: 2.4rem;
                 }
             }
-            a{
-                @extend %btn;
+            .manageOptions{
+                visibility: hidden;
+                max-height: 0;
+                opacity: 0;
+                transition: 200ms ease, visibility 100ms ease;
+                button{
+                    @include set-background-color($surfaceColor);
+                    text-transform: capitalize;
+
+                    &:focus, &:hover{
+                        box-shadow: none;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .allUser{
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            @extend %btn;
                 @include set-background-color($backgroundColor);
                 min-height: 3rem;
                 text-decoration: none;
                 &.active{
                     @include set-background-color($surfaceColor);
                 }
-            }
         }
-        .groupList{
+        .department, .groupList{
             display: flex;
             flex-flow: column;
             gap: 0.8rem;
-
-            .group{
-                .groupHeader{
-                    text-transform: uppercase;
-                    justify-content: flex-start;
-                    position: relative;
+        }
+        .department{
+            margin-top: 3.2rem;
+            & > li{
+                &> .deptHead{
+                    text-transform: capitalize;
+                    justify-content: space-between;
+                    //overide
+                    padding: 0 0.8rem;
+                    svg{
+                        transition: 200ms ease;
+                    }
                     &.active{
                         @include set-background-color($surfaceColor);
-                        & ~ .subGroupList{
+                        & ~ .groupList{
+                            //show
+                            display: flex;
                             visibility: visible;
                             opacity: 1;
-                            max-height: initial;
+                            max-height: 200px;
+                        }
+                        svg{
+                            transform: rotate(180deg);
                         }
                     }
-                    & > span:first-child{
-                        position: absolute;
-                        left: 8rem;
-                    }
-
-                    & > span:last-child{
-                        margin-left: auto;
-                    }
-                }
+                    
+                } 
             }
-            .subGroupList{
-                transition: 200ms ease;
+            .groupList{
                 visibility: hidden;
                 opacity: 0;
                 max-height: 0;
-                display: flex;
                 margin-top: 0.8rem;
-                flex-flow: column;
-                gap: 0.8rem;
-                a{
-                    display: inline-block;
-                    width: 100%;
-                    color: set-text-color($backgroundColor);
-                    font-weight: 500;
+                transition: 200ms ease, visibility 100ms ease;
+                .group{
+                    .groupHeader{
+                        text-transform: uppercase;
+                        justify-content: flex-start;
+                        position: relative;
+                        &.active{
+                            @include set-background-color($surfaceColor);
+                            & ~ .subGroupList{
+                                visibility: visible;
+                                opacity: 1;
+                                max-height: initial;
+                            }
+                        }
+                        & > span:first-of-type{
+                            position: absolute;
+                            left: 8rem;
+                        }
+    
+                        & > span:last-of-type,svg{ 
+                            margin-left: auto;
+                        }
+                        svg{
+                            display: none;
+                        }
+                    }
+                }
+                .subGroupList{
+                    transition: 200ms ease;
+                    visibility: hidden;
+                    opacity: 0;
+                    max-height: 0;
+                    display: flex;
+                    margin-top: 0.8rem;
+                    flex-flow: column;
+                    gap: 0.8rem;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        color: set-text-color($backgroundColor);
+                        font-weight: 500;
+                    }
                 }
             }
         }
+        
         .allUserCount,.groupUserCount{
             @include set-background-color($primaryColorLight);
             padding: 0 0.6rem;
