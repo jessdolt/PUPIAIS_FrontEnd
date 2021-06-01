@@ -1923,7 +1923,7 @@ ul {
   border-style: solid;
   border-radius: 0.5rem; }
 
-.mainNav button, .mainNav > a, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .userSurvey ~ .alumni .mainContent .container .form button, .userSurvey ~ .alumni .mainContent .container .form a, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination a, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer button, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .home .mainContent .newsCon > a, .home .mainContent .eventsCon > a, .home .mainContent .jobCon > a, .loginMain form button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .mainContent.questionnaire .form:first-child h2 > button {
+.mainNav button, .mainNav > a, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .userSurvey ~ .alumni .mainContent .container .form button, .userSurvey ~ .alumni .mainContent .container .form a, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination a, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer button, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .modalFilterNav .btnContainer button, .home .mainContent .newsCon > a, .home .mainContent .eventsCon > a, .home .mainContent .jobCon > a, .loginMain form button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .mainContent.questionnaire .form:first-child h2 > button {
   border: 1px solid transparent; }
 
 .icon {
@@ -1994,7 +1994,7 @@ ul {
         width: 1.8rem;
         height: 2rem; }
 
-.modalContainer, .addModalContainer {
+.modalContainer, .addModalContainer, .modalConFilterNav {
   display: none;
   position: absolute;
   top: 50%;
@@ -2006,7 +2006,7 @@ ul {
   z-index: 25;
   align-items: center;
   justify-content: center; }
-  .modalContainer.show, .addModalContainer.show {
+  .modalContainer.show, .addModalContainer.show, .modalConFilterNav.show {
     display: flex; }
 
 .modalContainer .hidden-form {
@@ -2351,6 +2351,54 @@ ul {
       background-position: center;
       width: 100%;
       height: 100%; }
+
+.modalFilterNav {
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.87);
+  width: 61.4rem;
+  padding: 2.4rem 4rem;
+  border-radius: 1rem;
+  display: none;
+  flex-flow: column;
+  gap: 1.6rem; }
+  .modalFilterNav.newDept.show {
+    display: flex; }
+  .modalFilterNav.newCourse.show {
+    display: flex; }
+  .modalFilterNav.newBatch.show {
+    display: flex; }
+  .modalFilterNav h1 {
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 0.8rem; }
+  .modalFilterNav .btnContainer {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.4rem; }
+    .modalFilterNav .btnContainer button {
+      min-height: 4rem;
+      width: 16rem; }
+      .modalFilterNav .btnContainer button:last-of-type {
+        background-color: #A63F3F;
+        color: #FFFFFF; }
+  .modalFilterNav input[type="text"], .modalFilterNav input[type="date"], .modalFilterNav input[type="tel"], .modalFilterNav input[type="email"], .modalFilterNav select, .modalFilterNav textarea {
+    border-radius: 0.5rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+    min-width: 32.4rem;
+    padding-right: 1.6rem;
+    padding-left: 1.6rem; }
+    .modalFilterNav input[type="text"]:focus, .modalFilterNav input[type="date"]:focus, .modalFilterNav input[type="tel"]:focus, .modalFilterNav input[type="email"]:focus, .modalFilterNav select:focus, .modalFilterNav textarea:focus {
+      border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
+  .modalFilterNav [for="batch-id"] ~ .textFieldContainer::before {
+    content: 'Batch:';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.6);
+    padding-left: 1.6rem; }
+  .modalFilterNav #batch-id {
+    padding-left: 6rem; }
 
 .card {
   background-color: #EEEEEE;
@@ -2702,12 +2750,20 @@ ul {
   background-color: #EEEEEE;
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   z-index: 21; }
-  .users .filterNav button, .users .filterNav a {
-    min-height: 3rem;
+  .users .filterNav button {
     width: 100%; }
+  .users .filterNav button, .users .filterNav a {
+    min-height: 3rem; }
     .users .filterNav button svg, .users .filterNav a svg {
       width: 2.1rem;
-      height: 2.1rem; }
+      height: 2.1rem;
+      transition: 200ms ease; }
+  .users .filterNav .settings {
+    width: 2.1rem;
+    height: 2.1rem;
+    cursor: pointer; }
+    .users .filterNav .settings:focus, .users .filterNav .settings:hover {
+      opacity: 0.8; }
   .users .filterNav .btnContainer {
     display: flex;
     flex-flow: column;
@@ -2769,6 +2825,8 @@ ul {
     .users .filterNav .allUser.active {
       background-color: #FFFFFF;
       color: rgba(0, 0, 0, 0.87); }
+  .users .filterNav hr {
+    color: rgba(0, 0, 0, 0.38); }
   .users .filterNav .department, .users .filterNav .groupList {
     display: flex;
     flex-flow: column;
@@ -2779,8 +2837,6 @@ ul {
       text-transform: capitalize;
       justify-content: space-between;
       padding: 0 1.6rem 0 0.8rem; }
-      .users .filterNav .department > li > .deptHead svg {
-        transition: 200ms ease; }
       .users .filterNav .department > li > .deptHead.active {
         background-color: #FFFFFF;
         color: rgba(0, 0, 0, 0.87); }
@@ -2810,6 +2866,8 @@ ul {
             visibility: visible;
             opacity: 1;
             max-height: initial; }
+          .users .filterNav .department .groupList .group .groupHeader.active svg {
+            transform: rotate(180deg); }
         .users .filterNav .department .groupList .group .groupHeader > span:first-of-type {
           position: absolute;
           left: 8rem; }
@@ -2829,10 +2887,10 @@ ul {
         .users .filterNav .department .groupList .subGroupList .subGroup {
           display: flex;
           padding: 0 1.6rem;
-          align-items: center; }
+          align-items: center;
+          justify-content: space-between; }
         .users .filterNav .department .groupList .subGroupList a {
-          display: inline-block;
-          width: 100%;
+          flex: 1;
           color: rgba(0, 0, 0, 0.87);
           font-weight: 500;
           text-align: left; }

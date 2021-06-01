@@ -43,6 +43,7 @@ const nav = {
                     const manage = document.querySelector(".btnContainer")
                     const deptHead = document.querySelectorAll(".deptHead")
                     const groupHeader = document.querySelectorAll(".groupHeader")
+                    const settIcon = document.querySelectorAll(".settings")
                     manage.addEventListener("click",()=>{
                         let isActive = manage.classList.contains("active")
                         if(isActive){
@@ -58,8 +59,6 @@ const nav = {
                             manage.classList.add("active")
                         }
                     })
-                    console.log(manage.classList.contains("active"))
-                    
                     deptHead.forEach(element=>element.addEventListener("click",()=>{
                         if(manage.classList.contains("active") == false){
                             let isActive = element.classList.contains("active")
@@ -75,7 +74,6 @@ const nav = {
                         }
                     }))
                     
-                    
                     groupHeader.forEach(element=>element.addEventListener("click",()=>{
                         let isActive = element.classList.contains("active")
                         if(isActive){
@@ -86,6 +84,10 @@ const nav = {
                             allUser.classList.remove("active")
                             element.classList.add("active")
                         }
+                    }))
+                    
+                    settIcon.forEach(element=>element.addEventListener("click",()=>{
+                        alert("allo")
                     }))
 
                     allUser.addEventListener("click", () => {

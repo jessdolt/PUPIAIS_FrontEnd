@@ -9,13 +9,24 @@
         background-color: $backgroundColor;
         box-shadow: $elevate24dp;
         z-index: 21;
+        button{
+            width: 100%;
+        }
         button,a{
             @extend %filled;
             min-height: 3rem;
-            width: 100%;
             svg{
                 width: 2.1rem;
                 height: 2.1rem;
+                transition: 200ms ease;
+            }
+        }
+        .settings{
+            width: 2.1rem;
+            height: 2.1rem;
+            cursor: pointer;
+            &:focus,&:hover{
+            opacity: 0.8;
             }
         }
         .btnContainer{
@@ -105,6 +116,9 @@
                     @include set-background-color($surfaceColor);
                 }
         }
+        hr{
+            color: $disabled;
+        }
         .department, .groupList{
             display: flex;
             flex-flow: column;
@@ -118,9 +132,6 @@
                     justify-content: space-between;
                     //overide
                     padding: 0 1.6rem 0 0.8rem;
-                    svg{
-                        transition: 200ms ease;
-                    }
                     &.active{
                         @include set-background-color($surfaceColor);
                         & ~ .groupList{
@@ -158,6 +169,9 @@
                                 opacity: 1;
                                 max-height: initial;
                             }
+                            svg{
+                                transform: rotate(180deg);
+                            }
                         }
                         & > span:first-of-type{
                             position: absolute;
@@ -185,14 +199,15 @@
                         display: flex;
                         padding: 0 1.6rem;
                         align-items: center;
+                        justify-content: space-between;
                     }
                     a{
-                        display: inline-block;
-                        width: 100%;
+                        flex: 1;
                         color: set-text-color($backgroundColor);
                         font-weight: 500;
                         text-align: left
                     }
+                    
                 }
             }
         }

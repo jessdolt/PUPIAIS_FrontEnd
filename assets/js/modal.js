@@ -12,8 +12,6 @@ const alertModalObj = {
                 else{
                     actualURL = dataUrl;
                 }
-                
-
                 modalBtnDelete.setAttribute("href", actualURL);
                 modalBackground.classList.add("show");
                 modalDelete.classList.add("show");

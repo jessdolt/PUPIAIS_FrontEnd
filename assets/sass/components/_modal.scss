@@ -1,5 +1,5 @@
-//same bg setting for preview and question modal
-.modalContainer,.addModalContainer{
+//same bg setting for preview, question, filterNav modal
+.modalContainer,.addModalContainer,.modalConFilterNav{
     display: none;
     position: absolute;
     top: 50%;
@@ -480,5 +480,71 @@
             }
 
         }
+    }
+}
+
+//for filterNav
+.modalFilterNav{
+    @include set-background-color($surfaceColor);
+    width: 61.4rem;
+    padding: 2.4rem 4rem;
+    border-radius: 1rem;
+    display: none;
+    flex-flow: column;
+    gap: 1.6rem;
+    //newdept
+    &.newDept.show{
+        display: flex;
+    }
+    &.newCourse.show{
+        display: flex;
+    }
+    &.newBatch.show{
+        display: flex;
+    }
+    h1{
+        border-bottom: 1px solid $backgroundColor;
+        margin-bottom: 0.8rem;
+    }
+    .btnContainer{
+        margin-top: 2.4rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2.4rem;
+        button{
+            @extend %filled;
+            min-height: 4rem;
+            width: 16rem;
+            &:last-of-type{
+                @include set-background-color($primaryColorLight);
+            }
+        }
+    }
+
+    //single components
+    input[type="text"],input[type="date"],input[type="tel"],input[type="email"],select,textarea{
+        border-radius: 0.5rem;
+        border-right: 1px solid $textfield-border !important;
+        min-width: 32.4rem;
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+        &:focus{ 
+            border-right: 1px $mediumEmphasis solid!important;
+        }
+    }
+    //for batch
+    [for="batch-id"] ~ .textFieldContainer{
+        &::before{
+            content: 'Batch:';
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            font-size: $basic-text;
+            color: $mediumEmphasis;
+            padding-left: 1.6rem;
+        }
+    }
+    #batch-id{
+        padding-left: 6rem;
     }
 }
