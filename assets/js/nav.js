@@ -58,18 +58,24 @@ const nav = {
                             manage.classList.add("active")
                         }
                     })
+                    console.log(manage.classList.contains("active"))
+                    
                     deptHead.forEach(element=>element.addEventListener("click",()=>{
-                        let isActive = element.classList.contains("active")
-                        if(isActive){
-                            element.classList.remove("active")
-                        }
-                        else{
-                            deptHead.forEach(boom=>boom.classList.remove("active"))
-                            groupHeader.forEach(boom=>boom.classList.remove("active"))
-                            allUser.classList.remove("active")
-                            element.classList.add("active")
+                        if(manage.classList.contains("active") == false){
+                            let isActive = element.classList.contains("active")
+                            if(isActive){
+                                element.classList.remove("active")
+                            }
+                            else{
+                                deptHead.forEach(boom=>boom.classList.remove("active"))
+                                groupHeader.forEach(boom=>boom.classList.remove("active"))
+                                allUser.classList.remove("active")
+                                element.classList.add("active")
+                            }
                         }
                     }))
+                    
+                    
                     groupHeader.forEach(element=>element.addEventListener("click",()=>{
                         let isActive = element.classList.contains("active")
                         if(isActive){

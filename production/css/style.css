@@ -2453,8 +2453,10 @@ ul {
     align-items: center;
     justify-content: space-between;
     flex-flow: wrap; }
-  .jobs.card .card-body .caption {
-    margin-bottom: 0.8rem; }
+  .jobs.card .card-body {
+    padding: 0.8rem 0; }
+    .jobs.card .card-body .caption {
+      margin-bottom: 0.8rem; }
 
 .home > section.welcomeBox .container {
   display: flex;
@@ -2709,7 +2711,6 @@ ul {
   .users .filterNav .btnContainer {
     display: flex;
     flex-flow: column;
-    gap: 0.8rem;
     margin-bottom: 2.4rem;
     border-radius: 2.5rem;
     background-color: #FFFFFF;
@@ -2728,7 +2729,12 @@ ul {
     .users .filterNav .btnContainer.active .manageOptions {
       visibility: visible;
       max-height: 200px;
-      opacity: 1; }
+      opacity: 1;
+      margin-top: 0.8rem; }
+    .users .filterNav .btnContainer.active ~ .department .deptHead svg:first-of-type {
+      display: none; }
+    .users .filterNav .btnContainer.active ~ .department .deptHead svg:last-of-type {
+      display: inline; }
     .users .filterNav .btnContainer.active ~ .department .groupHeader > span:last-of-type {
       display: none; }
     .users .filterNav .btnContainer.active ~ .department .groupHeader svg {
@@ -2772,7 +2778,7 @@ ul {
     .users .filterNav .department > li > .deptHead {
       text-transform: capitalize;
       justify-content: space-between;
-      padding: 0 0.8rem; }
+      padding: 0 1.6rem 0 0.8rem; }
       .users .filterNav .department > li > .deptHead svg {
         transition: 200ms ease; }
       .users .filterNav .department > li > .deptHead.active {
@@ -2785,6 +2791,8 @@ ul {
           max-height: 200px; }
         .users .filterNav .department > li > .deptHead.active svg {
           transform: rotate(180deg); }
+      .users .filterNav .department > li > .deptHead svg:last-of-type {
+        display: none; }
     .users .filterNav .department .groupList {
       visibility: hidden;
       opacity: 0;
@@ -2807,7 +2815,7 @@ ul {
           left: 8rem; }
         .users .filterNav .department .groupList .group .groupHeader > span:last-of-type, .users .filterNav .department .groupList .group .groupHeader svg {
           margin-left: auto; }
-        .users .filterNav .department .groupList .group .groupHeader svg {
+        .users .filterNav .department .groupList .group .groupHeader > svg:last-of-type {
           display: none; }
       .users .filterNav .department .groupList .subGroupList {
         transition: 200ms ease;
@@ -2818,11 +2826,16 @@ ul {
         margin-top: 0.8rem;
         flex-flow: column;
         gap: 0.8rem; }
+        .users .filterNav .department .groupList .subGroupList .subGroup {
+          display: flex;
+          padding: 0 1.6rem;
+          align-items: center; }
         .users .filterNav .department .groupList .subGroupList a {
           display: inline-block;
           width: 100%;
           color: rgba(0, 0, 0, 0.87);
-          font-weight: 500; }
+          font-weight: 500;
+          text-align: left; }
   .users .filterNav .allUserCount, .users .filterNav .groupUserCount {
     background-color: #A63F3F;
     color: #FFFFFF;
