@@ -150,6 +150,16 @@ table{
     }
 }
 
+.editProfile{
+    h3{
+        font-size: $basic-text;
+        font-weight: 500;
+        @include respond-to('medium2'){
+            font-size: $h3-text-mobile;
+        }
+    }
+}
+
 //form
 .outsideLabel,label{
     font-size: $basic-text;
