@@ -1,0 +1,111 @@
+.news{
+    & > section{
+        &.heroBox{
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: wrap;
+                gap: 1.6rem;
+                padding: 0.8rem 0 1.6rem;
+                @include respond-to('medium2'){
+                    padding: 0.8rem 0;
+                    justify-content: space-between;
+                }
+                h1{
+                    font-size: calc(1.8rem + 1vw);
+                    text-align: center;
+                    max-width: max-content;
+                }
+
+                .textFieldContainer{
+                    border-radius: 5rem;
+                    min-width: 30rem;
+                    input{
+                        border-radius: 5rem 0 0 5rem;
+                    }
+                    .icon{
+                        border-radius: 0 5rem 5rem 0;
+                    }
+                }
+            }
+        }
+        &.mainContent{
+            padding-top: 2.4rem;
+            
+            .card-img{
+                //reset
+                width: initial;
+                flex: 1;
+                @include respond-to('medium2'){
+                    width: 41.2rem;
+                    max-height: 23rem;
+                    flex: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: 1rem;
+                }
+            }
+            .card-body{
+                flex: 1;
+                .caption{
+                    margin-top: 0;
+                    margin-bottom: 1.6rem;
+                }
+                .description{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    overflow: hidden;
+                    @include respond-to('medium2'){
+                        margin-bottom: 1.6rem;
+                    }
+                }
+                
+            }
+        }
+        &.moreContent{
+            @include set-background-color($primaryColorLight);
+            .additional{
+                padding: 2.4rem 2.4rem 3.2rem;
+                @include respond-to('medium2'){
+                    padding: 2.4rem 0 3.2rem;
+                }
+                h3{
+                    border-color: $backgroundColor;
+                    margin-bottom: 2.4rem;
+                    @include respond-to('medium2'){
+                        margin-bottom: 3.2rem;
+                    }
+                }
+                ul{
+                    display: flex;
+                    flex-flow: column;
+                    row-gap: 0.8rem;
+                    padding: 0 0.8rem;
+                    @include respond-to('medium2'){
+                        padding: 0 4rem;
+                    }
+                }
+                a{
+                    color: currentColor;
+                }
+                .pagination{
+                    margin-top: 3.2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.8rem;
+                    a{
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
+                    svg{
+                        fill: currentColor;
+                        width: inherit;
+                        height: inherit;
+                    }
+                }
+            }
+        }
+    }
+}

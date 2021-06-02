@@ -7,7 +7,6 @@
                 align-items: center;
                 gap: 4rem;
             }
-            
         }
         &.mainContent{
             @include respond-to('medium2'){
@@ -22,8 +21,8 @@
             padding: 14rem 0 7rem;
         }
         .container{
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
             h1{
                 @include respond-to('medium2'){
                     font-size: 5rem;
@@ -68,45 +67,19 @@
         }
     }
 
-    .mainContent{
-        padding: 2.4rem 0;
+    Section.mainContent{
         row-gap: 2.4rem;
         &>div>h3{
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            border: none;
         }
-        .newsCon,.eventsCon,.jobCon{
-            display: flex;
-            flex-flow: column;
-            gap: 1.6rem;
-            
-            & > h3, .card-body{
-                margin: 0 2.4rem;
-            }
-            
-            h3{
-                @include respond-to('medium2'){
-                    margin-left: 0;
-                    margin-right: 0;
-                }
-            }
-            & > a{
-                @extend %btn;
-                @extend %filled;
-                @include set-background-color($primaryColorLight);
-                min-height: 4rem;
-                margin: 0 2.4rem;
-                svg{
-                    color: currentColor;
-                }
-            }
-            hr{
-                margin: 0 2.4rem;
-                color: $disabled;
-                @include respond-to('medium2'){
-                    display: none;
-                }
+        hr{
+            margin: 0 2.4rem;
+            color: $disabled;
+            @include respond-to('medium2'){
+                display: none;
             }
         }
         .newsCon{
@@ -122,9 +95,6 @@
                 grid-column: 9/11;
                 margin: 0!important;
             }
-            & > a{
-               @include set-background-color($backgroundColor); 
-            }
         }
         .newsCon{
             @include respond-to('medium2'){
@@ -135,38 +105,15 @@
             @include respond-to('medium2'){
                 grid-row: 1/2;
             }
+            & > a{
+                @include set-background-color($backgroundColor); 
+             }
         }
         .jobCon{
             @include respond-to('medium2'){
                 grid-row: 2/3;
             }
-            //reset
-            & > a{
-                padding: 0;
-                text-align: start;
-                display: block;
-                text-transform: initial;
-                border-radius: 1rem;
-                margin: 0 2.4rem;
-                &:focus,&:hover{
-                    text-decoration: none;
-                }
-                @include respond-to('medium2'){
-                    margin: 0;
-                }
-                @include set-background-color($surfaceColor);
-                border: 1px solid $primaryColorLight;
-                .card-title{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
-                .card-body{
-                    .caption{
-                        margin-bottom: 0.8rem;
-                    }
-                }
-            }
+            
         }
     }
 }

@@ -31,9 +31,9 @@ const inputUtil = {
 
         function setStudentId(e){
             try{
-                let selectedBatch = e.target.selectedOptions[0].attributes[1].value;
+                let selectedBatch = e.target.selectedOptions[0].attributes["data-batch"].value;
                 
-                    studentIdBox.value = selectedBatch - 3 + "-";
+                studentIdBox.value = selectedBatch - 3 + "-";
             }
             catch{
                 studentIdBox.value = "";
