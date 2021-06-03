@@ -9,7 +9,7 @@
     <script src="index.js" defer></script>
 </head>
 <body id="Alumni">
-    <header class="mainHeader userSurvey">
+    <header class="mainHeader">
         <h1>Polytechnic University of the Philippines</h1>
         <svg class="icon hamburgerIcon" tabindex="0" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M13.3333 32H29.0286C29.7619 32 30.3619 31.4 30.3619 30.6667C30.3619 29.9333 29.7619 29.3333 29.0286 29.3333H13.3333C12.6 29.3333 12 29.9333 12 30.6667C12 31.4 12.6 32 13.3333 32ZM13.3333 25.3333H34.6667C35.4 25.3333 36 24.7333 36 24C36 23.2667 35.4 22.6667 34.6667 22.6667H13.3333C12.6 22.6667 12 23.2667 12 24C12 24.7333 12.6 25.3333 13.3333 25.3333ZM12 17.3333C12 18.0667 12.6 18.6667 13.3333 18.6667H29.0286C29.7619 18.6667 30.3619 18.0667 30.3619 17.3333C30.3619 16.6 29.7619 16 29.0286 16L13.3333 16C12.6 16 12 16.6 12 17.3333Z"/>
@@ -55,105 +55,36 @@
     <main class="alumni">
         <section class="heroBox behind">
         </section>
-        <section class="mainContent questionnaire">
+        <section class="mainContent profile">
             <div class="container">
-                <form action="" class="form">
-                    <h2>Survey Title</h2>
-                    <div class="questionCon">
-                        <div class="questionHeader">
-                            <h3>
-                                <span>1.</span>
-                                Question Sample:
-                            </h3>
-                        </div>
-                        <!-- Multiple Choice -->
-                        <div class="answerCon">
-                            <div>
-                                <input type="radio" id="q1-a1" name="q1a" value="sampleanswer">
-                                <label for="q1-a1">Sample Answer</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="q1-a2" name="q1a" value="sampleanswer">
-                                <label for="q1-a2">Sample Answer</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="q1-a3" name="q1a" value="sampleanswer">
-                                <label for="q1-a3">Sample Answer</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="q1-a4" name="q1a" value="sampleanswer">
-                                <label for="q1-a4">Sample Answer</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="questionCon">
-                        <div class="questionHeader">
-                            <h3>
-                                <span>2.</span>
-                                Question Sample:
-                            </h3>
-                        </div>
-                        <!-- Paragraph -->
-                        <div class="answerCon">
-                            <textarea name="q2a" id="answer-para"></textarea>
-                        </div>
-                    </div>
-                    <div class="questionCon">
-                        <div class="questionHeader">
-                            <h3>
-                                <span>3.</span>
-                                Question Sample:
-                            </h3>
-                        </div>
-                        <!-- ChechBox multiple Answer -->
-                        <div class="answerCon">
-                            <div>
-                                <input type="checkbox" id="q3-a1" name="nq3-a1">
-                                <label for="q3-a1">Sample Answer.</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="q3-a2" name="nq3-a2">
-                                <label for="q3-a2">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="q3-a3" name="nq3-a3">
-                                <label for="q3-a3">Sample Answer</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="q3-a4" name="nq3-a4">
-                                <label for="q3-a4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="questionCon">
-                        <div class="questionHeader">
-                            <h3>
-                                <span>4.</span>
-                                Question Sample:
-                            </h3>
-                        </div>
-                        <!-- ChechBox multiple Answer -->
-                        <div class="answerCon">
-                            <div>
-                                <input type="checkbox" id="q3-a1" name="nq3-a1">
-                                <label for="q3-a1">Sample Answer.</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="q3-a2" name="nq3-a2">
-                                <label for="q3-a2">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="q3-a3" name="nq3-a3">
-                                <label for="q3-a3">Sample Answer</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="q3-a4" name="nq3-a4">
-                                <label for="q3-a4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</label>
-                            </div>
-                        </div>
-                    </div>
-                    <button>Submit Response</button>
-                </form>
+                <div class="profile-header">
+                    <img src="../images/heroBoxBg.png">
+                    <h1 class="alumni-name">Aniel Yodub</h1>
+                    <span class="alumni-lrn">(2018-12198-MN-0)</span>
+                    <a href="#" class="editBtn">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.2406 1.50879L16.4906 3.75879L14.7754 5.47479L12.5254 3.22479L14.2406 1.50879Z" />
+                            <path d="M6 11.9999H8.25L13.7153 6.53467L11.4653 4.28467L6 9.74992V11.9999Z"/>
+                            <path d="M14.25 14.25H6.1185C6.099 14.25 6.07875 14.2575 6.05925 14.2575C6.0345 14.2575 6.00975 14.2507 5.98425 14.25H3.75V3.75H8.88525L10.3853 2.25H3.75C2.92275 2.25 2.25 2.922 2.25 3.75V14.25C2.25 15.078 2.92275 15.75 3.75 15.75H14.25C14.6478 15.75 15.0294 15.592 15.3107 15.3107C15.592 15.0294 15.75 14.6478 15.75 14.25V7.749L14.25 9.249V14.25Z"/>
+                        </svg>
+                        <span>Edit Profile</span>
+                    </a>
+                </div>
+                <div class="profile-body">
+                    <section class="profile-information">
+                        <h3>Alumni Information</h3>
+                        <ul>
+                            <li>
+                                <span class="li-header">course</span>
+                                <p class="li-data">Diploma in Information Communication Technology</p>
+                            </li>
+                            <li>
+                                <span class="li-header">YEAR GRADUATED</span>
+                                <p class="li-data">Batch 2021</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
             </div>
         </section>
     </main>

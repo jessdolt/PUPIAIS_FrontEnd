@@ -105,6 +105,46 @@ html{
                 }
             }
         }
+        //this when we have the layout with herobox behind
+        &.behind{
+            height: 36rem;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            & ~ .mainContent > .container{
+                /* use longhand margin property 
+                because there is a shorthand declaration 
+                of margin for all .container class */
+                margin: 0.8rem 1.6rem;
+                box-shadow: $elevate24dp;
+                border-radius: 1rem;
+                padding: 0 1.6rem 4.8rem;
+                @include respond-to('medium2'){
+                    padding: 0 5.5rem 4.8rem;
+                    margin-top: 2.4rem;
+                    margin-bottom: 2.4rem;
+                }
+                @include respond-to('large'){
+                    padding: 0 9.6rem 4.8rem;
+                }
+                @include set-background-color($surfaceColor);
+                .form{
+                    button,a{
+                        @extend %btn;
+                        @extend %filled;
+                    }
+                    //submit the survey
+                    button{
+                        align-self: center;
+                        @include respond-to('medium2'){
+                            align-self: flex-end;
+                        }
+                        width: 18rem;
+                    }
+                }
+            }
+        }
+
         //remove the side margin for mainContent container at mobile
         &.mainContent{
             padding: 2.4rem 0;

@@ -1,0 +1,118 @@
+.profile{
+    
+    .container{
+        //reset
+        padding: 0 0 2.4rem !important;
+    }
+    .profile-header{
+        position: relative;
+        border-radius: 1rem 1rem 0 0;
+        padding: 4.9rem 2.5rem 0.8rem 10.3rem;
+        @include set-background-color(#F4F4F4);
+        @include respond-to('medium2'){
+            padding: 8.1rem 10rem 0.8rem 31.2rem;
+        }
+        img{
+            position: absolute;
+            top: 4.9rem;
+            left: 1.6rem;
+            width: 7.2rem;
+            height: 7.2rem;
+            border-radius: 10rem;
+            border: 3px solid $surfaceColor;
+            background-image: url('../images/profile-default-img.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            @include respond-to('medium2'){
+                top: 3.2rem;
+                left: 10rem;
+                width: 18rem;
+                height: 18rem;
+            }
+        }
+        
+        .editBtn{
+            @include set-background-color($surfaceColor);
+            position: absolute;
+            top: 1.6rem;
+            right: 2.4rem;
+            display: flex;
+            gap: 0.2rem;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem;
+            border-radius: 5rem;
+            transition: 200ms ease;
+            &:focus,&:hover{
+                opacity: 0.87;
+            }
+            @include respond-to('medium2'){
+                padding: 0.6rem 2rem;
+                top: 12.2rem;
+                right: 10rem;
+            }
+            svg{
+                fill: currentColor;
+            }
+            span{
+                display: none;
+                @include respond-to('medium2'){
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .profile-body{
+        padding: 3.2rem 1.6rem 2.4rem;
+        @include respond-to('medium2'){
+            padding: 8.4rem 10rem 4.8rem;
+        }
+        & > section{
+            border-radius: 1rem;
+            border: 1px solid $disabled;
+            padding: 1.6rem 2.4rem;
+            @include respond-to('medium2'){
+                padding: 2.4rem 4.8rem;
+            }
+        }
+        h3,li{
+            border-bottom: 1px solid $disabled;
+        }
+        h3{
+            color: $primaryColorLight;
+            padding-bottom: 1.6rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            @include respond-to('medium2'){
+                font-size: 1.8rem;
+                padding-bottom: 2.4rem;
+            }
+        }
+        li{
+            padding: 0.8rem 0;
+            @include respond-to('medium2'){
+                padding: 1.6rem 1rem;
+                display: flex;
+            }
+        }
+        .li-header, .li-data{
+            flex: 1;
+        }
+        .li-header{
+            max-width: 21.4rem;
+            font-size: 1.2rem;
+            @include respond-to('medium2'){
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .alumni-lrn,.li-header{
+        color: $mediumEmphasis;
+        text-transform: uppercase;
+    }
+
+    
+}
