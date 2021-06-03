@@ -3646,10 +3646,14 @@ ul {
           display: inline-block; } }
 
 .profile .profile-body {
-  padding: 3.2rem 1.6rem 2.4rem; }
+  display: flex;
+  flex-flow: column;
+  padding: 3.2rem 1.6rem 2.4rem;
+  gap: 2.4rem; }
   @media (min-width: 800px) {
     .profile .profile-body {
-      padding: 8.4rem 10rem 4.8rem; } }
+      padding: 8.4rem 10rem 4.8rem;
+      gap: 4rem; } }
   .profile .profile-body > section {
     border-radius: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.38);
@@ -3673,7 +3677,8 @@ ul {
     @media (min-width: 800px) {
       .profile .profile-body li {
         padding: 1.6rem 1rem;
-        display: flex; } }
+        display: flex;
+        gap: 10rem; } }
   .profile .profile-body .li-header, .profile .profile-body .li-data {
     flex: 1; }
   .profile .profile-body .li-header {
