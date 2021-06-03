@@ -91,21 +91,34 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%,-50%);
+                    width: 10rem;
+                    height: 10rem;
+                    @include respond-to('medium'){
+                        width: 16rem;
+                        height: 16rem;
+                    }
                     background-image: url('../images/profile-default-img.svg');
                     background-repeat: no-repeat;
-                    
+                    border-radius: 10rem;
                     border: none;
                 }
                 #profile-pic-btn{
                     width: 0;
                 }
                 [for="profile-pic-btn"]{
+                    transition: 200ms ease;
                     cursor: pointer;
                     position: absolute;
-                    top: 58%;
-                    right: 12px;
+                    top: 65%;
+                    right: 0px;
+                    width: 2.7rem;
+                    height: 2.7rem;
+                        @include respond-to('medium'){
+                            width: 4.3rem;
+                            height: 4.3rem;
+                        }
                     &:focus,&:hover{
-                        opacity: 0.87;
+                        filter: brightness(1.1);
                     }
                 }
 
@@ -113,8 +126,12 @@
                     position: relative;
                     align-self: center;
                     cursor: pointer;
-                    width: 21rem;
-                    height: 21rem;
+                    width: 10rem;
+                    height: 10rem;
+                    @include respond-to('medium'){
+                        width: 16rem;
+                        height: 16rem;
+                    }
                 }
                 .smallComponentsContainer{
                     display: flex;
