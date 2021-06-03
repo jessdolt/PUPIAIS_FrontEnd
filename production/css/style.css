@@ -2510,6 +2510,7 @@ ul {
     .card .card-img::before, .card .card-img[src=""] {
       display: none; }
   .card .card-body {
+    flex: 1;
     padding: 2.4rem 0;
     min-width: 90%;
     display: flex;
@@ -2728,6 +2729,37 @@ ul {
       @media (min-width: 800px) {
         .alumniNews > section.mainContent .card-body .description {
           margin-bottom: 1.6rem; } }
+  .alumniNews > section.mainContent.newsView {
+    padding-bottom: 3.2rem; }
+    .alumniNews > section.mainContent.newsView .card {
+      flex-flow: column;
+      background-color: #FFFFFF;
+      color: rgba(0, 0, 0, 0.87); }
+    .alumniNews > section.mainContent.newsView h3 {
+      color: #A63F3F; }
+    .alumniNews > section.mainContent.newsView .card-img {
+      flex: 1;
+      width: initial;
+      max-height: 20.4rem;
+      border-radius: 0;
+      margin-right: 2.4rem;
+      margin-left: 2.4rem;
+      margin-bottom: 1.6rem; }
+      @media (min-width: 800px) {
+        .alumniNews > section.mainContent.newsView .card-img {
+          max-height: 69.6rem; } }
+    .alumniNews > section.mainContent.newsView .card-body {
+      padding: 1.6rem 0; }
+    .alumniNews > section.mainContent.newsView .caption {
+      border-top: 1px solid rgba(0, 0, 0, 0.38);
+      margin-bottom: 2.4rem !important; }
+    .alumniNews > section.mainContent.newsView .description {
+      display: block; }
+    .alumniNews > section.mainContent.newsView ~ .moreContent {
+      background-color: #EEEEEE;
+      color: rgba(0, 0, 0, 0.87); }
+      .alumniNews > section.mainContent.newsView ~ .moreContent .additional > a {
+        color: #A63F3F; }
 
 .alumniNews > section.moreContent {
   background-color: #A63F3F;
