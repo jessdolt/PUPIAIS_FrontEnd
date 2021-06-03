@@ -8,9 +8,13 @@
         position: relative;
         border-radius: 1rem 1rem 0 0;
         padding: 4.9rem 2.5rem 0.8rem 10.3rem;
+        box-shadow: $elevate1dp;
         @include set-background-color(#F4F4F4);
         @include respond-to('medium2'){
-            padding: 8.1rem 10rem 0.8rem 31.2rem;
+            padding: 8.1rem 10rem 0.8rem 26.2rem;
+        }
+        @include respond-to('large'){
+            padding-left: 31.2rem;
         }
         img{
             position: absolute;
@@ -26,6 +30,11 @@
             background-size: cover;
             @include respond-to('medium2'){
                 top: 3.2rem;
+                left: 5rem;
+                width: 18rem;
+                height: 18rem;
+            }
+            @include respond-to('large'){
                 left: 10rem;
                 width: 18rem;
                 height: 18rem;
@@ -45,11 +54,17 @@
             border-radius: 5rem;
             transition: 200ms ease;
             &:focus,&:hover{
-                opacity: 0.87;
+                opacity: 0.93;
+            }
+            &:active{
+                @include set-background-color($primaryColorLight);
             }
             @include respond-to('medium2'){
-                padding: 0.6rem 2rem;
                 top: 12.2rem;
+                right: 5rem;
+            }
+            @include respond-to('large'){
+                padding: 0.6rem 2rem;
                 right: 10rem;
             }
             svg{
@@ -57,8 +72,10 @@
             }
             span{
                 display: none;
-                @include respond-to('medium2'){
+                @include respond-to('large'){
                     display: inline-block;
+                    font-weight: 500;
+                    text-transform: uppercase;
                 }
             }
         }
@@ -69,6 +86,10 @@
         padding: 3.2rem 1.6rem 2.4rem;
         gap: 2.4rem;
         @include respond-to('medium2'){
+            padding: 8.4rem 5rem 4.8rem;
+            gap: 4rem;
+        }
+        @include respond-to('large'){
             padding: 8.4rem 10rem 4.8rem;
             gap: 4rem;
         }
@@ -105,11 +126,13 @@
             flex: 1;
         }
         .li-header{
-            max-width: 21.4rem;
+            
             font-size: 1.2rem;
             @include respond-to('medium2'){
                 font-size: 1.4rem;
                 font-weight: 500;
+                min-width: 10rem;
+                max-width: 21.4rem;
             }
         }
     }
