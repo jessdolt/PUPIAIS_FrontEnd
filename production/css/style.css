@@ -1127,7 +1127,8 @@ html {
         gap: 1.6rem; }
         @media (min-width: 800px) {
           .alumni > section.mainContent .newsCon, .alumni > section.mainContent .eventsCon, .alumni > section.mainContent .jobCon {
-            grid-column: 3/11; } }
+            grid-column: 3/11;
+            gap: 4rem; } }
         .alumni > section.mainContent .newsCon > h3, .alumni > section.mainContent .newsCon .card-body, .alumni > section.mainContent .eventsCon > h3, .alumni > section.mainContent .eventsCon .card-body, .alumni > section.mainContent .jobCon > h3, .alumni > section.mainContent .jobCon .card-body {
           margin: 0 2.4rem; }
         @media (min-width: 800px) {
@@ -1141,6 +1142,9 @@ html {
           margin: 0 2.4rem; }
           .alumni > section.mainContent .newsCon > a svg, .alumni > section.mainContent .eventsCon > a svg, .alumni > section.mainContent .jobCon > a svg {
             color: currentColor; }
+      @media (min-width: 800px) {
+        .alumni > section.mainContent .jobCon {
+          gap: 2.4rem !important; } }
       .alumni > section.mainContent .jobCon > a {
         padding: 0 !important;
         text-align: start !important;
@@ -2594,11 +2598,6 @@ ul {
     .jobs.card .card-body .caption {
       margin-bottom: 0.8rem; }
 
-.home > section.welcomeBox .container {
-  display: flex;
-  align-items: center;
-  gap: 4rem; }
-
 @media (min-width: 800px) {
   .home > section.mainContent {
     grid-template-rows: 2fr 1fr 1fr; } }
@@ -2628,7 +2627,8 @@ ul {
     grid-template-columns: 4.5rem 1fr;
     grid-template-areas: "svg header" "message message";
     column-gap: 0.8rem;
-    row-gap: 1.6rem; }
+    row-gap: 1.6rem;
+    align-items: center; }
     @media (min-width: 800px) {
       .home .welcomeBox div.container {
         column-gap: 4.8rem;

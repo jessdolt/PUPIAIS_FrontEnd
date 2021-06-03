@@ -163,6 +163,7 @@ html{
                 gap: 1.6rem;
                 @include respond-to('medium2'){
                     grid-column: 3/11;
+                    gap: 4rem;
                 }
                 
                 & > h3, .card-body{
@@ -188,6 +189,9 @@ html{
             }
             .jobCon{
                 //reset
+                @include respond-to('medium2'){
+                    gap: 2.4rem!important;
+                }
             & > a{
                 padding: 0!important;
                 text-align: start!important;

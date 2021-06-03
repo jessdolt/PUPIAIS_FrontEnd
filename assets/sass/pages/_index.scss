@@ -1,13 +1,6 @@
 
 .home{
     & > section{
-        &.welcomeBox{
-            .container{
-                display: flex;
-                align-items: center;
-                gap: 4rem;
-            }
-        }
         &.mainContent{
             @include respond-to('medium2'){
                 grid-template-rows: 2fr 1fr 1fr;
@@ -45,6 +38,7 @@
                                  "message message";
             column-gap: 0.8rem;
             row-gap: 1.6rem;
+            align-items: center;
             @include respond-to('medium2'){
                 column-gap: 4.8rem;
                 row-gap: 0.8rem;
