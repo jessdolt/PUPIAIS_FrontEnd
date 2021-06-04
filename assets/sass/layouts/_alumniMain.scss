@@ -114,6 +114,9 @@ html{
             width: 100%;
             position: absolute;
             z-index: -1;
+            & ~ .mainContent{
+                background-color: initial;
+            }
             & ~ .mainContent > .container{
                 /* use longhand margin property 
                 because there is a shorthand declaration 
