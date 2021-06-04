@@ -5,6 +5,7 @@
     flex-flow: wrap;
     @include respond-to('medium2'){
         border-radius: 1rem;
+
     }
     //margin  2.4rem all elements inside newsCon except image
     .card-img{
@@ -30,13 +31,11 @@
     .card-body{
         flex: 1;
         padding: 2.4rem 0;
-        min-width: 90%;
         display: flex;
         flex-flow: column;
         justify-content: center;
         @include respond-to('medium2'){
-            display: block;
-            min-width: 14rem;
+            /* min-width: 14rem; */
         }
         .caption{
             border-top: 1px solid $primaryColorLight;
@@ -56,6 +55,9 @@
                 align-items: center;
                 margin-bottom: 2.4rem;
             }
+        }
+        a{
+            margin-top: auto;
         }
         a,.date-posted{
             display: inline-flex;

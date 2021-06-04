@@ -1,7 +1,13 @@
 const card = {
     init:() => {
+        //variable----------------------------------------------
         const svg = document.querySelectorAll(".card-svg")
         let colorChoices = ["#C5C5C5","#DCDCDC","#9B9B9B"]
+        //alumniJobPage
+        const archiveFil = document.querySelector(".card-filter")
+        const archiveCon = document.querySelector(".archive")
+        
+        //functions----------------------------------------------
         if(svg){
             svg.forEach(element => {
                 const listOfVector = element.children
@@ -24,6 +30,12 @@ const card = {
                 let remove = colorChoices.splice(colorIndex, 1)
                 return selectedColor
             }
+        }
+        if(archiveFil){
+            archiveFil.addEventListener("click",()=>{
+                archiveFil.classList.add("active")
+                archiveCon.style.overflowY = "auto"
+            })
         }
         
     }

@@ -14,6 +14,7 @@
                     }
                 }
                 .questionCon{
+                    @include set-background-color($surfaceColor);
                     display: flex;
                     flex-flow: column;
                     gap: 1.6rem;
@@ -47,7 +48,6 @@
                     gap: 0.8rem;
                     div,ul{
                         display: flex;
-                        align-items: flex-start;
                         gap: 0.8rem;
                     }
                     ul{
@@ -72,8 +72,6 @@
                     resize: none;
                     //reset
                     min-width: 0;
-                    
-            
                     &:focus{ 
                         border: 1px $mediumEmphasis solid;
                     }
@@ -101,6 +99,46 @@
                         margin-top: 0;
                     }
                 }
+            }
+        }
+    }
+    //reportview Overides questionnaire
+    &.reportView{
+        textarea{
+            @include set-background-color($backgroundColor);
+        }
+        .answer-list{
+            .answer{
+                margin-left: 1.6rem;
+            }
+            .flex-con{
+                display: flex;
+                align-items: center;
+                flex-flow: wrap;
+                gap: 1.6rem;
+            }
+            p{
+                min-width: 100%;
+            }
+            .answer-ratio{
+                min-width: 5.4rem;
+            }
+            .answer-progress-bar{
+                flex: 1;
+                background-color: $backgroundColor;
+                border-radius: 1rem;
+                height: 1.2rem;
+                .answer-progress-bar-percent{
+                    background-color: $primaryColorLight;
+                    width: 50%;
+                    border-radius: inherit;
+                }
+            }
+            .answer-percentage{
+                @include set-background-color($primaryColorLight);
+                border-radius: 0.5rem;
+                min-width: 4.8rem;
+                text-align: center;
             }
         }
     }

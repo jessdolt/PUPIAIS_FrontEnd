@@ -100,7 +100,7 @@ table{
             }
         }
     }
-    .date-posted{
+    .date-posted, .availablePos{
         font-size: $smallest-text;
         color: $mediumEmphasis;
     }
@@ -171,6 +171,13 @@ table{
     li{
         font-size: $basic-text;
         font-weight: 500;
+        span,p{
+            font-size: inherit;
+            font-weight: inherit;
+        }
+        .answer-ratio{
+            font-weight: 400;
+        }
     }
 }
 
@@ -209,6 +216,11 @@ table{
         letter-spacing: 0.15rem;
         color: $errorColor1;
     }
+}
+.error{
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    color: $errorColor1;
 }
 
 //footer

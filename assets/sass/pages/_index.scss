@@ -2,8 +2,10 @@
 .home{
     & > section{
         &.mainContent{
+            background-color: $surfaceColor;
             @include respond-to('medium2'){
-                grid-template-rows: 2fr 1fr 1fr;
+                /* grid-template-rows: 2fr 1fr 1fr; */
+                grid-auto-rows: minmax(16.4rem, auto);
             }
         }
     }
@@ -78,16 +80,22 @@
         }
         .newsCon{
             @include respond-to('medium2'){
-                grid-column: 3/9;
+                grid-column: 2/9;
                 padding-right: 4rem;
                 margin-right: 1.6rem;
                 border-right: 1px solid $mediumEmphasis;
             }
+            @include respond-to('large'){
+                grid-column: 3/9;
+            }
         }
         .eventsCon,.jobCon{
             @include respond-to('medium2'){
-                grid-column: 9/11;
+                grid-column: 9/12;
                 margin: 0!important;
+            }
+            @include respond-to('large'){
+                grid-column: 9/11;
             }
         }
         .newsCon{

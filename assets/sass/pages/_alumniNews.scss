@@ -32,6 +32,10 @@
         }
         &.mainContent{
             padding-top: 2.4rem;
+            
+            .card{
+                @include set-background-color($surfaceColor);
+            }
             .card-img{
                 //reset
                 width: initial;
@@ -64,20 +68,21 @@
             //newsView override
             &.newsView{
                 padding-bottom: 3.2rem;
+                background-color: $surfaceColor;
                 .card{
                     flex-flow: column;
                     @include set-background-color($surfaceColor);
+                    margin: 0 2.4rem;
                 }
                 h3{
                     color: $primaryColorLight;
                 }
                 .card-img{
                     flex: 1;
-                    width: initial;
+                    width: 100%;
                     max-height: 20.4rem;
                     border-radius: 0;
-                    margin-right: 2.4rem;
-                    margin-left: 2.4rem;
+                    
                     margin-bottom: 1.6rem;
                     @include respond-to('medium2'){
                         max-height: 69.6rem;
@@ -85,6 +90,7 @@
                 }
                 .card-body{
                     padding: 1.6rem 0;
+                    margin: 0;
                 }
                 .caption{
                     border-top: 1px solid $disabled;
@@ -98,8 +104,9 @@
                 &~.moreContent{
                     @include set-background-color($backgroundColor);
                     .additional{
-                        &>a{
-                            color: $primaryColorLight;
+                        
+                        h3{
+                            border-color: currentColor;
                         }
                     }
                 }
