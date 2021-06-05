@@ -37,6 +37,7 @@
                 visibility: hidden;
             }
             & > .card-filter{
+                cursor: pointer;
                 content: 'Show Archive';
                 position: absolute;
                 left: 0;
