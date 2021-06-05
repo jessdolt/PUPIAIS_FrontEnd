@@ -87,7 +87,7 @@ const nav = {
                     }))
                     
                     settIcon.forEach(element=>element.addEventListener("click",()=>{
-                        alert("allo")
+                        /* alert("allo") */
                     }))
 
                     allUser.addEventListener("click", () => {

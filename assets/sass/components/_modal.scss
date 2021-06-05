@@ -493,13 +493,12 @@
     flex-flow: column;
     gap: 1.6rem;
     //newdept
-    &.newDept.show{
-        display: flex;
-    }
-    &.newCourse.show{
-        display: flex;
-    }
-    &.newBatch.show{
+    &.newDept.show,
+    &.newCourse.show,
+    &.newBatch.show,
+    &.editDept.show,
+    &.editCourse.show,
+    &.editBatch.show{
         display: flex;
     }
     h1{
@@ -509,15 +508,30 @@
     .btnContainer{
         margin-top: 2.4rem;
         display: flex;
+        align-items: center;
         justify-content: flex-end;
         gap: 2.4rem;
-        button{
+        button,a{
             @extend %filled;
             min-height: 4rem;
             width: 16rem;
             &:last-of-type{
                 @include set-background-color($primaryColorLight);
             }
+            svg{
+                width: 1.8rem;
+                height: 2rem;
+                align-self: center;
+            }
+        }
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 3rem !important;
+            min-height: 3rem !important;
+            border-radius: 5rem;
+            margin-right: auto;
         }
     }
 

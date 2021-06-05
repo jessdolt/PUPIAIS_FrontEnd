@@ -124,6 +124,19 @@
         min-width: 20rem;
         padding: 1.6rem 2.4rem;
         z-index: 100;
+        box-shadow: $elevate24dp;
+        .avatar{
+            position: relative;
+            width: 8rem;
+            height: 8rem;
+            align-self: center;
+            img{
+                object-fit: cover;
+                width: inherit;
+                height: inherit;
+                border-radius: 100rem;
+            }
+        }
         p{
             text-align: center;
             padding-bottom: 1.6rem;
