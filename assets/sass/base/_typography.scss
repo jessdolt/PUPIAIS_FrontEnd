@@ -6,7 +6,7 @@ html{
 h1,h2,h3,h4,h5,h6,
 p,a,span,li,dl,
 label,button,input,textarea,select,
-thead,tbody,tfoot,th{
+thead,tbody,tfoot,th,pre{
     line-height: 1.5;
     letter-spacing: 0.025rem;
     font-weight: 400;
@@ -100,7 +100,8 @@ table{
             }
         }
     }
-    .date-posted, .availablePos{
+    
+    .date-posted, .date-updated, .availablePos{
         font-size: $smallest-text;
         color: $mediumEmphasis;
     }

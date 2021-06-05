@@ -15,7 +15,6 @@
         min-width: 30rem;
         width: 100vw;
         height: calc(100vw - 60vw);
-        
         object-fit: cover;
         @include respond-to('medium2'){
             width: 100%;
@@ -59,12 +58,16 @@
         a{
             margin-top: auto;
         }
+        .author{
+            min-width: max-content;
+        }
         a,.date-posted{
             display: inline-flex;
             align-items: center;
         }
         .date-posted{
-            gap: 0.4rem;
+            gap: 0.8rem;
+            flex-flow: wrap;
         }
 
         .description{

@@ -203,32 +203,32 @@ html{
                 @include respond-to('medium2'){
                     gap: 2.4rem!important;
                 }
-            & > a{
-                padding: 0!important;
-                text-align: start!important;
-                display: block!important;
-                text-transform: initial!important;
-                border-radius: 1rem !important;
-                margin: 0 2.4rem!important;
-                &:focus,&:hover{
-                    text-decoration: none;
-                }
-                @include respond-to('medium2'){
-                    margin: 0!important;
-                }
-                @include set-background-color($surfaceColor);
-                border: 1px solid $primaryColorLight;
-                .card-title{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
-                .card-body{
-                    .caption{
-                        margin-bottom: 0.8rem;
+                & > a{
+                    padding: 0!important;
+                    text-align: start!important;
+                    display: block!important;
+                    text-transform: initial!important;
+                    border-radius: 1rem !important;
+                    margin: 0 2.4rem!important;
+                    &:focus,&:hover{
+                        text-decoration: none;
+                    }
+                    @include respond-to('medium2'){
+                        margin: 0!important;
+                    }
+                    @include set-background-color($surfaceColor);
+                    border: 1px solid $primaryColorLight;
+                    .card-title{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .card-body{
+                        .caption{
+                            margin-bottom: 0.8rem;
+                        }
                     }
                 }
-            }
             }
         }
         &.moreContent{
