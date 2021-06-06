@@ -41,7 +41,7 @@
             .forumCon{
                 min-height: 97.2rem;
                 @include respond-to('medium2'){
-                    grid-row: 1/5;
+                    grid-row: 1/6;
                     grid-column: 2/9;
                     padding-right: 4rem;
                     margin-right: 1.6rem;
@@ -169,6 +169,17 @@
                 padding-top: 2.4rem;
                 justify-content: flex-end;
                 margin-top: auto;
+                gap: 0.8rem;
+                a{
+                    transition: 200ms ease;
+                    justify-content: center;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    &:focus,&:hover{
+                        @include set-background-color($backgroundColor);
+                        border-radius: 5rem;
+                    }
+                }
             }
 
             .conHeader{
@@ -232,6 +243,8 @@
 
             img{
                 border: 3px solid $surfaceColor;
+                object-fit: cover;
+                border-radius: 10rem;
             }
             button{
                 text-transform: capitalize;
@@ -306,6 +319,7 @@
             }
             .description{
                 margin-left: 10.4rem;
+                width: 100%;
             }
             .vote-con{
                 position: absolute;
@@ -454,7 +468,7 @@
                         margin-bottom: 1.6rem;
                     }
                     .btn-con{
-                        button{
+                        button,a{
                             min-height: 2.1rem;
                             border: none;
                             background-color: transparent;
@@ -467,6 +481,9 @@
                         svg{
                             fill:none;
                         }
+                        a:visited{
+                            color: $highEmphasis;
+                        }
                     }
                     .btn-con2{
                         display: none;
@@ -477,7 +494,7 @@
                             &.cancel{
                                 @include set-background-color($backgroundColor);
                             }
-                            &.reply{
+                            &.submit-reply{
                                 @include set-background-color($primaryColorLight);
                             }
                         }
@@ -514,7 +531,7 @@
 }
 select,input,textarea{
     text-indent: 0px;
-    color: $mediumEmphasis !important;
+    /* color: $mediumEmphasis !important; */
     resize: none;
 }
 .textFieldContainer{
@@ -528,10 +545,7 @@ select,input,textarea{
         }
     }
 }
-img{
-    object-fit: cover;
-    border-radius: 10rem;
-}
+
 
 #Alumni{
     & .modalConFilterNav{

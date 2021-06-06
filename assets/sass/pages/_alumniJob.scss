@@ -78,6 +78,7 @@
                 box-shadow: $elevate1dp;
                 border: 0 !important;
                 border-left: 4px solid !important;
+                flex: 1;
                 &.fullTime{
                     border-color: $primaryColorLight!important;
                 }
@@ -87,6 +88,7 @@
                 
                 @include respond-to('medium2'){
                     min-width: 37.65rem;
+                    flex: none;
                 }
             }
             .caption{
