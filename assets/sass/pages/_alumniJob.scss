@@ -111,6 +111,7 @@
             .jobs{
                 border: none!important;
                 box-shadow: none;
+                flex: 1;
             }
             img{
                 @include respond-to('medium2'){

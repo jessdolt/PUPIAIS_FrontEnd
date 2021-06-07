@@ -22,6 +22,7 @@
         box-shadow: $elevate2dp;
         display: flex;
         position: relative;
+        justify-content: space-between;
 
         //this act as the background color filter
         &::before{
@@ -70,7 +71,7 @@
 
         & > div:last-child{
             align-self: flex-end;
-            margin-left: auto;
+            
 
             .textFieldContainer{
                 border-radius: 5rem;
