@@ -6,7 +6,7 @@ html{
 h1,h2,h3,h4,h5,h6,
 p,a,span,li,dl,
 label,button,input,textarea,select,
-thead,tbody,tfoot,th,pre{
+thead,tbody,tfoot,th,pre,div{
     line-height: 1.5;
     letter-spacing: 0.025rem;
     font-weight: 400;
@@ -24,7 +24,7 @@ button, %btn{
     }
 }
 
-input, a, p, span, button, %btn, textarea, select, option,pre{
+input, a, p, span, button, %btn, textarea, select, option, pre, div{
     font-size: $basic-text;
     font-family: 'Roboto', sans-serif;
 }
@@ -258,4 +258,9 @@ table{
 }
 .midot{
     font-size: 1.5rem;
+}
+.alumGallery{
+    h3{
+        font-size: $overline-text-desktop;
+    }
 }

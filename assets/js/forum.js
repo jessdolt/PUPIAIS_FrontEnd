@@ -2,9 +2,9 @@ const forum = {
     init:() => {
         /* const replyBtn = document.querySelectorAll(".reply") */
         const cancelReply = document.querySelectorAll(".btn-con2 > .cancel")
-        const submitReply = document.querySelectorAll(".btn-con2 > .submit-reply")
+        /* const submitReply = document.querySelectorAll(".btn-con2 > .submit-reply") */
 
-        if(replyBtn){
+        if(cancelReply){
             /* replyBtn.forEach(element => element.addEventListener("click", ()=>{
                 let parentli = element.parentElement.parentElement.parentElement
                 parentli.classList.add("active")
@@ -15,10 +15,10 @@ const forum = {
                 parentli.classList.remove("active")
             }))
 
-            submitReply.forEach(element => element.addEventListener("click", ()=>{
+            /* submitReply.forEach(element => element.addEventListener("click", ()=>{
                 let parentli = element.parentElement.parentElement.parentElement
                 parentli.classList.remove("active")
-            }))
+            })) */
         }
     }
 }

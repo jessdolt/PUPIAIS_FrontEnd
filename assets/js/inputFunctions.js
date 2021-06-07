@@ -4,6 +4,7 @@ const inputUtil = {
         const codeTextBox = document.querySelector("#verification-code");
         const batchComboBox = document.querySelector("#batch-id");
         const studentIdBox = document.querySelector("#student-id");
+        const altTextArea = document.querySelectorAll('[role="textbox"]');
 
         //--------------------Event Listeners------------------------
         //for verification code to fill the box
@@ -27,6 +28,19 @@ const inputUtil = {
         if(batchComboBox){
             batchComboBox.addEventListener("change", setStudentId)
         }
+
+        altTextArea.forEach(element => element.addEventListener("input",(event)=>{
+            if(event.key != 'Backspace'){
+                let charValue = event.target.textContent
+                let charSize = charValue.length
+                if(charSize >= 1000){
+                    event.preventDefault()
+                    event.target.textContent = charValue.slice(0,999)
+                    event.target.focus()
+                }
+                console.log(charSize)
+            }
+        }))
         //--------------------functions------------------------
 
         function setStudentId(e){

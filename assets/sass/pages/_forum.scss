@@ -414,6 +414,9 @@
                 //commentList section
                 .comment-list{
                     .list-item{
+                        &:last-of-type{
+                            border-left: none;
+                        }
                         &.active{
                             &>form{
                                 & > img, &>.commentInfo,&>.btn-con{
@@ -425,18 +428,24 @@
                             }
                         }
                     }
-                    //all image inside comment list
                     .textFieldContainer{
+                        [role="textbox"]{
+                            padding: .85rem 1.6rem;
+                            border: 1px solid $textfield-border;
+                            border-radius: 0.5rem;
+                            min-width: 100%;
+                            max-width: 100%;
+                        }
                         textarea{
-                            height: 4rem;
+                            height: initial;
                             transition: none;
-                            resize: vertical;
-                            &:read-only{
+                            resize: none;
+                            /* &:read-only{
                                 resize: none;
                             }
                             &.active{
-                                height: 8rem;
-                            }
+                                height: initial;
+                            } */
                         }
                     }
                     img{
