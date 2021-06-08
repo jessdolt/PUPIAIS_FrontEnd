@@ -1,5 +1,5 @@
-//same bg setting for preview, question, filterNav modal
-.modalContainer,.addModalContainer,.modalConFilterNav{
+//same bg setting for preview, question, filterNav modal, changeCoverModal
+.modalContainer,.addModalContainer,.modalConFilterNav,.changeModalContainer{
     display: none;
     position: absolute;
     top: 50%;
@@ -528,8 +528,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            max-width: 3rem !important;
-            min-height: 3rem !important;
+            max-width: 4rem !important;
+            min-height: 4rem !important;
             border-radius: 5rem;
             margin-right: auto;
         }
@@ -560,5 +560,86 @@
     }
     #batch-id{
         padding-left: 6rem;
+    }
+}
+
+//for changeCover
+.changeModalContainer{
+    .changeCoverModal{
+        @include set-background-color($surfaceColor);
+        position: relative;
+        width: 67.2rem;
+        padding: 2.4rem 4rem;
+        border-radius: 1rem;
+        display: none;
+        flex-flow: column;
+        gap: 1.6rem;
+        //newdept
+        &.show{
+            display: flex;
+        }
+        &>svg{
+            cursor: pointer;
+            position: absolute;
+            top: 2.4rem;
+            right: 2.4rem;
+        }
+        h3{
+            border-bottom: 1px solid $backgroundColor;
+            font-weight: 500;
+        }
+        .uploaded-list,.uploaded-item,img{
+            border-radius: 1rem;
+        }
+        .uploaded-list{
+            //forfirefox scrollbar
+            scrollbar-width: thin;
+            scrollbar-color: $disabled $surfaceColor;
+            &::-webkit-scrollbar-corner{
+                background: rgba(255,0,0,1);
+            }
+            &::-webkit-scrollbar{
+                width: 0.5rem;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: $surfaceColor;
+                border-radius: 1rem;
+
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: $disabled;
+                border-radius: 5rem;
+                
+            }
+            padding: 2.4rem 3.2rem;
+            border: 1px solid $disabled;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(11.7rem,1fr));
+            column-gap: 1.6rem;
+            row-gap: 1.6rem;
+            max-height: 31.2rem;
+            overflow-y: auto;
+        }
+        .uploaded-item{
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+        
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 400ms ease-in;
+            &:hover{
+                transform: scale(1.2);
+                filter: brightness(1.2);
+            }
+        }
     }
 }

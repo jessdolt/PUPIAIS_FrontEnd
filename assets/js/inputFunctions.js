@@ -33,10 +33,11 @@ const inputUtil = {
             if(event.key != 'Backspace'){
                 let charValue = event.target.textContent
                 let charSize = charValue.length
-                if(charSize >= 1000){
+                let maxSize = event.target.attributes.maxLength.value
+                console.log()
+                if(charSize >= maxSize){
                     event.preventDefault()
-                    event.target.textContent = charValue.slice(0,999)
-                    event.target.focus()
+                    event.target.textContent = charValue.slice(0,maxSize)
                 }
                 console.log(charSize)
             }

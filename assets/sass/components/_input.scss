@@ -4,9 +4,15 @@ input,textarea{
     @include set-background-color($surfaceColor);
     transition: 200ms ease;
 }
-
-.outsideLabel{
-
+[role="textbox"]{
+    padding: .85rem 1.6rem;
+    border: 1px solid $textfield-border;
+    border-radius: 0.5rem;
+    min-width: 100%;
+    max-width: 100%;
+    &::before{
+        transition: 200ms ease;
+    }
 }
 
 //textfieldwithIcon
@@ -138,12 +144,14 @@ textarea{
 
 
 input:required:-moz-ui-invalid{
-    border: 1px solid $errorColor1;
+    border: 1px solid $errorColor1 !important;
+    border-right: 1px solid $errorColor1 !important;
     //remove the default red box-shadow for invalid textfield
     box-shadow: none;
 
     &~.icon{
-        border: 1px solid $errorColor1;
+        border: 1px solid $errorColor1 !important;
+        border-right: 1px solid $errorColor1 !important;
         box-shadow: none;
     }
 }

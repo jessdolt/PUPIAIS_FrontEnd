@@ -279,7 +279,7 @@
                     align-items: center;
                     justify-content: center;
                     gap: 0.8rem;
-                    box-shadow: $elevate8dp;
+                    box-shadow: $elevate3dp;
                     transition: all 200ms ease;
                     @include set-background-color($backgroundColor);
                     button{
