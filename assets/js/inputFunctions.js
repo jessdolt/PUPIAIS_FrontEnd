@@ -51,7 +51,7 @@ const inputUtil = {
                     selection.removeAllRanges();
                     selection.addRange(range)
                 }
-                console.log(charSize)
+                /* console.log(charSize) */
             }
         }))
 
