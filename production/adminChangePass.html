@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="images/logo-32px.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="index.js" defer></script>
+</head>
+<body id="Admin">
+    <div class="fullscreen">
+        <header class="adminHeader">
+            <div class="hamburgerAdmin">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#" class="logo"></a>
+            <h1>PUP Institute of Technology</h1>
+            <span class="userType">Admin Page</span>
+            <a href="index.html">Back to Admin Home</a>
+        </header>
+        <div class="main">
+            <main class="admin managePage"><!-- remove cont-creator to access all-->
+                <section class="card-con">
+                    <div class="header-con">
+                        <h1>Change Password</h1>
+                        <span>Choose a strong password and don’t reuse it for other accounts.</span>
+                    </div>
+                    <form action="" id="change-pass-form">
+                        <div>
+                            <label for="old-password" class="outsideLabel">Old Password:</label>
+                            <div class="textFieldContainer">
+                                <input type="password" name="oldPassword" id="old-password"required>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="new-password" class="outsideLabel">New Password:</label>
+                            <div class="textFieldContainer">
+                                <input type="password" name="new-Password" id="new-password"required>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="confirm-password" class="outsideLabel">Confirm Password:</label>
+                            <div class="textFieldContainer">
+                                <input type="password" name="confirmPassword" id="confirm-password"required>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="btn-con">
+                        <button class="changePass" form="change-pass-form">Change Password</button>
+                    </div>
+                </section>
+                <p>Polytechnic University Institute of Technology Alumni Information System (PUP-IAIS)</p>
+            </main>
+        </div>
+    </div>
+    <div class="alertModalContainer">
+        <!-- this inline -->
+        <div class="alertModal deleteAlert">
+            <svg></svg>
+            <h2>Are you sure?</h2>
+            <p>This will delete the selected data and cannot be undone!</p>
+            <div>
+                <button class="cancelBtn">Cancel</button>
+                <a class="modalDeleteInline"href="#">Delete</a>
+            </div>
+        </div>
+    </div>
+
+        
+</body>
+</html>

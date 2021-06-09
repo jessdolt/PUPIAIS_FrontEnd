@@ -5,6 +5,10 @@ const inputUtil = {
         const batchComboBox = document.querySelector("#batch-id");
         const studentIdBox = document.querySelector("#student-id");
         const altTextArea = document.querySelectorAll('[role="textbox"]');
+        const editBtnManageAcc = document.querySelector('.managePage .btn-con .edit');
+        const cancelBtnManageAcc = document.querySelector('.managePage .btn-con .cancel');
+        const cardCon = document.querySelector('.managePage .card-con');
+        const inputs = document.querySelectorAll('.managePage .card-con #edit-form input');
 
         //--------------------Event Listeners------------------------
         //for verification code to fill the box
@@ -50,6 +54,22 @@ const inputUtil = {
                 console.log(charSize)
             }
         }))
+
+        if(editBtnManageAcc){
+            editBtnManageAcc.addEventListener("click", ()=>{
+                cardCon.classList.add('active')
+                inputs.forEach(element => {
+                    element.removeAttribute('readonly')
+                })
+            })
+            cancelBtnManageAcc.addEventListener("click", ()=>{
+                cardCon.classList.remove('active')
+                inputs.forEach(element => {
+                    element.setAttribute('readonly','true')
+                    element.value = ""
+                })
+            })
+        }
         //--------------------functions------------------------
 
         function setStudentId(e){
