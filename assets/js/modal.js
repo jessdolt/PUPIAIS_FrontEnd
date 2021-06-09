@@ -12,6 +12,7 @@ const alertModalObj = {
                 const forumBg = document.querySelector(".modalConFilterNav")
                 const forumModal = document.querySelector(".newCourse")
                 const editPostBtn = document.querySelector(".btnEditPost")
+                const modalDeleteForum = document.querySelector(".modalDeleteInline");
                 const addPostBtn = document.querySelector(".newDis button")
                 const xBtn = document.querySelector(".modalFilterNav > svg")
 
@@ -22,6 +23,17 @@ const alertModalObj = {
                 }
                 if(deletePostBtn){
                     deletePostBtn.addEventListener("click", ()=>{
+                        let dataId = deletePostBtn.getAttribute("data-id");
+                            let dataUrl = deletePostBtn.getAttribute("data-url");
+                            let actualURL;
+                            if(dataId){
+                                actualURL = dataUrl + "/" + dataId;
+                            }
+                            else{
+                                actualURL = dataUrl;
+                            }
+                        
+                        modalDeleteForum.setAttribute("href", actualURL);
                         bgModal.classList.add("show")
                         alertDelete.classList.add("show")
                     })

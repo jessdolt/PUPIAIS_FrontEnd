@@ -38,6 +38,14 @@ const inputUtil = {
                 if(charSize >= maxSize){
                     event.preventDefault()
                     event.target.textContent = charValue.slice(0,maxSize)
+                    /* this code below just to make the cursor stay at the end
+                    contentEditable when it reach the limit of characters allowed */
+                    let range = document.createRange()
+                    let selection = window.getSelection()
+                    range.selectNodeContents(event.target)
+                    range.collapse(false)
+                    selection.removeAllRanges();
+                    selection.addRange(range)
                 }
                 console.log(charSize)
             }

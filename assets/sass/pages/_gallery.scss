@@ -1,7 +1,9 @@
 .alumGallery, .album-list{
     @include set-background-color($surfaceColor);
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     column-gap: 2.4rem;
+    row-gap: 2.4rem;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -20,7 +22,6 @@
         border-radius: 5rem;
         
     }
-    grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
     padding: 3.2rem 2.8rem;
     .album-cover{
         @include set-background-color($errorColor2);
@@ -47,7 +48,8 @@
         border-radius: 1rem;
         border: 0;
     }
-    
+    .album-con{
+    }
     img{
         transition: 200ms;
         object-fit: cover;
@@ -110,7 +112,7 @@
         }
     }
     .album-body{
-        margin-bottom: 2.4rem;
+        padding: 0.8rem;
     }
     //overide for addnewAlbum
     &.adminForm{
@@ -129,7 +131,6 @@
         }
 
         .album-list{
-            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
             padding: 3.2rem 0;
 
             .option{
@@ -143,6 +144,14 @@
                     min-height: 0;
                     background-color: transparent;
                 }
+            }
+            .album-con{
+                background-color: $backgroundColor;
+                border-radius: 1rem;
+            }
+            img,button{
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
             }
         }
 
