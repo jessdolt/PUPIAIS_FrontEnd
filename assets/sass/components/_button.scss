@@ -45,7 +45,7 @@ button{
     fill: currentcolor;
 
     &:focus,&:hover{
-        filter: opacity(.88);
+        filter: brightness(1.01);
     }
 }
 //ellipsis button
@@ -99,9 +99,10 @@ button{
         .btnEditInline{
             @include set-background-color($surfaceColor);
         }
-        .btnDeleteInline{
+        .btnDeleteInline,.btnDeleteAccount{
             @include set-background-color($errorColor2);
         }
+        
         
         
         > *{

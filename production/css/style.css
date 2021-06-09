@@ -1846,7 +1846,8 @@ html {
     background-color: rgba(0, 0, 0, 0.38);
     border-radius: 5rem; }
   .managePage.cont-creator ul.btn-con > * {
-    transition: none !important;
+    transition: visibility 0s, box-shadow 200ms !important;
+    transition-timing-function: ease;
     visibility: hidden; }
   .managePage.cont-creator ul.btn-con > li:nth-of-type(1), .managePage.cont-creator ul.btn-con > li:nth-of-type(2) {
     visibility: visible; }
@@ -1910,7 +1911,7 @@ html {
     justify-content: center; }
     .managePage .btn-con > button + button {
       margin-left: 3.2rem; }
-    .managePage .btn-con button, .managePage .btn-con a {
+    .managePage .btn-con > button, .managePage .btn-con > a {
       background-color: #A63F3F;
       color: #FFFFFF;
       width: 14rem; }
@@ -2001,8 +2002,7 @@ html {
             border-radius: 5rem; }
         .managePage table td:last-of-type .optionModal {
           top: -1rem;
-          left: initial;
-          right: -5rem;
+          left: -5rem;
           z-index: 24; }
       .managePage table td p {
         overflow: hidden;
@@ -2280,7 +2280,7 @@ ul {
   border-style: solid;
   border-radius: 0.5rem; }
 
-.mainNav button, .mainNav > a, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .alumni > section.behind ~ .mainContent > .container .form button, .alumni > section.behind ~ .mainContent > .container .form a, .alumni > section.mainContent .newsCon > a, .alumni > section.mainContent .eventsCon > a, .alumni > section.mainContent .jobCon > a, .userSurvey ~ .alumni .mainContent .container .form button, .userSurvey ~ .alumni .mainContent .container .form a, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination a, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer button, .managePage .btn-con button, .managePage .btn-con a, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .modalFilterNav .btnContainer button, .modalFilterNav .btnContainer a, .loginMain form button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .alumGallery.adminForm .album-list .option button, .alumGallery.adminForm .form:nth-of-type(2) [for="upload-photo"], .forum > section.mainContent .newDis button, .forum > section.mainContent .catCon a, .forum > section.mainContent .catCon button, .forum > section.mainContent .popCon a, .forum > section.mainContent .popCon button, .forum > section.mainContent .myDisCon a, .forum > section.mainContent .myDisCon button, .forum > section.forumView .optionCon > .optionModal button, .forum > section.forumView .vote-con button, .forum > section.forumView .comment-main-con .comment-con > button, .forum > section.forumView .comment-main-con .comment-list .btn-con2 button, .mainContent.questionnaire .form:first-child h2 > button, .mainHeader ~ .editProfile .mainContent input[type="radio"]:checked::before {
+.mainNav button, .mainNav > a, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .alumni > section.behind ~ .mainContent > .container .form button, .alumni > section.behind ~ .mainContent > .container .form a, .alumni > section.mainContent .newsCon > a, .alumni > section.mainContent .eventsCon > a, .alumni > section.mainContent .jobCon > a, .userSurvey ~ .alumni .mainContent .container .form button, .userSurvey ~ .alumni .mainContent .container .form a, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination a, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer button, .managePage .btn-con > button, .managePage .btn-con > a, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .modalFilterNav .btnContainer button, .modalFilterNav .btnContainer a, .loginMain form button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .alumGallery.adminForm .album-list .option button, .alumGallery.adminForm .form:nth-of-type(2) [for="upload-photo"], .forum > section.mainContent .newDis button, .forum > section.mainContent .catCon a, .forum > section.mainContent .catCon button, .forum > section.mainContent .popCon a, .forum > section.mainContent .popCon button, .forum > section.mainContent .myDisCon a, .forum > section.mainContent .myDisCon button, .forum > section.forumView .optionCon > .optionModal button, .forum > section.forumView .vote-con button, .forum > section.forumView .comment-main-con .comment-con > button, .forum > section.forumView .comment-main-con .comment-list .btn-con2 button, .mainContent.questionnaire .form:first-child h2 > button, .mainHeader ~ .editProfile .mainContent input[type="radio"]:checked::before {
   border: 1px solid transparent; }
 
 .icon {
@@ -2293,7 +2293,7 @@ ul {
   transition: 200ms ease;
   fill: currentcolor; }
   .icon:focus, .icon:hover {
-    filter: opacity(0.88); }
+    filter: brightness(1.01); }
 
 .option {
   width: 3rem;
@@ -2339,7 +2339,7 @@ ul {
     .option .optionModal .btnEditInline {
       background-color: #FFFFFF;
       color: rgba(0, 0, 0, 0.87); }
-    .option .optionModal .btnDeleteInline {
+    .option .optionModal .btnDeleteInline, .option .optionModal .btnDeleteAccount {
       background-color: #B61734;
       color: #FFFFFF; }
     .option .optionModal > * {
@@ -2525,6 +2525,7 @@ ul {
     background-image: url("../images/alertContainer.png");
     background-position: top 1px right 0;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     /* box-shadow: $elevate24dp; */ }
     .alertModalContainer .alertModal.logoutAlert.show {
       display: flex; }
@@ -2547,6 +2548,8 @@ ul {
       .alertModalContainer .alertModal.deleteAlertAll.show div button:last-child {
         background-color: #B61734;
         color: #FFFFFF; }
+    .alertModalContainer .alertModal.manage h2 {
+      font-size: 2.4rem; }
     .alertModalContainer .alertModal svg {
       position: absolute;
       transform: translateY(-80%);
@@ -2571,6 +2574,22 @@ ul {
       .alertModalContainer .alertModal div button {
         background-color: #EEEEEE;
         color: rgba(0, 0, 0, 0.87); }
+      .alertModalContainer .alertModal div .modalDeleteInline {
+        background-color: #B61734;
+        color: #FFFFFF; }
+    .alertModalContainer .alertModal .column {
+      flex-flow: column;
+      gap: 0; }
+      .alertModalContainer .alertModal .column > div {
+        margin-top: 0; }
+    .alertModalContainer .alertModal input[type="password"] {
+      border-radius: 0.5rem;
+      border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+      min-width: 32.4rem;
+      padding-right: 1.6rem;
+      padding-left: 1.6rem; }
+      .alertModalContainer .alertModal input[type="password"]:focus {
+        border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
 
 .addModalContainer .addModal {
   display: flex;

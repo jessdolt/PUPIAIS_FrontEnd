@@ -17,7 +17,8 @@
     &.cont-creator{
         ul.btn-con{
             &>*{
-                transition: none!important;
+                transition: visibility 0s, box-shadow 200ms!important;
+                transition-timing-function: ease;
                 visibility: hidden;
             }
             &>li:nth-of-type(1),&>li:nth-of-type(2){
@@ -110,7 +111,7 @@
         &>a{
             @extend %btn;
         }
-        button,a{
+        &>button,&>a{
             @extend %filled;
             @include set-background-color($primaryColorLight);
             width: 14rem;
@@ -230,8 +231,7 @@
                 }
                 .optionModal{
                     top: -1rem;
-                    left: initial;
-                    right: -5rem;
+                    left: -5rem;
                     z-index: 24;
                 }
             }

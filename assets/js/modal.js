@@ -99,11 +99,11 @@ const alertModalObj = {
                     const previewFileInput = document.querySelector(".input-file-hidden");
                     const previewFormHidden = document.querySelector("#preview-form-hidden");
 
+                    //manage
+
                     //modal for questionair add question
-                    //JessDoIt
-                    /* const newQuestBtn = document.querySelector(".addNewQuestion");
-                    const modalQuestionBg = document.querySelector(".addModalContainer");
-                    const questionBtnCancel = document.querySelector(".addModalContainer .btnContainer .cancel"); */
+                    const btnDeleteAccount = document.querySelector(".btnDeleteAccount")
+                    const deleteAccountForm = document.querySelector(".delete-acc-form")
                     //--------------------Event Listeners------------------------
                     if(btnLogout){
                         btnLogout.addEventListener("click", generateLogoutModal);
@@ -121,11 +121,22 @@ const alertModalObj = {
                         previewBtnImport.addEventListener("click", generatePreviewModal);
                         previewFileInput.addEventListener("change", submitForm);
                     }
-                    //JessDoIt
-                    /* if(newQuestBtn){
-                        newQuestBtn.addEventListener("click", generateAddQuestion);
-                        questionBtnCancel.addEventListener("click", cancelAddQuestion);
-                    } */
+                    if(btnDeleteAccount){
+                        btnDeleteAccount.addEventListener("click",()=>{
+                            let dataId = btnDeleteAccount.getAttribute("data-id");
+                            let dataUrl = btnDeleteAccount.getAttribute("data-url");
+                            let actualURL;
+                            if(dataId){
+                                actualURL = dataUrl + "/" + dataId;
+                            }
+                            else{
+                                actualURL = dataUrl;
+                            }
+                            deleteAccountForm.setAttribute("action", actualURL);
+                            modalBackground.classList.add("show");
+                            modalDelete.classList.add("show");
+                        })
+                    }
 
                     //--------------------functions------------------------
                     modalBtnCancel.forEach(element => element.onclick = () => {
@@ -153,14 +164,8 @@ const alertModalObj = {
                     function refreshPage(){
                         document.location.reload();
                     }
-                    //JessDoIt
-                    /* 
-                    function generateAddQuestion(){
-                        modalQuestionBg.classList.add("show")
-                    }
-                    function cancelAddQuestion(){
-                        modalQuestionBg.classList.remove("show");
-                    } */
+                    
+                    
                 break;
         }
         

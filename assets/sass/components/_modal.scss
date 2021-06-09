@@ -222,6 +222,7 @@
         background-image: url('../images/alertContainer.png');
         background-position: top 1px right 0;
         background-repeat: no-repeat;
+        background-size: 100% 100%;
         /* box-shadow: $elevate24dp; */
 
         //change color base on class in alert modal
@@ -258,6 +259,11 @@
                 }
             }
         }
+        &.manage{
+            h2{
+                font-size: $h3-text-desktop;
+            }
+        }
     
         svg{
             position: absolute;
@@ -290,8 +296,30 @@
                 @extend %filled;
                 @include set-background-color($backgroundColor);
             }
+            .modalDeleteInline{
+                @include set-background-color($errorColor2);
+            }
             a{
                 @extend %btn;
+            }
+        }
+        .column{
+            flex-flow: column;
+            gap: 0;
+            &>div{
+                margin-top: 0;
+            }
+            
+        }
+        //single components
+        input[type="password"]{
+            border-radius: 0.5rem;
+            border-right: 1px solid $textfield-border !important;
+            min-width: 32.4rem;
+            padding-right: 1.6rem;
+            padding-left: 1.6rem;
+            &:focus{ 
+                border-right: 1px $mediumEmphasis solid!important;
             }
         }
     }
