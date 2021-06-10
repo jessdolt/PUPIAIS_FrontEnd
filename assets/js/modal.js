@@ -102,7 +102,7 @@ const alertModalObj = {
                     //manage
 
                     //modal for questionair add question
-                    const btnDeleteAccount = document.querySelector(".btnDeleteAccount")
+                    const btnDeleteAccount = document.querySelectorAll(".btnDeleteAccount")
                     const deleteAccountForm = document.querySelector(".delete-acc-form")
                     //--------------------Event Listeners------------------------
                     if(btnLogout){
@@ -122,9 +122,9 @@ const alertModalObj = {
                         previewFileInput.addEventListener("change", submitForm);
                     }
                     if(btnDeleteAccount){
-                        btnDeleteAccount.addEventListener("click",()=>{
-                            let dataId = btnDeleteAccount.getAttribute("data-id");
-                            let dataUrl = btnDeleteAccount.getAttribute("data-url");
+                        btnDeleteAccount.forEach(element => element.addEventListener("click",()=>{
+                            let dataId = element.getAttribute("data-id");
+                            let dataUrl = element.getAttribute("data-url");
                             let actualURL;
                             if(dataId){
                                 actualURL = dataUrl + "/" + dataId;
@@ -135,15 +135,20 @@ const alertModalObj = {
                             deleteAccountForm.setAttribute("action", actualURL);
                             modalBackground.classList.add("show");
                             modalDelete.classList.add("show");
-                        })
+                        }))
                     }
 
                     //--------------------functions------------------------
                     modalBtnCancel.forEach(element => element.onclick = () => {
                         modalBackground.classList.remove("show");
                         modalDelete.classList.remove("show");
-                        modalDeleteAll.classList.remove("show");
-                        modalLogout.classList.remove("show");
+                        if(modalDeleteAll){
+                            modalDeleteAll.classList.remove("show");
+                            
+                        }
+                        if(modalLogout){
+                            modalLogout.classList.remove("show"); 
+                        }
                     })
 
                     function generateDeleteModalAll(){
