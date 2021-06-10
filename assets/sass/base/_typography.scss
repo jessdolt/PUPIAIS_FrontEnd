@@ -106,7 +106,7 @@ table{
         color: $mediumEmphasis;
     }
     a{
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Cinzel', serif;
         font-weight: 500;
     }
 }
@@ -261,7 +261,11 @@ table{
 }
 .alumGallery,.galCon{
     h3{
-        font-size: $overline-text-desktop;
-        font-weight: 500;
+        font-size: $basic-text;
+        font-weight: 600;
+        @include respond-to('medium2'){
+            font-size: $overline-text-desktop;
+        }
+        
     }
 }

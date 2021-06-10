@@ -31,6 +31,16 @@
                     </div>
                     <form action="" id="add-new-account">
                         <div>
+                            <label for="admin-type" class="outsideLabel">Admin Type:</label>
+                            <div class="textFieldContainer">
+                                <select name="adminType" id="admin-type" required>
+                                    <option value="super admin" data-batch="adminType">Super Admin</option>
+                                    <option value="admin" data-batch="adminType">Admin</option>
+                                </select>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div>
                             <label for="full-name" class="outsideLabel">Full Name:</label>
                             <div class="textFieldContainer">
                                 <input type="text" name="fullName" id="full-name" required>
