@@ -749,7 +749,7 @@ table tbody {
       .mainNav button.active ~ .userContainer {
         display: flex; }
         .mainNav button.active ~ .userContainer a:last-child {
-          background-color: #FFFFFF;
+          background-color: #EEEEEE;
           color: rgba(0, 0, 0, 0.87);
           position: relative;
           min-height: 3rem !important; }
@@ -757,7 +757,7 @@ table tbody {
             position: absolute;
             left: 1.3rem; }
   .mainNav .userContainer {
-    background-color: #EEEEEE;
+    background-color: #FFFFFF;
     color: rgba(0, 0, 0, 0.87);
     position: absolute;
     top: 4.2rem;
@@ -779,7 +779,9 @@ table tbody {
         object-fit: cover;
         width: inherit;
         height: inherit;
-        border-radius: 100rem; }
+        border-radius: 100rem;
+        border: 2px solid #EEEEEE;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05); }
     .mainNav .userContainer p {
       padding-top: 1.6rem;
       text-align: center;
@@ -1887,7 +1889,7 @@ html {
       padding-left: 4.8rem;
       padding-right: 4.8rem; }
       .managePage .card-con.specificPadding .header-con, .managePage .card-con.specificPadding form {
-        width: 51.2rem; }
+        width: 52.4rem; }
   .managePage .header-con {
     width: 44.8rem;
     text-align: center;
@@ -1955,29 +1957,30 @@ html {
   .managePage .table-form {
     border: 1px solid rgba(0, 0, 0, 0.38);
     border-radius: 1rem;
-    padding: 0.4rem 1.6rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.38) #FFFFFF; }
-    .managePage .table-form::-webkit-scrollbar {
-      width: 0.5rem; }
-    .managePage .table-form::-webkit-scrollbar-track {
-      background-color: #FFFFFF; }
-    .managePage .table-form::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.38);
-      border-radius: 5rem; }
+    padding: 1.2rem 0em 1.2rem 1.6rem; }
   .managePage table {
     display: block;
     max-width: 100%;
-    height: 20.8rem; }
+    height: 30rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 1.6rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.38) #FFFFFF; }
+    .managePage table::-webkit-scrollbar {
+      width: 0.5rem; }
+    .managePage table::-webkit-scrollbar-track {
+      background-color: #FFFFFF; }
+    .managePage table::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.38);
+      border-radius: 5rem; }
     .managePage table tbody {
       display: inherit;
       max-width: inherit; }
     .managePage table tr {
       display: flex;
       align-items: center;
-      padding: 0.6rem;
+      padding: 0.6rem 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
       .managePage table tr > * + * {
         margin-left: 1.6rem;
@@ -1986,10 +1989,18 @@ html {
       display: inline-block;
       position: relative; }
       .managePage table td:first-of-type {
-        max-width: 2.8rem;
-        max-height: 2.8rem;
-        width: 2.8em;
-        height: 2.8rem; }
+        max-width: 5.6rem;
+        max-height: 5.6rem;
+        min-width: 5.6rem;
+        min-height: 5.6rem;
+        position: relative; }
+        .managePage table td:first-of-type svg {
+          position: absolute;
+          bottom: -3px;
+          right: -5px; }
+          .managePage table td:first-of-type svg > path:first-child {
+            stroke: #EEEEEE;
+            stroke-width: 2px; }
       .managePage table td:nth-of-type(2), .managePage table td:nth-of-type(3) {
         min-width: 18rem; }
       .managePage table td:last-of-type {
@@ -2013,8 +2024,10 @@ html {
         overflow: hidden;
         text-overflow: ellipsis; }
       .managePage table td img {
-        min-width: 2.8rem;
-        min-height: 2.8rem; }
+        min-width: 5.6rem;
+        min-height: 5.6rem;
+        border: 1px solid #EEEEEE;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05); }
   .managePage .image-con {
     position: relative;
     width: 12rem;

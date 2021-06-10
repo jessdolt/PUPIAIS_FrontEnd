@@ -100,7 +100,7 @@
                 display: flex;
                 a:last-child{
                     @extend %btn;
-                    @include set-background-color($surfaceColor);
+                    @include set-background-color($backgroundColor);
                     position: relative;
                     min-height: 3rem!important;
                     svg{
@@ -113,7 +113,7 @@
     }
     
     .userContainer{
-        @include set-background-color($backgroundColor);
+        @include set-background-color($surfaceColor);
         position: absolute;
         top: 4.2rem;
         right: 12.8rem;
@@ -135,6 +135,8 @@
                 width: inherit;
                 height: inherit;
                 border-radius: 100rem;
+                border: 2px solid $backgroundColor;
+                box-shadow: $minimalShadow;
             }
         }
         p{
