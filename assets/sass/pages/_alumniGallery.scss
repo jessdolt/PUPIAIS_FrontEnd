@@ -1,0 +1,130 @@
+.gallery{
+    .mainContent{
+        padding: 0 0 4.8rem!important;
+    }
+    
+    .galcon, .mainContent .container{
+        padding-left:  2.4rem;
+        padding-right:  2.4rem;
+        @include set-background-color($surfaceColor);
+    }
+    .galCon{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
+        padding-top: 3.2rem;
+        padding-bottom: 3.2rem;
+        column-gap: 2.4rem;
+        row-gap: 3.2rem;
+        @include respond-to('medium2'){
+            grid-template-columns: repeat(auto-fill,minmax(40rem,1fr));
+        }
+        a{
+            &>*+*{
+                margin-top: 0.8rem;
+            }
+        }
+    }
+
+    a{
+        text-align: start;
+        color: currentColor;
+    }
+    .image-container{
+        position: relative;
+        padding-top: 56.25%;
+        overflow: hidden;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            transition: 200ms ease;
+            &:focus,&:hover{
+                transform: scale(1.025);
+                filter: brightness(1.2);
+            }
+        }
+    }
+    img{
+        object-fit: cover;
+    }
+    .pagination{
+        grid-column: 3;
+        margin-top: 1.6rem;
+        padding-bottom: 4.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        a{
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+        svg{
+            fill: currentColor;
+            width: inherit;
+            height: inherit;
+        }
+    }
+
+    //override gallery view
+    .mainContent.view{
+        padding: 2.4rem 0 4.8rem!important;
+        &>a,&>.image-container, .galCon{
+            grid-column: 1/5;
+            @include respond-to('medium2'){
+                grid-column: 2/12;
+                margin-left: 1.6rem;
+                margin-right: 1.6rem;
+            }
+        }
+        
+        &>a{
+            display: flex;
+            align-items: center;
+            font-size: $overline-text-desktop;
+            padding-left:  2.4rem;
+            padding-right:  2.4rem;
+        }
+        &>.image-container{
+            margin-top: 2.4rem;
+            margin-bottom: 0.8rem;
+            margin-left: 2.4rem;
+            margin-right: 2.4rem;
+            padding-top: 42.85%;
+            @include respond-to('medium2'){
+                margin-left: 4rem;
+                margin-right: 4rem;
+            }
+
+            .album-cover-title{
+
+            }
+        }
+        
+        .galCon{
+            @include set-background-color(transparent);
+            @include respond-to('medium2'){
+                grid-template-columns: repeat(auto-fill,minmax(60rem,1fr));
+            }
+            a{
+                position: relative;
+            }
+            li{
+                &:nth-child(5){
+                    grid-column: 1/-1;
+                }
+    
+                h3{
+                    position: absolute;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    
+}

@@ -66,7 +66,7 @@ const inputUtil = {
                 cardCon.classList.remove('active')
                 inputs.forEach(element => {
                     element.setAttribute('readonly','true')
-                    element.value = ""
+                    document.location.reload();
                 })
             })
         }
