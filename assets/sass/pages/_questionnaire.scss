@@ -104,6 +104,24 @@
     }
     //reportview Overides questionnaire
     &.reportView{
+        .btnGroupContainer{
+            margin-left: auto;
+            flex-flow: row;
+            a{
+                @extend %btn;
+            }
+            a,button{
+                @include set-background-color($backgroundColor);
+                @extend %filled;
+                position: relative;
+                svg{
+                    left: 1.3rem;
+                    top: 1.3rem;
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+            }
+        }
         textarea{
             @include set-background-color($backgroundColor);
         }

@@ -332,7 +332,7 @@
             }
             .btnGroupContainer{
                 margin-top: auto;
-                button{
+                a,button{
                     @extend %filled;
                     position: relative;
                     svg{

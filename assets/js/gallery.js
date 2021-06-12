@@ -55,8 +55,6 @@ const gallery = {
 
                             let nextCount = imageIdArr.length - (nthPercent + 1)
                             let prevCount = (nthPercent)
-                            console.log("next left: " + nextCount)
-                            console.log("prev left: " + prevCount)
                             //nextBtn function
                             nextBtn.addEventListener("click", ()=>{
                                 //get the margin left at the moment
@@ -72,21 +70,19 @@ const gallery = {
                                     }
                                     nextCount--
                                     prevCount++
-                                    console.log("next left: " + nextCount)
                                 }
                                 
                                 
                             })
                             prevBtn.addEventListener("click", ()=>{
                                 //get the margin left at the moment
-                                let marginLeft = firstImage.style.marginLeft[1  ]
+                                let marginLeft = firstImage.style.marginLeft[1]
                                 if(prevCount >=1){
                                     if(marginLeft != '%'){
                                         firstImage.style.marginLeft = `-${parseInt(marginLeft) - 1}00%`
                                     }
                                     nextCount++
                                     prevCount--
-                                    console.log("prev left: " + prevCount)
                                 }
                                 
                                 

@@ -17,10 +17,10 @@ select{
 }
 
 button, %btn{
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     span,a{
-        font-weight: 500;
+        font-weight: 600;
     }
 }
 
@@ -74,6 +74,16 @@ table{
         font-size: $basic-text;
     }
 }
+.accountNameContainer{
+    h3{
+        text-transform: capitalize;
+        font-weight: 600;
+        text-align: center;
+    }
+    a{
+        text-transform: capitalize !important;
+    }
+}
 //index
 .welcomeBox{
     h2{
@@ -86,7 +96,7 @@ table{
 .card{
     h3{
         font-size: $basic-text;
-        font-weight: 500;
+        font-weight: 600;
         @include respond-to('medium2'){
             font-size: $h3-text-desktop;
             font-weight: 400;
@@ -96,7 +106,7 @@ table{
         h3{
             @include respond-to('medium2'){
                 font-size: $basic-text;
-                font-weight: 500;
+                font-weight: 600;
             }
         }
     }
@@ -117,7 +127,7 @@ table{
     .container{
         h1{
             font-size: $h3-text-mobile;
-            font-weight: 500;
+            font-weight: 600;
             @include respond-to('medium2'){
                 font-size: $h1-text-desktop;
             }
@@ -154,7 +164,7 @@ table{
 .editProfile{
     h3{
         font-size: $basic-text;
-        font-weight: 500;
+        font-weight: 600;
         @include respond-to('medium2'){
             font-size: $h3-text-mobile;
         }
@@ -171,7 +181,9 @@ table{
 .answerCon{
     li{
         font-size: $basic-text;
-        font-weight: 500;
+        .flex-con{
+            font-weight: 600;
+        }
         span,p{
             font-size: inherit;
             font-weight: inherit;
@@ -195,7 +207,7 @@ table{
         .changePassHeader{
             color: $primaryColorLight;
             font-size: 2.4rem;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: capitalize;
         }
         span{

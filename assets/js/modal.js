@@ -55,12 +55,14 @@ const alertModalObj = {
                     canBtn.addEventListener("click",()=>{
                         bgModal.classList.remove("show")
                         alertDelete.classList.remove("show")
+                        document.body.classList.remove('stop-scrolling')
                     })
                 }
                 if(xBtn){
                     xBtn.addEventListener("click", ()=>{
                         forumBg.classList.remove("show")
                         forumModal.classList.remove("show")
+                        document.body.classList.remove('stop-scrolling')
                     })
                 }
                 break;
@@ -149,10 +151,11 @@ const alertModalObj = {
                         modalDelete.classList.remove("show");
                         if(modalDeleteAll){
                             modalDeleteAll.classList.remove("show");
-                            
+                            document.body.classList.remove('stop-scrolling')
                         }
                         if(modalLogout){
                             modalLogout.classList.remove("show"); 
+                            document.body.classList.remove('stop-scrolling')
                         }
                     })
 
