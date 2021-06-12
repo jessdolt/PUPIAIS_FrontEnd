@@ -19,13 +19,12 @@
     transition: 200ms ease;
     box-shadow: $elevate24dp;
     z-index: 24;
-    @include set-background-color($primaryColor);
+    @include set-background-color($surfaceColor);
     width: 30rem;
     height: 100vh;
     padding: .4rem;
     background-image: url("../images/PUPlogo.png");
     background-repeat: no-repeat;
-    background-color: $primaryColor;
     background-size: 4rem 4rem;
     background-position: center bottom 5rem;
     @include respond-to('medium2'){
@@ -58,17 +57,21 @@
         display: flex;
         gap: .8rem;
         flex-flow: column;
+        align-items: center;
         @include respond-to('medium2'){
             flex-flow: row;
         }
         a{
             display: inline-block;
             width: 23.8rem;
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             border-radius: 3rem;
-            border: $surfaceColor .1rem solid;
-            color: $surfaceColor;
+            color: currentColor;
             text-align: center;
+            &.active{
+                @include set-background-color(mix($surfaceColor,$primaryColorLight,80%));
+                color: $primaryColorLight;
+            }
             @include respond-to('medium2'){
                 display: block;
                 width: initial;
@@ -76,7 +79,7 @@
                 padding: 0 2rem;
                 border: none;
                 border-radius: 0;
-                color: set-text-color(#d4d4d4);
+                color: currentColor;
                 &.active{
                     @include set-background-color($backgroundColor);
                 }

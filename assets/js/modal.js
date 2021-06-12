@@ -1,70 +1,76 @@
 const alertModalObj = {
     init:() => {
         let page = document.body.id;
+        //both for alumni and Admin
+        const optionBtnAlum = document.querySelector(".optionCon")
+        const deletePostBtn = document.querySelector(".btnDeletePost")
+        const bgModal = document.querySelector(".alertModalContainer")
+        const alertDelete = document.querySelector(".deleteAlert")
+        const canBtn = document.querySelector(".cancelBtn")
+        //forum form
+        const forumBg = document.querySelector(".modalConFilterNav")
+        const forumModal = document.querySelector(".newCourse")
+        const editPostBtn = document.querySelector(".btnEditPost")
+        const modalDeleteForum = document.querySelector(".modalDeleteInline");
+        const addPostBtn = document.querySelector(".newDis button")
+        const xBtn = document.querySelector(".modalFilterNav > svg")
+        if(optionBtnAlum){
+            optionBtnAlum.addEventListener("click", ()=>{
+                optionBtnAlum.classList.toggle("active")
+            })
+        }
+        if(deletePostBtn){
+            deletePostBtn.addEventListener("click", ()=>{
+                let dataId = deletePostBtn.getAttribute("data-id");
+                    let dataUrl = deletePostBtn.getAttribute("data-url");
+                    let actualURL;
+                    if(dataId){
+                        actualURL = dataUrl + "/" + dataId;
+                    }
+                    else{
+                        actualURL = dataUrl;
+                    }
+                
+                modalDeleteForum.setAttribute("href", actualURL);
+                bgModal.classList.add("show")
+                alertDelete.classList.add("show")
+                document.body.classList.add('stop-scrolling')
+            })
+            editPostBtn.addEventListener("click",()=>{
+                forumBg.classList.add("show")
+                forumModal.classList.add("show")
+                document.body.classList.add('stop-scrolling')
+            })
+        }
+        if(addPostBtn){
+            addPostBtn.addEventListener("click",()=>{
+                forumBg.classList.add("show")
+                forumModal.classList.add("show")
+                document.body.classList.add('stop-scrolling')
+            })
+        }
+        if(canBtn){
+            canBtn.addEventListener("click",()=>{
+                bgModal.classList.remove("show")
+                alertDelete.classList.remove("show")
+                document.body.classList.remove('stop-scrolling')
+            })
+        }
+        if(xBtn){
+            xBtn.addEventListener("click", ()=>{
+                forumBg.classList.remove("show")
+                forumModal.classList.remove("show")
+                document.body.classList.remove('stop-scrolling')
+            })
+        }
         switch(page){
             case 'Alumni':
-                const optionBtnAlum = document.querySelector(".optionCon")
-                const deletePostBtn = document.querySelector(".btnDeletePost")
-                const bgModal = document.querySelector(".alertModalContainer")
-                const alertDelete = document.querySelector(".deleteAlert")
-                const canBtn = document.querySelector(".cancelBtn")
-                //forum form
-                const forumBg = document.querySelector(".modalConFilterNav")
-                const forumModal = document.querySelector(".newCourse")
-                const editPostBtn = document.querySelector(".btnEditPost")
-                const modalDeleteForum = document.querySelector(".modalDeleteInline");
-                const addPostBtn = document.querySelector(".newDis button")
-                const xBtn = document.querySelector(".modalFilterNav > svg")
+                
+                
 
-                if(optionBtnAlum){
-                    optionBtnAlum.addEventListener("click", ()=>{
-                        optionBtnAlum.classList.toggle("active")
-                    })
-                }
-                if(deletePostBtn){
-                    deletePostBtn.addEventListener("click", ()=>{
-                        let dataId = deletePostBtn.getAttribute("data-id");
-                            let dataUrl = deletePostBtn.getAttribute("data-url");
-                            let actualURL;
-                            if(dataId){
-                                actualURL = dataUrl + "/" + dataId;
-                            }
-                            else{
-                                actualURL = dataUrl;
-                            }
-                        
-                        modalDeleteForum.setAttribute("href", actualURL);
-                        bgModal.classList.add("show")
-                        alertDelete.classList.add("show")
-                        document.body.classList.add('stop-scrolling')
-                    })
-                    editPostBtn.addEventListener("click",()=>{
-                        forumBg.classList.add("show")
-                        forumModal.classList.add("show")
-                        document.body.classList.add('stop-scrolling')
-                    })
-                }
-                if(addPostBtn){
-                    addPostBtn.addEventListener("click",()=>{
-                        forumBg.classList.add("show")
-                        forumModal.classList.add("show")
-                        document.body.classList.add('stop-scrolling')
-                    })
-                }
-                if(canBtn){
-                    canBtn.addEventListener("click",()=>{
-                        bgModal.classList.remove("show")
-                        alertDelete.classList.remove("show")
-                        document.body.classList.remove('stop-scrolling')
-                    })
-                }
-                if(xBtn){
-                    xBtn.addEventListener("click", ()=>{
-                        forumBg.classList.remove("show")
-                        forumModal.classList.remove("show")
-                        document.body.classList.remove('stop-scrolling')
-                    })
-                }
+                
+                
+                
                 break;
             case 'Admin':
                     //this to get inline delete btn
@@ -105,7 +111,8 @@ const alertModalObj = {
                     const previewFileInput = document.querySelector(".input-file-hidden");
                     const previewFormHidden = document.querySelector("#preview-form-hidden");
 
-                    //manage
+                    //forumView for admin
+                    /* const optionBtnAdmin = document.querySelector(".optionCon") */
 
                     //modal for questionair add question
                     const btnDeleteAccount = document.querySelectorAll(".btnDeleteAccount")
@@ -144,6 +151,12 @@ const alertModalObj = {
                             document.body.classList.add('stop-scrolling')
                         }))
                     }
+
+                    /* if(optionBtnAdmin){
+                        optionBtnAdmin.addEventListener("click", ()=>{
+                            optionBtnAdmin.classList.toggle("active")
+                        })
+                    } */
 
                     //--------------------functions------------------------
                     modalBtnCancel.forEach(element => element.onclick = () => {

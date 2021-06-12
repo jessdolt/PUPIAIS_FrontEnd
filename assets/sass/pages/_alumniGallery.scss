@@ -2,13 +2,18 @@
     .mainContent{
         padding: 0 0 4.8rem!important;
     }
+    .gal-card{
+        box-shadow: $minimalShadow;
+    }
     
     .galcon, .mainContent .container{
         padding-left:  2.4rem;
         padding-right:  2.4rem;
         @include set-background-color($surfaceColor);
+        
     }
     .galCon{
+        z-index: 1;
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
         padding-top: 3.2rem;
