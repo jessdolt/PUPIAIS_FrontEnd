@@ -1,12 +1,15 @@
 //same bg setting for preview, question, filterNav modal, changeCoverModal
-.modalContainer,.addModalContainer,.modalConFilterNav,.changeModalContainer{
+.modalContainer,
+.addModalContainer,
+.modalConFilterNav,
+.changeModalContainer,
+.imageViewModal{
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: $disabled;
     z-index: 25;
     align-items: center;
@@ -685,5 +688,104 @@
                 filter: brightness(1.2);
             }
         }
+    }
+}
+.imageViewModal{
+    transition: 200ms ease;
+    & *{
+        transition: 200ms ease;
+    }
+    backdrop-filter: blur(5px);
+    flex-flow: column;
+    svg{
+        min-width: 4em;
+        cursor: pointer;
+        position: absolute;
+        min-height: 4rem;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 2;
+        @include respond-to('medium2'){
+            min-width: 6rem;
+            min-height: 6rem;
+        }
+        &:focus,&:hover{
+            filter: brightness(1.2);
+            transform: scale(0.9);
+        } 
+        &:first-of-type{
+            background-image: url('../images/close-btn.svg');
+            
+            top: 2.4rem;
+            right: 2.4rem;
+        }
+        &:nth-of-type(2),&:nth-of-type(3){
+            background-image: url('../images/arrow-next.svg');
+            top: 50%;
+            transform: translateY(-50%);
+            &:focus,&:hover{
+                transform: translateY(-50%) scale(0.9);
+            } 
+            
+        }
+        &:nth-of-type(2){
+            transform: translateY(-50%) rotate(180deg);
+            left: 0.8rem;
+            &:focus,&:hover{
+                transform: translateY(-50%) scale(0.9) rotate(180deg);
+            } 
+            @include respond-to('medium2'){
+                left: 2.4rem;
+            }
+        }
+        &:nth-of-type(3){
+            right: 0.8rem;
+            @include respond-to('medium2'){
+                right: 2.4rem;
+            }
+        }
+    }
+    .imageViewCon{
+        flex: 1;
+        @include set-background-color($surfaceColor);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        border-radius: 1rem;
+        display: none;
+        overflow-x: hidden;
+        @include respond-to('medium2'){
+            left: 10rem;
+            right: 10rem;
+        }
+        @include respond-to('large'){
+            left: 16rem;
+            right: 16rem;
+        }
+        //newdept
+        &.show{
+            display: flex;
+        }
+        
+        .imgCon{
+            position: relative;
+            padding-top: 56.25%;
+            min-width: 100%;
+            height: 100%;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
     }
 }

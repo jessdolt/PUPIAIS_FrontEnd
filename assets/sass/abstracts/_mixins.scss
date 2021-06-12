@@ -31,7 +31,11 @@
             + "Please make sure it is defined in `$breakpoints` map.";
     }
 }
-
+//util
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden!important;
+  }
 
 //use to extend something inside media query
 /* @at-root (without: media) {

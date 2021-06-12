@@ -1,11 +1,15 @@
-/* @at-root (without: media) {
-    @extend %foo;
-} */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap");
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden !important; }
+
+/* @at-root (without: media) {
+    @extend %foo;
+} */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,9 +38,9 @@ html {
 body {
   margin: 0; }
 
-html, body {
-  height: 100%;
-  width: 100%; }
+body {
+  min-height: 100vh;
+  position: relative; }
 
 /**
    * Render the `main` element consistently in IE.
@@ -2372,19 +2376,26 @@ ul {
         width: 1.8rem;
         height: 2rem; }
 
-.modalContainer, .addModalContainer, .modalConFilterNav, .changeModalContainer {
+.modalContainer,
+.addModalContainer,
+.modalConFilterNav,
+.changeModalContainer,
+.imageViewModal {
   display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.38);
   z-index: 25;
   align-items: center;
   justify-content: center; }
-  .modalContainer.show, .addModalContainer.show, .modalConFilterNav.show, .changeModalContainer.show {
+  .modalContainer.show,
+  .addModalContainer.show,
+  .modalConFilterNav.show,
+  .changeModalContainer.show,
+  .imageViewModal.show {
     display: flex; }
 
 .modalContainer .hidden-form {
@@ -2878,6 +2889,88 @@ ul {
     .changeModalContainer .changeCoverModal img:hover {
       transform: scale(1.1);
       filter: brightness(1.2); }
+
+.imageViewModal {
+  transition: 200ms ease;
+  backdrop-filter: blur(5px);
+  flex-flow: column; }
+  .imageViewModal * {
+    transition: 200ms ease; }
+  .imageViewModal svg {
+    min-width: 4em;
+    cursor: pointer;
+    position: absolute;
+    min-height: 4rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2; }
+    @media (min-width: 800px) {
+      .imageViewModal svg {
+        min-width: 6rem;
+        min-height: 6rem; } }
+    .imageViewModal svg:focus, .imageViewModal svg:hover {
+      filter: brightness(1.2);
+      transform: scale(0.9); }
+    .imageViewModal svg:first-of-type {
+      background-image: url("../images/close-btn.svg");
+      top: 2.4rem;
+      right: 2.4rem; }
+    .imageViewModal svg:nth-of-type(2), .imageViewModal svg:nth-of-type(3) {
+      background-image: url("../images/arrow-next.svg");
+      top: 50%;
+      transform: translateY(-50%); }
+      .imageViewModal svg:nth-of-type(2):focus, .imageViewModal svg:nth-of-type(2):hover, .imageViewModal svg:nth-of-type(3):focus, .imageViewModal svg:nth-of-type(3):hover {
+        transform: translateY(-50%) scale(0.9); }
+    .imageViewModal svg:nth-of-type(2) {
+      transform: translateY(-50%) rotate(180deg);
+      left: 0.8rem; }
+      .imageViewModal svg:nth-of-type(2):focus, .imageViewModal svg:nth-of-type(2):hover {
+        transform: translateY(-50%) scale(0.9) rotate(180deg); }
+      @media (min-width: 800px) {
+        .imageViewModal svg:nth-of-type(2) {
+          left: 2.4rem; } }
+    .imageViewModal svg:nth-of-type(3) {
+      right: 0.8rem; }
+      @media (min-width: 800px) {
+        .imageViewModal svg:nth-of-type(3) {
+          right: 2.4rem; } }
+  .imageViewModal .imageViewCon {
+    flex: 1;
+    background-color: #FFFFFF;
+    color: rgba(0, 0, 0, 0.87);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    border-radius: 1rem;
+    display: none;
+    overflow-x: hidden; }
+    @media (min-width: 800px) {
+      .imageViewModal .imageViewCon {
+        left: 10rem;
+        right: 10rem; } }
+    @media (min-width: 1367px) {
+      .imageViewModal .imageViewCon {
+        left: 16rem;
+        right: 16rem; } }
+    .imageViewModal .imageViewCon.show {
+      display: flex; }
+    .imageViewModal .imageViewCon .imgCon {
+      position: relative;
+      padding-top: 56.25%;
+      min-width: 100%;
+      height: 100%; }
+    .imageViewModal .imageViewCon img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
 
 .card {
   background-color: #EEEEEE;

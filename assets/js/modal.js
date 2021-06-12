@@ -36,16 +36,19 @@ const alertModalObj = {
                         modalDeleteForum.setAttribute("href", actualURL);
                         bgModal.classList.add("show")
                         alertDelete.classList.add("show")
+                        document.body.classList.add('stop-scrolling')
                     })
                     editPostBtn.addEventListener("click",()=>{
                         forumBg.classList.add("show")
                         forumModal.classList.add("show")
+                        document.body.classList.add('stop-scrolling')
                     })
                 }
                 if(addPostBtn){
                     addPostBtn.addEventListener("click",()=>{
                         forumBg.classList.add("show")
                         forumModal.classList.add("show")
+                        document.body.classList.add('stop-scrolling')
                     })
                 }
                 if(canBtn){
@@ -77,6 +80,7 @@ const alertModalObj = {
                             modalBtnDelete.setAttribute("href", actualURL);
                             modalBackground.classList.add("show");
                             modalDelete.classList.add("show");
+                            document.body.classList.add('stop-scrolling')
                         }
                     }
                     //--------------------Variable Declaration------------------------
@@ -135,6 +139,7 @@ const alertModalObj = {
                             deleteAccountForm.setAttribute("action", actualURL);
                             modalBackground.classList.add("show");
                             modalDelete.classList.add("show");
+                            document.body.classList.add('stop-scrolling')
                         }))
                     }
 
@@ -154,11 +159,13 @@ const alertModalObj = {
                     function generateDeleteModalAll(){
                         modalBackground.classList.add("show");
                         modalDeleteAll.classList.add("show");
+                        document.body.classList.add('stop-scrolling')
                     }
 
                     function generateLogoutModal(){
                         modalBackground.classList.add("show");
                         modalLogout.classList.add("show");
+                        document.body.classList.add('stop-scrolling')
                     }
                     function generatePreviewModal(){
                         previewFileInput.click();
