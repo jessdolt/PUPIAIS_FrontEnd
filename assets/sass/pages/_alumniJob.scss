@@ -11,6 +11,9 @@
             @include respond-to('medium2'){
                 padding: 2.4rem 4rem;
             }
+            a{
+                border-radius: 0.5rem !important;
+            }
             //archive
             &:nth-of-type(2){
                 overflow-y: hidden;

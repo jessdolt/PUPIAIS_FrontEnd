@@ -33,7 +33,6 @@
             }
         }
         &.mainContent{
-            padding: 0;
             @include respond-to('medium2'){
                 /* grid-template-rows: 2fr 1fr 1fr; */
                 grid-auto-rows: minmax(4.4rem, auto);
@@ -54,7 +53,7 @@
                     padding-top: 2.4rem !important;
                     padding-right: 4rem;
                     margin-right: 1.6rem;
-                    border-radius: 1rem;
+                    border-radius: 1rem !important;
                 }
                 @include respond-to('large'){
                     grid-column: 3/9;
@@ -112,24 +111,35 @@
             .forum-link{
                 @include set-background-color($surfaceColor);
                 display: flex;
-                gap: 1.6rem;
+                gap: 0.8rem;
                 text-decoration: none;
                 //padding bottom attach to forum-details-con
-                padding: 0.8rem 1.6rem 0;
+                padding-top: 0.8rem;
                 transition: 200ms ease;
                 border-radius: 1rem;
+                @include respond-to('medium2'){
+                    padding: 0.8rem 1.6rem 0;
+                    gap: 1.6rem;
+                }
                 &:focus,&:hover{
                     box-shadow: $elevate1dp;
                 }
             }
             
             .forum-image{
-                margin: 0.475rem;
-                width: 4.75rem;
-                height: 4.75rem;
+                margin: 0.7rem;
+                width: 3.5rem;
+                height: 3.5rem;
                 border-radius: 10rem;
                 background-position: center;
                 background-size: cover;
+                align-self: flex-start;
+                @include respond-to('medium2'){
+                    margin: 0.475rem;
+                    width: 4.75rem;
+                    height: 4.75rem;
+                    align-self: center;
+                }
                 &.help{
                     background-image: url('../images/help-forum-pic.svg');
                 }
@@ -255,7 +265,10 @@
         }
         //overide for forumView
         &.forumView{
-
+            padding: 0;
+            @include respond-to('medium2'){
+                padding: 2.4rem 0;
+            }
             img{
                 border: 3px solid $surfaceColor;
                 object-fit: cover;

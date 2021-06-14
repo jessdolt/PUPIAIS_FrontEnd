@@ -1,39 +1,60 @@
 const nav = {
     init:() => {
         let page = document.body.id;
+        //global
+        //--------------------Variable Declaration------------------------
+        //userNav
+        const hamburgerIcon = document.querySelector(".hamburgerIcon");
+        const closeIcon = document.querySelector(".closeIcon");
+        const mobileNav = document.querySelector(".mainNav");
+        const navBtn = document.querySelector(".mainNav button");
+
+        //--------------------Event Listeners------------------------
+        if(hamburgerIcon){
+            hamburgerIcon.addEventListener("click", showMobileNav);
+            /* closeIcon.addEventListener("click", hideMobileNav); */
+            navBtn.addEventListener("click", toggleNavModal);
+            window.addEventListener("resize", () => {
+                if(window.innerWidth >= 1366){
+                    showMobileNav();
+                }
+                else{
+                    hideMobileNav();
+                }
+            });
+        }
+        if(mobileNav){
+            window.addEventListener("click", closeMobileNav);
+        }
+        
+
+        //--------------------functions------------------------
+        //mobileNav Functions
+        
+        function toggleNavModal(){
+            navBtn.classList.toggle("active");
+        }
+        function showMobileNav(){
+            mobileNav.classList.add("show");
+        }
+        function hideMobileNav(){
+            mobileNav.classList.remove("show");
+        }
+        function closeMobileNav(e){
+            let targetElem = e.target;
+            //click inside or the humburger
+            do{
+                if(targetElem == mobileNav || targetElem == hamburgerIcon){
+                    return;
+                }
+                targetElem = targetElem.parentNode;
+            } while(targetElem);
+            //click outside
+            mobileNav.classList.remove("show");
+        }
         switch(page){
             case 'Alumni':
-                //--------------------Variable Declaration------------------------
-                //userNav
-                const hamburgerIcon = document.querySelector(".hamburgerIcon");
-                const closeIcon = document.querySelector(".closeIcon");
-                const mobileNav = document.querySelector(".mainNav");
-                const navBtn = document.querySelector(".mainNav button");
-
-                //--------------------Event Listeners------------------------
-                hamburgerIcon.addEventListener("click", showMobileNav);
-                closeIcon.addEventListener("click", hideMobileNav);
-                navBtn.addEventListener("click", toggleNavModal);
-
-                //--------------------functions------------------------
-                //mobileNav Functions
-                window.addEventListener("resize", () => {
-                    if(window.innerWidth >= 1366){
-                        showMobileNav();
-                    }
-                    else{
-                        hideMobileNav();
-                    }
-                });
-                function toggleNavModal(){
-                    navBtn.classList.toggle("active");
-                }
-                function showMobileNav(){
-                    mobileNav.classList.add("show");
-                }
-                function hideMobileNav(){
-                    mobileNav.classList.remove("show");
-                }
+                
                 break;
             case 'Admin':
                 //check if filterNav is on the page

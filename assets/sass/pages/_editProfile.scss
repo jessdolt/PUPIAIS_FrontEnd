@@ -247,10 +247,10 @@
                 border-right: 1px $mediumEmphasis solid!important;
             }
         }
-        input[type="number"]{
+        /* input[type="number"]{
             @extend %outline;
             color: $mediumEmphasis;
-        }
+        } */
         //radioButtons
         fieldset{
             border: none;

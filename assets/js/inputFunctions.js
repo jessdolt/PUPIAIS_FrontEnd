@@ -1,14 +1,20 @@
 const inputUtil = {
     init:() => {
         //--------------------Variable Declaration------------------------
+        //verification
         const codeTextBox = document.querySelector("#verification-code");
+        //userAdd
         const batchComboBox = document.querySelector("#batch-id");
         const studentIdBox = document.querySelector("#student-id");
+        //contentEditable
         const altTextArea = document.querySelectorAll('[role="textbox"]');
+        //manage
         const editBtnManageAcc = document.querySelector('.managePage .btn-con .edit');
         const cancelBtnManageAcc = document.querySelector('.managePage .btn-con .cancel');
         const cardCon = document.querySelector('.managePage .card-con');
         const inputs = document.querySelectorAll('.managePage .card-con #edit-form input');
+        //addInfo
+        const currentStat = document.querySelector('#current-status')
 
         //--------------------Event Listeners------------------------
         //for verification code to fill the box
@@ -70,6 +76,10 @@ const inputUtil = {
                 })
             })
         }
+        if(currentStat){
+            window.addEventListener('load', setInputFields)
+            currentStat.addEventListener('change',setInputFields)
+        }
         //--------------------functions------------------------
 
         function setStudentId(e){
@@ -81,6 +91,55 @@ const inputUtil = {
             catch{
                 studentIdBox.value = "";
             }
+        }
+
+        function setInputFields(e){
+            /* const parentCon = e.target.parentNode.parentNode.parentNode */
+            const allInput = document.querySelectorAll('input')
+            console.log(currentStat.value)
+            if(currentStat.value == 'student' || currentStat.value == 'unemployed')
+            {
+                allInput.forEach(element=>{
+                    if(element.id == 'grad-date' ||
+                    element.id == "first-emp-date"){
+                        
+                    }
+                    else if(element.id == 'course-id'){
+                        element.setAttribute("readonly", true)
+                    }
+                    else if(element.id == 'news-image-input'){
+                        element.setAttribute("disabled", true)
+                        element.parentNode.style.display = 'none'
+                    }
+                    else if(element.type == 'radio'){
+                        element.setAttribute("disabled", true)
+                        element.parentNode.parentNode.style.display = 'none'
+                    }
+                    else{
+                        element.setAttribute("readonly", true)
+                        element.value = ""
+                    }
+                })
+            }
+            else{
+                allInput.forEach(element=>{
+                    if(element.id == 'course-id'){
+                        
+                    }
+                    else if(element.id == 'news-image-input'){
+                        element.removeAttribute("disabled")
+                        element.parentNode.style.display = 'block'
+                    }
+                    else if(element.type == 'radio'){
+                        element.removeAttribute("disabled")
+                        element.parentNode.parentNode.style.display = 'block'
+                    }
+                    else{
+                        element.removeAttribute("readonly")
+                    }
+                })
+            }
+            
         }
     }
 }

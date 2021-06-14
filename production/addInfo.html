@@ -17,9 +17,6 @@
     </header>
     <div class="headerShadow"></div>
     <nav class="mainNav">
-        <svg class="icon closeIcon" tabindex="0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32.6007 15.413C32.0683 14.8805 31.2082 14.8805 30.6758 15.413L24 22.0751L17.3242 15.3993C16.7918 14.8669 15.9317 14.8669 15.3993 15.3993C14.8669 15.9317 14.8669 16.7918 15.3993 17.3242L22.0751 24L15.3993 30.6758C14.8669 31.2082 14.8669 32.0683 15.3993 32.6007C15.9317 33.1331 16.7918 33.1331 17.3242 32.6007L24 25.9249L30.6758 32.6007C31.2082 33.1331 32.0683 33.1331 32.6007 32.6007C33.1331 32.0683 33.1331 31.2082 32.6007 30.6758L25.9249 24L32.6007 17.3242C33.1195 16.8055 33.1195 15.9317 32.6007 15.413V15.413Z"/>
-        </svg>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="alumniNews.html">News</a></li>
@@ -50,7 +47,6 @@
             </a>
         </div>
         <a href="" class="dashboardLink">Admin Dashboard</a>
-        <h1>Polytechnic University <br> of the Philippines</h1>
     </nav>
     <main class="alumni editProfile">
         <section class="heroBox behind">
@@ -65,6 +61,13 @@
                     <div class="questionCon addInfo">
                         <div class="smallComponentsContainer">
                             <div>
+                                <label for="course-id" class="outsideLabel">Course:</label>
+                                <div class="textFieldContainer">
+                                    <input type="text" name="courseId" id="course-id" value="DICT" required>
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                            <div>
                                 <label for="grad-date" class="outsideLabel">Date of Graduation:</label>
                                 <div class="textFieldContainer">
                                     <input type="date" name="gradDate" id="grad-date"required>
@@ -72,7 +75,18 @@
                                 </div>
                             </div>
                             <div>
-                                <label for="first-emp-date" class="outsideLabel">Date of 1st Employment:</label>
+                                <label for="current-status" class="outsideLabel">Current Status:</label>
+                                <div class="textFieldContainer">
+                                    <select name="cstatus" id="current-status" required>
+                                        <option value="unemployed">Unemployed</option>
+                                        <option value="employed">Employed</option>
+                                        <option value="student">Student</option>
+                                    </select>
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="first-emp-date" class="outsideLabel" read>Date of 1st Employment(if applicable):</label>
                                 <div class="textFieldContainer">
                                     <input type="date" name="firstEmpDate" id="first-emp-date"required>
                                     <span class="error"></span>
