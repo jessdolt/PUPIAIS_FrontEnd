@@ -97,7 +97,7 @@ const inputUtil = {
             /* const parentCon = e.target.parentNode.parentNode.parentNode */
             const allInput = document.querySelectorAll('input')
             console.log(currentStat.value)
-            if(currentStat.value == 'student' || currentStat.value == 'unemployed')
+            if(currentStat.value == 'Student' || currentStat.value == 'Unemployed')
             {
                 allInput.forEach(element=>{
                     if(element.id == 'grad-date' ||
