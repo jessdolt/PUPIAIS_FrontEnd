@@ -127,9 +127,30 @@
                                 <!-- Multiple Choice -->
                                 <!-- for each ageyn-->
                                 <div class="answerCon">
-                                    <div class="container">
-                                        <canvas id="my-chart"></canvas>
-                                    </div>
+                                    <canvas id="my-chart"></canvas>
+                                </div>
+                            </div>
+                            <!-- for each -->
+                            <div class="questionCon">
+                                <div class="questionHeader">
+                                    <h3>Question Sample:</h3>
+                                    <span class="questionType">Multiple Choice</span>
+                                </div>
+                                <!-- Multiple Choice -->
+                                <!-- for each ageyn-->
+                                <div class="answerCon">
+                                    <ul class="answer-list">
+                                        <li class="answer">
+                                            <div class="flex-con">
+                                                <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+                                                <span class="answer-ratio">0/0000</span>
+                                                <div class="answer-progress-bar">
+                                                    <div class="answer-progress-bar-percent"></div>
+                                                </div>
+                                                <span class="answer-percentage">100%</span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="questionCon">
@@ -140,10 +161,6 @@
                                 <!-- Paragraph -->
                                 <div class="answerCon">
                                     <!-- for each ageyn-->
-                                    <textarea name="q2a" id="answer-para" readonly>Margaux Balew Shesh
-                                    </textarea>
-                                    <textarea name="q2a" id="answer-para" readonly>Margaux Balew Shesh
-                                    </textarea>
                                     <textarea name="q2a" id="answer-para" readonly>Margaux Balew Shesh
                                     </textarea>
                                     <textarea name="q2a" id="answer-para" readonly>Margaux Balew Shesh
@@ -217,6 +234,55 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        let myChart = document.getElementById('my-chart').getContext('2d')
+
+        //Global Options
+        Chart.defaults.font.family = 'Poppins';
+        Chart.defaults.font.size  = 18;
+        Chart.defaults.color = '#212121';
+
+        let userCountChart = new Chart(myChart, {
+            type: 'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data:{
+                labels:['Active','Inactive'],
+                datasets:[{
+                    label:'UsersCount',
+                    data:[
+                        500,
+                        7054
+                    ],
+                    backgroundColor:[
+                        '#A63F3F',
+                        '#EEEEEE'
+                    ],
+                    /* borderWidth: 4,
+                    borderColor: '#777',
+                    hoverBorderColor: '#212121' */
+                }]
+            },
+            options:{
+                plugins:{
+                    title:{
+                    display:true,
+                    text: 'User Count',
+                    fontSize:36
+                    },
+                    legend:{
+                        /* display: false */
+                    }
+                },
+                responsive:true/* ,
+                layout:{
+                    padding:{
+                        left: 50,
+                        top:0,
+                        right:0,
+                        bottom:0
+                    }
+                } */
+            }
+        })
+    </script>    
 </body>
 </html>

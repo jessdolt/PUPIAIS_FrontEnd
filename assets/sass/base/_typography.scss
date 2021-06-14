@@ -154,7 +154,41 @@ table{
         font-weight: 500;
     }
 }
-    
+
+//dashboard
+.dashboard{
+    h3{
+        font-size: $overline-text-desktop;
+        font-weight: 600;
+    }
+    .visit-count,
+    .job-open-count{
+        font-size: $h1-text-desktop;
+    }
+    a{
+        color: currentColor !important;
+    }
+    select{
+        color: $mediumEmphasis;
+    }
+    .author{
+        
+        font-weight: 600;
+    }
+    .time-elapsed{
+        font-size: $smallest-text;
+        color: $mediumEmphasis;
+    }
+    li{
+        p{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+}
 
 //userSurvey
 .mainContent{

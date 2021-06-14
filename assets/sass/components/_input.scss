@@ -13,6 +13,10 @@ input,textarea{
         transition: 200ms ease;
     }
 }
+[readonly]{
+    background-color: $backgroundColor!important;
+    color: $disabled !important;
+}
 
 //textfieldwithIcon
 .textFieldContainer{
@@ -115,6 +119,9 @@ textarea{
         border-radius: 5rem;
     }
     border: 1px $textfield-border solid;
+    border-radius: 0.5rem;
+}
+select{
     border-radius: 0.5rem;
 }
 

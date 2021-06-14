@@ -24,10 +24,6 @@
             height: 7.2rem;
             border-radius: 10rem;
             border: 3px solid $surfaceColor;
-            background-image: url('../images/profile-default-img.svg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
             object-fit: cover;
             @include respond-to('medium2'){
                 top: 3.2rem;

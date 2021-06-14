@@ -1,11 +1,12 @@
 .admin.dataInput{
-    .answerCon{
-        padding-right: 0.8rem;
-        max-height: 34.4rem;
-        overflow: auto;
-        canvas{
-            /* min-height: 34.4rem; */
-            max-height: 100%;
+    .reportView{
+        .answerCon{
+            padding-right: 0.8rem;
+            max-height: 34.4rem;
+            overflow: auto;
+            canvas{
+                max-height: 100%;
+            }
         }
     }
 }
