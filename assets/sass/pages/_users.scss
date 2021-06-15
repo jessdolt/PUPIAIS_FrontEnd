@@ -136,8 +136,11 @@
             margin-top: 3.2rem;
             & > li{
                 &> .deptHead{
+                    @extend %btn;
+                    min-height: 3rem!important;
                     text-transform: capitalize;
                     justify-content: space-between;
+                    color: currentColor;
                     //overide
                     padding: 0 1.6rem 0 0.8rem;
                     &.active{
