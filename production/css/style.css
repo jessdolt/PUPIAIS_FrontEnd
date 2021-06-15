@@ -608,6 +608,17 @@ table tbody {
     .alumGallery h3, .galCon h3 {
       font-size: 1.8rem; } }
 
+.modalFilterNav h1, .modalFilterNav h3 {
+  font-weight: 600; }
+
+.modalFilterNav .profile-header .date-res-con {
+  color: rgba(0, 0, 0, 0.6); }
+  .modalFilterNav .profile-header .date-res-con span {
+    font-weight: 600; }
+
+.modalFilterNav .profile-body h3 {
+  font-size: 1.8rem; }
+
 .fullscreen {
   width: 100%;
   height: 100%;
@@ -2950,6 +2961,8 @@ ul {
       padding: 2.4rem 4rem; } }
   .modalFilterNav.newDept.show, .modalFilterNav.newCourse.show, .modalFilterNav.newBatch.show, .modalFilterNav.editDept.show, .modalFilterNav.editCourse.show, .modalFilterNav.editBatch.show {
     display: flex; }
+  .modalFilterNav.show {
+    display: flex; }
   .modalFilterNav h1 {
     border-bottom: 1px solid #EEEEEE;
     margin-bottom: 0.8rem; }
@@ -2977,6 +2990,73 @@ ul {
       min-height: 4rem !important;
       border-radius: 5rem;
       margin-right: auto; }
+  .modalFilterNav.alum-rep {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.38) #FFFFFF;
+    width: 106rem;
+    max-height: calc(100% - 4.8rem);
+    overflow: auto; }
+    .modalFilterNav.alum-rep::-webkit-scrollbar {
+      width: 0.5rem; }
+    .modalFilterNav.alum-rep::-webkit-scrollbar-track {
+      background-color: #FFFFFF; }
+    .modalFilterNav.alum-rep::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.38);
+      border-radius: 5rem; }
+    .modalFilterNav.alum-rep .profile-header {
+      display: flex;
+      align-items: center; }
+      .modalFilterNav.alum-rep .profile-header > * + * {
+        margin-left: 1.6rem; }
+    .modalFilterNav.alum-rep .profile-body > * + * {
+      margin-top: 4rem; }
+    .modalFilterNav.alum-rep .profile-body section {
+      border: 1px solid rgba(0, 0, 0, 0.38);
+      border-radius: 1rem;
+      padding: 2.4rem 4.8rem 3.2rem; }
+    .modalFilterNav.alum-rep .profile-body h3, .modalFilterNav.alum-rep .profile-body li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.38); }
+    .modalFilterNav.alum-rep .profile-body h3 {
+      color: #A63F3F;
+      font-weight: 600;
+      font-size: 1.8rem;
+      padding-bottom: 2.4rem; }
+    .modalFilterNav.alum-rep .profile-body li {
+      padding: 1.6rem 1rem;
+      display: flex; }
+      .modalFilterNav.alum-rep .profile-body li > * + * {
+        margin-left: 10rem; }
+    .modalFilterNav.alum-rep .profile-body .li-header, .modalFilterNav.alum-rep .profile-body .li-data {
+      flex: 1; }
+    .modalFilterNav.alum-rep .profile-body .li-header {
+      font-size: 1.4rem;
+      font-weight: 500;
+      min-width: 10rem;
+      max-width: 21.4rem; }
+    .modalFilterNav.alum-rep .profile-body .li-header {
+      color: rgba(0, 0, 0, 0.6);
+      text-transform: uppercase; }
+    .modalFilterNav.alum-rep .profile-body .img-main-con {
+      max-width: 41.4rem; }
+    .modalFilterNav.alum-rep .profile-body .img-con {
+      position: relative;
+      padding-top: 56.25%;
+      width: 100%; }
+      .modalFilterNav.alum-rep .profile-body .img-con img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        background-image: url("../images/gallery-default.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 8rem; }
   .modalFilterNav input[type="text"], .modalFilterNav input[type="date"], .modalFilterNav input[type="tel"], .modalFilterNav input[type="email"], .modalFilterNav select, .modalFilterNav textarea {
     border-radius: 0.5rem;
     border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
@@ -3956,7 +4036,13 @@ ul {
     width: 0;
     margin-right: auto; }
   .users .mainContent.userReport th:nth-child(7), .users .mainContent.userReport td:nth-child(7) {
-    min-width: 3.2rem; }
+    min-width: 3.2rem;
+    cursor: pointer;
+    transition: 200ms ease; }
+    .users .mainContent.userReport th:nth-child(7):focus, .users .mainContent.userReport th:nth-child(7):hover, .users .mainContent.userReport td:nth-child(7):focus, .users .mainContent.userReport td:nth-child(7):hover {
+      filter: brightness(1.025); }
+    .users .mainContent.userReport th:nth-child(7):active, .users .mainContent.userReport td:nth-child(7):active {
+      filter: brightness(0.85); }
   .users .mainContent.userReport th:nth-child(6), .users .mainContent.userReport th time, .users .mainContent.userReport th p, .users .mainContent.userReport td:nth-child(6), .users .mainContent.userReport td time, .users .mainContent.userReport td p {
     display: block;
     overflow: hidden;
@@ -5569,7 +5655,7 @@ select, input, textarea {
     color: #A63F3F;
     padding-bottom: 1.6rem;
     font-size: 1.4rem;
-    font-weight: 500; }
+    font-weight: 600; }
     @media (min-width: 800px) {
       .profile .profile-body h3 {
         font-size: 1.8rem;
@@ -5579,8 +5665,9 @@ select, input, textarea {
     @media (min-width: 800px) {
       .profile .profile-body li {
         padding: 1.6rem 1rem;
-        display: flex;
-        gap: 10rem; } }
+        display: flex; }
+        .profile .profile-body li > * + * {
+          margin-left: 10rem; } }
   .profile .profile-body .li-header, .profile .profile-body .li-data {
     flex: 1; }
   .profile .profile-body .li-header {

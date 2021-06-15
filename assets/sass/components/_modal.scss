@@ -533,9 +533,13 @@
     &.newBatch.show,
     &.editDept.show,
     &.editCourse.show,
-    &.editBatch.show{
+    &.editBatch.show{ 
         display: flex;
     }
+    &.show{
+        display: flex;
+    }
+    
     h1{
         border-bottom: 1px solid $backgroundColor;
         margin-bottom: 0.8rem;
@@ -569,6 +573,97 @@
             margin-right: auto;
         }
     }
+    //almuniReport
+    &.alum-rep{
+        //forfirefox scrollbar
+        scrollbar-width: thin;
+        scrollbar-color: $disabled $surfaceColor;
+        &::-webkit-scrollbar{
+            width: 0.5rem;
+        }
+        &::-webkit-scrollbar-track{
+            background-color: $surfaceColor;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $disabled;
+            border-radius: 5rem;
+            
+        }
+        width: 106rem;
+        max-height: calc(100% - 4.8rem);
+        overflow: auto;
+        .profile-header{
+            display: flex;
+            align-items: center;
+            &>*+*{
+                margin-left: 1.6rem;
+            }
+        }
+        .profile-body{
+            &>*+*{
+                margin-top: 4rem;
+            }
+            section{
+                border: 1px solid $disabled;
+                border-radius: 1rem;
+                padding: 2.4rem 4.8rem 3.2rem;
+            }
+            h3,li{
+                border-bottom: 1px solid $disabled;
+            }
+            h3{
+                color: $primaryColorLight;
+                font-weight: 600;
+                font-size: 1.8rem;
+                padding-bottom: 2.4rem;
+            }
+            li{
+                padding: 1.6rem 1rem;
+                display: flex;
+                &>*+*{
+                    margin-left: 10rem;
+                }
+            }
+            .li-header, .li-data{
+                flex: 1;
+            }
+            .li-header{
+                font-size: 1.4rem;
+                font-weight: 500;
+                min-width: 10rem;
+                max-width: 21.4rem;
+            }
+            .li-header{
+                color: $mediumEmphasis;
+                text-transform: uppercase;
+            }
+            .img-main-con{
+                max-width: 41.4rem;
+            }
+            .img-con{
+                position: relative;
+                padding-top: 56.25%;
+                width: 100%;
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                    border: 1px solid $disabled;
+                    background-image: url('../images/gallery-default.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 8rem;
+                }
+            }
+        }
+    }
+    
 
     //single components
     input[type="text"],input[type="date"],input[type="tel"],input[type="email"],select,textarea{

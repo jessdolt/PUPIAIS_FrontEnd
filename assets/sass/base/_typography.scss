@@ -370,3 +370,24 @@ table{
         
     }
 }
+
+
+.modalFilterNav{
+    h1,h3{
+        font-weight: 600;
+    }
+    .profile-header{
+        .date-res-con{
+            color: $mediumEmphasis;
+            span{
+                font-weight: 600;
+            }
+        }
+        
+    }
+    .profile-body{
+        h3{
+            font-size: $h3-text-mobile;
+        }
+    }
+}

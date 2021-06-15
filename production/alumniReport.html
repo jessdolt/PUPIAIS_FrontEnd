@@ -174,13 +174,13 @@
                                     <td><p class="batch">2021</p></td>
                                     <td><p class="emp-stat">Unemployed</p></td>
                                     <td><time>September 02, 0000</time></td>
-                                    <td><a href="#"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <td><span class="viewAlumni"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="28" height="28" rx="14" fill="#EEEEEE"/>
                                             <path d="M17.4756 19.5C18.0279 19.5 18.4756 19.0523 18.4756 18.5C18.4756 17.9477 18.0279 17.5 17.4756 17.5C16.9233 17.5 16.4756 17.9477 16.4756 18.5C16.4756 19.0523 16.9233 19.5 17.4756 19.5Z" fill="black" fill-opacity="0.87"/>
                                             <path d="M21.3641 18.2395C21.0551 17.4524 20.522 16.7733 19.8308 16.2864C19.1396 15.7994 18.3207 15.526 17.4756 15.5C16.6305 15.526 15.8116 15.7994 15.1203 16.2864C14.4291 16.7733 13.896 17.4524 13.5871 18.2395L13.4756 18.5L13.5871 18.7605C13.896 19.5476 14.4291 20.2267 15.1203 20.7136C15.8116 21.2006 16.6305 21.474 17.4756 21.5C18.3207 21.474 19.1396 21.2006 19.8308 20.7136C20.522 20.2267 21.0551 19.5476 21.3641 18.7605L21.4756 18.5L21.3641 18.2395ZM17.4756 20.5C17.08 20.5 16.6933 20.3827 16.3644 20.1629C16.0355 19.9432 15.7792 19.6308 15.6278 19.2654C15.4765 18.8999 15.4368 18.4978 15.514 18.1098C15.5912 17.7219 15.7817 17.3655 16.0614 17.0858C16.3411 16.8061 16.6974 16.6156 17.0854 16.5384C17.4734 16.4613 17.8755 16.5009 18.241 16.6522C18.6064 16.8036 18.9188 17.06 19.1385 17.3889C19.3583 17.7178 19.4756 18.1044 19.4756 18.5C19.4749 19.0302 19.264 19.5386 18.8891 19.9135C18.5141 20.2884 18.0058 20.4993 17.4756 20.5Z" fill="black" fill-opacity="0.87"/>
                                             <path d="M11.7755 20.4286H9.57557V7.5716H13.9755V10.7858C13.9764 11.0697 14.0925 11.3418 14.2986 11.5425C14.5047 11.7433 14.784 11.8564 15.0755 11.8573H18.3754V14.0001H19.4754V10.7858C19.4773 10.7154 19.4636 10.6455 19.4351 10.5807C19.4066 10.516 19.3641 10.458 19.3104 10.4108L15.4605 6.66089C15.4121 6.60858 15.3526 6.56712 15.2861 6.53937C15.2196 6.51163 15.1478 6.49826 15.0755 6.50018H9.57557C9.2841 6.50103 9.00482 6.61418 8.79872 6.81493C8.59263 7.01568 8.47646 7.2877 8.47559 7.5716V20.4286C8.47646 20.7125 8.59263 20.9845 8.79872 21.1853C9.00482 21.386 9.2841 21.4992 9.57557 21.5H11.7755V20.4286ZM15.0755 7.78588L18.1554 10.7858H15.0755V7.78588Z" fill="black" fill-opacity="0.87"/>
                                             </svg>
-                                        </a>
+                                        </span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -223,6 +223,83 @@
             <div>
                 <button class="cancelBtn">Cancel</button>
                 <a href="">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="modalConFilterNav ">
+        <!-- addNewDept -->
+        <div class="modalFilterNav alum-rep show">
+            <svg class="close-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.7608 11.9989L19.1306 6.64085C19.3658 6.40566 19.4979 6.08668 19.4979 5.75408C19.4979 5.42148 19.3658 5.1025 19.1306 4.86731C18.8955 4.63213 18.5765 4.5 18.244 4.5C17.9114 4.5 17.5925 4.63213 17.3573 4.86731L12 10.2379L6.64268 4.86731C6.40752 4.63213 6.08859 4.5 5.75603 4.5C5.42348 4.5 5.10454 4.63213 4.86939 4.86731C4.63424 5.1025 4.50213 5.42148 4.50213 5.75408C4.50213 6.08668 4.63424 6.40566 4.86939 6.64085L10.2392 11.9989L4.86939 17.357C4.75234 17.4731 4.65944 17.6113 4.59604 17.7635C4.53264 17.9157 4.5 18.0789 4.5 18.2438C4.5 18.4087 4.53264 18.5719 4.59604 18.7241C4.65944 18.8763 4.75234 19.0144 4.86939 19.1306C4.98548 19.2476 5.1236 19.3405 5.27578 19.4039C5.42795 19.4674 5.59118 19.5 5.75603 19.5C5.92089 19.5 6.08411 19.4674 6.23629 19.4039C6.38847 19.3405 6.52659 19.2476 6.64268 19.1306L12 13.76L17.3573 19.1306C17.4734 19.2476 17.6115 19.3405 17.7637 19.4039C17.9159 19.4674 18.0791 19.5 18.244 19.5C18.4088 19.5 18.572 19.4674 18.7242 19.4039C18.8764 19.3405 19.0145 19.2476 19.1306 19.1306C19.2477 19.0144 19.3406 18.8763 19.404 18.7241C19.4674 18.5719 19.5 18.4087 19.5 18.2438C19.5 18.0789 19.4674 17.9157 19.404 17.7635C19.3406 17.6113 19.2477 17.4731 19.1306 17.357L13.7608 11.9989Z" fill="black" fill-opacity="0.87"/>
+            </svg>
+            <div class="profile-header">
+                <h3>View report details</h3>
+                <p class="date-res-con">Date responded: <span class="date-res">September 00,0000</span></p>
+            </div>
+            <div class="profile-body">
+                <section class="profile-information">
+                    <h3>Alumni Information</h3>
+                    <ul>
+                        <li>
+                            <span class="li-header">STUDENT ID</span>
+                            <p class="li-data">2000-00000-MM-0</p>
+                        </li>
+                        <li>
+                            <span class="li-header">ALUMNI NAME</span>
+                            <p class="li-data">aniel Yodub</p>
+                        </li>
+                        <li>
+                            <span class="li-header">COURSE</span>
+                            <p class="li-data">Diploma in Information Communication Techonology</p>
+                        </li>
+                        <li>
+                            <span class="li-header">YEAR GRADUATED</span>
+                            <p class="li-data">Batch 2021</p>
+                        </li>
+                        <li>
+                            <span class="li-header">EMPLOYMENT STATUS</span>
+                            <p class="li-data">Unemployed</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="profile-information">
+                    <h3>Employment Information</h3>
+                    <ul>
+                        <li>
+                            <span class="li-header">FIRST EMPLOYMENT</span>
+                            <p class="li-data">September 00,0000</p>
+                        </li>
+                        <li>
+                            <span class="li-header">CURRENT EMPLOYMENT</span>
+                            <p class="li-data">September 00,0000</p>
+                        </li>
+                        <li>
+                            <span class="li-header">TYPE OF WORK</span>
+                            <p class="li-data">Web Development</p>
+                        </li>
+                        <li>
+                            <span class="li-header">WORK POSITION</span>
+                            <p class="li-data">UI/Ux</p>
+                        </li>
+                        <li>
+                            <span class="li-header">MONTHLY INCOME</span>
+                            <p class="li-data">P 20,000</p>
+                        </li>
+                        <li>
+                            <span class="li-header">IS WORK RELATED TO COURSE?</span>
+                            <p class="li-data">Yes</p>
+                        </li>
+                        <li>
+                            <span class="li-header">COMPANY ID</span>
+                            <div class="li-data img-main-con">
+                                <div class="img-con">
+                                    <img>
+                                </div>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>

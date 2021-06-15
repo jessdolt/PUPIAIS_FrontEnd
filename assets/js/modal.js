@@ -14,6 +14,9 @@ const alertModalObj = {
         const modalDeleteForum = document.querySelector(".modalDeleteInline");
         const addPostBtn = document.querySelector(".newDis button")
         const xBtn = document.querySelector(".modalFilterNav > svg")
+        //viewAlumReport
+        const viewAlum = document.querySelector(".viewAlumni")
+        const alumModal = document.querySelector(".alum-rep")
         if(optionBtnAlum){
             optionBtnAlum.addEventListener("click", ()=>{
                 optionBtnAlum.classList.toggle("active")
@@ -61,6 +64,13 @@ const alertModalObj = {
                 forumBg.classList.remove("show")
                 forumModal.classList.remove("show")
                 document.body.classList.remove('stop-scrolling')
+            })
+        }
+        if(viewAlum){
+            viewAlum.addEventListener('click',()=>{
+                forumBg.classList.add("show")
+                alumModal.classList.add("show")
+                document.body.classList.add('stop-scrolling')
             })
         }
         switch(page){

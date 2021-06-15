@@ -309,6 +309,14 @@
                 }
                 &:nth-child(7){
                     min-width: 3.2rem;
+                    cursor: pointer;
+                    transition: 200ms ease;
+                    &:focus,&:hover{
+                        filter: brightness(1.025);
+                    }
+                    &:active{
+                        filter: brightness(0.85);
+                    }
                 }
                 &:nth-child(6),time,p{
                     display: block;
