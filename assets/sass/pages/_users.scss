@@ -141,6 +141,7 @@
                     text-transform: capitalize;
                     justify-content: space-between;
                     color: currentColor;
+                    text-decoration: none;
                     //overide
                     padding: 0 1.6rem 0 0.8rem;
                     &.active{
@@ -170,9 +171,12 @@
                 transition: 200ms ease, visibility 100ms ease;
                 .group{
                     .groupHeader{
+                        @extend %btn;
+                        min-height: 3rem !important;
                         text-transform: uppercase;
                         justify-content: flex-start;
                         position: relative;
+                        text-decoration: none;
                         &.active{
                             @include set-background-color($surfaceColor);
                             & ~ .subGroupList{
