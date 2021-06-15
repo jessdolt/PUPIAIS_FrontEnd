@@ -160,6 +160,11 @@ table{
     h3{
         font-size: $overline-text-desktop;
         font-weight: 600;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        width: 100%;
     }
     .visit-count,
     .job-open-count{
@@ -167,6 +172,10 @@ table{
     }
     a{
         color: currentColor !important;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
     }
     select{
         color: $mediumEmphasis;

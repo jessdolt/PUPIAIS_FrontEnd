@@ -1,6 +1,22 @@
 .dashboard{
+    //forfirefox scrollbar
+    scrollbar-width: thin;
+    scrollbar-color: $disabled $surfaceColor;
+    &::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: $surfaceColor;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $disabled;
+        border-radius: 5rem;
+        
+    }
+    overflow-y: auto;
     canvas{
-        max-height: 100%;
+        max-height: 100%!important;
+        max-width: 100%!important;
     }
     .pageSpecificHeader{
         & > div{
@@ -16,6 +32,7 @@
         }
     }
     .mainContent{
+        max-height: 100%!important;
         //reset
         box-shadow: none;
         display: flex;
@@ -32,9 +49,17 @@
                         position: relative;
                         &:nth-child(2){
                             margin-left: 2.4rem;
-                            svg{
-                                top: 1.6rem;
-                                right: 3.2rem;
+                            &>svg{
+                                top: 3.2rem;
+                                right: 1.6rem;
+                                width: 7.5rem;
+                                height: 6rem;
+                                @include respond-to('large'){
+                                    top: 1.6rem;
+                                    right: 3.2rem;
+                                    width: 11.4rem;
+                                    height: 9.1rem;
+                                }
                             }
                         }
                         &:last-child{
@@ -42,9 +67,17 @@
                         }
                         &>svg{
                             position: absolute;
-                            top: 1.6rem;
-                            right: 1.8rem;
                             fill: none;
+                            top: 3.2rem;
+                            right: 1.8rem;
+                            width: 13.1rem;
+                            height: 6rem;
+                            @include respond-to('large'){
+                                top: 1.6rem;
+                                right: 3.2rem;
+                                width: 20rem;
+                                height: 9.1rem;
+                            }
                         }
                     }
                     //for the bar graph in first container
@@ -54,6 +87,7 @@
                         flex-flow: column;
                         .card-header{
                             display: flex;
+                            align-items: center;
                             justify-content: space-between;
                             .textFieldContainer{
                                 min-width: 15rem;
