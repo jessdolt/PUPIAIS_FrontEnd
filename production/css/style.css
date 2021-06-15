@@ -3860,7 +3860,8 @@ ul {
         text-transform: uppercase;
         justify-content: flex-start;
         position: relative;
-        text-decoration: none; }
+        text-decoration: none;
+        color: currentColor; }
         .users .filterNav .department .groupList .group .groupHeader.active {
           background-color: #FFFFFF;
           color: rgba(0, 0, 0, 0.87); }

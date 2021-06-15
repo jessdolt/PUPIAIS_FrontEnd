@@ -177,6 +177,7 @@
                         justify-content: flex-start;
                         position: relative;
                         text-decoration: none;
+                        color: currentColor;
                         &.active{
                             @include set-background-color($surfaceColor);
                             & ~ .subGroupList{
