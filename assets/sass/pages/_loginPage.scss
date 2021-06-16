@@ -270,6 +270,9 @@
             margin: 0 auto;
             p{
                 width: 100%;
+                span{
+                    color: $primaryColorLight;
+                }
             }
         }
         

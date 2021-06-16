@@ -3933,6 +3933,8 @@ ul {
       margin: 0 auto; }
       .loginMain .registration .verify-con p {
         width: 100%; }
+        .loginMain .registration .verify-con p span {
+          color: #A63F3F; }
     .loginMain .registration .btn-con {
       display: flex; }
       .loginMain .registration .btn-con > * + * {
