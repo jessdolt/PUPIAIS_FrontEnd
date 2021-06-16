@@ -294,7 +294,12 @@ table{
                 letter-spacing: 0.015rem;
             }
         }
-        
+    }
+    p{
+        text-align: center;
+        a{
+            font-weight: 600;
+        }
     }
     h3{
         color: $primaryColorLight;
