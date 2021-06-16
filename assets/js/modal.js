@@ -15,7 +15,7 @@ const alertModalObj = {
         const addPostBtn = document.querySelector(".newDis button")
         const xBtn = document.querySelector(".modalFilterNav > svg")
         //viewAlumReport
-        const viewAlum = document.querySelector(".viewAlumni")
+        const viewAlum = document.querySelectorAll(".viewAlumni")
         const alumModal = document.querySelector(".alum-rep")
         if(optionBtnAlum){
             optionBtnAlum.addEventListener("click", ()=>{
@@ -67,11 +67,11 @@ const alertModalObj = {
             })
         }
         if(viewAlum){
-            viewAlum.addEventListener('click',()=>{
+            viewAlum.forEach(element => element.addEventListener('click',()=>{
                 forumBg.classList.add("show")
                 alumModal.classList.add("show")
                 document.body.classList.add('stop-scrolling')
-            })
+            }))
         }
         switch(page){
             case 'Alumni':

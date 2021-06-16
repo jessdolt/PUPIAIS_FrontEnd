@@ -548,6 +548,16 @@ table tbody {
       font-size: 1.8rem;
       letter-spacing: 0.015rem; } }
 
+.loginMain h3 {
+  color: #A63F3F;
+  padding-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.38); }
+  @media (min-width: 800px) {
+    .loginMain h3 {
+      font-size: 1.8rem; } }
+
 .loginMain div > a {
   text-transform: capitalize; }
 
@@ -3711,6 +3721,10 @@ ul {
   background-size: 100vw 100vw;
   display: flex;
   flex-flow: column; }
+  @media (min-width: 800px) {
+    .loginMain {
+      flex-flow: row;
+      background-size: initial; } }
   .loginMain .pupPylon {
     position: absolute;
     top: 4rem;
@@ -3718,6 +3732,13 @@ ul {
     transform: translateX(-50%);
     width: 25rem;
     height: 27rem; }
+    @media (min-width: 800px) {
+      .loginMain .pupPylon {
+        flex: 1;
+        align-self: flex-end;
+        height: 50vw;
+        position: initial;
+        transform: translate(0); } }
   .loginMain > div {
     position: relative;
     margin-top: 30vh;
@@ -3742,15 +3763,48 @@ ul {
       background-size: 8rem 8rem;
       border-radius: 5rem;
       box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12); }
+    @media (min-width: 800px) {
+      .loginMain > div {
+        background-color: #FFFFFF;
+        color: rgba(0, 0, 0, 0.87);
+        flex: 1;
+        gap: 2.4rem;
+        margin-top: 0; }
+        .loginMain > div::before {
+          min-width: 10rem;
+          min-height: 10rem;
+          content: "";
+          position: initial;
+          visibility: hidden; } }
   .loginMain header {
     text-align: center;
     display: flex;
     flex-flow: column; }
     .loginMain header div {
       min-width: 27rem;
-      height: .05rem;
+      height: 0.1rem;
       color: rgba(0, 0, 0, 0.38);
       background-color: rgba(0, 0, 0, 0.38); }
+    @media (min-width: 800px) {
+      .loginMain header {
+        position: relative;
+        gap: 0.8rem; }
+        .loginMain header::before {
+          position: absolute;
+          top: -2.4rem;
+          left: 50%;
+          transform: translate(-50%, -100%);
+          min-width: 10rem;
+          min-height: 10rem;
+          content: "";
+          background-image: url("../images/PUPlogo.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 10rem 10rem;
+          border-radius: 5rem;
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12); }
+        .loginMain header div {
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); } }
   .loginMain form {
     display: flex;
     flex-flow: column;
@@ -3761,59 +3815,46 @@ ul {
       fill: rgba(0, 0, 0, 0.6); }
     .loginMain form .textFieldContainer #verification-code {
       max-width: 100%; }
+    @media (min-width: 800px) {
+      .loginMain form {
+        gap: 2.4rem;
+        min-width: 30rem; }
+        .loginMain form .textFieldContainer {
+          align-self: stretch; } }
     .loginMain form button {
       background-color: #A63F3F;
       color: #FFFFFF;
       width: 16rem; }
+    .loginMain form.registration {
+      border: 1px solid rgba(0, 0, 0, 0.38);
+      border-radius: 1rem;
+      padding: 2.4rem 4.8rem 3.2rem;
+      align-items: stretch;
+      max-width: 62.4rem; }
+      .loginMain form.registration .input-con-list {
+        display: flex;
+        flex-flow: wrap; }
+        .loginMain form.registration .input-con-list > * + * {
+          margin-top: 1.6rem; }
+        @media (min-width: 800px) {
+          .loginMain form.registration .input-con-list > *:nth-child(2) {
+            margin-top: 0; } }
+        .loginMain form.registration .input-con-list > * {
+          flex: 1; }
+          @media (min-width: 800px) {
+            .loginMain form.registration .input-con-list > *:nth-child(even) {
+              margin-left: 4rem; } }
+      .loginMain form.registration input[type="text"], .loginMain form.registration input[type="password"], .loginMain form.registration input[type="date"], .loginMain form.registration input[type="tel"], .loginMain form.registration input[type="email"], .loginMain form.registration select, .loginMain form.registration textarea {
+        border-radius: 0.5rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+        min-width: 24rem;
+        padding-right: 1.6rem; }
+        .loginMain form.registration input[type="text"]:focus, .loginMain form.registration input[type="password"]:focus, .loginMain form.registration input[type="date"]:focus, .loginMain form.registration input[type="tel"]:focus, .loginMain form.registration input[type="email"]:focus, .loginMain form.registration select:focus, .loginMain form.registration textarea:focus {
+          border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
+      .loginMain form.registration .textFieldContainer {
+        min-width: 1.8rem; }
   .loginMain a span {
-    color: #A63F3F; }
-
-@media (min-width: 52.5em) and (orientation: landscape) {
-  .loginMain {
-    flex-flow: row;
-    background-size: initial; }
-    .loginMain .pupPylon {
-      flex: 1;
-      align-self: flex-end;
-      height: 50vw;
-      position: initial;
-      transform: translate(0); }
-    .loginMain > div {
-      background-color: #FFFFFF;
-      color: rgba(0, 0, 0, 0.87);
-      flex: 1;
-      gap: 2.4rem;
-      margin-top: 0; }
-      .loginMain > div::before {
-        min-width: 10rem;
-        min-height: 10rem;
-        content: "";
-        position: initial;
-        visibility: hidden; }
-    .loginMain header {
-      position: relative;
-      gap: 0.8rem; }
-      .loginMain header::before {
-        position: absolute;
-        top: -2.4rem;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        min-width: 10rem;
-        min-height: 10rem;
-        content: "";
-        background-image: url("../images/PUPlogo.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 10rem 10rem;
-        border-radius: 5rem;
-        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12); }
-      .loginMain header div {
-        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); }
-    .loginMain form {
-      gap: 2.4rem;
-      min-width: 30rem; }
-      .loginMain form .textFieldContainer {
-        align-self: stretch; } }
+    color: currentColor; }
 
 .users .filterNav {
   max-width: 26rem;

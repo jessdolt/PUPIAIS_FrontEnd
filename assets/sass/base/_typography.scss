@@ -296,6 +296,16 @@ table{
         }
         
     }
+    h3{
+        color: $primaryColorLight;
+        padding-bottom: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-bottom: 1px solid $disabled;
+        @include respond-to('medium2'){
+            font-size: 1.8rem;
+        }
+    }
     div>a{
         text-transform: capitalize;
     }
