@@ -295,6 +295,9 @@ table{
             }
         }
     }
+    &>div>p{
+        color: $mediumEmphasis;
+    }
     p{
         text-align: center;
         a{

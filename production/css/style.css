@@ -548,6 +548,9 @@ table tbody {
       font-size: 1.8rem;
       letter-spacing: 0.015rem; } }
 
+.loginMain > div > p {
+  color: rgba(0, 0, 0, 0.6); }
+
 .loginMain p {
   text-align: center; }
   .loginMain p a {
@@ -2336,7 +2339,7 @@ input, textarea {
   [role="textbox"]::before {
     transition: 200ms ease; }
 
-[readonly] {
+.questionnaire [readonly] {
   background-color: #EEEEEE !important;
   color: rgba(0, 0, 0, 0.38) !important; }
 
@@ -2503,7 +2506,7 @@ ul {
   border-style: solid;
   border-radius: 0.5rem; }
 
-.mainNav button, .mainNav .dashboardLink, .mainNav > .logout, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .alumni > section.behind ~ .mainContent > .container .form button, .alumni > section.behind ~ .mainContent > .container .form a, .alumni > section.mainContent .newsCon > a, .alumni > section.mainContent .eventsCon > a, .alumni > section.mainContent .jobCon > a, .userSurvey ~ .alumni .mainContent .container .form button, .userSurvey ~ .alumni .mainContent .container .form a, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination a, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer a, .mainContent.adminForm .form:last-child .btnGroupContainer button, .managePage .btn-con > button, .managePage .btn-con > a, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .modalFilterNav .btnContainer button, .modalFilterNav .btnContainer a, .loginMain form button, .loginMain .registration .btn-con a, .loginMain .registration .btn-con button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .alumGallery.adminForm .album-list .option button, .alumGallery.adminForm .form:nth-of-type(2) [for="upload-photo"], .forum > section.mainContent .newDis button, .forum > section.mainContent .catCon a, .forum > section.mainContent .catCon button, .forum > section.mainContent .popCon a, .forum > section.mainContent .popCon button, .forum > section.mainContent .myDisCon a, .forum > section.mainContent .myDisCon button, .forum > section.forumView .optionCon > .optionModal button, .forum > section.forumView .vote-con button, .forum > section.forumView .comment-main-con .comment-con > button, .forum > section.forumView .comment-main-con .comment-list .btn-con2 button, .dashboard .mainContent .container .card-con .card-footer button, .mainContent.questionnaire .form:first-child h2 > button, .mainContent.reportView .btnGroupContainer a, .mainContent.reportView .btnGroupContainer button, .mainHeader ~ .editProfile .mainContent input[type="radio"]:checked::before {
+.mainNav button, .mainNav .dashboardLink, .mainNav > .logout, .adminNav .mainCategoryList .open .categoryContainer, .adminNav button, .alumni > section.behind ~ .mainContent > .container .form button, .alumni > section.behind ~ .mainContent > .container .form a, .alumni > section.mainContent .newsCon > a, .alumni > section.mainContent .eventsCon > a, .alumni > section.mainContent .jobCon > a, .userSurvey ~ .alumni .mainContent .container .form button, .userSurvey ~ .alumni .mainContent .container .form a, .admin .pageSpecificHeader > div:first-child button, .admin .pageSpecificHeader > div:first-child a, .admin .mainContent .data-table .option .optionModal button, .admin .mainContent .pagination a, .admin .mainContent .pagination button, .mainContent.adminForm .form:first-child .smallComponentsContainer input[type="radio"]:checked::before, .mainContent.adminForm .form:last-child .btnGroupContainer a, .mainContent.adminForm .form:last-child .btnGroupContainer button, .managePage .btn-con > button, .managePage .btn-con > a, .option .optionModal button, .modalContainer .modalPreview .pagination .btnContainer button, .alertModalContainer .alertModal div button, .addModalContainer .addModal .btn-opt-delete button, .addModalContainer .addModal .btnContainer button, .modalFilterNav .btnContainer button, .modalFilterNav .btnContainer a, .loginMain form button, .loginMain .verify-con button, .loginMain .registration .btn-con a, .loginMain .registration .btn-con button, .users .filterNav button, .users .filterNav a, .jobPortal .mainContent .data-table .status.closed, .jobPortal .mainContent .data-table .workType, .alumGallery.adminForm .album-list .option button, .alumGallery.adminForm .form:nth-of-type(2) [for="upload-photo"], .forum > section.mainContent .newDis button, .forum > section.mainContent .catCon a, .forum > section.mainContent .catCon button, .forum > section.mainContent .popCon a, .forum > section.mainContent .popCon button, .forum > section.mainContent .myDisCon a, .forum > section.mainContent .myDisCon button, .forum > section.forumView .optionCon > .optionModal button, .forum > section.forumView .vote-con button, .forum > section.forumView .comment-main-con .comment-con > button, .forum > section.forumView .comment-main-con .comment-list .btn-con2 button, .dashboard .mainContent .container .card-con .card-footer button, .mainContent.questionnaire .form:first-child h2 > button, .mainContent.reportView .btnGroupContainer a, .mainContent.reportView .btnGroupContainer button, .mainHeader ~ .editProfile .mainContent input[type="radio"]:checked::before {
   border: 1px solid transparent; }
 
 .icon {
@@ -3352,8 +3355,16 @@ ul {
   .jobs.card .card-title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-flow: wrap; }
+    justify-content: space-between; }
+    .jobs.card .card-title h3 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 0;
+      flex: 1;
+      font-family: 'Open Sans', sans-serif; }
+    .jobs.card .card-title span {
+      max-height: 3rem; }
   .jobs.card .card-body {
     padding: 0.8rem 0; }
     .jobs.card .card-body .caption {
@@ -3450,6 +3461,8 @@ ul {
   @media (min-width: 800px) {
     .home Section.mainContent .jobCon {
       grid-row: 2/3; } }
+  .home Section.mainContent .jobCon .card-title h3 {
+    max-width: 12rem; }
   .home Section.mainContent article {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05); }
 
@@ -3731,25 +3744,38 @@ ul {
       flex-flow: row;
       background-size: initial; } }
   .loginMain .pupPylon {
+    overflow: hidden;
     background-color: transparent;
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 25rem;
-    height: 27rem;
+    height: 18rem;
+    min-height: 18rem;
     box-shadow: none; }
     @media (min-width: 800px) {
       .loginMain .pupPylon {
         flex: 1;
-        align-self: flex-end;
-        height: 50vw;
-        position: static;
-        transform: translate(0); } }
+        height: 100%; } }
+    .loginMain .pupPylon .img-con {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding-top: 56.25%; }
+      @media (min-width: 800px) {
+        .loginMain .pupPylon .img-con {
+          padding-top: 100%; } }
+    .loginMain .pupPylon img {
+      position: absolute;
+      top: 0.8rem;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; }
+      @media (min-width: 800px) {
+        .loginMain .pupPylon img {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          object-fit: cover; } }
   .loginMain > div {
     position: relative;
-    margin-top: 30vh;
-    min-height: 42rem;
     background-color: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 9px 46px 8px rgba(0, 0, 0, 0.12), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 0px 200px 50px rgba(0, 0, 0, 0.04);
     flex: 1;
@@ -3772,11 +3798,22 @@ ul {
       box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12); }
     @media (min-width: 800px) {
       .loginMain > div {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.38) #FFFFFF;
         background-color: #FFFFFF;
         color: rgba(0, 0, 0, 0.87);
         flex: 1;
         gap: 2.4rem;
-        margin-top: 0; }
+        margin-top: 0;
+        overflow: auto;
+        /* justify-content: initial; */ }
+        .loginMain > div::-webkit-scrollbar {
+          width: 0.5rem; }
+        .loginMain > div::-webkit-scrollbar-track {
+          background-color: #FFFFFF; }
+        .loginMain > div::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.38);
+          border-radius: 5rem; }
         .loginMain > div::before {
           min-width: 10rem;
           min-height: 10rem;
@@ -3801,34 +3838,43 @@ ul {
           top: -2.4rem;
           left: 50%;
           transform: translate(-50%, -100%);
-          min-width: 10rem;
-          min-height: 10rem;
+          min-width: 8rem;
+          min-height: 8rem;
+          background-size: 8rem 8rem;
           content: "";
           background-image: url("../images/PUPlogo.png");
           background-repeat: no-repeat;
           background-position: center;
-          background-size: 10rem 10rem;
           border-radius: 5rem;
           box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12); }
         .loginMain header div {
           box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); } }
-  .loginMain form {
+    @media (min-width: 1367px) {
+      .loginMain header::before {
+        min-width: 10rem;
+        min-height: 10rem;
+        background-size: 10rem 10rem; } }
+  .loginMain form, .loginMain .verify-con {
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 1.6rem;
+    /* gap: 1.6rem; */
     max-width: 30rem; }
-    .loginMain form .textFieldContainer .icon path {
+    .loginMain form > * + *, .loginMain .verify-con > * + * {
+      margin-top: 1.6rem; }
+    .loginMain form .textFieldContainer .icon path, .loginMain .verify-con .textFieldContainer .icon path {
       fill: rgba(0, 0, 0, 0.6); }
-    .loginMain form .textFieldContainer #verification-code {
+    .loginMain form .textFieldContainer #verification-code, .loginMain .verify-con .textFieldContainer #verification-code {
       max-width: 100%; }
     @media (min-width: 800px) {
-      .loginMain form {
-        gap: 2.4rem;
+      .loginMain form, .loginMain .verify-con {
+        /* gap: 2.4rem; */
         min-width: 30rem; }
-        .loginMain form .textFieldContainer {
+        .loginMain form > * + *, .loginMain .verify-con > * + * {
+          margin-top: 2.4rem; }
+        .loginMain form .textFieldContainer, .loginMain .verify-con .textFieldContainer {
           align-self: stretch; } }
-    .loginMain form button {
+    .loginMain form button, .loginMain .verify-con button {
       background-color: #A63F3F;
       color: #FFFFFF;
       width: 16rem; }
@@ -3855,32 +3901,38 @@ ul {
         height: 100%;
         overflow: auto;
         justify-content: initial; } }
-    .loginMain .registration form {
+    .loginMain .registration form, .loginMain .registration .verify-con {
       border: 1px solid rgba(0, 0, 0, 0.38);
       border-radius: 1rem;
       padding: 2.4rem 4.8rem 3.2rem;
       align-items: stretch;
       max-width: 62.4rem; }
-      .loginMain .registration form .input-con-list {
+      .loginMain .registration form .input-con-list, .loginMain .registration .verify-con .input-con-list {
         display: flex;
         flex-flow: wrap; }
-        .loginMain .registration form .input-con-list > * + * {
+        .loginMain .registration form .input-con-list > * + *, .loginMain .registration .verify-con .input-con-list > * + * {
           margin-top: 1.6rem; }
         @media (min-width: 1367px) {
-          .loginMain .registration form .input-con-list > *:nth-child(2) {
+          .loginMain .registration form .input-con-list > *:nth-child(2), .loginMain .registration .verify-con .input-con-list > *:nth-child(2) {
             margin-top: 0; } }
-        .loginMain .registration form .input-con-list > * {
+        .loginMain .registration form .input-con-list > *, .loginMain .registration .verify-con .input-con-list > * {
           flex: 1;
           min-width: 24rem; }
           @media (min-width: 415px) {
-            .loginMain .registration form .input-con-list > * {
+            .loginMain .registration form .input-con-list > *, .loginMain .registration .verify-con .input-con-list > * {
               min-width: 28rem; } }
           @media (min-width: 1367px) {
-            .loginMain .registration form .input-con-list > * {
+            .loginMain .registration form .input-con-list > *, .loginMain .registration .verify-con .input-con-list > * {
               min-width: 24rem; } }
           @media (min-width: 1367px) {
-            .loginMain .registration form .input-con-list > *:nth-child(even) {
+            .loginMain .registration form .input-con-list > *:nth-child(even), .loginMain .registration .verify-con .input-con-list > *:nth-child(even) {
               margin-left: 4rem; } }
+    .loginMain .registration .verify-con {
+      max-width: 62.4rem;
+      align-self: stretch;
+      margin: 0 auto; }
+      .loginMain .registration .verify-con p {
+        width: 100%; }
     .loginMain .registration .btn-con {
       display: flex; }
       .loginMain .registration .btn-con > * + * {
@@ -4173,7 +4225,7 @@ ul {
   min-width: 8.4rem; }
 
 .jobPortal .mainContent .data-table th:nth-child(3), .jobPortal .mainContent .data-table td:nth-child(3) {
-  min-width: 9rem;
+  min-width: 10rem;
   flex: none; }
 
 .jobPortal .mainContent .data-table th:nth-child(4), .jobPortal .mainContent .data-table th:nth-child(5), .jobPortal .mainContent .data-table th:nth-child(6), .jobPortal .mainContent .data-table td:nth-child(4), .jobPortal .mainContent .data-table td:nth-child(5), .jobPortal .mainContent .data-table td:nth-child(6) {

@@ -115,7 +115,11 @@
             @include respond-to('medium2'){
                 grid-row: 2/3;
             }
-            
+            .card-title{
+                h3{
+                    max-width: 12rem;
+                }
+            }
         }
         article{
             box-shadow: $minimalShadow;

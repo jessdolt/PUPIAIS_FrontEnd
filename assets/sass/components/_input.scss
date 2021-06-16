@@ -13,10 +13,13 @@ input,textarea{
         transition: 200ms ease;
     }
 }
-[readonly]{
-    background-color: $backgroundColor!important;
-    color: $disabled !important;
+.questionnaire{
+    [readonly]{
+        background-color: $backgroundColor!important;
+        color: $disabled !important;
+    }
 }
+
 
 //textfieldwithIcon
 .textFieldContainer{
