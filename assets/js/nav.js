@@ -14,17 +14,18 @@ const nav = {
             hamburgerIcon.addEventListener("click", showMobileNav);
             /* closeIcon.addEventListener("click", hideMobileNav); */
             navBtn.addEventListener("click", toggleNavModal);
-            window.addEventListener("resize", () => {
+            /* window.addEventListener("resize", () => {
                 if(window.innerWidth >= 1366){
                     showMobileNav();
                 }
                 else{
                     hideMobileNav();
                 }
-            });
+            }); */
         }
         if(mobileNav){
             window.addEventListener("click", closeMobileNav);
+            document.body.classList.remove('stop-scrolling')
         }
         
 
@@ -36,10 +37,12 @@ const nav = {
         }
         function showMobileNav(){
             mobileNav.classList.add("show");
+            document.body.classList.add('stop-scrolling')
         }
-        function hideMobileNav(){
+        /* function hideMobileNav(){
             mobileNav.classList.remove("show");
-        }
+            document.body.classList.remove('stop-scrolling')
+        } */
         function closeMobileNav(e){
             let targetElem = e.target;
             //click inside or the humburger
@@ -51,6 +54,7 @@ const nav = {
             } while(targetElem);
             //click outside
             mobileNav.classList.remove("show");
+            document.body.classList.remove('stop-scrolling')
         }
         switch(page){
             case 'Alumni':

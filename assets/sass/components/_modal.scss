@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $disabled;
+    background-color: $mediumEmphasis;
     z-index: 25;
     align-items: center;
     justify-content: center;
@@ -73,6 +73,9 @@
                 border-top-left-radius: 1rem;
                 border-top-right-radius: 1rem;
                 @include set-background-color($primaryColorLight);
+                &.bigger{
+                    height: 8rem;
+                }
                 tr{
                     width: 100%;
                 }
@@ -133,7 +136,7 @@
             border-bottom-right-radius: 1rem;
             h3{
                 font-size: 2.4rem;
-                font-weight: 500;
+                font-weight: 600;
             }
             .fileNameCon{
                 span{
@@ -170,6 +173,24 @@
                     @include set-background-color($primaryColorLight);
                 }
             }
+            &.v2{
+                h3{
+                    font-size: $overline-text-desktop;
+                    font-weight: 400;
+                }
+                .warningCon{
+                    .warning{
+                        color: $primaryColorLight;
+                        font-weight: 600;
+                    }
+                }
+                .btnContainer{
+                    display: flex;
+                    gap: 2.4rem;
+                    width: 18rem;
+                    margin-left: auto;
+                }
+            }
             
         }
 
@@ -198,7 +219,7 @@
     }
 }
 //for alert modal
-.alertModalContainer{
+.alertModalContainer,.notifModalContainer{
     display: none;
     position: absolute;
     top: 50%;
@@ -206,7 +227,7 @@
     transform: translate(-50%,-50%);
     width: 100vw;
     height: 100vh;
-    background-color: $disabled;
+    background-color: $mediumEmphasis;
     z-index: 25;
     &.show{
         display: block;
@@ -223,9 +244,8 @@
         border-radius: 1rem;
         background-color: transparent;
         background-image: url('../images/alertContainer.png');
-        background-position: top 1px right 0;
+        background-position: top 1px center;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
         /* box-shadow: $elevate24dp; */
 
         //change color base on class in alert modal
@@ -243,7 +263,7 @@
         &.deleteAlert.show{
             display: flex;
             svg{
-                background-image: url("../images/alertDeleteIcon.svg");
+                background-image: url("../images/errorIcon.svg");
             }
             div{
                 a{
@@ -254,7 +274,7 @@
         &.deleteAlertAll.show{
             display: flex;
             svg{
-                background-image: url("../images/alertDeleteIcon.svg");
+                background-image: url("../images/errorIcon.svg");
             }
             div{
                 button:last-child{
@@ -262,6 +282,41 @@
                 }
             }
         }
+        &.notify{
+            padding: 7rem 7.2rem 2.4rem;
+            button{
+                min-width: 24.8rem;
+            }
+            svg{
+                position: absolute;
+                transform: translateY(-84%);
+            }
+        }
+        &.successAlert.show{
+            display: flex;
+            svg{
+                background-image: url("../images/successIcon.svg");
+            }
+        }
+        &.warningAlert.show{
+            display: flex;
+            p{
+                margin-top: 0.8rem;
+            }
+            svg{
+                background-image: url("../images/warningIcon.svg");
+            }
+        }
+        &.errorAlert.show{
+            display: flex;
+            p{
+                margin-top: 0.8rem;
+            }
+            svg{
+                background-image: url("../images/errorIcon.svg");
+            }
+        }
+
         &.manage{
             h2{
                 font-size: $h3-text-desktop;
@@ -270,10 +325,9 @@
     
         svg{
             position: absolute;
-            transform: translateY(-80%);
+            transform: translateY(-88%);
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 100% 100%;
             width: 19.6rem;
             height: 19.8rem;
         }
@@ -281,7 +335,7 @@
             text-align: center;
         }
         h2{
-            font-weight: 500;
+            font-weight: 600;
         }
         p{
             margin-top: 2.4rem;

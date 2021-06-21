@@ -1,6 +1,10 @@
 .gallery{
     .mainContent{
-        padding: 0 0 4.8rem!important;
+        padding: 0 !important;
+        margin: 0!important;
+        @include respond-to('medium2'){
+            padding: 3.2rem 0 6.4rem !important;
+        }
     }
     .gal-card{
         box-shadow: $minimalShadow;

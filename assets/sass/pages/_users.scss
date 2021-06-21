@@ -2,6 +2,19 @@
 // speific just for this page
 .users{
     .filterNav{
+        //forfirefox scrollbar
+        scrollbar-width: thin;
+        scrollbar-color: $disabled $surfaceColor;
+        &::-webkit-scrollbar{
+            width: 0.5rem;
+        }
+        &::-webkit-scrollbar-track{
+            background-color: $surfaceColor;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $disabled;
+            border-radius: 5rem;
+        }
         max-width: 26rem;
         width: 26rem;
         min-width: 22.8rem;
@@ -9,6 +22,8 @@
         background-color: $backgroundColor;
         box-shadow: $elevate24dp;
         z-index: 21;
+        overflow-y: auto;
+        max-height: 100vh;
         button{
             width: 100%;
         }
@@ -133,7 +148,7 @@
             gap: 0.8rem;
         }
         .department{
-            margin-top: 3.2rem;
+            margin: 3.2rem 0;
             & > li{
                 &> .deptHead{
                     @extend %btn;
@@ -142,10 +157,13 @@
                     justify-content: space-between;
                     color: currentColor;
                     text-decoration: none;
+                    padding: 0 !important;
+                    &:focus, &:hover{
+                        box-shadow: none !important;
+                    }
                     //overide
                     padding: 0 1.6rem 0 0.8rem;
                     &.active{
-                        @include set-background-color($surfaceColor);
                         & ~ .groupList{
                             //show
                             display: flex;
@@ -228,6 +246,9 @@
                     }
                 }
             }
+        }
+        .settings{
+            fill: $mediumEmphasis!important;
         }
         
         .allUserCount,.groupUserCount{

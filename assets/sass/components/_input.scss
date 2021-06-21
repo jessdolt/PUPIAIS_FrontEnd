@@ -50,7 +50,7 @@ input,textarea{
         border-radius: 0 0.5rem 0.5rem 0;
     }
 
-    input, textarea{
+    input, textarea, select{
         border-right: none !important;
         padding: .85rem 0 .85rem 1.6rem;
         border-radius: 0.5rem 0 0 0.5rem;
@@ -150,7 +150,7 @@ select{
 
 
 
-input:required:-moz-ui-invalid{
+/* input:required:-moz-ui-invalid{
     border: 1px solid $errorColor1 !important;
     border-right: 1px solid $errorColor1 !important;
     //remove the default red box-shadow for invalid textfield
@@ -161,7 +161,7 @@ input:required:-moz-ui-invalid{
         border-right: 1px solid $errorColor1 !important;
         box-shadow: none;
     }
-}
+} */
 
 input[type="search"]::-webkit-search-cancel-button{
     -webkit-appearance: none;

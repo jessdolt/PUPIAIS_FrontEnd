@@ -1,37 +1,6 @@
 .forum{
     & > section{
-        &.heroBox{
-            //herobox layout
-            .container{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-flow: wrap;
-                gap: 1.6rem;
-                padding: 0.8rem 0 1.6rem;
-                margin-right: 0;
-                @include respond-to('medium2'){
-                    padding: 0.8rem 0;
-                    justify-content: space-between;
-                }
-                h1{
-                    font-size: calc(1.8rem + 1vw);
-                    text-align: center;
-                    max-width: max-content;
-                }
-
-                .textFieldContainer{
-                    border-radius: 5rem;
-                    min-width: 30rem;
-                    input{
-                        border-radius: 5rem 0 0 5rem;
-                    }
-                    .icon{
-                        border-radius: 0 5rem 5rem 0;
-                    }
-                }
-            }
-        }
+        
         &.mainContent{
             @include respond-to('medium2'){
                 /* grid-template-rows: 2fr 1fr 1fr; */
@@ -45,8 +14,6 @@
             }
             .forumCon{
                 min-height: 97.2rem;
-                border-radius: 0 !important;
-                padding-top: 3.2rem !important;
                 @include respond-to('medium2'){
                     grid-row: 1/6;
                     grid-column: 2/9;
@@ -73,7 +40,6 @@
                 @include respond-to('medium2'){
                 grid-row: 1/2;
                 }
-                margin: 0 2.4rem;
                 button{
                     @extend %filled;
                     @include set-background-color($primaryColorLight);
@@ -100,14 +66,10 @@
             .forumCon,.catCon,.popCon,.myDisCon{
                 @include set-background-color($surfaceColor);
                 border-radius: 1rem;
-                padding: 2.4rem;
+                padding: 1.6rem;
                 display: flex;
                 flex-flow: column;
             }
-            /* .forum-list{
-                .list-item{
-                }
-            } */
             .forum-link{
                 @include set-background-color($surfaceColor);
                 display: flex;
@@ -127,18 +89,17 @@
             }
             
             .forum-image{
+                align-self: flex-start;
                 margin: 0.7rem;
                 width: 3.5rem;
                 height: 3.5rem;
                 border-radius: 10rem;
                 background-position: center;
                 background-size: cover;
-                align-self: flex-start;
                 @include respond-to('medium2'){
                     margin: 0.475rem;
                     width: 4.75rem;
                     height: 4.75rem;
-                    align-self: center;
                 }
                 &.help{
                     background-image: url('../images/help-forum-pic.svg');
@@ -162,7 +123,11 @@
                 row-gap: 0.4rem;
                 .forum-details{
                     text-align: start;
-                    
+                    min-width: 100%;
+                    @include respond-to('medium2'){
+                        flex: 1;
+                        min-width: 0;
+                    }
                     span{
                         color: $mediumEmphasis;
                     }
@@ -213,10 +178,6 @@
             }
             .catCon,.popCon,.myDisCon{
                 max-width: 100%;
-                margin: 0 1rem;
-                @include respond-to('medium2'){
-                    margin: 0;
-                }
                 ul{
                     display: flex;
                     flex-flow: column;
@@ -266,6 +227,7 @@
         //overide for forumView
         &.forumView{
             padding: 0;
+            margin: 0;
             @include respond-to('medium2'){
                 padding: 2.4rem 0;
             }
@@ -281,6 +243,13 @@
             //forumCon---------------------------------------
             .forumCon{
                 position: relative;
+                padding-top: 2.4rem;
+                
+            border-radius: 0;
+                @include respond-to('medium2'){
+                    padding-left: 3.2rem;
+                    padding-right: 3.2rem;
+                }
             }
             .forum-image{
                 object-fit: cover;

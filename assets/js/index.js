@@ -5,6 +5,7 @@ import inputUtil from './inputFunctions'
 import card from './card'
 import forum from './forum'
 import gallery from './gallery'
+import aos from './aos'
 
 nav.init();
 alertModalObj.init();
@@ -13,6 +14,7 @@ inputUtil.init();
 card.init();
 forum.init();
 gallery.init();
+aos.init();
 /* if(module.hot){
     module.hot.accept()
 }   */ 

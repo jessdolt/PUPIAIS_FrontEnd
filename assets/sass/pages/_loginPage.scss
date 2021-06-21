@@ -89,12 +89,9 @@
             }
             @include set-background-color($surfaceColor);
             flex: 1;
-            gap: 2.4rem;
             //reset
             margin-top: 0;
             overflow: auto;
-            /* justify-content: initial; */
-
             //just to center vertically the whole form ui including the visible logo
             &::before{
                 min-width: 10rem;
@@ -103,6 +100,9 @@
                 position: initial;
                 visibility: hidden;
             }
+        }
+        @include respond-to('large'){
+            gap: 2.4rem;
         }
     }
 
@@ -151,6 +151,15 @@
             }
         }
     }
+    form{
+        width: 100%;
+    }
+    .textFieldContainer{
+        align-self: stretch;
+    }
+    .verification-code{
+        min-width: 30rem;
+    }
 
     form,.verify-con{
         display: flex;
@@ -161,7 +170,7 @@
         }
         /* gap: 1.6rem; */
         //just to limit the width in firefox
-        max-width: 30rem;
+        max-width: 27rem;
 
         .textFieldContainer{
             .icon{
@@ -191,6 +200,7 @@
             @extend %filled;
             width: 16rem;
         }
+        
     }
     p{
         width: 25.2rem;
@@ -198,6 +208,18 @@
     a{
         span{
             color: currentColor;
+        }
+    }
+    .resend{
+        background-color: transparent;
+        box-shadow: none;
+        color: $primaryColorLight;
+        border: none;
+        text-transform: capitalize;
+        min-height: 3rem;
+        &:focus,&:hover{
+            text-decoration: underline;
+            filter: brightness(0.9);
         }
     }
 
@@ -229,10 +251,14 @@
         form,.verify-con{
             border: 1px solid $disabled;
             border-radius: 1rem;
-            padding: 2.4rem 4.8rem 3.2rem;
+            padding: 2.4rem 3.2rem 3.2rem;
             align-items: stretch;
             //reset
+            width: initial;
             max-width: 62.4rem;
+            @include respond-to('medium2'){
+                padding: 2.4rem 4.8rem 3.2rem;
+            }
     
             .input-con-list{
                 display: flex;
@@ -265,11 +291,10 @@
             }
         }
         .verify-con{
-            max-width: 62.4rem;
-            align-self: stretch;
-            margin: 0 auto;
+            min-width: 30.6rem;
             p{
                 width: 100%;
+                
                 span{
                     color: $primaryColorLight;
                 }
@@ -291,6 +316,7 @@
             a,button{
                 @extend %filled;
                 width: 12rem;
+                text-decoration: none;
                 @include respond-to('medium2'){
                     width: 18rem;
                 }

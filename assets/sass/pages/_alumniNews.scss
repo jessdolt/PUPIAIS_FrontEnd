@@ -4,7 +4,6 @@
             .container{
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 flex-flow: wrap;
                 gap: 1.6rem;
                 /* padding: 0.8rem 0 1.6rem; */
@@ -13,28 +12,49 @@
                     justify-content: space-between;
                 }
                 h1{
-                    font-size: calc(1.8rem + 1vw);
-                    text-align: center;
                     max-width: max-content;
                 }
 
-                .textFieldContainer{
+                /* .textFieldContainer{
+                    display: none;
                     border-radius: 5rem;
-                    min-width: 30rem;
+                    min-width: 26rem;
+                    @include respond-to('medium2'){
+                        display: flex;
+                    }
                     input{
                         border-radius: 5rem 0 0 5rem;
                     }
                     .icon{
                         border-radius: 0 5rem 5rem 0;
                     }
-                }
+                } */
             }
         }
         &.mainContent{
             padding-top: 2.4rem;
+            .newsCon{
+                @include set-background-color($backgroundColor);
+                overflow: hidden;
+            }
+
             
             .card{
                 @include set-background-color($surfaceColor);
+                position: relative;
+                transform: translateY(10%);
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 350ms ease-in ,transform 400ms ease-in;
+                /* &:nth-child(odd){
+                    transform: translateX(70%);
+                } */
+                &.appear{
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
             }
             .card-img{
                 //reset
@@ -42,7 +62,7 @@
                 flex: 1;
                 @include respond-to('medium2'){
                     width: 41.2rem;
-                    max-height: 23rem;
+                    max-height: 23.5rem;
                     flex: 0;
                     border-top-right-radius: 0;
                     border-bottom-left-radius: 1rem;
@@ -68,8 +88,12 @@
             }
             //newsView override
             &.newsView{
+                margin: 0;
                 padding-bottom: 3.2rem;
                 background-color: $surfaceColor;
+                .newsCon{
+                    @include set-background-color($surfaceColor);
+                }
                 .card{
                     flex-flow: column;
                     @include set-background-color($surfaceColor);
@@ -77,6 +101,10 @@
                 }
                 h3{
                     color: $primaryColorLight;
+                    font-size:$h2-text-mobile;
+                    @include respond-to('medium2'){
+                        font-size:$h2-text-desktop;
+                    }
                 }
                 .card-img{
                     flex: 1;
@@ -116,9 +144,9 @@
         &.moreContent{
             @include set-background-color($primaryColorLight);
             .additional{
-                padding: 2.4rem 2.4rem 3.2rem;
+                padding: 3.2rem 2.4rem 3.2rem;
                 @include respond-to('medium2'){
-                    padding: 2.4rem 0 3.2rem;
+                    padding: 3.2rem 0 3.2rem;
                 }
                 h3{
                     border-color: $backgroundColor;

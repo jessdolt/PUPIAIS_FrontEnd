@@ -125,9 +125,29 @@
                                             </div>
                                         </div>
                                         <div>
+                                            <label for="auxiliary-name" class="outsideLabel">Auxiliary Name:</label>
+                                            <div class="textFieldContainer">
+                                                <input type="text" name="auxiliary" id="auxiliary0name"required>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div>
                                             <label for="birth-date" class="outsideLabel">Birth Date:</label>
                                             <div class="textFieldContainer">
                                                 <input type="date" name="birthDate" id="birth-date"required>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="civil-status" class="outsideLabel">Civil Status:</label>
+                                            <div class="textFieldContainer">
+                                                <select name="civilStat" id="civil-status" required>
+                                                    <option value="single">Single</option>
+                                                    <option value="married">Married</option>
+                                                    <option value="widowed">Widowed</option>
+                                                    <option value="separated">Separated</option>
+                                                    <option value="divorced">Divorced</option>
+                                                </select>
                                                 <span class="error"></span>
                                             </div>
                                         </div>
@@ -137,13 +157,6 @@
                                             <fieldset class="radioBtnContainer">
                                                 <input type="radio" class="male" name="gender" id="male-id" value="Male" checked>
                                                 <input type="radio" class="female" name="gender" id="female-id" value="Female">
-                                            </fieldset>
-                                        </div>
-                                        <div>
-                                            <label class="outsideLabel">Employment Status:</label>
-                                            <fieldset class="radioBtnContainer">
-                                                <input type="radio" class="eStatus" name="eStatus" id="employed-id" value="Employed" checked>
-                                                <input type="radio" class="eStatus" name="eStatus" id="unemployed-id" value="Unemployed">
                                             </fieldset>
                                         </div>
                                     </div>

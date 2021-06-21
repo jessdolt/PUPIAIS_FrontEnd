@@ -3,24 +3,22 @@
     @include set-background-color($backgroundColor);
     display: flex;
     flex-flow: wrap;
-    @include respond-to('medium2'){
-        border-radius: 1rem;
-
-    }
+    border-radius: 1rem;
     //margin  2.4rem all elements inside newsCon except image
     .card-img{
         @include set-background-color(#121212);
         margin: 0;
         min-height: 20rem;
         min-width: 30rem;
-        width: 100vw;
+        /* width: 100vw; */
+        width: 100%;
         height: calc(100vw - 60vw);
         object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
         @include respond-to('medium2'){
             width: 100%;
             max-height: 48.7rem;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
         }
         //hide image if no image is loaded
         &::before,&[src=""]{
@@ -40,19 +38,21 @@
             border-top: 1px solid $primaryColorLight;
             padding-top: 0.4rem;
             margin-top: 0.4rem;
-            @include respond-to('medium'){
-                padding-top: 0.8rem;
-                margin-top: 0.8rem;
-            }
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.6rem;
             display: flex;
             flex-flow: column;
-            gap: 1.2rem;
             justify-content: space-between;
+            &>*+*{
+                margin-top: 0.8rem;
+            }
+            /* &>*+*{
+                margin-left: 1.2rem;
+            } */
             @include respond-to('medium'){
                 flex-flow: row;
                 align-items: center;
-                margin-bottom: 2.4rem;
+                padding-top: 0.8rem;
+                margin-top: 0.8rem;
             }
         }
         a{
@@ -94,7 +94,10 @@
 }
 .events{
     &.card{
-        @include set-background-color($primaryColorLight);
+        @include set-background-color($eventCardMobile);
+        @include respond-to('medium2'){
+            @include set-background-color($primaryColorLight);
+        }
         *{
             color: currentColor;
         }
@@ -115,10 +118,6 @@
 .jobs{
     &.card{
         border-radius: 1rem;
-        margin: 0 2.4rem;
-        @include respond-to('medium2'){
-            margin: 0;
-        }
         @include set-background-color($surfaceColor);
         border: 1px solid $primaryColorLight !important;
         .card-title{
@@ -126,12 +125,12 @@
             align-items: center;
             justify-content: space-between;
             h3{
+                display: block;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 width: 0;
                 flex: 1;
-
                 //temporary
                 font-family: 'Open Sans', sans-serif;
             }
@@ -144,6 +143,51 @@
             .caption{
                 margin-bottom: 0.8rem;
             }
+        }
+    }
+}
+.card.category-list{
+    background-color: transparent;
+    padding: 1.6rem;
+    border: 1px solid $disabled;
+    flex-flow: column;
+    align-items: stretch;
+    li+li{
+        margin-top: 0.8rem;
+    }
+    li a{
+        display: flex;
+        align-items: center;
+        color: currentColor;
+        text-align: start;
+        
+        &>*+*{
+            margin-left: 0.8rem;
+        }
+        .forum-image{
+            margin: 0.175rem;
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 10rem;
+            background-position: center;
+            background-size: cover;
+            &.help{
+                background-image: url('../images/help-forum-pic.svg');
+            }
+            &.general{
+                background-image: url('../images/general-forum-pic.svg');
+            }
+            &.blog{
+                background-image: url('../images/blog-forum-pic.svg');
+            }
+        }
+        .forum-title{
+            max-width: calc(90%);
+            width: 0;
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     }
 }

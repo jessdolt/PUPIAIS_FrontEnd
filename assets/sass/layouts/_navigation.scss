@@ -18,7 +18,7 @@
     flex-flow: column;
     position: fixed;
     left: -100%;
-    transition: 200ms ease;
+    transition: 600ms ease;
     box-shadow: $elevate24dp;
     z-index: 24;
     @include set-background-color($surfaceColor);
@@ -42,6 +42,9 @@
         padding: 0 2.4rem;
         z-index: 18;
         box-shadow: $elevate2dp;
+    }
+    &.move{
+        transform: translateY(-110px);
     }
     &.show{
         left: 0;
@@ -316,6 +319,7 @@
         gap: 4rem;
     }
     .accountNameContainer{
+        position: relative;
         display: none;
         flex-flow: column;
         border-radius: 1rem;
@@ -353,9 +357,13 @@
         a{
             @include set-background-color($surfaceColor);
             @extend %btn;
-            min-height: 2.2rem !important;
-            padding: 0 0.8rem !important;
-            border: 1px solid $disabled;
+            position: absolute;
+            right: 1.6rem;
+            min-width: 2.4rem!important;
+            min-height: 2.4rem!important;
+            max-width: 2.4rem!important;
+            max-height: 2.4rem!important;
+            padding: 0 !important;
             .icon{
                 display: inline-flex;
                 fill: currentColor;

@@ -34,6 +34,7 @@
     align-items: center;
     
     .card-con{
+        position: relative;
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -46,6 +47,22 @@
         background-position: center bottom;
         background-size: 14.1rem 15.3rem;
         box-shadow: $elevate1dp;
+        .back{
+            position: absolute;
+            top: 2.4rem;
+            left: 2.4rem;
+            display: flex;
+            align-items: center;
+            svg{
+                transition: 200ms ease;
+                fill:$highEmphasis;
+            }
+            &:focus, &:hover{
+                svg{
+                    fill: $primaryColorLight;
+                }
+            }
+        }
         &> * + *{
             margin-top: 2.4rem;
         }

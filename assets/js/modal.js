@@ -114,12 +114,12 @@ const alertModalObj = {
                     const modalBtnDelete = document.querySelector(".modalDeleteInline");
 
                     //for user import preview
-                    const modalPreviewBackground = document.querySelector(".modalContainer");
+                    /* const modalPreviewBackground = document.querySelector(".modalContainer");
                     const modalPreview = document.querySelector(".modalPreview");
                     const previewBtnCancel = document.querySelector(".pagination .btnContainer .cancel");
                     const previewBtnImport = document.querySelector(".importBtn");
                     const previewFileInput = document.querySelector(".input-file-hidden");
-                    const previewFormHidden = document.querySelector("#preview-form-hidden");
+                    const previewFormHidden = document.querySelector("#preview-form-hidden"); */
 
                     //forumView for admin
                     /* const optionBtnAdmin = document.querySelector(".optionCon") */
@@ -140,10 +140,10 @@ const alertModalObj = {
                         btnDeleteInline.forEach(element => element.addEventListener("click", generateDeleteModal(element)));
                     }
 
-                    if(modalPreviewBackground){
+                    /* if(modalPreviewBackground){
                         previewBtnImport.addEventListener("click", generatePreviewModal);
                         previewFileInput.addEventListener("change", submitForm);
-                    }
+                    } */
                     if(btnDeleteAccount){
                         btnDeleteAccount.forEach(element => element.addEventListener("click",()=>{
                             let dataId = element.getAttribute("data-id");
@@ -193,12 +193,12 @@ const alertModalObj = {
                         modalLogout.classList.add("show");
                         document.body.classList.add('stop-scrolling')
                     }
-                    function generatePreviewModal(){
+                    /* function generatePreviewModal(){
                         previewFileInput.click();
-                    }
-                    function submitForm(){
+                    } */
+                    /* function submitForm(){
                         previewFormHidden.submit();
-                    }
+                    } */
                     function refreshPage(){
                         document.location.reload();
                     }
