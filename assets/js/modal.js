@@ -75,11 +75,26 @@ const alertModalObj = {
         }
         switch(page){
             case 'Alumni':
+                const editProfileBtn = document.querySelector('[for="profile-pic-btn"]')
+                const editPicModal = document.querySelector('.edit-pic-modal')
                 
-                
-
-                
-                
+                if(editProfileBtn){
+                    window.addEventListener('click',(e)=>{
+                        let targetElem = e.target;
+                    //click inside or the humburger
+                    do{
+                        if(targetElem == editPicModal || targetElem == editProfileBtn){
+                            return;
+                        }
+                        targetElem = targetElem.parentNode;
+                    } while(targetElem);
+                    //click outside
+                    editPicModal.classList.remove("show");
+                    })
+                    editProfileBtn.addEventListener('click', ()=>{
+                        editPicModal.classList.toggle('show')
+                    })
+                }
                 
                 break;
             case 'Admin':
@@ -100,6 +115,7 @@ const alertModalObj = {
                             modalDelete.classList.add("show");
                             document.body.classList.add('stop-scrolling')
                         }
+                        
                     }
                     //--------------------Variable Declaration------------------------
                     //for logout and delete in table

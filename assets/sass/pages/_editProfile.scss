@@ -151,6 +151,48 @@
                         width: 16rem;
                         height: 16rem;
                     }
+
+                    .edit-pic-modal{
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: 200ms ease;
+                        position: absolute;
+                        top: 7.4rem;
+                        right: 5rem;
+                        @include set-background-color($surfaceColor);
+                        box-shadow: $elevate4dp;
+                        border-radius: 1rem;
+                        padding: 1.6rem;
+                        z-index: 4;
+                        &.show{
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                        &>*{
+                            transition: 0ms ease;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            @include set-background-color($surfaceColor);
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            padding: 0;
+                            min-height: initial;
+                            width: 14.5rem;
+                            &:focus,&:hover{
+                                box-shadow: none;
+                                text-decoration: underline;
+                            }
+                            &>svg{
+                                position: absolute;
+                                left: 0;
+                            }
+                            &+*{
+                                margin-top: 1.6rem;
+                            }
+                        }
+                    }
                 }
                 .smallComponentsContainer{
                     display: flex;

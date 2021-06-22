@@ -5868,6 +5868,43 @@ select, input, textarea {
         .mainHeader ~ .editProfile .mainContent .container .form .avatar {
           width: 16rem;
           height: 16rem; } }
+      .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal {
+        visibility: hidden;
+        opacity: 0;
+        transition: 200ms ease;
+        position: absolute;
+        top: 7.4rem;
+        right: 5rem;
+        background-color: #FFFFFF;
+        color: rgba(0, 0, 0, 0.87);
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 1rem;
+        padding: 1.6rem;
+        z-index: 4; }
+        .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal.show {
+          visibility: visible;
+          opacity: 1; }
+        .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal > * {
+          transition: 0ms ease;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #FFFFFF;
+          color: rgba(0, 0, 0, 0.87);
+          font-weight: 400;
+          text-transform: capitalize;
+          padding: 0;
+          min-height: initial;
+          width: 14.5rem; }
+          .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal > *:focus, .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal > *:hover {
+            box-shadow: none;
+            text-decoration: underline; }
+          .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal > * > svg {
+            position: absolute;
+            left: 0; }
+          .mainHeader ~ .editProfile .mainContent .container .form .avatar .edit-pic-modal > * + * {
+            margin-top: 1.6rem; }
     .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
       display: flex;
       flex-flow: column wrap;
