@@ -229,7 +229,10 @@
     height: 100vh;
     background-color: $mediumEmphasis;
     z-index: 25;
+    transition: opacity 2s ease;
+    opacity: 0;
     &.show{
+        opacity: 1;
         display: block;
     }
     .alertModal{
@@ -297,11 +300,7 @@
             }
             svg{
                 position: absolute;
-                
-                transform: translateY(-75%);
-            @include respond-to('medium2'){
-                transform: translateY(-84%);
-            }
+                top: -75px;
             }
         }
         &.successAlert.show{
@@ -337,21 +336,16 @@
     
         svg{
             position: absolute;
-            transform: translateY(-77%);
-            @include respond-to('medium2'){
-                transform: translateY(-88%);
-            }
+            top: -75px;
             background-position: center;
             background-repeat: no-repeat;
-            width: 19.6rem;
-            height: 19.8rem;
         }
+
+        
         h2,p{
             text-align: center;
         }
-        h2{
-            font-weight: 600;
-        }
+        
         p{
             margin-top: 2.4rem;
             max-width: 25.2rem;
@@ -398,6 +392,77 @@
             }
         }
     }
+    .successAlert{
+        @include set-background-color($surfaceColor);
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+        display: none;
+        align-items: center;
+        padding: 1.2rem 1.6rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid $activeIndicator;
+        box-shadow: $elevate2dp;
+        animation: slideIn 600ms ease;
+        &.show{
+            display: flex;
+        }
+        &>*{
+            opacity: 0;
+        }
+        &>*+*{
+            margin-left: 0.8rem;
+        }
+        .success-icon{
+            fill: $activeIndicator;
+            transform: scale(0.0);
+            animation: scale 1.5s ease 1.2s forwards;
+        }
+        .notif-message-con{
+            max-width: 32.8rem;
+            animation: pop 1.2s ease 600ms forwards;
+        }
+        h2{
+            font-size: $overline-text-desktop;
+        }
+        p{
+            animation-delay: 400ms;
+        }
+        @keyframes slideIn {
+            from{
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+        @keyframes pop {
+            from{
+                opacity: 0;
+                transform: translateY(-20%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @keyframes scale {
+            80%{
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+    h2{
+        font-weight: 600;
+    }
+
 }
 //for add question
 .addModalContainer{

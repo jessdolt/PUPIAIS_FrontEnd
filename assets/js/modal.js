@@ -77,6 +77,7 @@ const alertModalObj = {
             case 'Alumni':
                 const editProfileBtn = document.querySelector('[for="profile-pic-btn"]')
                 const editPicModal = document.querySelector('.edit-pic-modal')
+                const removePicBtn = document.querySelector('.edit-pic-modal button')
                 
                 if(editProfileBtn){
                     window.addEventListener('click',(e)=>{
@@ -93,6 +94,9 @@ const alertModalObj = {
                     })
                     editProfileBtn.addEventListener('click', ()=>{
                         editPicModal.classList.toggle('show')
+                    })
+                    removePicBtn.addEventListener('click', ()=>{
+                        editPicModal.classList.remove('show')
                     })
                 }
                 

@@ -48,7 +48,38 @@
                     max-width: 65.6rem;
                     width: 100%;
                     margin: 0 auto;
-                    padding: 2.4rem 4.8rem;
+                    padding: 1.6rem 2.4rem;
+                    @include respond-to('medium2'){
+                        padding: 2.4rem 4.8rem;
+                    }
+                    &.googleForm{
+                        border-left-color: $googleFormsColor;
+                        background-image: url('../images/google-forms-icon.svg');
+                        background-repeat: no-repeat;
+                        background-position: right 1.8rem top 2.4rem;
+                        background-size: 7.4rem 2.7rem;
+                        @include respond-to('medium2'){
+                            background-size: initial;
+                            background-position: right 4.8rem top 2.4rem;
+                        }
+                    }
+                    h3{
+                        max-width: 80%;
+                    }
+                    .check-con{
+                        display: flex;
+                        align-items: center;
+                        &>*+*{
+                            margin-left: 0.8rem;
+                        }
+                        [type="checkbox"]{
+                            &:checked::before{
+                                background-image: url('../images/check-success-icon.svg');
+                            
+                            }
+                        }
+                        
+                    }
                     p{
                         color: $mediumEmphasis;
                         margin-top: 0.8rem;

@@ -1515,7 +1515,29 @@ html {
       max-width: 65.6rem;
       width: 100%;
       margin: 0 auto;
-      padding: 2.4rem 4.8rem; }
+      padding: 1.6rem 2.4rem; }
+      @media (min-width: 800px) {
+        .userSurvey ~ .alumni .mainContent .container .form .surveyCard {
+          padding: 2.4rem 4.8rem; } }
+      .userSurvey ~ .alumni .mainContent .container .form .surveyCard.googleForm {
+        border-left-color: #7248BC;
+        background-image: url("../images/google-forms-icon.svg");
+        background-repeat: no-repeat;
+        background-position: right 1.8rem top 2.4rem;
+        background-size: 7.4rem 2.7rem; }
+        @media (min-width: 800px) {
+          .userSurvey ~ .alumni .mainContent .container .form .surveyCard.googleForm {
+            background-size: initial;
+            background-position: right 4.8rem top 2.4rem; } }
+      .userSurvey ~ .alumni .mainContent .container .form .surveyCard h3 {
+        max-width: 80%; }
+      .userSurvey ~ .alumni .mainContent .container .form .surveyCard .check-con {
+        display: flex;
+        align-items: center; }
+        .userSurvey ~ .alumni .mainContent .container .form .surveyCard .check-con > * + * {
+          margin-left: 0.8rem; }
+        .userSurvey ~ .alumni .mainContent .container .form .surveyCard .check-con [type="checkbox"]:checked::before {
+          background-image: url("../images/check-success-icon.svg"); }
       .userSurvey ~ .alumni .mainContent .container .form .surveyCard p {
         color: rgba(0, 0, 0, 0.6);
         margin-top: 0.8rem;
@@ -2863,8 +2885,11 @@ ul {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 25; }
+  z-index: 25;
+  transition: opacity 2s ease;
+  opacity: 0; }
   .alertModalContainer.show, .notifModalContainer.show {
+    opacity: 1;
     display: block; }
   .alertModalContainer .alertModal, .notifModalContainer .alertModal {
     position: absolute;
@@ -2916,10 +2941,7 @@ ul {
         color: rgba(0, 0, 0, 0.87); }
       .alertModalContainer .alertModal.notify svg, .notifModalContainer .alertModal.notify svg {
         position: absolute;
-        transform: translateY(-75%); }
-        @media (min-width: 800px) {
-          .alertModalContainer .alertModal.notify svg, .notifModalContainer .alertModal.notify svg {
-            transform: translateY(-84%); } }
+        top: -75px; }
     .alertModalContainer .alertModal.successAlert.show, .notifModalContainer .alertModal.successAlert.show {
       display: flex; }
       .alertModalContainer .alertModal.successAlert.show svg, .notifModalContainer .alertModal.successAlert.show svg {
@@ -2940,18 +2962,11 @@ ul {
       font-size: 2.4rem; }
     .alertModalContainer .alertModal svg, .notifModalContainer .alertModal svg {
       position: absolute;
-      transform: translateY(-77%);
+      top: -75px;
       background-position: center;
-      background-repeat: no-repeat;
-      width: 19.6rem;
-      height: 19.8rem; }
-      @media (min-width: 800px) {
-        .alertModalContainer .alertModal svg, .notifModalContainer .alertModal svg {
-          transform: translateY(-88%); } }
+      background-repeat: no-repeat; }
     .alertModalContainer .alertModal h2, .alertModalContainer .alertModal p, .notifModalContainer .alertModal h2, .notifModalContainer .alertModal p {
       text-align: center; }
-    .alertModalContainer .alertModal h2, .notifModalContainer .alertModal h2 {
-      font-weight: 600; }
     .alertModalContainer .alertModal p, .notifModalContainer .alertModal p {
       margin-top: 2.4rem;
       max-width: 25.2rem; }
@@ -2983,6 +2998,62 @@ ul {
       padding-left: 1.6rem; }
       .alertModalContainer .alertModal input[type="password"]:focus, .notifModalContainer .alertModal input[type="password"]:focus {
         border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
+  .alertModalContainer .successAlert, .notifModalContainer .successAlert {
+    background-color: #FFFFFF;
+    color: rgba(0, 0, 0, 0.87);
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    display: none;
+    align-items: center;
+    padding: 1.2rem 1.6rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #15CC8A;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+    animation: slideIn 600ms ease; }
+    .alertModalContainer .successAlert.show, .notifModalContainer .successAlert.show {
+      display: flex; }
+    .alertModalContainer .successAlert > *, .notifModalContainer .successAlert > * {
+      opacity: 0; }
+    .alertModalContainer .successAlert > * + *, .notifModalContainer .successAlert > * + * {
+      margin-left: 0.8rem; }
+    .alertModalContainer .successAlert .success-icon, .notifModalContainer .successAlert .success-icon {
+      fill: #15CC8A;
+      transform: scale(0);
+      animation: scale 1.5s ease 1.2s forwards; }
+    .alertModalContainer .successAlert .notif-message-con, .notifModalContainer .successAlert .notif-message-con {
+      max-width: 32.8rem;
+      animation: pop 1.2s ease 600ms forwards; }
+    .alertModalContainer .successAlert h2, .notifModalContainer .successAlert h2 {
+      font-size: 1.8rem; }
+    .alertModalContainer .successAlert p, .notifModalContainer .successAlert p {
+      animation-delay: 400ms; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%); }
+  to {
+    opacity: 1;
+    transform: translateX(0%); } }
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(-20%); }
+  to {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+@keyframes scale {
+  80% {
+    opacity: 1;
+    transform: scale(1.2); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+  .alertModalContainer h2, .notifModalContainer h2 {
+    font-weight: 600; }
 
 .addModalContainer .addModal {
   display: flex;
