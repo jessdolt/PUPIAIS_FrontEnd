@@ -7,9 +7,9 @@
             @include set-background-color($backgroundColor);
             width: 100%;
             height: 4rem;
-            position: fixed;
-            top: 0;
-            left: 0rem;
+            position: absolute;
+            top: -4rem;
+            left: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,6 +20,7 @@
             font-weight: 500;
             @include respond-to('medium2'){
                 height: 6rem;
+                top: -6rem;
             }
         }
         &,&~.headerShadow{
@@ -27,11 +28,18 @@
             @include respond-to('medium2'){
                 top: 6rem;
             }
+            &.move{
+                transition: 600ms ease 600ms;
+                transform: translateY(-200px);
+            }
         }
         &~.mainNav{
             top: 10rem;
             @include respond-to('medium2'){
                 top: 12rem;
+            }
+            &.move{
+                transform: translateY(-200px);
             }
         }
         &~.editProfile,~.mainFooter{
@@ -45,6 +53,7 @@
 .mainHeader ~ .editProfile{
     .mainContent{
         .container{
+            z-index: 2;
             .form{
                 .questionCon{
                     //reset
@@ -104,6 +113,7 @@
                     transform: translate(-50%,-50%);
                     width: 10rem;
                     height: 10rem;
+                    object-fit: cover;
                     @include respond-to('medium'){
                         width: 16rem;
                         height: 16rem;

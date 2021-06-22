@@ -28,10 +28,8 @@
 //main starts here
 .userSurvey ~ .alumni{
     .mainContent{
-        width: 100%;
-        z-index: 24;
         .container{
-            
+            z-index: 2;
             .form{
                 gap: 2.4rem;
                 h1,h2{

@@ -17,6 +17,14 @@ input,textarea{
     [readonly]{
         background-color: $backgroundColor!important;
         color: $disabled !important;
+        &:hover{
+            cursor:not-allowed;
+        }
+    }
+}
+:disabled{
+    &:hover{
+        cursor: not-allowed;
     }
 }
 

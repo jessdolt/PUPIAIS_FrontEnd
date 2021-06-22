@@ -500,6 +500,21 @@
                         }
                     }
                 }
+                //sub-comment-list
+                .sub-comment-list{
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    .see-more{
+                        background-color: transparent;
+                        border: 0;
+                        font-weight: 600;
+                        &:focus,&:hover{
+                            box-shadow: none;
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
 
             //statCon---------------------------------------

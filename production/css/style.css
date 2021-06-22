@@ -1058,7 +1058,7 @@ table tbody {
 .adminNav {
   min-width: 9.2rem;
   max-width: 9.2rem;
-  max-height: 100%;
+  max-height: calc(100vh - 6rem);
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-flow: column;
@@ -1088,7 +1088,7 @@ table tbody {
     display: none;
     flex-flow: column;
     border-radius: 1rem;
-    min-height: 10rem;
+    min-height: 12.1rem;
     align-self: stretch;
     background-color: #A63F3F;
     color: #FFFFFF;
@@ -1097,7 +1097,6 @@ table tbody {
     background-position: center;
     background-size: cover;
     border-radius: 1rem;
-    min-height: 10rem;
     align-self: stretch;
     align-items: center;
     gap: .8rem;
@@ -1393,15 +1392,13 @@ html {
     .alumni > section.behind {
       height: 36rem;
       width: 100%;
-      position: absolute;
-      z-index: -1; }
+      position: absolute; }
       .alumni > section.behind ~ .mainContent {
         background-color: initial; }
       .alumni > section.behind ~ .mainContent > .container {
         /* use longhand margin property 
                 because there is a shorthand declaration 
                 of margin for all .container class */
-        margin: 0.8rem 1.6rem;
         box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
         border-radius: 1rem;
         padding: 0 1.6rem 4.8rem;
@@ -1501,9 +1498,8 @@ html {
 .userSurvey .hamburgerIcon {
   display: none; }
 
-.userSurvey ~ .alumni .mainContent {
-  width: 100%;
-  z-index: 24; }
+.userSurvey ~ .alumni .mainContent .container {
+  z-index: 2; }
   .userSurvey ~ .alumni .mainContent .container .form {
     gap: 2.4rem; }
     .userSurvey ~ .alumni .mainContent .container .form h1, .userSurvey ~ .alumni .mainContent .container .form h2 {
@@ -1536,18 +1532,21 @@ html {
       @media (min-width: 800px) {
         .userSurvey ~ .alumni .mainContent .container .form button {
           align-self: flex-end; } }
-  .userSurvey ~ .alumni .mainContent .textFieldContainer {
-    min-width: 26rem; }
-  .userSurvey ~ .alumni .mainContent label {
-    color: rgba(0, 0, 0, 0.6); }
-  .userSurvey ~ .alumni .mainContent input[type="text"], .userSurvey ~ .alumni .mainContent input[type="date"], .userSurvey ~ .alumni .mainContent input[type="tel"], .userSurvey ~ .alumni .mainContent input[type="email"], .userSurvey ~ .alumni .mainContent select, .userSurvey ~ .alumni .mainContent textarea {
-    border-radius: 0.5rem;
-    border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
-    min-width: 0rem;
-    padding-right: 1.6rem;
-    padding-left: 1.6rem; }
-    .userSurvey ~ .alumni .mainContent input[type="text"]:focus, .userSurvey ~ .alumni .mainContent input[type="date"]:focus, .userSurvey ~ .alumni .mainContent input[type="tel"]:focus, .userSurvey ~ .alumni .mainContent input[type="email"]:focus, .userSurvey ~ .alumni .mainContent select:focus, .userSurvey ~ .alumni .mainContent textarea:focus {
-      border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
+
+.userSurvey ~ .alumni .mainContent .textFieldContainer {
+  min-width: 26rem; }
+
+.userSurvey ~ .alumni .mainContent label {
+  color: rgba(0, 0, 0, 0.6); }
+
+.userSurvey ~ .alumni .mainContent input[type="text"], .userSurvey ~ .alumni .mainContent input[type="date"], .userSurvey ~ .alumni .mainContent input[type="tel"], .userSurvey ~ .alumni .mainContent input[type="email"], .userSurvey ~ .alumni .mainContent select, .userSurvey ~ .alumni .mainContent textarea {
+  border-radius: 0.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+  min-width: 0rem;
+  padding-right: 1.6rem;
+  padding-left: 1.6rem; }
+  .userSurvey ~ .alumni .mainContent input[type="text"]:focus, .userSurvey ~ .alumni .mainContent input[type="date"]:focus, .userSurvey ~ .alumni .mainContent input[type="tel"]:focus, .userSurvey ~ .alumni .mainContent input[type="email"]:focus, .userSurvey ~ .alumni .mainContent select:focus, .userSurvey ~ .alumni .mainContent textarea:focus {
+    border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
 
 .admin {
   position: relative;
@@ -1608,7 +1607,12 @@ html {
         .admin .pageSpecificHeader > div:first-child h2 span {
           font-size: inherit; }
     .admin .pageSpecificHeader > div:last-child {
-      align-self: flex-end; }
+      display: flex;
+      flex-flow: column;
+      align-self: flex-end;
+      align-items: flex-end; }
+      .admin .pageSpecificHeader > div:last-child > * + * {
+        margin-top: 4.7rem; }
       .admin .pageSpecificHeader > div:last-child .textFieldContainer {
         border-radius: 5rem;
         width: 30rem; }
@@ -2439,6 +2443,11 @@ input, textarea {
 .questionnaire [readonly] {
   background-color: #EEEEEE !important;
   color: rgba(0, 0, 0, 0.38) !important; }
+  .questionnaire [readonly]:hover {
+    cursor: not-allowed; }
+
+:disabled:hover {
+  cursor: not-allowed; }
 
 .textFieldContainer {
   position: relative;
@@ -2748,7 +2757,7 @@ ul {
       background-color: #A63F3F;
       color: #FFFFFF; }
       .modalContainer .modalPreview .data-table thead.bigger {
-        height: 8rem; }
+        height: 7rem; }
       .modalContainer .modalPreview .data-table thead tr {
         width: 100%; }
     .modalContainer .modalPreview .data-table tbody {
@@ -2847,7 +2856,7 @@ ul {
 
 .alertModalContainer, .notifModalContainer {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -2865,13 +2874,16 @@ ul {
     display: none;
     flex-flow: column;
     align-items: center;
-    padding: 7rem 2.4rem 2.4rem 2.4rem;
+    padding: 5.2rem 1.4rem 2.4rem;
     border-radius: 1rem;
     background-color: transparent;
     background-image: url("../images/alertContainer.png");
     background-position: top 1px center;
     background-repeat: no-repeat;
     /* box-shadow: $elevate24dp; */ }
+    @media (min-width: 800px) {
+      .alertModalContainer .alertModal, .notifModalContainer .alertModal {
+        padding: 7rem 2.4rem 2.4rem 2.4rem; } }
     .alertModalContainer .alertModal.logoutAlert.show, .notifModalContainer .alertModal.logoutAlert.show {
       display: flex; }
       .alertModalContainer .alertModal.logoutAlert.show svg, .notifModalContainer .alertModal.logoutAlert.show svg {
@@ -2894,12 +2906,20 @@ ul {
         background-color: #B61734;
         color: #FFFFFF; }
     .alertModalContainer .alertModal.notify, .notifModalContainer .alertModal.notify {
-      padding: 7rem 7.2rem 2.4rem; }
-      .alertModalContainer .alertModal.notify button, .notifModalContainer .alertModal.notify button {
-        min-width: 24.8rem; }
+      padding: 5.2rem 3.2rem 2.4rem; }
+      @media (min-width: 800px) {
+        .alertModalContainer .alertModal.notify, .notifModalContainer .alertModal.notify {
+          padding: 7rem 7.2rem 2.4rem; } }
+      .alertModalContainer .alertModal.notify button, .alertModalContainer .alertModal.notify a, .notifModalContainer .alertModal.notify button, .notifModalContainer .alertModal.notify a {
+        min-width: 24.8rem;
+        background-color: #EEEEEE;
+        color: rgba(0, 0, 0, 0.87); }
       .alertModalContainer .alertModal.notify svg, .notifModalContainer .alertModal.notify svg {
         position: absolute;
-        transform: translateY(-84%); }
+        transform: translateY(-75%); }
+        @media (min-width: 800px) {
+          .alertModalContainer .alertModal.notify svg, .notifModalContainer .alertModal.notify svg {
+            transform: translateY(-84%); } }
     .alertModalContainer .alertModal.successAlert.show, .notifModalContainer .alertModal.successAlert.show {
       display: flex; }
       .alertModalContainer .alertModal.successAlert.show svg, .notifModalContainer .alertModal.successAlert.show svg {
@@ -2920,11 +2940,14 @@ ul {
       font-size: 2.4rem; }
     .alertModalContainer .alertModal svg, .notifModalContainer .alertModal svg {
       position: absolute;
-      transform: translateY(-88%);
+      transform: translateY(-77%);
       background-position: center;
       background-repeat: no-repeat;
       width: 19.6rem;
       height: 19.8rem; }
+      @media (min-width: 800px) {
+        .alertModalContainer .alertModal svg, .notifModalContainer .alertModal svg {
+          transform: translateY(-88%); } }
     .alertModalContainer .alertModal h2, .alertModalContainer .alertModal p, .notifModalContainer .alertModal h2, .notifModalContainer .alertModal p {
       text-align: center; }
     .alertModalContainer .alertModal h2, .notifModalContainer .alertModal h2 {
@@ -2937,7 +2960,10 @@ ul {
       display: flex;
       gap: 2.4rem; }
       .alertModalContainer .alertModal div a, .alertModalContainer .alertModal div button, .notifModalContainer .alertModal div a, .notifModalContainer .alertModal div button {
-        min-width: 16rem; }
+        min-width: 14rem; }
+        @media (min-width: 800px) {
+          .alertModalContainer .alertModal div a, .alertModalContainer .alertModal div button, .notifModalContainer .alertModal div a, .notifModalContainer .alertModal div button {
+            min-width: 16rem; } }
       .alertModalContainer .alertModal div button, .notifModalContainer .alertModal div button {
         background-color: #EEEEEE;
         color: rgba(0, 0, 0, 0.87); }
@@ -5247,6 +5273,17 @@ ul {
         .forum > section.forumView .comment-main-con .comment-list .btn-con2 button.submit-reply {
           background-color: #A63F3F;
           color: #FFFFFF; }
+    .forum > section.forumView .comment-main-con .sub-comment-list {
+      display: flex;
+      flex-flow: column;
+      align-items: center; }
+      .forum > section.forumView .comment-main-con .sub-comment-list .see-more {
+        background-color: transparent;
+        border: 0;
+        font-weight: 600; }
+        .forum > section.forumView .comment-main-con .sub-comment-list .see-more:focus, .forum > section.forumView .comment-main-con .sub-comment-list .see-more:hover {
+          box-shadow: none;
+          text-decoration: underline; }
   .forum > section.forumView .catCon .list-item {
     display: flex;
     align-items: center;
@@ -5433,6 +5470,12 @@ select, input, textarea {
           .dashboard .mainContent .container .card-con .card-footer a {
             display: flex;
             align-items: center; }
+      .dashboard .mainContent .container input[type="text"], .dashboard .mainContent .container input[type="date"], .dashboard .mainContent .container input[type="tel"], .dashboard .mainContent .container input[type="email"], .dashboard .mainContent .container select, .dashboard .mainContent .container textarea {
+        border-radius: 0.5rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+        padding-right: 1.6rem; }
+        .dashboard .mainContent .container input[type="text"]:focus, .dashboard .mainContent .container input[type="date"]:focus, .dashboard .mainContent .container input[type="tel"]:focus, .dashboard .mainContent .container input[type="email"]:focus, .dashboard .mainContent .container select:focus, .dashboard .mainContent .container textarea:focus {
+          border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
 
 .userAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div {
   min-width: 30rem; }
@@ -5702,9 +5745,9 @@ select, input, textarea {
   color: rgba(0, 0, 0, 0.87);
   width: 100%;
   height: 4rem;
-  position: fixed;
-  top: 0;
-  left: 0rem;
+  position: absolute;
+  top: -4rem;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5715,19 +5758,25 @@ select, input, textarea {
   font-weight: 500; }
   @media (min-width: 800px) {
     .userSurvey.firstEdit::after {
-      height: 6rem; } }
+      height: 6rem;
+      top: -6rem; } }
 
 .userSurvey.firstEdit, .userSurvey.firstEdit ~ .headerShadow {
   top: 4rem; }
   @media (min-width: 800px) {
     .userSurvey.firstEdit, .userSurvey.firstEdit ~ .headerShadow {
       top: 6rem; } }
+  .userSurvey.firstEdit.move, .userSurvey.firstEdit ~ .headerShadow.move {
+    transition: 600ms ease 600ms;
+    transform: translateY(-200px); }
 
 .userSurvey.firstEdit ~ .mainNav {
   top: 10rem; }
   @media (min-width: 800px) {
     .userSurvey.firstEdit ~ .mainNav {
       top: 12rem; } }
+  .userSurvey.firstEdit ~ .mainNav.move {
+    transform: translateY(-200px); }
 
 .userSurvey.firstEdit ~ .editProfile, .userSurvey.firstEdit ~ .mainFooter {
   top: 10rem; }
@@ -5740,103 +5789,106 @@ select, input, textarea {
             @extend %outline;
             color: $mediumEmphasis;
         } */ }
-  .mainHeader ~ .editProfile .mainContent .container .form .questionCon {
-    padding: 1.6rem 2.4rem;
-    box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.38); }
-    @media (min-width: 800px) {
-      .mainHeader ~ .editProfile .mainContent .container .form .questionCon {
-        padding: 1.6rem 4.8rem;
-        gap: 4.8rem; } }
-    @media (min-width: 800px) {
-      .mainHeader ~ .editProfile .mainContent .container .form .questionCon.changePass {
-        max-width: 51rem;
-        align-self: center; } }
-    .mainHeader ~ .editProfile .mainContent .container .form .questionCon.changePass ~ button {
-      align-self: center; }
-  .mainHeader ~ .editProfile .mainContent .container .form .addInfo {
-    flex-flow: row wrap;
-    align-items: flex-start; }
-  .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
-    flex: 1; }
-  .mainHeader ~ .editProfile .mainContent .container .form h1, .mainHeader ~ .editProfile .mainContent .container .form h2 {
-    text-align: center;
-    border-bottom: none;
-    padding-top: 2.4rem;
-    padding-bottom: 0.8rem; }
-  .mainHeader ~ .editProfile .mainContent .container .form h3 {
-    color: #A63F3F; }
-  .mainHeader ~ .editProfile .mainContent .container .form p {
-    margin-bottom: 0;
-    text-align: center; }
-  .mainHeader ~ .editProfile .mainContent .container .form button {
-    background-color: #A63F3F;
-    color: #FFFFFF;
-    position: relative;
-    width: 22rem; }
-    .mainHeader ~ .editProfile .mainContent .container .form button svg {
-      position: absolute;
-      left: 1.3rem; }
-  .mainHeader ~ .editProfile .mainContent .container .form .profilePic {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10rem;
-    height: 10rem;
-    border-radius: 10rem;
-    border: none; }
-    @media (min-width: 415px) {
-      .mainHeader ~ .editProfile .mainContent .container .form .profilePic {
-        width: 16rem;
-        height: 16rem; } }
-  .mainHeader ~ .editProfile .mainContent .container .form #profile-pic-btn {
-    width: 0; }
-  .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"] {
-    transition: 200ms ease;
-    cursor: pointer;
-    position: absolute;
-    top: 65%;
-    right: 0px;
-    width: 2.7rem;
-    height: 2.7rem; }
-    @media (min-width: 415px) {
-      .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"] {
-        width: 4.3rem;
-        height: 4.3rem; } }
-    .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"]:focus, .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"]:hover {
-      filter: brightness(1.1); }
-  .mainHeader ~ .editProfile .mainContent .container .form .avatar {
-    position: relative;
-    align-self: center;
-    cursor: pointer;
-    width: 10rem;
-    height: 10rem; }
-    @media (min-width: 415px) {
-      .mainHeader ~ .editProfile .mainContent .container .form .avatar {
-        width: 16rem;
-        height: 16rem; } }
-  .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 1.6rem; }
-    @media (min-width: 800px) {
-      .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
-        flex-flow: row wrap; } }
-    .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer > div {
-      flex: 1; }
+  .mainHeader ~ .editProfile .mainContent .container {
+    z-index: 2; }
+    .mainHeader ~ .editProfile .mainContent .container .form .questionCon {
+      padding: 1.6rem 2.4rem;
+      box-shadow: none;
+      border: 1px solid rgba(0, 0, 0, 0.38); }
       @media (min-width: 800px) {
-        .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer > div {
-          min-width: 32rem; } }
-  .mainHeader ~ .editProfile .mainContent .container .form .questionCon .textFieldContainer {
-    min-width: 0; }
-  .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(1) {
-    min-width: 100%; }
-  @media (min-width: 800px) {
-    .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(2) {
-      min-width: 46.4rem; } }
-  .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(3), .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(4) {
-    min-width: 18.3rem; }
+        .mainHeader ~ .editProfile .mainContent .container .form .questionCon {
+          padding: 1.6rem 4.8rem;
+          gap: 4.8rem; } }
+      @media (min-width: 800px) {
+        .mainHeader ~ .editProfile .mainContent .container .form .questionCon.changePass {
+          max-width: 51rem;
+          align-self: center; } }
+      .mainHeader ~ .editProfile .mainContent .container .form .questionCon.changePass ~ button {
+        align-self: center; }
+    .mainHeader ~ .editProfile .mainContent .container .form .addInfo {
+      flex-flow: row wrap;
+      align-items: flex-start; }
+    .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
+      flex: 1; }
+    .mainHeader ~ .editProfile .mainContent .container .form h1, .mainHeader ~ .editProfile .mainContent .container .form h2 {
+      text-align: center;
+      border-bottom: none;
+      padding-top: 2.4rem;
+      padding-bottom: 0.8rem; }
+    .mainHeader ~ .editProfile .mainContent .container .form h3 {
+      color: #A63F3F; }
+    .mainHeader ~ .editProfile .mainContent .container .form p {
+      margin-bottom: 0;
+      text-align: center; }
+    .mainHeader ~ .editProfile .mainContent .container .form button {
+      background-color: #A63F3F;
+      color: #FFFFFF;
+      position: relative;
+      width: 22rem; }
+      .mainHeader ~ .editProfile .mainContent .container .form button svg {
+        position: absolute;
+        left: 1.3rem; }
+    .mainHeader ~ .editProfile .mainContent .container .form .profilePic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10rem;
+      height: 10rem;
+      object-fit: cover;
+      border-radius: 10rem;
+      border: none; }
+      @media (min-width: 415px) {
+        .mainHeader ~ .editProfile .mainContent .container .form .profilePic {
+          width: 16rem;
+          height: 16rem; } }
+    .mainHeader ~ .editProfile .mainContent .container .form #profile-pic-btn {
+      width: 0; }
+    .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"] {
+      transition: 200ms ease;
+      cursor: pointer;
+      position: absolute;
+      top: 65%;
+      right: 0px;
+      width: 2.7rem;
+      height: 2.7rem; }
+      @media (min-width: 415px) {
+        .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"] {
+          width: 4.3rem;
+          height: 4.3rem; } }
+      .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"]:focus, .mainHeader ~ .editProfile .mainContent .container .form [for="profile-pic-btn"]:hover {
+        filter: brightness(1.1); }
+    .mainHeader ~ .editProfile .mainContent .container .form .avatar {
+      position: relative;
+      align-self: center;
+      cursor: pointer;
+      width: 10rem;
+      height: 10rem; }
+      @media (min-width: 415px) {
+        .mainHeader ~ .editProfile .mainContent .container .form .avatar {
+          width: 16rem;
+          height: 16rem; } }
+    .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 1.6rem; }
+      @media (min-width: 800px) {
+        .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer {
+          flex-flow: row wrap; } }
+      .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer > div {
+        flex: 1; }
+        @media (min-width: 800px) {
+          .mainHeader ~ .editProfile .mainContent .container .form .smallComponentsContainer > div {
+            min-width: 32rem; } }
+    .mainHeader ~ .editProfile .mainContent .container .form .questionCon .textFieldContainer {
+      min-width: 0; }
+    .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(1) {
+      min-width: 100%; }
+    @media (min-width: 800px) {
+      .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(2) {
+        min-width: 46.4rem; } }
+    .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(3), .mainHeader ~ .editProfile .mainContent .container .form .questionCon:nth-of-type(3) .smallComponentsContainer > div:nth-child(4) {
+      min-width: 18.3rem; }
   .mainHeader ~ .editProfile .mainContent .imageInputContainer {
     display: flex;
     flex-flow: column;
@@ -5944,6 +5996,7 @@ select, input, textarea {
       content: "No"; }
 
 .profile .container {
+  z-index: 2;
   padding: 0 0 2.4rem !important; }
 
 .profile .profile-header {

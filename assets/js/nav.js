@@ -24,8 +24,9 @@ const nav = {
             }); */
         }
         if(mobileNav){
-            window.addEventListener("click", closeMobileNav);
-            document.body.classList.remove('stop-scrolling')
+            if(mobileNav.classList.contains('show')){
+                window.addEventListener("click", closeMobileNav);
+            }
         }
         
 

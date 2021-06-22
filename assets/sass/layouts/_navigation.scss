@@ -288,7 +288,7 @@
 .adminNav{
     min-width: 9.2rem;
     max-width: 9.2rem;
-    max-height: 100%;
+    max-height: calc(100vh - 6rem);
     box-shadow: $elevate24dp;
     display: flex;
     flex-flow: column;
@@ -323,7 +323,7 @@
         display: none;
         flex-flow: column;
         border-radius: 1rem;
-        min-height: 10rem;
+        min-height: 12.1rem;
         align-self: stretch;
         @include set-background-color($primaryColorLight);
         background-image: url("../images/accNameBg.svg");
@@ -331,7 +331,6 @@
         background-position: center;
         background-size: cover;
         border-radius: 1rem;
-        min-height: 10rem;
         align-self: stretch;
         align-items: center;
         gap: .8rem;

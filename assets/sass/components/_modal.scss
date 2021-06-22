@@ -74,7 +74,7 @@
                 border-top-right-radius: 1rem;
                 @include set-background-color($primaryColorLight);
                 &.bigger{
-                    height: 8rem;
+                    height: 7rem;
                 }
                 tr{
                     width: 100%;
@@ -221,7 +221,7 @@
 //for alert modal
 .alertModalContainer,.notifModalContainer{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -240,13 +240,17 @@
         display: none;
         flex-flow: column;
         align-items: center;
-        padding: 7rem 2.4rem 2.4rem 2.4rem;
+        padding: 5.2rem 1.4rem 2.4rem;
         border-radius: 1rem;
         background-color: transparent;
         background-image: url('../images/alertContainer.png');
         background-position: top 1px center;
         background-repeat: no-repeat;
         /* box-shadow: $elevate24dp; */
+        @include respond-to('medium2'){
+
+            padding: 7rem 2.4rem 2.4rem 2.4rem;
+        }
 
         //change color base on class in alert modal
         &.logoutAlert.show{
@@ -283,13 +287,21 @@
             }
         }
         &.notify{
-            padding: 7rem 7.2rem 2.4rem;
-            button{
+            padding: 5.2rem 3.2rem 2.4rem;
+            @include respond-to('medium2'){
+                padding: 7rem 7.2rem 2.4rem;
+            }
+            button,a{
                 min-width: 24.8rem;
+                @include set-background-color($backgroundColor);
             }
             svg{
                 position: absolute;
+                
+                transform: translateY(-75%);
+            @include respond-to('medium2'){
                 transform: translateY(-84%);
+            }
             }
         }
         &.successAlert.show{
@@ -325,7 +337,10 @@
     
         svg{
             position: absolute;
-            transform: translateY(-88%);
+            transform: translateY(-77%);
+            @include respond-to('medium2'){
+                transform: translateY(-88%);
+            }
             background-position: center;
             background-repeat: no-repeat;
             width: 19.6rem;
@@ -347,7 +362,10 @@
             display: flex;
             gap: 2.4rem;
             a,button{
-                min-width: 16rem;
+                min-width: 14rem;
+                @include respond-to('medium2'){
+                    min-width: 16rem;
+                }
             }
             button{
                 @extend %filled;

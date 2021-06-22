@@ -1,3 +1,4 @@
+
 .dashboard{
     //forfirefox scrollbar
     scrollbar-width: thin;
@@ -188,6 +189,15 @@
                         align-items: center;
 
                     }
+                }
+            }
+            //singleComponents
+            input[type="text"],input[type="date"],input[type="tel"],input[type="email"],select,textarea{
+                border-radius: 0.5rem;
+                border-right: 1px solid $textfield-border !important;
+                padding-right: 1.6rem;
+                &:focus{ 
+                    border-right: 1px $mediumEmphasis solid!important;
                 }
             }
         }
