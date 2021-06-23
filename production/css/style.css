@@ -1529,6 +1529,10 @@ html {
           .userSurvey ~ .alumni .mainContent .container .form .surveyCard.googleForm {
             background-size: initial;
             background-position: right 4.8rem top 2.4rem; } }
+        .userSurvey ~ .alumni .mainContent .container .form .surveyCard.googleForm > button {
+          display: none;
+          align-self: center;
+          width: 16rem; }
       .userSurvey ~ .alumni .mainContent .container .form .surveyCard h3 {
         max-width: 80%; }
       .userSurvey ~ .alumni .mainContent .container .form .surveyCard .check-con {

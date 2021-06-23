@@ -62,6 +62,12 @@
                             background-size: initial;
                             background-position: right 4.8rem top 2.4rem;
                         }
+
+                        &>button{
+                            display: none;
+                            align-self: center;
+                            width: 16rem;
+                        }
                     }
                     h3{
                         max-width: 80%;

@@ -6,10 +6,12 @@ const userSurvey = {
             surveyLink.forEach(element=>{
                 element.addEventListener('click', ()=>{
                     let checkBox = element.previousElementSibling.children[0]
+                    let btnDone = element.nextElementSibling
                     checkBox.disabled = false
                     checkBox.addEventListener('click', ()=>{
                         if(checkBox.checked){
-                            element.textContent = "OK"
+                            btnDone.style.display = "block"
+                            element.style.display = "none"
                         }
                     })
                 })
