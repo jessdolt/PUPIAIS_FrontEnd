@@ -3244,12 +3244,16 @@ ul {
         width: 1.8rem;
         height: 2rem;
         align-self: center; }
-    .modalFilterNav .btnContainer a {
+    .modalFilterNav .btnContainer .btnDeleteInline {
+      background-color: #A63F3F;
+      color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
       max-width: 4rem !important;
+      min-width: 4rem !important;
       min-height: 4rem !important;
+      padding: 0 !important;
       border-radius: 5rem;
       margin-right: auto; }
   .modalFilterNav.alum-rep {

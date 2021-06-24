@@ -711,12 +711,15 @@
                 align-self: center;
             }
         }
-        a{
+        .btnDeleteInline{
+            @include set-background-color($primaryColorLight);
             display: flex;
             align-items: center;
             justify-content: center;
             max-width: 4rem !important;
+            min-width: 4rem !important;
             min-height: 4rem !important;
+            padding: 0 !important;
             border-radius: 5rem;
             margin-right: auto;
         }
