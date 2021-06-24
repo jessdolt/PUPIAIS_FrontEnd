@@ -102,6 +102,21 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+            &.google-form{
+                .survey-footer{
+                    position: relative;
+                    .google-form-icon{
+                        position: absolute;
+                        right: 0.8rem;
+                        top: 0;
+                        width: 11.8rem;
+                        height: 4.6rem;
+                        background-image: url("../images/google-forms-icon2.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+            }
         }
         
         .card-svg{

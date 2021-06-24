@@ -3,6 +3,9 @@
         &.adminForm{
             .form{
                 .infoCon{
+                    .smallComponentsContainer{
+                        column-gap: 3.2rem;
+                    }
                     //personal info
                     &:nth-of-type(1){
                         .smallComponentsContainer{

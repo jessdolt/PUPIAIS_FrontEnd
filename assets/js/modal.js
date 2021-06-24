@@ -147,6 +147,18 @@ const alertModalObj = {
                     //modal for questionair add question
                     const btnDeleteAccount = document.querySelectorAll(".btnDeleteAccount")
                     const deleteAccountForm = document.querySelector(".delete-acc-form")
+
+                    //modal for alert success
+                    const successAlert = document.querySelector('.successAlert')
+                    if(successAlert){
+                        window.addEventListener('load', ()=>{
+                            setTimeout(()=>{
+                                successAlert.parentNode.classList.remove('show')
+                                successAlert.classList.remove('show')
+                            },2000)
+                            
+                        })
+                    }
                     //--------------------Event Listeners------------------------
                     if(btnLogout){
                         btnLogout.addEventListener("click", generateLogoutModal);

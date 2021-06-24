@@ -403,7 +403,7 @@
         border-radius: 0.5rem;
         border-left: 4px solid $activeIndicator;
         box-shadow: $elevate2dp;
-        animation: slideIn 600ms ease;
+        animation: slideIn 400ms ease;
         &.show{
             display: flex;
         }
@@ -415,12 +415,14 @@
         }
         .success-icon{
             fill: $activeIndicator;
-            transform: scale(0.0);
-            animation: scale 1.5s ease 1.2s forwards;
+            animation: scale 1.2s ease-in-out 400ms forwards;
         }
         .notif-message-con{
-            max-width: 32.8rem;
-            animation: pop 1.2s ease 600ms forwards;
+            max-width: 24.8rem;
+            @include respond-to('medium2'){
+                max-width: 32.8rem;
+            }
+            animation: pop 600ms ease-in-out 400ms forwards;
         }
         h2{
             font-size: $overline-text-desktop;
@@ -449,6 +451,10 @@
             }
         }
         @keyframes scale {
+            0%{
+                opacity: 0;
+                transform: scale(0);
+            }
             80%{
                 opacity: 1;
                 transform: scale(1.2);

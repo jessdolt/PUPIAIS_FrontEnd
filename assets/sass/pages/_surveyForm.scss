@@ -3,13 +3,17 @@
         &.adminForm{
             .form{
                 .infoCon{
+                    .smallComponentsContainer{
+                        column-gap: 3.2rem;
+                    }
                     //PrimaryDetails
                     &:nth-of-type(1){
                         .smallComponentsContainer{
                             & > div{
-                                &:nth-child(1){
                                     min-width: 100%;
-                                }
+                                    .outsideLabel{
+                                        margin-top: 0;
+                                    }
                                 textarea{
                                     height: 12rem;
                                 }

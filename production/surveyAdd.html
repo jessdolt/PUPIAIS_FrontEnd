@@ -102,6 +102,30 @@
                                 <div class="infoSubCon">
                                     <div class="smallComponentsContainer">
                                         <div>
+                                            <label for="survey-type" class="outsideLabel">Type:</label>
+                                            <div class="textFieldContainer">
+                                                <select name="survey-type" id="survey-type" required>
+                                                    <option value="Google">Google Form Survey</option>
+                                                    <option value="Built-in">Built-in Survey</option>
+                                                </select>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="google-form-link" class="outsideLabel">Google Form Link:</label>
+                                            <div class="textFieldContainer">
+                                                <input type="text" name="google-form-link" id="google-form-link"required>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="google-form-link-editor" class="outsideLabel">Google Form Editor Link:</label>
+                                            <div class="textFieldContainer">
+                                                <input type="text" name="google-form-link-editor" id="google-form-link-editor"required>
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div>
                                             <label for="survey-title" class="outsideLabel">Survey Title:</label>
                                             <div class="textFieldContainer">
                                                 <input type="text" name="surveyTitle" id="survey-title"required>
@@ -115,7 +139,6 @@
                                                 <span class="error"></span>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </section>

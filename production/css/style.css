@@ -1946,8 +1946,9 @@ html {
     .mainContent.adminForm .form:first-child .smallComponentsContainer {
       display: flex;
       flex-flow: wrap;
-      justify-content: space-between;
-      gap: 2rem; }
+      justify-content: space-between; }
+      .mainContent.adminForm .form:first-child .smallComponentsContainer > * {
+        margin-top: 1.6rem; }
       .mainContent.adminForm .form:first-child .smallComponentsContainer fieldset {
         border: none;
         display: flex;
@@ -3014,7 +3015,7 @@ ul {
     border-radius: 0.5rem;
     border-left: 4px solid #15CC8A;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-    animation: slideIn 600ms ease; }
+    animation: slideIn 400ms ease; }
     .alertModalContainer .successAlert.show, .notifModalContainer .successAlert.show {
       display: flex; }
     .alertModalContainer .successAlert > *, .notifModalContainer .successAlert > * {
@@ -3023,11 +3024,13 @@ ul {
       margin-left: 0.8rem; }
     .alertModalContainer .successAlert .success-icon, .notifModalContainer .successAlert .success-icon {
       fill: #15CC8A;
-      transform: scale(0);
-      animation: scale 1.5s ease 1.2s forwards; }
+      animation: scale 1.2s ease-in-out 400ms forwards; }
     .alertModalContainer .successAlert .notif-message-con, .notifModalContainer .successAlert .notif-message-con {
-      max-width: 32.8rem;
-      animation: pop 1.2s ease 600ms forwards; }
+      max-width: 24.8rem;
+      animation: pop 600ms ease-in-out 400ms forwards; }
+      @media (min-width: 800px) {
+        .alertModalContainer .successAlert .notif-message-con, .notifModalContainer .successAlert .notif-message-con {
+          max-width: 32.8rem; } }
     .alertModalContainer .successAlert h2, .notifModalContainer .successAlert h2 {
       font-size: 1.8rem; }
     .alertModalContainer .successAlert p, .notifModalContainer .successAlert p {
@@ -3050,6 +3053,9 @@ ul {
     transform: translateY(0%); } }
 
 @keyframes scale {
+  0% {
+    opacity: 0;
+    transform: scale(0); }
   80% {
     opacity: 1;
     transform: scale(1.2); }
@@ -5397,14 +5403,24 @@ select, input, textarea {
     cursor: pointer; }
 
 .survey .mainContent .data-table th:nth-child(2), .survey .mainContent .data-table td:nth-child(2) {
+  min-width: 2.8rem;
+  height: 2.8rem; }
+
+.survey .mainContent .data-table th:nth-child(3), .survey .mainContent .data-table td:nth-child(3) {
   min-width: 13.6rem;
   flex: 1; }
 
-.survey .mainContent .data-table th:nth-child(3), .survey .mainContent .data-table td:nth-child(3) {
+.survey .mainContent .data-table th:nth-child(4), .survey .mainContent .data-table td:nth-child(4) {
   flex: 2; }
 
-.survey .mainContent .data-table th:nth-child(4), .survey .mainContent .data-table th:nth-child(5), .survey .mainContent .data-table td:nth-child(4), .survey .mainContent .data-table td:nth-child(5) {
+.survey .mainContent .data-table th:nth-child(5), .survey .mainContent .data-table th:nth-child(6), .survey .mainContent .data-table td:nth-child(5), .survey .mainContent .data-table td:nth-child(6) {
   min-width: 12.6rem; }
+
+.survey .mainContent .data-table td:nth-child(2) {
+  height: 2.8rem;
+  background-image: url("../images/google-forms-icon-only.svg");
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .dashboard {
   scrollbar-width: thin;
@@ -5552,6 +5568,9 @@ select, input, textarea {
         .dashboard .mainContent .container input[type="text"]:focus, .dashboard .mainContent .container input[type="date"]:focus, .dashboard .mainContent .container input[type="tel"]:focus, .dashboard .mainContent .container input[type="email"]:focus, .dashboard .mainContent .container select:focus, .dashboard .mainContent .container textarea:focus {
           border-right: 1px rgba(0, 0, 0, 0.6) solid !important; }
 
+.userAdd .mainContent.adminForm .form .infoCon .smallComponentsContainer {
+  column-gap: 3.2rem; }
+
 .userAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div {
   min-width: 30rem; }
 
@@ -5567,11 +5586,15 @@ select, input, textarea {
 .userAdd .mainContent.adminForm .form .infoCon:nth-of-type(3) .smallComponentsContainer > div:last-child {
   flex: 2; }
 
-.surveyAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div:nth-child(1) {
-  min-width: 100%; }
+.surveyAdd .mainContent.adminForm .form .infoCon .smallComponentsContainer {
+  column-gap: 3.2rem; }
 
-.surveyAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div textarea {
-  height: 12rem; }
+.surveyAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div {
+  min-width: 100%; }
+  .surveyAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div .outsideLabel {
+    margin-top: 0; }
+  .surveyAdd .mainContent.adminForm .form .infoCon:nth-of-type(1) .smallComponentsContainer > div textarea {
+    height: 12rem; }
 
 .surveyAdd .mainContent.adminForm .form .infoCon:nth-of-type(2) .smallComponentsContainer > div {
   flex: 1; }
@@ -5795,6 +5818,17 @@ select, input, textarea {
       -webkit-line-clamp: 5;
       overflow: hidden;
       text-overflow: ellipsis; }
+    .report .mainContent .survey-card.google-form .survey-footer {
+      position: relative; }
+      .report .mainContent .survey-card.google-form .survey-footer .google-form-icon {
+        position: absolute;
+        right: 0.8rem;
+        top: 0;
+        width: 11.8rem;
+        height: 4.6rem;
+        background-image: url("../images/google-forms-icon2.svg");
+        background-repeat: no-repeat;
+        background-position: center; }
   .report .mainContent .card-svg {
     border-radius: 1rem;
     position: absolute;
