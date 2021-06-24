@@ -145,7 +145,10 @@
         .department, .groupList{
             display: flex;
             flex-flow: column;
-            gap: 0.8rem;
+            /* gap: 0.8rem; */
+            &>*+*{
+                margin-top: 0.8rem;
+            }
         }
         .department{
             margin: 3.2rem 0;
@@ -228,7 +231,11 @@
                     display: flex;
                     margin-top: 0.8rem;
                     flex-flow: column;
-                    gap: 0.8rem;
+                    /* gap: 0.8rem; */
+                    &>*+*{
+                        margin-top: 0.8rem;
+                    }
+                    
                     .subGroup{
                         display: flex;
                         padding: 0 1.6rem;

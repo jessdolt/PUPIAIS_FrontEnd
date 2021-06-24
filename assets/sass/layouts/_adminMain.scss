@@ -46,14 +46,21 @@
             .btnContainer{
                 margin-top: auto;
                 display: flex;
-                gap: 2.4rem;
+                /* gap: 2.4rem; */
+                &>*+*{
+                    margin-left: 2.4rem
+                }
+                
             }
             button,a{
                 @extend %btn;
                 @extend %filled;
                 @include set-background-color($surfaceColor);
                 padding: 0 1rem 0 2rem;
-                gap: .8rem;
+                /* gap: .8rem; */
+                &>*{
+                    margin-left: 0.8rem;
+                }
                 svg{
                     width: 2.4rem;
                     height: 2.4rem;
@@ -285,9 +292,11 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: 0.8rem;
                     box-shadow: $elevate3dp;
                     transition: all 200ms ease;
+                    &>*+*{
+                        margin-left: 0.8rem
+                    }
                     @include set-background-color($backgroundColor);
                     button{
                         @extend %filled;
@@ -323,7 +332,10 @@
         .pagination{
             height: 7.8rem;
             display: flex;
-            gap: 0.8rem;
+            /* gap: 0.8rem; */
+            &>*+*{
+                margin-left: 0.8rem
+            }
             padding: 2.4rem;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;

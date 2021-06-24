@@ -31,7 +31,10 @@
         .container{
             z-index: 2;
             .form{
-                gap: 2.4rem;
+                /* gap: 2.4rem; */
+                &>*+*{
+                    margin-top: 2.4rem!important;
+                }
                 h1,h2{
                     padding: 2.4rem 0;
                     border-bottom: 1px solid $disabled;

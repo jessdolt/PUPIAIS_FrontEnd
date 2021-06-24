@@ -88,9 +88,11 @@ button{
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.8rem;
         box-shadow: $elevate3dp;
         transition: all 200ms ease;
+        &>*+*{
+            margin-left: 0.8rem
+        }
         @include set-background-color($backgroundColor);
         button{
             @extend %filled;

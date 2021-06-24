@@ -24,10 +24,14 @@ html{
     & > section{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        //gap is allowed in grid layout to support ios
         column-gap: 1.6rem;
         @include respond-to('medium2'){
             grid-template-columns: repeat(12, 1fr);
             column-gap: 2.4rem;
+            &>*+*{
+                margin-left: 2.4rem
+            }
         }
         .container{
             margin: 0 1.6rem;

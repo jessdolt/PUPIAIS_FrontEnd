@@ -115,6 +115,16 @@
         .small-con{
             min-width: 18.3rem;
         }
+        select{
+            border-radius: 0.5rem;
+            border-right: 1px solid $textfield-border !important;
+            min-width: 0rem;
+            padding-right: 1.6rem;
+            padding-left: 1.6rem;
+            &:focus{ 
+                border-right: 1px $mediumEmphasis solid!important;
+            }
+        }
     }
     .btn-con{
         margin-top: 3.2rem;

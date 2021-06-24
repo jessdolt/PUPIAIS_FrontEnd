@@ -56,7 +56,10 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        gap: 1.6rem;
+        /* gap: 1.6rem; */
+        &>*+*{
+            margin-top: 1.6rem;
+        }
         
         //pupLogo
         &::before{
@@ -102,7 +105,10 @@
             }
         }
         @include respond-to('large'){
-            gap: 2.4rem;
+            /* gap: 2.4rem; */
+            &>*+*{
+                margin-top: 2.4rem;
+            }
         }
     }
 
@@ -120,7 +126,10 @@
 
         @include respond-to('medium2'){
             position: relative;
-            gap: 0.8rem;
+            /* gap: 0.8rem; */
+            &>*+*{
+                margin-top: 0.8rem;
+            }
 
             //the actual visible logo for desktop view
             &::before{

@@ -73,7 +73,10 @@
             .forum-link{
                 @include set-background-color($surfaceColor);
                 display: flex;
-                gap: 0.8rem;
+                /* gap: 0.8rem; */
+                &>*+*{
+                    margin-left: 0.8rem;
+                }
                 text-decoration: none;
                 //padding bottom attach to forum-details-con
                 padding-top: 0.8rem;
@@ -81,7 +84,10 @@
                 border-radius: 1rem;
                 @include respond-to('medium2'){
                     padding: 0.8rem 1.6rem 0;
-                    gap: 1.6rem;
+                    /* gap: 1.6rem; */
+                    &>*+*{
+                        margin-left: 1.6rem;
+                    }
                 }
                 &:focus,&:hover{
                     box-shadow: $elevate1dp;
@@ -120,7 +126,10 @@
                 flex-flow: wrap;
                 padding-bottom: 0.8rem;
                 border-bottom: 1px solid $disabled;
-                row-gap: 0.4rem;
+                /* row-gap: 0.4rem; */
+                &>*+*{
+                    margin-top: 0.4rem;
+                }
                 .forum-details{
                     text-align: start;
                     min-width: 100%;
@@ -137,7 +146,10 @@
             .commentCount{
                 display: flex;
                 align-items: center;
-                gap: 0.4rem;
+                /* gap: 0.4rem; */
+                &>*{
+                    margin-right: 0.4rem;
+                }
                 color: $mediumEmphasis;
             }
 
@@ -154,7 +166,10 @@
                 padding-top: 2.4rem;
                 justify-content: flex-end;
                 margin-top: auto;
-                gap: 0.8rem;
+                /* gap: 0.8rem; */
+                &>*+*{
+                    margin-left: 0.8rem;
+                }
                 a{
                     transition: 200ms ease;
                     justify-content: center;
@@ -181,7 +196,10 @@
                 ul{
                     display: flex;
                     flex-flow: column;
-                    gap: 0.8rem;
+                    /* gap: 0.8rem; */
+                    &>*+*{
+                        margin-top: 0.8rem;
+                    }
                     padding-top: 1.6rem;
                 }
                 a,button{
@@ -220,7 +238,10 @@
             .popCon{
                 a,button{
                     justify-content: flex-start;
-                    column-gap: 0.4rem;
+                    /* column-gap: 0.4rem; */
+                    &>*+*{
+                        margin-left: 0.4rem;
+                    }
                 }
             }
         }
@@ -289,7 +310,10 @@
                     top: 3rem;
                     left: -5.1rem;
                     padding: 0.8rem;
-                    gap: 0.8rem;
+                    /* gap: 0.8rem; */
+                    &>*+*{
+                        margin-left: 0.8rem;
+                    }
                     border-radius: 0.5rem;
                     box-shadow: $elevate3dp;
                     button{
@@ -325,7 +349,10 @@
                 left: 4.4rem;
                 display: flex;
                 flex-flow: column;
-                gap: 0.8rem;
+                /* gap: 0.8rem; */
+                &>*+*{
+                    margin-top: 0.8rem;
+                }
                 justify-content: center;
                 button{
                     @extend %filled;
@@ -394,7 +421,13 @@
                     display: flex;
                     align-items: flex-start;
                     flex-flow: wrap;
-                    gap: 0.8rem;
+                    /* gap: 0.8rem; */
+                    &>*+*{
+                        margin-left: 0.8rem;
+                    }
+                    &>*:last-child{
+                        margin-top: 0.8rem;
+                    }
                     .textFieldContainer{
                         flex: 1;
                         min-width: 80%;
@@ -458,13 +491,22 @@
                         display: flex;
                         flex-flow: column;
                         row-gap: 0.8rem;
+                        &>*:nth-child(2){
+                            margin-top: 0;
+                        }
+                        &>*+*{
+                            margin-top: 0.8rem;
+                        }
                     }
                     .account-name{
                         font-weight: 500;
                     }
                     .btn-con,.btn-con2{
                         display: flex;
-                        gap: 0.8rem;
+                        /* gap: 0.8rem; */
+                        &>*+*{
+                            margin-left: 0.8rem;
+                        }
                         margin-bottom: 1.6rem;
                     }
                     .btn-con{
@@ -504,7 +546,6 @@
                 .sub-comment-list{
                     display: flex;
                     flex-flow: column;
-                    align-items: center;
                     .see-more{
                         background-color: transparent;
                         border: 0;
@@ -523,7 +564,10 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: 3rem;
+                    /* gap: 3rem; */
+                    &>*+*{
+                        margin-left: 3rem;
+                    }
                     &>div{
                         display: flex;
                         align-items: center;
@@ -531,6 +575,9 @@
                     }
                 }
             }
+            /* .catCon,.popCon{
+                margin: 0 1.6rem;
+            } */
             .catCon{
                 @include respond-to('medium2'){
                     grid-row: 1/2;

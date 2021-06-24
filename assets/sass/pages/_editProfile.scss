@@ -51,6 +51,7 @@
     }
 }
 .mainHeader ~ .editProfile{
+    overflow-x: hidden;
     .mainContent{
         .container{
             z-index: 2;
@@ -62,7 +63,12 @@
                     border: 1px solid $disabled;
                     @include respond-to('medium2'){
                         padding: 1.6rem 4.8rem;
-                        gap: 4.8rem;
+                        /* gap: 4.8rem; */
+                        //temporary gap 0
+                        gap:0;
+                        &>*+*{
+                            margin-top: 4.8rem;
+                        }
                     }
                     //changePass
                     &.changePass{
@@ -195,16 +201,18 @@
                     }
                 }
                 .smallComponentsContainer{
-                    display: flex;
-                    flex-flow: column wrap;
+                    display: grid;
+                    /* flex-flow: column wrap; */
+                    grid-template-columns: repeat(auto-fill,minmax(23rem,1fr));
                     gap: 1.6rem;
                     @include respond-to('medium2'){
-                        flex-flow: row wrap;
+                        /* flex-flow: row wrap; */
+                        grid-template-columns: repeat(auto-fill,minmax(32rem,1fr));
                     }
                     &>div{
                         flex: 1;
                         @include respond-to('medium2'){
-                            min-width: 32rem;
+                            /* min-width: 32rem; */
                         }
                     }
                 }
@@ -307,7 +315,8 @@
         //radioButtons
         fieldset{
             border: none;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 2.4rem;
             padding: 0;
             display: flex;
