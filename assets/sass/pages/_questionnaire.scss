@@ -5,7 +5,10 @@
             max-height: 34.4rem;
             overflow: auto;
             canvas{
+                align-self: center;
+                min-height: 34.4rem;
                 max-height: 100%;
+                max-width: 80%;
             }
         }
     }

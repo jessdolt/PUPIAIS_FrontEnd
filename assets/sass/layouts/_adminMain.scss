@@ -141,7 +141,9 @@
             }
             tr{
                 display: flex;
-                gap: 3.2rem;
+                &>*+*{
+                    margin-left: 3.2rem;
+                }
                 align-items: center;
                 justify-content: center;
                 padding: 0.8rem 1.6rem;

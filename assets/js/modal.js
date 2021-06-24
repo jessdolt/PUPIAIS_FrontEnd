@@ -153,8 +153,11 @@ const alertModalObj = {
                     if(successAlert){
                         window.addEventListener('load', ()=>{
                             setTimeout(()=>{
-                                successAlert.parentNode.classList.remove('show')
-                                successAlert.classList.remove('show')
+                                successAlert.parentNode.style.opacity="0"
+                                setTimeout(()=>{
+                                    successAlert.parentNode.classList.remove('show')
+                                    successAlert.classList.remove('show')
+                                },300)
                             },2000)
                             
                         })

@@ -10,6 +10,7 @@
                 &:nth-child(3){
                     min-width: 13.6rem;
                     flex: 1;
+                    margin-left: 1.2rem;
                 }
                 
                 &:nth-child(4){
@@ -22,10 +23,11 @@
             }
             td{
                 &:nth-child(2){
-                    height: 2.8rem;
-                    background-image: url("../images/google-forms-icon-only.svg");
-                    background-repeat: no-repeat;
-                    background-position: center;
+                    &.google-form{
+                        background-image: url("../images/google-forms-icon-only.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
                 }
             }
         }

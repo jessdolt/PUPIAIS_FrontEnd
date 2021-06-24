@@ -229,7 +229,7 @@
     height: 100vh;
     background-color: $mediumEmphasis;
     z-index: 25;
-    transition: opacity 2s ease;
+    transition: opacity 300ms ease;
     opacity: 0;
     &.show{
         opacity: 1;
@@ -332,6 +332,11 @@
             h2{
                 font-size: $h3-text-desktop;
             }
+            form>div{
+                margin-top: 2.4rem;
+            }
+
+
         }
     
         svg{
