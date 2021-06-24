@@ -5558,7 +5558,7 @@ select, input, textarea {
             border-radius: 10rem;
             background-color: #EEEEEE;
             color: rgba(0, 0, 0, 0.87); }
-            .dashboard .mainContent .container .card-con .card-footer button:nth-child(2) {
+            .dashboard .mainContent .container .card-con .card-footer button.active {
               background-color: #A63F3F;
               color: #FFFFFF; }
           .dashboard .mainContent .container .card-con .card-footer a {
