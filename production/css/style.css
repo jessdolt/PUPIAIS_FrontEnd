@@ -4521,7 +4521,7 @@ ul {
         display: flex;
         visibility: visible;
         opacity: 1;
-        max-height: 200px; }
+        max-height: 100%; }
       .users .filterNav .department > li > .deptHead.active svg {
         transform: rotate(180deg); }
       .users .filterNav .department > li > .deptHead svg:last-of-type {
