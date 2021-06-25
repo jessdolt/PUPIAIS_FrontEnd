@@ -3612,8 +3612,11 @@ ul {
       display: inline-flex;
       align-items: center; }
     .card .card-body .date-posted {
-      gap: 0.8rem;
+      /* gap: 0.8rem; */
       flex-flow: wrap; }
+      .card .card-body .date-posted > * + * {
+        margin-left: 0.8rem;
+        font-size: inherit; }
     .card .card-body .description {
       margin-bottom: 0.8rem;
       display: -webkit-box;

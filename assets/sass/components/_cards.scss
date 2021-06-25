@@ -66,8 +66,12 @@
             align-items: center;
         }
         .date-posted{
-            gap: 0.8rem;
+            /* gap: 0.8rem; */
             flex-flow: wrap;
+            &>*+*{
+                margin-left: 0.8rem;
+                font-size: inherit;
+            }
         }
 
         .description{
