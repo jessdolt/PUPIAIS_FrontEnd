@@ -1078,7 +1078,7 @@ table tbody {
   flex-flow: column;
   align-items: center;
   z-index: 22;
-  transition: 200ms ease;
+  transition: min-width 200ms ease;
   background-color: #FFFFFF;
   overflow-x: hidden;
   overflow-y: auto;

@@ -309,7 +309,7 @@
     flex-flow: column;
     align-items: center;
     z-index: 22;
-    transition: 200ms ease;
+    transition: min-width 200ms ease;
     background-color: ($surfaceColor);
     overflow-x: hidden;
     overflow-y: auto;
