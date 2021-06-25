@@ -5171,6 +5171,8 @@ ul {
           min-width: 0; } }
       .forum > section.mainContent .forum-details-con .forum-details span, .forum > section.mainContent .forum-details-con .forum-details p {
         color: rgba(0, 0, 0, 0.6); }
+      .forum > section.mainContent .forum-details-con .forum-details .forum-type {
+        display: inline-block; }
   .forum > section.mainContent .commentCount {
     display: flex;
     align-items: center;
