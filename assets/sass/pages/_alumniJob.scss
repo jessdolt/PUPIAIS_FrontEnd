@@ -168,6 +168,7 @@
             //container of dateposted and available position in jobview
             .flex-row{
                 display: flex;
+                flex-flow: wrap;
                 /* gap: 2.4rem; */
                 &>*+*{
                     margin-left: 2.4rem;

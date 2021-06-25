@@ -4122,6 +4122,7 @@ ul {
         margin-left: auto; }
     .jobPost section.mainContent.jobView .flex-row {
       display: flex;
+      flex-flow: wrap;
       /* gap: 2.4rem; */
       margin-bottom: 2.4rem; }
       .jobPost section.mainContent.jobView .flex-row > * + * {
