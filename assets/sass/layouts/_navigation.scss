@@ -88,7 +88,6 @@
         }
     }
     ul{
-        flex: 1;
         display: flex;
         /* gap: .8rem; */
         &>*+*{
@@ -195,6 +194,9 @@
                 }
             }
         }
+    }
+    &>.logout{
+        margin-top: auto;
     }
     
     .userContainer,.dashboardLink{

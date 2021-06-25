@@ -619,7 +619,7 @@ table tbody {
 .forum-details h3 {
   font-weight: 600; }
 
-.forum-details span {
+.forum-details span, .forum-details p {
   font-size: 1.2rem; }
 
 .mainFooter h1 {
@@ -894,7 +894,6 @@ table tbody {
     .mainNav .userConMobile span {
       color: rgba(0, 0, 0, 0.6); }
   .mainNav ul {
-    flex: 1;
     display: flex;
     /* gap: .8rem; */
     flex-flow: column;
@@ -988,6 +987,8 @@ table tbody {
         .mainNav button.active ~ .userContainer a:last-child svg {
           position: absolute;
           left: 1.3rem; }
+  .mainNav > .logout {
+    margin-top: auto; }
   .mainNav .userContainer, .mainNav .dashboardLink {
     position: absolute; }
   .mainNav .userContainer {
@@ -1539,7 +1540,7 @@ html {
     .userSurvey ~ .alumni .mainContent .container .form h1, .userSurvey ~ .alumni .mainContent .container .form h2 {
       padding: 2.4rem 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.38); }
-    .userSurvey ~ .alumni .mainContent .container .form h1 {
+    .userSurvey ~ .alumni .mainContent .container .form > h2, .userSurvey ~ .alumni .mainContent .container .form h1 {
       text-align: center; }
     .userSurvey ~ .alumni .mainContent .container .form p {
       text-align: center;
@@ -5168,7 +5169,7 @@ ul {
         .forum > section.mainContent .forum-details-con .forum-details {
           flex: 1;
           min-width: 0; } }
-      .forum > section.mainContent .forum-details-con .forum-details span {
+      .forum > section.mainContent .forum-details-con .forum-details span, .forum > section.mainContent .forum-details-con .forum-details p {
         color: rgba(0, 0, 0, 0.6); }
   .forum > section.mainContent .commentCount {
     display: flex;

@@ -39,7 +39,7 @@
                     padding: 2.4rem 0;
                     border-bottom: 1px solid $disabled;
                 }
-                h1{
+                &>h2,h1{
                     text-align: center;
                 }
                 p{
