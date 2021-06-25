@@ -84,6 +84,14 @@
                 .addInfo{
                     flex-flow: row wrap;
                     align-items: flex-start;
+                    &>*+*{
+                        margin-top: 2.4rem;
+
+                        @media (min-width:1410px) {
+                            margin-left: 3.2rem;
+                            margin-top: 0;
+                        }
+                    }
                 }
                 .smallComponentsContainer{
                     flex: 1;
