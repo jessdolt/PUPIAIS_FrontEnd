@@ -145,7 +145,7 @@
             border-radius: 0 0 1rem 1rem;
             filter: opacity(.9);
             margin: 0;
-            margin-top: auto;
+            margin-top: auto!important;
             display: flex;
             /* gap: 0.4rem; */
             &>*+*{
