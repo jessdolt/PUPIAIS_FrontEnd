@@ -401,7 +401,7 @@
     .mainCategoryList{
         width: 100%;
         @include respond-to('large'){
-            min-height: 25.2rem;
+            /* min-height: 25.2rem; */
             width: 22rem;
             /* gap: .8rem; */
             &>*+*{
@@ -586,8 +586,9 @@
             display: flex;
         }
         .mainCategoryList{
-            min-height: 25.2rem;
+            /* min-height: 25.2rem; */
             width: 22rem;
+            margin-bottom: 2rem;
             /* gap: .8rem; */
             &>*+*{
                 margin-top: 0.8rem;
@@ -618,6 +619,7 @@
 
         button{
             display: block;
+            margin-top: auto!important;
         }
     }
 }
