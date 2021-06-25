@@ -526,6 +526,9 @@ table tbody {
   font-size: 2.4rem;
   text-transform: capitalize; }
 
+.description pre {
+  white-space: normal; }
+
 .adminNav h3 {
   font-size: 1.4rem; }
 
