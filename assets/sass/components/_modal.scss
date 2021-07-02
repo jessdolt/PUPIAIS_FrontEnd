@@ -3,7 +3,8 @@
 .addModalContainer,
 .modalConFilterNav,
 .changeModalContainer,
-.imageViewModal{
+.imageViewModal,
+.privacyModalCon{
     display: none;
     position: fixed;
     top: 0;
@@ -940,6 +941,7 @@
         }
     }
 }
+//for galleryView
 .imageViewModal{
     transition: 200ms ease;
     & *{
@@ -1037,5 +1039,38 @@
             object-fit: cover;
         }
 
+    }
+}
+//for privacyModal
+.privacyModal{
+    @include set-background-color($surfaceColor);
+    transition: 200ms ease;
+    padding: 2.4rem 4rem;
+    width: 80rem;
+    max-width: 90%;
+    border-radius: 0.8rem;
+    &>*+*{
+        margin-top: 1.8rem;
+    }
+    svg{
+        cursor: pointer;
+    }
+    
+    .btn-con{
+        display: flex;
+        justify-content: center;
+        &>*{
+            @extend %btn;
+            @extend %filled;
+            @include set-background-color($activeIndicator);
+            min-width: 12rem;
+            min-height: 3rem;
+            text-transform: capitalize;
+            text-decoration: none;
+            &+*{
+                margin-left: 2.4rem;
+                @include set-background-color($backgroundColor);
+            }
+        }
     }
 }
