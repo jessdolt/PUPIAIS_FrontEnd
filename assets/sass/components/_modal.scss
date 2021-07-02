@@ -1052,14 +1052,10 @@
     &>*+*{
         margin-top: 1.8rem;
     }
-    svg{
-        cursor: pointer;
-    }
-    
     .btn-con{
         display: flex;
         justify-content: center;
-        &>*{
+        form>*{
             @extend %btn;
             @extend %filled;
             @include set-background-color($activeIndicator);
@@ -1067,10 +1063,12 @@
             min-height: 3rem;
             text-transform: capitalize;
             text-decoration: none;
-            &+*{
-                margin-left: 2.4rem;
-                @include set-background-color($backgroundColor);
-            }
+        }
+        &>*+*{
+            margin-left: 2.4rem;   
+        }
+        .disagree{
+            @include set-background-color($backgroundColor);
         }
     }
 }
